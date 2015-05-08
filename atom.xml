@@ -4,7 +4,7 @@
   <title><![CDATA[Alessandro Lacava]]></title>
   <link href="http://lambdista.github.io/atom.xml" rel="self"/>
   <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T11:37:25+02:00</updated>
+  <updated>2015-05-08T12:08:28+02:00</updated>
   <id>http://lambdista.github.io/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
@@ -313,7 +313,7 @@ Have a look at the <code>Money</code> class for a complete coverage.</p>
     <id>http://lambdista.github.io/blog/try-success-failure-api-for-java</id>
     <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
 
-<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+<p>.Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
 
 <p>This API is a Java implementation of <a href="http://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
 originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
@@ -522,7 +522,7 @@ printed out.</p>
     <id>http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
     <content type="html"><![CDATA[<p><img class="left" src="http://lambdista.github.io/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
 <a href="http://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)</a>
-AThis post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language    and the key developer of the Unix operating system.</p>
+This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language     and the key developer of the Unix operating system.</p>
 
 <p><a href="http://en.wikipedia.org/wiki/The_C_Programming_Language_%28book%29">The C programming language</a> is the book he wrote along with <a href="http://en.wikipedia.org/wiki/Brian_Kernighan">Brian Kernighan</a>.   In my humble opinion, it is one of the best book ever written about computer programming.</p>
 
