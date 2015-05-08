@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Template Engine | Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/blog/categories/template-engine/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Combine JavaScript and a Template Engine for Flexible Web Apps]]></title>
+    <link href="http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
+    <updated>2011-10-26T17:34:17+02:00</updated>
+    <id>http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
+    <content type="html"><![CDATA[<h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
+
+<p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>
+
+<p>Go to <a href="http://www.developer.com/open/article.php/3864011/Combine-JavaScript-and-a-Template-Engine-for-Flexible-Web-Apps.htm">developer.com</a> to read the rest of the article: <strong>Combine JavaScript and a Template Engine for Flexible Web Apps</strong>.</p>
+]]></content>
+  </entry>
+  
+</feed>

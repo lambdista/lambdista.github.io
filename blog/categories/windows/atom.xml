@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Windows | Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Useful Windows Shortcuts]]></title>
+    <link href="http://lambdista.github.io/blog/two-useful-windows-shortcuts/"/>
+    <updated>2007-05-10T13:29:54+02:00</updated>
+    <id>http://lambdista.github.io/blog/two-useful-windows-shortcuts</id>
+    <content type="html"><![CDATA[<p>Try these nice shortcuts and you&rsquo;ll find yourself using them on and on.</p>
+
+<ol>
+<li><p>Windows Key + d shows the desktop</p></li>
+<li><p>Windows Key + e opens the explorer on My Computer</p></li>
+<li><p>Windows Key + f opens the &ldquo;Find&rdquo; window</p></li>
+<li><p>Windows Key + l logs out the current user</p></li>
+<li><p>Windows Key + m minimizes all windows</p></li>
+<li><p>Windows Key + r opens the &ldquo;Run&rdquo; window</p></li>
+<li><p>Windows Key + u opens the &ldquo;Utility Manager&rdquo; window</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

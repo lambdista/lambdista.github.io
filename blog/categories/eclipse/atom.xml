@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Eclipse | Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/blog/categories/eclipse/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Undo Close Tab In Eclipse]]></title>
+    <link href="http://lambdista.github.io/blog/undo-close-tab-in-eclipse/"/>
+    <updated>2009-03-26T10:33:59+01:00</updated>
+    <id>http://lambdista.github.io/blog/undo-close-tab-in-eclipse</id>
+    <content type="html"><![CDATA[<p>I don&rsquo;t know about you, but I love the Firefox&rsquo;s <strong>undo-close-tab</strong> feature (Ctrl+Shift+T). If you use <strong>Eclipse</strong> you might be glad to know you can undo the close-tab action in Eclipse as well. You can do that both using your mouse by clicking on the yellow left arrow you can see in the Eclipse toolbar and through the keybord using the Alt+Left Arrow key combination.</p>
+
+<p>I hope this helps.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OutOfMemoryError In Eclipse | Java Virtual Machine (JVM)]]></title>
+    <link href="http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
+    <updated>2008-07-22T10:53:07+02:00</updated>
+    <id>http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
+    <content type="html"><![CDATA[<h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
+
+<p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
+
+<ol>
+<li>By editing your <strong>eclipse.ini</strong> file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones:</li>
+</ol>
+
+
+<p><strong>-Xms40m</strong>
+<strong> -Xmx512m</strong></p>
+
+<p>You might want to change them depending on your hardware. For example I changed them as follows:</p>
+
+<p><strong>-Xms256m</strong>
+<strong>-Xmx1024m</strong></p>
+
+<p>It means: &ldquo;start with an initial heap size of 256 MB and grow to a maximum of 1024MB, that is 1GB.&rdquo;</p>
+
+<ol>
+<li>By editing the <strong>Run Configurations in Eclipse</strong>. To do this, right-click on the class you want to run (the one with the main method) and then select:</li>
+</ol>
+
+
+<p><strong>Run As -> Run Configurations</strong></p>
+
+<p>Click on the <strong>Arguments</strong> tab. In the VM Arguments box type:</p>
+
+<p><strong>-Xms256m -Xmx1024m</strong></p>
+
+<p>or whatever you prefer, depending on the hardware you possess.</p>
+
+<p><strong>IMPORTANT NOTE: It is strongly recommended that you make a backup copy of your eclipse.ini file before editing it in any way.</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Very Useful Shortcuts for Eclipse]]></title>
+    <link href="http://lambdista.github.io/blog/very-useful-shortcuts-for-eclipse/"/>
+    <updated>2007-09-25T13:10:01+02:00</updated>
+    <id>http://lambdista.github.io/blog/very-useful-shortcuts-for-eclipse</id>
+    <content type="html"><![CDATA[<p>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java.</p>
+
+<table cellpadding="3" style="border: 1px solid #0066ff; font-family: arial" cellspacing="0" >
+
+Action
+Shortcut
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Toggle Comment
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+7
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Show Tooltip
+</td>
+
+<td style="border: 1px solid #0066ff" >F2
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Format Code
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Shift+F
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Indent Line
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+I
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Duplicate Lines Down
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Alt+Down Arrow
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Duplicate Lines Up
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Alt+Up Arrow
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Delete Next Line And Move Below Code Up
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+D
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Delete Next Word
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Delete
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Delete Previous Word
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Backspace
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Delete Line
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Shift+Delete
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Insert Line Above The Current One
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Shift+Enter
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Insert Line Below The Current One
+</td>
+
+<td style="border: 1px solid #0066ff" >Shift+Enter
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Move Lines Down
+</td>
+
+<td style="border: 1px solid #0066ff" >Alt+Down Arrow
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Move Lines Up
+</td>
+
+<td style="border: 1px solid #0066ff" >Alt+Up Arrow
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Next Word
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Right Arrow
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Previous Word
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Left Arrow
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >To Upper Case
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Shift+X
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >To Lower Case
+</td>
+
+<td style="border: 1px solid #0066ff" >Ctrl+Shift+Y
+</td>
+</tr>
+<tr >
+
+<td style="border: 1px solid #0066ff" >Shortcut for System.out.println
+</td>
+
+<td style="border: 1px solid #0066ff" >Type syso and then Ctrl+Space Bar
+</td>
+</tr>
+</table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Attach Source or Javadoc to Java Enterprise Edition API In Eclipse]]></title>
+    <link href="http://lambdista.github.io/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/"/>
+    <updated>2007-09-14T14:50:48+02:00</updated>
+    <id>http://lambdista.github.io/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse</id>
+    <content type="html"><![CDATA[<p>Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as <code>HttpServletRequest</code> you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:</p>
+
+<ol>
+<li><p>Right click on servlet-api.jar in your project.</p></li>
+<li><p>Choose Properties from the menu.</p></li>
+<li><p>In Javadoc location path put the URL where the Java EE documentation is located (e.g. <a href="http://java.sun.com/j2ee/1.4/docs/api/">http://java.sun.com/j2ee/1.4/docs/api/</a>) or, alternatively, indicate the path where the Javadoc is located in your disk, such as file:/c:/path/to/your/documentation.</p></li>
+</ol>
+
+
+<p>Hope this helps!</p>
+]]></content>
+  </entry>
+  
+</feed>

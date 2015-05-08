@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Using Dynamic SQL Statements From PL/SQL - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+EXECUTE IMMEDIATE statement. Here &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lambdista.github.io/blog/using-dynamic-sql-statements-from-plsql">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lambdista.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Using Dynamic SQL Statements From PL/SQL</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-06T12:24:18+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:24 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+<code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
+</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
+The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
+<code>your_parameter_for_field1</code> parameter.</p>
+
+<p>Now let&rsquo;s see another example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1 AND field2 = :2&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
+</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see this example is similar to the previous one but here I showed how you can use more than one parameter.</p>
+
+<p>One last example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_insert</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;INSERT INTO your_table VALUES (:1, :2)&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_insert</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This last example shows how you can use <code>EXECUTE IMMEDIATE</code> to execute an <code>INSERT</code> statement. Here you don&rsquo;t need an
+explicit cursor. Of course, in a similar way, you can use <code>EXECUTE IMMEDIATE</code> to execute <code>UPDATE</code> and <code>DELETE</code>
+statements as well.</p>
+
+<p>Of course, you could have accomplished the &ldquo;same&rdquo; result using string concatenation but binding the variables using
+the method just shown is much better from a performance viewpoint.</p>
+
+<p>One last note: you CANNOT use bind variables to replace actual object names like table names, columns and so on.
+In this case you can turn back to string concatenation.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2006-09-06T12:24:18+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:24 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/oracle/'>oracle</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lambdista.github.io/blog/using-dynamic-sql-statements-from-plsql/" data-via="lambdista" data-counturl="http://lambdista.github.io/blog/using-dynamic-sql-statements-from-plsql/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/" title="Previous Post: How to hide/show an HTML form element depending on a combo box choice">&laquo; How to hide/show an HTML form element depending on a combo box choice</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/what-happens-if-you-write-something-like-a-a-in-java/" title="Next Post: What happens if you write something like a = a++ in Java?">What happens if you write something like a = a++ in Java? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Scala&#8217;s Self-recursive Types - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="One of the advantages of using a statically typed language is that you can use the type system to enforce
+some constraints. Scala provides self- &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lambdista.github.io/blog/scala-self-recursive-types">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lambdista.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Scala&#8217;s Self-recursive Types</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-30T14:59:24+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:59 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>One of the advantages of using a statically typed language is that you can use the type system to enforce
+some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
+that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
+
+<h2>Self-recursive type definition</h2>
+
+<p>Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example
+which does not use a self-recursive type:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So far so good, the compiler will not complain. The problem is that it won&rsquo;t complain even if you write
+something outrageous like the following code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Smith&quot;</span><span class="o">,</span> <span class="mi">42</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You want to avoid something like that by enforcing a compile-time check. Enters a self-recursive type:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By using this definition of <code>Doubler</code> you&rsquo;re saying: &ldquo;Hey, if someone tries to extends <code>Doubler</code> with a type
+which doesn&rsquo;t extend <code>Doubler</code> in turn (hence <em>self-recursive</em>), do not compile it&rdquo;.
+In this case the previous definition of <code>Square</code>, which extends <code>Doubler[Person]</code>, doesn&rsquo;t compile.</p>
+
+<p>Note that self-recursive types are not specific to Scala. Indeed Java uses them too.
+Take, for example, the <code>Enum</code> definition:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="n">E</span> <span class="kd">extends</span> <span class="n">Enum</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&gt;</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;,</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>E extends Enum&lt;E&gt;</code> in <em>Javanese</em> means exactly <code>E &lt;: Enum[E]</code></p>
+
+<h2>Self type definition</h2>
+
+<p>F-bounded polymorphic types are of great help but sometimes they are not enough to enforce the constraints you need.
+Indeed, the previous definition of <code>Doubler</code> has still one problem. Consider the next code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Apple</span><span class="o">(</span><span class="n">kind</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Can you spot the problem? Look at the <code>Apple</code> definition, it extends <code>Doubler[Square]</code> instead of <code>Doubler[Apple]</code>.</p>
+
+<p>This code compiles because it respects the constraint put by the <code>Doubler</code> definition.
+Indeed <code>Square</code> extends <code>Doubler</code> so it can be used in <code>Apple</code>. Sometimes this is what you want in which case
+the self-recursive type will do. In cases when you don’t want this to happen a self type can work this out:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span> <span class="n">self</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now if you try to compile the previous definition of <code>Apple</code> the compiler will complain by saying something like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">error</span><span class="k">:</span> <span class="kt">illegal</span> <span class="kt">inheritance</span><span class="o">;</span>
+</span><span class='line'> <span class="n">self</span><span class="o">-</span><span class="k">type</span> <span class="kt">Apple</span> <span class="kt">does</span> <span class="kt">not</span> <span class="kt">conform</span> <span class="kt">to</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span><span class="-Symbol">&#39;s</span> <span class="n">selftype</span> <span class="nc">Square</span>
+</span><span class='line'>       <span class="k">case</span> <span class="k">class</span> <span class="nc">Apple</span><span class="o">(</span><span class="n">kind</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>                                              <span class="o">^</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conclusions</h2>
+
+<p>If you&rsquo;re thinking: &ldquo;Come on! I would never extend <code>Apple</code> that way because I know what I meant when I wrote
+my <code>Doubler</code> abstraction. I don&rsquo;t need then the self type annotation and, since I know what I&rsquo;m doing,
+I don&rsquo;t need the self-recursive type either&rdquo;. Well you may be right but I&rsquo;d have two objections:</p>
+
+<ol>
+<li><p>Generally you are not the only one working on a project and, anyway, a good rule of thumb is to design your
+software as if you&rsquo;re designing a public API. In this case you want to be sure no one will use your API in the wrong way.</p></li>
+<li><p>Compilers are implemented by smart guys, generally. Having the compiler help by your side is
+always a good thing in my humble opinion.</p></li>
+</ol>
+
+
+<p>Are there alternatives to this type of problems? Yes indeed, <em>Type Classes</em>, which is by the way the option I prefer.
+But this is another story for a future post.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Alessandro Lacava</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-03-30T14:59:24+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:59 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/scala/'>scala</a>, <a class='category' href='/blog/categories/self-recursive-type/'>self-recursive type</a>, <a class='category' href='/blog/categories/self-type/'>self-type</a>, <a class='category' href='/blog/categories/type-system/'>type system</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lambdista.github.io/blog/scala-self-recursive-types/" data-via="lambdista" data-counturl="http://lambdista.github.io/blog/scala-self-recursive-types/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/introduction-to-internal-dsls-in-scala/" title="Previous Post: Introduction to Internal DSLs in Scala">&laquo; Introduction to Internal DSLs in Scala</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

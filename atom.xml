@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
+    <link href="http://lambdista.github.io/blog/scala-self-recursive-types/"/>
+    <updated>2015-03-30T14:59:24+02:00</updated>
+    <id>http://lambdista.github.io/blog/scala-self-recursive-types</id>
+    <content type="html"><![CDATA[<p>One of the advantages of using a statically typed language is that you can use the type system to enforce
+some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
+that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
+
+<h2>Self-recursive type definition</h2>
+
+<p>Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example
+which does not use a self-recursive type:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So far so good, the compiler will not complain. The problem is that it won&rsquo;t complain even if you write
+something outrageous like the following code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Smith&quot;</span><span class="o">,</span> <span class="mi">42</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You want to avoid something like that by enforcing a compile-time check. Enters a self-recursive type:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By using this definition of <code>Doubler</code> you&rsquo;re saying: &ldquo;Hey, if someone tries to extends <code>Doubler</code> with a type
+which doesn&rsquo;t extend <code>Doubler</code> in turn (hence <em>self-recursive</em>), do not compile it&rdquo;.
+In this case the previous definition of <code>Square</code>, which extends <code>Doubler[Person]</code>, doesn&rsquo;t compile.</p>
+
+<p>Note that self-recursive types are not specific to Scala. Indeed Java uses them too.
+Take, for example, the <code>Enum</code> definition:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="n">E</span> <span class="kd">extends</span> <span class="n">Enum</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&gt;</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;,</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>E extends Enum&lt;E&gt;</code> in <em>Javanese</em> means exactly <code>E &lt;: Enum[E]</code></p>
+
+<h2>Self type definition</h2>
+
+<p>F-bounded polymorphic types are of great help but sometimes they are not enough to enforce the constraints you need.
+Indeed, the previous definition of <code>Doubler</code> has still one problem. Consider the next code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Apple</span><span class="o">(</span><span class="n">kind</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Can you spot the problem? Look at the <code>Apple</code> definition, it extends <code>Doubler[Square]</code> instead of <code>Doubler[Apple]</code>.</p>
+
+<p>This code compiles because it respects the constraint put by the <code>Doubler</code> definition.
+Indeed <code>Square</code> extends <code>Doubler</code> so it can be used in <code>Apple</code>. Sometimes this is what you want in which case
+the self-recursive type will do. In cases when you don’t want this to happen a self type can work this out:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span> <span class="n">self</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now if you try to compile the previous definition of <code>Apple</code> the compiler will complain by saying something like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">error</span><span class="k">:</span> <span class="kt">illegal</span> <span class="kt">inheritance</span><span class="o">;</span>
+</span><span class='line'> <span class="n">self</span><span class="o">-</span><span class="k">type</span> <span class="kt">Apple</span> <span class="kt">does</span> <span class="kt">not</span> <span class="kt">conform</span> <span class="kt">to</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span><span class="-Symbol">&#39;s</span> <span class="n">selftype</span> <span class="nc">Square</span>
+</span><span class='line'>       <span class="k">case</span> <span class="k">class</span> <span class="nc">Apple</span><span class="o">(</span><span class="n">kind</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>                                              <span class="o">^</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conclusions</h2>
+
+<p>If you&rsquo;re thinking: &ldquo;Come on! I would never extend <code>Apple</code> that way because I know what I meant when I wrote
+my <code>Doubler</code> abstraction. I don&rsquo;t need then the self type annotation and, since I know what I&rsquo;m doing,
+I don&rsquo;t need the self-recursive type either&rdquo;. Well you may be right but I&rsquo;d have two objections:</p>
+
+<ol>
+<li><p>Generally you are not the only one working on a project and, anyway, a good rule of thumb is to design your
+software as if you&rsquo;re designing a public API. In this case you want to be sure no one will use your API in the wrong way.</p></li>
+<li><p>Compilers are implemented by smart guys, generally. Having the compiler help by your side is
+always a good thing in my humble opinion.</p></li>
+</ol>
+
+
+<p>Are there alternatives to this type of problems? Yes indeed, <em>Type Classes</em>, which is by the way the option I prefer.
+But this is another story for a future post.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Internal DSLs In Scala]]></title>
+    <link href="http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala/"/>
+    <updated>2015-03-26T09:41:48+01:00</updated>
+    <id>http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on developing an internal DSL in Scala for currency-related operations
+on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Functional Programming In Scala]]></title>
+    <link href="http://lambdista.github.io/blog/introduction-to-functional-programming-in-scala/"/>
+    <updated>2015-02-28T09:29:30+01:00</updated>
+    <id>http://lambdista.github.io/blog/introduction-to-functional-programming-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on Functional Programming in Scala
+on <a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">DevX</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Scala DSL for Currency-related Operations]]></title>
+    <link href="http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations/"/>
+    <updated>2015-02-20T15:09:06+01:00</updated>
+    <id>http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations</id>
+    <content type="html"><![CDATA[<h3>A simple internal DSL in Scala for money-related operations</h3>
+
+<p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
+
+<p>This Domain-Specific Language (DSL) lets you perform operations among different currencies,
+by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.</p>
+
+<h3>Usage Example</h3>
+
+<p>Here&rsquo;s a simple usage example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">com.lambdista.money._</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">com.lambdista.money.Currency._</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">object</span> <span class="nc">Main</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">conversion</span><span class="k">:</span> <span class="kt">Conversion</span> <span class="o">=</span> <span class="nc">Map</span><span class="o">(</span>
+</span><span class='line'>      <span class="o">(</span><span class="nc">GBP</span><span class="o">,</span> <span class="nc">EUR</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="mf">1.270</span><span class="o">,</span>
+</span><span class='line'>      <span class="o">(</span><span class="nc">EUR</span><span class="o">,</span> <span class="nc">USD</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="mf">1.268</span><span class="o">,</span>
+</span><span class='line'>      <span class="o">(</span><span class="nc">GBP</span><span class="o">,</span> <span class="nc">USD</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="mf">1.611</span>
+</span><span class='line'>    <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">implicit</span> <span class="k">val</span> <span class="n">converter</span> <span class="k">=</span> <span class="nc">Converter</span><span class="o">(</span><span class="n">conversion</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">sumAndConversion1</span> <span class="k">=</span> <span class="mf">100.001</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mi">200</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span> <span class="n">to</span> <span class="nc">GBP</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;sumAndConversion1: $sumAndConversion1&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">sumAndConversion2</span><span class="k">:</span> <span class="kt">Money</span> <span class="o">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mf">210.4</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span> <span class="n">to</span> <span class="nc">EUR</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;sumAndConversion2: $sumAndConversion2&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">sum</span> <span class="k">=</span> <span class="mf">100.001</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mi">200</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span>
+</span><span class='line'>    <span class="k">val</span> <span class="n">simpleConversion</span> <span class="k">=</span> <span class="n">sum</span><span class="o">(</span><span class="nc">GBP</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;simpleConversion: $simpleConversion&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">sumWithSimpleNumber</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mf">23.560</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;sumWithSimpleNumber: $sumWithSimpleNumber&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">multiplicationWithSimpleNumber</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">*</span> <span class="mi">23</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">usd</span> <span class="k">=</span> <span class="nc">Currency</span><span class="o">(</span><span class="s">&quot;USD&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">multiplication</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="n">usd</span><span class="o">)</span> <span class="o">*</span> <span class="mi">23</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;multiplication: $multiplication&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">divisionWithSimpleNumber</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">/</span> <span class="mi">23</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;divisionWithSimpleNumber: $divisionWithSimpleNumber&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">val</span> <span class="n">comparison</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;100 USD &gt; 90 EUR? $comparison&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see the client code just needs two simple imports and an implicit value of type <code>Converter</code>
+in order to use the DSL. The operations shown in the previous code are only a few among the available ones.
+Have a look at the <code>Money</code> class for a complete coverage.</p>
+
+<p>You can find the source code here: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Try-Success-Failure API for Java 8]]></title>
+    <link href="http://lambdista.github.io/blog/try-success-failure-api-for-java/"/>
+    <updated>2014-06-20T16:03:33+02:00</updated>
+    <id>http://lambdista.github.io/blog/try-success-failure-api-for-java</id>
+    <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
+
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+
+<p>This API is a Java implementation of <a href="http://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
+originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
+
+<p>The <code>Try</code> type represents a computation that may fail. If the computation is successful returns
+the value wrapped in a <code>Try.Success</code> otherwise returns the
+<code>java.lang.Exception</code> wrapped in a <code>Try.Failure</code>.</p>
+
+<p>To use <code>Try</code> you need to call the <code>Try.apply(FailableSupplier)</code> method passing in a lambda with
+the same signature used for a common <code>java.util.function.Supplier</code>.
+Indeed <code>FailableSupplier</code> is just a <code>java.util.function.Supplier</code> with a
+<code>throws Exception</code> added to its <code>get</code> method.</p>
+
+<p>For example, <code>Try</code> can be used to perform division on a user-defined input, without the need to do explicit
+exception-handling in all of the places that an exception might occur.</p>
+
+<p>An important property of <code>Try</code> shown in the <code>divide</code> method of the <code>MainExample</code> class is its ability
+to <em>pipeline (chain if you prefer)</em>  operations, catching exceptions along the way thanks to its <code>flatMap</code> method.
+If you are not a seasoned functional programming geek concepts such as <code>flatMap/map</code> might not be easy to grasp
+at first. However you&rsquo;ll get used to them and, in the end, you&rsquo;ll love them. Moreover you&rsquo;re going to encounter
+these methods more and more often since some important Java 8 classes already implement them
+(e.g. <code>java.util.Optional</code> and <code>java.util.stream.Stream</code>. Anyway for the moment just take for
+granted that to pipeline more than two operations, say N, you just need to chain them by using N - 1
+<code>flatMap</code> calls and a last call to <code>map</code>. E.g.: Suppose you have 3 variables (x, y and z) being
+of type <code>Try</code> and you just want to sum them up. The code you need for doing that is the
+following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">x</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">y</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="o">)))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Apart from <code>map</code> and <code>flatMap</code>, <code>Try</code> has many other useful methods. See the <code>TryTest</code>
+class for a thorough coverage of all methods.</p>
+
+<h3>Usage example</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Integer division&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Enter the dividend press Return and then enter the divisor: &quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">Scanner</span> <span class="n">dividend</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+</span><span class='line'><span class="n">Scanner</span> <span class="n">divisor</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">num</span> <span class="o">=</span> <span class="n">Try</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="nl">dividend:</span><span class="o">:</span><span class="n">nextInt</span><span class="o">);</span>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">denom</span> <span class="o">=</span> <span class="n">Try</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="nl">divisor:</span><span class="o">:</span><span class="n">nextInt</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">denom</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">y</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="o">));</span>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">resultTryStr</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="s">&quot;The result of division is: &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+</span><span class='line'><span class="n">String</span> <span class="n">resultStr</span> <span class="o">=</span> <span class="n">resultTryStr</span><span class="o">.</span><span class="na">getOrElse</span><span class="o">(</span><span class="s">&quot;You must&#39;ve divided by zero or entered something that&#39;s not an Int. Try again!&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">resultStr</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the previous example if you enter two valid integers with the second one&ndash;the divisor&ndash;being different from zero
+then the code prints out <code>The result of division is: $RESULT</code>, where <code>$RESULT</code> is the division between the first
+and the second number. On the other hand, if you either enter non valid integers&ndash;such as a string&ndash;or the second
+number is zero then you&rsquo;ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
+printed out.</p>
+
+<p>Anyway, as I already said, see the <code>TryTest</code> class for a thorough coverage of all methods.</p>
+
+<h3>Final Notes</h3>
+
+<p>Any criticism/suggestion is more than welcome!</p>
+
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Combine JavaScript and a Template Engine for Flexible Web Apps]]></title>
+    <link href="http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
+    <updated>2011-10-26T17:34:17+02:00</updated>
+    <id>http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
+    <content type="html"><![CDATA[<h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
+
+<p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>
+
+<p>Go to <a href="http://www.developer.com/open/article.php/3864011/Combine-JavaScript-and-a-Template-Engine-for-Flexible-Web-Apps.htm">developer.com</a> to read the rest of the article: <strong>Combine JavaScript and a Template Engine for Flexible Web Apps</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Script.aculo.us Controls: Do Your Web Users a Favor]]></title>
+    <link href="http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
+    <updated>2011-10-26T17:32:32+02:00</updated>
+    <id>http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
+    <content type="html"><![CDATA[<h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
+
+<p>In a previous DevX article, I wrote about the JavaScript framework Prototype, which aims to ease the development of dynamic web applications. That article ended with just a few words about Script.aculo.us, which is a fantastic UI library based on Prototype. This article gives Script.aculo.us its due by examining the web controls it provides: autocompleters, sliders, and in-place editors.</p>
+
+<p>Script.aculo.us is a pretty big library, so no single article can cover it completely. However, the knowledge you will gain will enable you to leverage the power of Script.aculo.us web controls to improve the end-user experience.</p>
+
+<p>Go to <a href="http://www.devx.com/webdev/Article/37574">DevX</a> to read the rest of the article: <strong>Script.aculo.us Controls: Do Your Web Users a Favor</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Will Your Next Web Application Be a Google Gadget?]]></title>
+    <link href="http://lambdista.github.io/blog/will-your-next-web-application-be-a-google-gadget/"/>
+    <updated>2011-10-26T17:31:04+02:00</updated>
+    <id>http://lambdista.github.io/blog/will-your-next-web-application-be-a-google-gadget</id>
+    <content type="html"><![CDATA[<h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
+
+<p>Since AJAX first appeared, developer interest in JavaScript has increased exponentially—and toolsets for building functionality in JavaScript have burgeoned as well. One of the latest tools for JavaScript-related development is Google Gadgets. Many web sites already provide gadgets built with the Google tools, and you can, too. This article shows you how to develop a Google Gadget that fetches DevX RSS feeds and displays them to the user.</p>
+
+<p>Go to <a href="http://www.devx.com/webdev/Article/35007">DevX</a> to read the rest of the article: <strong>Will Your Next Web Application Be a Google Gadget?</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Productivity Perks Behind Prototype's Popularity]]></title>
+    <link href="http://lambdista.github.io/blog/the-productivity-perks-behind-prototypes-popularity-2/"/>
+    <updated>2011-10-26T17:29:31+02:00</updated>
+    <id>http://lambdista.github.io/blog/the-productivity-perks-behind-prototypes-popularity-2</id>
+    <content type="html"><![CDATA[<h3>Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in an object-oriented way.</h3>
+
+<p>The Prototype home page claims that &ldquo;Prototype is a JavaScript framework that aims to ease the development of dynamic Web applications.&rdquo; By using many object-oriented paradigms such as class-driven development and inheritance to enable JavaScript application development, Prototype completely accomplishes its aim. In fact, this framework contains a lot of useful functionalities, which you cannot help but apply to every application you develop once you&rsquo;ve started using them.</p>
+
+<p>Prototype&rsquo;s main claim to fame is its rich AJAX (Asynchronous JavaScript and XML) library, which simplifies the now popular Web development technique for making non-blocking calls to the server through JavaScript. (It topped the recent Ajaxian.com 2006 Survey as the most popular AJAX framework.) Of course, everything you can do with Prototype you also can do using plain JavaScript—upon which Prototype is built. But why would you want to complicate your life? For example, which would you rather type to accomplish the same task: document.getElementById(&ldquo;myElement&rdquo;) or $(&ldquo;myElement&rdquo;)? If you answered $(&ldquo;myElement&rdquo;), then read the remainder of this article for an in-depth discussion of some useful Prototype functions—$ is just one.</p>
+
+<p>Go to <a href="http://www.devx.com/AJAXRoundup/Article/33174">DevX</a> to read the rest of the article: <strong>The Productivity Perks Behind Prototype&rsquo;s Popularity</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Speed Up Your AJAX-based Apps With JSON]]></title>
+    <link href="http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json/"/>
+    <updated>2011-10-26T16:54:43+02:00</updated>
+    <id>http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json</id>
+    <content type="html"><![CDATA[<h3>Find out how to improve your Web application performance by leveraging AJAX and JSON. In particular, you&rsquo;ll see the advantages of using JSON over XML as a lightweight JavaScript data-interchange format.</h3>
+
+<p>JSON stands for JavaScript Object Notation and is a lightweight data-interchange format. Because it is text-based it is easy for humans to read and write, and it has a regular syntax that&rsquo;s easy to parse programmatically. JSON is basically a subset of JavaScript and, as you&rsquo;ll see, is even easier to parse than XML.</p>
+
+<p>Go to <a href="http://www.devx.com/webdev/Article/32651">DevX</a> to read the rest of the article: <strong>Speed Up Your AJAX-based Apps with JSON</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Build Brilliant Client/Server Apps With J2ME, PHP, and MySQL]]></title>
+    <link href="http://lambdista.github.io/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
+    <updated>2011-10-26T16:53:41+02:00</updated>
+    <id>http://lambdista.github.io/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
+    <content type="html"><![CDATA[<h3>In this article you&rsquo;ll see how to make the three technologies work together by developing a simple and useful application that lets you update a multi-user blog and download the latest posts from it.</h3>
+
+<p>Write once, run anywhere. This Java motto seems to hold true even for mobile devices. Indeed, since it was born J2ME has had an ever-increasing impact on mobile development. Some may argue that J2ME is not as portable as other Java technologies, but even so, the result obtained on different mobile devices is, in most cases, still acceptable.</p>
+
+<p>Go to <a href="http://www.devx.com/Java/Article/32069">DevX</a> to read the rest of the article: <strong>Build Brilliant Client/Server Apps with J2ME, PHP, and MySQL</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Producing Professional MSDN-style Documentation With .NET and NDoc]]></title>
+    <link href="http://lambdista.github.io/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/"/>
+    <updated>2011-10-26T16:52:33+02:00</updated>
+    <id>http://lambdista.github.io/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc</id>
+    <content type="html"><![CDATA[<h3>Tired of trying to keep your documentation synchronized with the source? You can help alleviate the problem by creating professional documentation directly from the built-in XML documentation features of the C# language using the brilliant NDoc open-source application.</h3>
+
+<p>The .NET framework provides a nice way to insert XML documentation tags inside C# source code. These tags can then be extracted to an XML file, and using NDoc, transformed into fully-functional MSDN-style documentation.</p>
+
+<p>Go to <a href="http://www.devx.com/dotnet/Article/29646">DevX</a> to read the rest of the article: <strong>Producing Professional MSDN-style Documentation with .NET and NDoc</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Obtaining Wireless News With J2ME and PHP]]></title>
+    <link href="http://lambdista.github.io/blog/obtaining-wireless-news-with-j2me-and-php/"/>
+    <updated>2011-10-26T16:49:06+02:00</updated>
+    <id>http://lambdista.github.io/blog/obtaining-wireless-news-with-j2me-and-php</id>
+    <content type="html"><![CDATA[<h3>J2ME and PHP are both powerful technologies used to develop applications for mobile devices and Web applications, respectively. In this article, you&rsquo;ll see how to make them work together by developing a simple and useful application that retrieves the latest news from the Web and displays that on a mobile device.</h3>
+
+<p>The Java 2 Platform, Micro Edition (J2ME) is targeted at cell phones, smart cards, pagers, and other consumer devices. J2ME technology consists of a virtual machine and a set of APIs suitable for tailored runtime environments for these devices. PHP, on the other hand, is a widely used server-based language to build Web applications. But these two radically different technologies work very well together. In this article you&rsquo;ll see how they can interact via HTTP (Hyper Text Transfer Protocol). Of course, this is not intended to be a thorough explanation of how HTTP works—you only need to know that HTTP is a request/response protocol. That simply means that the client application performs a request and the server application returns a response.</p>
+
+<p>Go to <a href="http://www.devx.com/wireless/Article/28404">DevX</a> to read the rest of the article: <strong>Obtaining Wireless News with J2ME and PHP</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Keeping Secrets Secret: Steganography With .NET]]></title>
+    <link href="http://lambdista.github.io/blog/keeping-secrets-secret-steganography-with-net/"/>
+    <updated>2011-10-26T16:47:19+02:00</updated>
+    <id>http://lambdista.github.io/blog/keeping-secrets-secret-steganography-with-net</id>
+    <content type="html"><![CDATA[<h3>Steganography is a way to protect information by hiding it &ldquo;in plain sight&rdquo; within other types of digital content. Steganography complements rather than replaces encryption by adding another layer of security—it&rsquo;s much more difficult to decrypt a message if you don&rsquo;t know that there is a message. See how to leverage .NET to create steganographic techniques that hide encrypted information inside common digital data files.</h3>
+
+<p>Steganography, literally &ldquo;hidden writing,&rdquo; is nowadays most often associated with embedding data in some form of electronic media. Data is hidden by adding or altering insignificant bits of information of a file. For example, an algorithm designed to embed a text message might slightly alter information describing the RGB composition of a pixel for an image file.</p>
+
+<p>Go to <a href="http://www.devx.com/dotnet/Article/22667">DevX</a> to read the rest of the article: <strong>Keeping Secrets Secret: Steganography with .NET</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Goodbye Dennis Ritchie (Dmr)]]></title>
+    <link href="http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
+    <updated>2011-10-13T14:56:36+02:00</updated>
+    <id>http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://lambdista.github.io/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
+<a href="http://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)</a>
+This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language     and the key developer of the Unix operating system.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/The_C_Programming_Language_%28book%29">The C programming language</a> is the book he wrote along with <a href="http://en.wikipedia.org/wiki/Brian_Kernighan">Brian Kernighan</a>.   In my humble opinion, it is one of the best book ever written about computer programming.</p>
+
+<p>Without further ado, I just want to say goodbye to one of the people I respect most when it comes to computer science. I have to thank Mr. Ritchie if I can read declarations such as (The C programming Language, chapter 5):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">char</span> <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">())[])()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>x is a function returning a pointer to an array of pointers to functions returning char. :-)
+I think he would have said goodbye this way:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;goodbye, world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>R.I.P. Dennis Ritchie.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Undo Close Tab In Eclipse]]></title>
+    <link href="http://lambdista.github.io/blog/undo-close-tab-in-eclipse/"/>
+    <updated>2009-03-26T10:33:59+01:00</updated>
+    <id>http://lambdista.github.io/blog/undo-close-tab-in-eclipse</id>
+    <content type="html"><![CDATA[<p>I don&rsquo;t know about you, but I love the Firefox&rsquo;s <strong>undo-close-tab</strong> feature (Ctrl+Shift+T). If you use <strong>Eclipse</strong> you might be glad to know you can undo the close-tab action in Eclipse as well. You can do that both using your mouse by clicking on the yellow left arrow you can see in the Eclipse toolbar and through the keybord using the Alt+Left Arrow key combination.</p>
+
+<p>I hope this helps.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Object Not Found | EasyPHP | MySQL | phpMyAdmin]]></title>
+    <link href="http://lambdista.github.io/blog/object-not-found-easyphp-mysql-phpmyadmin/"/>
+    <updated>2009-01-30T10:46:05+01:00</updated>
+    <id>http://lambdista.github.io/blog/object-not-found-easyphp-mysql-phpmyadmin</id>
+    <content type="html"><![CDATA[<p>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:</p>
+
+<p><strong>Object not found!</strong></p>
+
+<p><strong>The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.</strong></p>
+
+<p>This might be due to the fact that it tries the following URL:</p>
+
+<p><strong><code>http://127.0.0.1/mysql/</code></strong></p>
+
+<p>Try this one instead:</p>
+
+<p><strong><code>http://127.0.0.1/home/mysql/</code></strong></p>
+
+<p>If it works then you can work it out by adding the following line to the httpd.conf file of Apache (you can find it under the %EASYPHP_HOME%/apache/conf path, where %EASYPHP_HOME% is the home directory of your EasyPHP installation). Open the file with a text editor and look up the following string: <strong>Alias /home/mysql</strong></p>
+
+<p>You should find something similar to the following line:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">Alias</span> <span class="sx">/home/mysql</span> <span class="s2">&quot;C:/Program Files/EasyPHP 3.0/phpmyadmin&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Just add, to the next line, the following string:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">Alias</span> <span class="sx">/mysql</span> <span class="s2">&quot;C:/Program Files/EasyPHP 3.0/phpmyadmin&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Restart EasyPHP. Now try to open <a href="http://127.0.0.1/mysql/.">http://127.0.0.1/mysql/.</a> It should work.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java Split() of String | Multiple Whitespace Characters]]></title>
+    <link href="http://lambdista.github.io/blog/java-split-of-string-multiple-whitespace-characters/"/>
+    <updated>2008-12-03T11:47:02+01:00</updated>
+    <id>http://lambdista.github.io/blog/java-split-of-string-multiple-whitespace-characters</id>
+    <content type="html"><![CDATA[<p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
+in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
+be careful when you want to split a string using the whitespace character as a delimiter. Consider the
+following snippet of code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Testing split using two  whitespace characters&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">token</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What&rsquo;s the output produced by the previous code? If you think it is the following one you&rsquo;re wrong:</p>
+
+<ul>
+<li>-Testing-</li>
+<li>-split-</li>
+<li>-using-</li>
+<li>-two-</li>
+<li>-whitespace-</li>
+<li>-characters-</li>
+</ul>
+
+
+<p>The actual output is instead this one:</p>
+
+<ul>
+<li>-Testing-</li>
+<li>-split-</li>
+<li>-using-</li>
+<li>-two-</li>
+<li>&ndash;</li>
+<li>-whitespace-</li>
+<li>-characters-</li>
+</ul>
+
+
+<p>Where in the hell did that empty string come out from? It comes out from the two whitespace characters that
+are between the word <strong>two</strong> and <strong>whitespace</strong> of the <strong>str</strong> string. If this is what you want OK. However,
+most of the time, you will want to discard that empty string from your resulting string array. You can obtain this
+result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previuos code becomes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Testing split using two  whitespace characters&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s+&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">token</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OutOfMemoryError In Eclipse | Java Virtual Machine (JVM)]]></title>
+    <link href="http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
+    <updated>2008-07-22T10:53:07+02:00</updated>
+    <id>http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
+    <content type="html"><![CDATA[<h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
+
+<p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
+
+<ol>
+<li>By editing your <strong>eclipse.ini</strong> file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones:</li>
+</ol>
+
+
+<p><strong>-Xms40m</strong>
+<strong> -Xmx512m</strong></p>
+
+<p>You might want to change them depending on your hardware. For example I changed them as follows:</p>
+
+<p><strong>-Xms256m</strong>
+<strong>-Xmx1024m</strong></p>
+
+<p>It means: &ldquo;start with an initial heap size of 256 MB and grow to a maximum of 1024MB, that is 1GB.&rdquo;</p>
+
+<ol>
+<li>By editing the <strong>Run Configurations in Eclipse</strong>. To do this, right-click on the class you want to run (the one with the main method) and then select:</li>
+</ol>
+
+
+<p><strong>Run As -> Run Configurations</strong></p>
+
+<p>Click on the <strong>Arguments</strong> tab. In the VM Arguments box type:</p>
+
+<p><strong>-Xms256m -Xmx1024m</strong></p>
+
+<p>or whatever you prefer, depending on the hardware you possess.</p>
+
+<p><strong>IMPORTANT NOTE: It is strongly recommended that you make a backup copy of your eclipse.ini file before editing it in any way.</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Performance Differences Between IN and EXISTS]]></title>
+    <link href="http://lambdista.github.io/blog/performance-differences-between-in-and-exists/"/>
+    <updated>2008-06-04T15:33:24+02:00</updated>
+    <id>http://lambdista.github.io/blog/performance-differences-between-in-and-exists</id>
+    <content type="html"><![CDATA[<p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
+Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
+(see <a href="http://lambdista.github.io/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
+
+<p>If you are sure that the field used to join the tables does not include <code>NULL</code> values then the <code>IN</code> operator &ldquo;generally&rdquo;
+performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span>
+</span><span class='line'><span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previous query is processed more or less as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">cd_field</span> <span class="k">FROM</span> <span class="n">table_b</span><span class="p">)</span> <span class="n">b</span>
+</span><span class='line'><span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The subquery is evaluated and the duplicates removed from the result.
+Then it is joined to the outer table. Now lets analyze the same query using <code>NOT EXISTS</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span>
+</span><span class='line'><span class="k">WHERE</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span> <span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previous query is processed more or less as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">FOR</span> <span class="n">x</span> <span class="k">IN</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">table_a</span> <span class="p">)</span> <span class="n">LOOP</span>
+</span><span class='line'>  <span class="n">IF</span> <span class="p">(</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span> <span class="p">)</span> <span class="k">THEN</span>
+</span><span class='line'>    <span class="c1">--output the record</span>
+</span><span class='line'>  <span class="k">END</span> <span class="n">IF</span>
+</span><span class='line'><span class="k">END</span> <span class="n">LOOP</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This means that using <code>NOT EXISTS</code> always results in a full scan of the outer table whereas the query which uses <code>NOT IN</code>
+can exploit an index on table_a.cd_field. In general <code>NOT IN</code> performs better when the result of the subquery is small
+and there&rsquo;s an index on the field used by the join. On the other hand, <code>NOT EXISTS</code> is to prefer when the subquery has
+many rows, the outer query is relatively small and there&rsquo;s an index on the field used to join the two tables.
+In this latter case the cost of removing duplicates (<code>DISTINCT</code>) could be greater than the cost of the full scan of the outer table.</p>
+
+<p>Of course this is a very general guideline, you should always conduct some test using indexes and so on to figure out
+which method to use.</p>
+]]></content>
+  </entry>
+  
+</feed>

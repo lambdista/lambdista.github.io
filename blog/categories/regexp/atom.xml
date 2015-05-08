@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Regexp | Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/blog/categories/regexp/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Select Any Character Across Multiple Lines In Java]]></title>
+    <link href="http://lambdista.github.io/blog/how-to-select-any-character-across-multiple-lines-in-java/"/>
+    <updated>2006-10-10T10:52:06+02:00</updated>
+    <id>http://lambdista.github.io/blog/how-to-select-any-character-across-multiple-lines-in-java</id>
+    <content type="html"><![CDATA[<p>You can do that using the following pattern in the <code>compile</code> static method of the <code>java.util.regex.Pattern</code> class.
+The pattern is <code>(.|n|r)*?</code> which means: any character (the .) or (the |) n or r. Zero or more times (the *)
+of the whole stuff.</p>
+
+<p>Example: The following method strips the multiline comments (those between /* and */) from a string passed in and
+returns the resulting string:</p>
+
+<pre><code class="java">import java.util.regex;
+
+// ... other code 
+
+// Strip multiline comments
+public void deleteMultilineComments(String subject) {
+  Pattern pattern = Pattern.compile("(/\\*(.|n|r)*?\\*/)");
+  Matcher matcher = pattern.matcher(subject);
+  return matcher.replaceAll("");
+}
+</code></pre>
+
+<p>Note: rn works for Windows systems. n works for Unix-like systems. r works for Mac systems.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Force One or More Metacharacters to Be Treated as Ordinary Characters In a Java Regular Expression (RegEx)]]></title>
+    <link href="http://lambdista.github.io/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/"/>
+    <updated>2006-07-12T15:24:03+02:00</updated>
+    <id>http://lambdista.github.io/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex</id>
+    <content type="html"><![CDATA[<p>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters.  As a reminder the metacharacters in a Java RegEx are:</p>
+
+<p><code>([{^$|)?*+.</code></p>
+
+<p>If you want to treat them as ordinary characters you have two options:</p>
+
+<ol>
+<li>Escape the metacharacter with a backslash,</li>
+<li>Enclose the whole string that contains metacharacters within <code>Q</code> and <code>E</code></li>
+</ol>
+
+
+<p><code>Q</code> means: &ldquo;quotes all characters until E&rdquo;, while <code>E</code> ends the quotes.</p>
+
+<p>The following example will hopefully to clarify the subject:</p>
+
+<pre><code class="java">String test = "I want to replace the . with the ,";
+String replaced = test.replaceAll(".", ",");
+System.out.println(replaced);
+</code></pre>
+
+<p>What do you expect the above method will do? Do you think the following string will be displayed?</p>
+
+<p><code>I want to replace the , with the ,</code></p>
+
+<p>If yes then you might be surprised to find out that what you really get is instead:</p>
+
+<p><code>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,</code></p>
+
+<p>The problem is that the <code>replaceAll</code> method of the <code>String</code> class accept a RegExp as its first parameter.
+Since <code>.</code> means any character, so writing <code>test.replaceAll(".", ",");</code> is translated in:
+&ldquo;Replace ANY character of the <code>test</code> string with a comma&rdquo;. As I said previously you can fix that in two ways.
+Either you escape the . with a  or enclose it within <code>Q</code> and <code>E</code>. What I didn&rsquo;t say is that, since the  is a
+metacharacter itself, you need to escape it too. :-)</p>
+
+<p>Translating this in Java you have:</p>
+
+<pre><code class="java">test.replaceAll("\.", ",");
+test.replaceAll("\Q.\E", ",");
+</code></pre>
+
+<p>I prefer to use the first method when the metacharacter is just one. However, when I have more metacharacters or
+I don&rsquo;t know at compile time what my string is going to be, I use the second method.</p>
+]]></content>
+  </entry>
+  
+</feed>

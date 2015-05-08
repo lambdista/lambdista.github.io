@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Articles - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="Articles Introduction to Internal DSLs in Scala
+Learn how to design and implement an internal domain-specific language (DSL).
+[DevX] Introduction to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lambdista.github.io/articles">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lambdista.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Articles</h1>
+    
+  </header>
+  
+  <p><a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">Introduction to Internal DSLs in Scala</a><br />
+Learn how to design and implement an internal domain-specific language (DSL).<br/>
+[DevX]</p>
+
+<p><a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">Introduction to Functional Programming in Scala</a><br />
+Learn more about Scala, a programming language that supports both object-oriented and functional paradigms.<br/>
+[DevX]</p>
+
+<p><a href="blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/">Combine JavaScript and a Template Engine for Flexible Web Apps</a><br />
+Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation
+web applications.<br/>
+[Web Developer]</p>
+
+<p><a href="blog/script-aculo-us-controls-do-your-web-users-a-favor/">Script.aculo.us Controls: Do Your Web Users a Favor</a><br />
+Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience
+more pleasant.<br/>
+[DevX]</p>
+
+<p><a href="blog/will-your-next-web-application-be-a-google-gadget/">Will Your Next Web Application Be a Google Gadget?</a><br />
+Learn how to leverage the Google Gadget API to make your web applications more reachable.
+As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.<br/>
+[DevX]</p>
+
+<p><a href="blog/the-productivity-perks-behind-prototypes-popularity-2/">The Productivity Perks Behind Prototype&rsquo;s Popularity</a><br />
+Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development.
+You&rsquo;ll see how to use JavaScript in an object-oriented way.<br/>
+[DevX]</p>
+
+<p><a href="blog/speed-up-your-ajax-based-apps-with-json/">Speed Up Your AJAX-based Apps with JSON</a><br />
+Find out how to improve your Web application performance by leveraging AJAX and JSON.
+In particular, you&rsquo;ll see the advantages of using JSON over XML as a lightweight JavaScript data-interchange format.<br/>
+[DevX]</p>
+
+<p><a href="blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/">Build Brilliant Client/Server Apps with J2ME, PHP, and MySQL</a><br />
+In this article you&rsquo;ll see how to make the three technologies work together by developing a simple and useful
+application that lets you update a multi-user blog and download the latest posts from it.<br/>
+[DevX]</p>
+
+<p><a href="blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/">Producing Professional MSDN-style Documentation with .NET and NDoc</a><br />
+Tired of trying to keep your documentation synchronized with the source? You can help alleviate the problem by
+creating professional documentation directly from the built-in XML documentation features of the C# language using
+the brilliant NDoc open-source application.<br/>
+[DevX]</p>
+
+<p><a href="blog/obtaining-wireless-news-with-j2me-and-php/">Obtaining Wireless News with J2ME and PHP</a><br />
+J2ME and PHP are both powerful technologies used to develop applications for mobile devices and Web applications,
+respectively. In this article, you&rsquo;ll see how to make them work together by developing a simple and useful application
+that retrieves the latest news from the Web and displays that on a mobile device.<br/>
+[DevX]</p>
+
+<p><a href="blog/keeping-secrets-secret-steganography-with-net/">Keeping Secrets Secret: Steganography with .NET</a><br />
+Steganography is a way to protect information by hiding it &ldquo;in plain sight&rdquo; within other types of digital content.
+Steganography complements rather than replaces encryption by adding another layer of security—it&rsquo;s much more difficult
+to decrypt a message if you don&rsquo;t know that there is a message. See how to leverage .NET to create steganographic
+techniques that hide encrypted information inside common digital data files.<br/>
+[DevX]</p>
+
+<h2>My articles in Italian (i miei articoli in Italiano)</h2>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=141">Sviluppiamo un framework Ajax fatto in casa</a><br />
+In questo articolo analizzeremo in dettaglio proprietà e metodi dell&#8217;oggetto cuore di Ajax, ossia XMLHttpRequest.
+Alla fine, sfruttando le conoscenze acquisite, progetteremo e svilupperemo un framework Ajax efficiente e leggero.<br/>
+[ioProgrammo N. 141 - Agosto 2009 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=128">Grafici Chart, basta solo Google</a><br />
+In questo articolo imparerete a creare diagrammi di ogni genere (a barre, a torta, a linee, ecc.)<br /> semplicemente agendo
+sulla query string di un URL. Tutto questo grazie alle Google Chart API.<br/>
+[io Programmo N. 128 - Luglio 2008 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=126">Drag &amp; Drop nelle applicazioni Web</a><br />
+Per gli ambienti desktop siamo abituati ad usare il drag &amp; drop ogni giorno. Muoviamo file da una cartella all’altra ecc.
+In quest’articolo vedremo come poter usare questa potente feature anche in applicazioni web.<br/>
+[io Programmo N. 126 - Maggio 2008 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=125">Web 2.0 facile con Scriptaculous</a><br />
+Scriptaculous è una libreria per lo sviluppo di interfacce grafiche accattivanti in ambiente web. In quest&#8217;articolo
+analizzeremo il suo set di controlli (autocompleter, slider, ecc.)<br /> che completano quelli standard HTML.<br/>
+[io Programmo N. 125 - Aprile 2008 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=124">Web 2.0 con effetti &ldquo;Scriptacolari&rdquo;</a><br />
+Scriptaculous è una libreria per lo sviluppo di interfacce grafiche accattivanti in ambiente web. Basata sul rodato
+framework Prototype e scritta utilizzando JavaScript al 100%, Scriptaculous merita un occhio di riguardo da parte
+di tutti gli sviluppatori web.<br/>
+[io Programmo N. 124 - Marzo 2008 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=122">Parsing di file XML in PHP5</a><br />
+XML rappresenta il sale dell&#8217;informatica. Tutti i linguaggi di programmazione seri permettono di interagire in qualche
+modo con documenti XML. Vediamo gli strumenti offerti a tale scopo da PHP 5.<br/>
+[io Programmo N. 122 - Gennaio 2008 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=122">Sviluppiamo un Google Gadget</a><br />
+In questo articolo imparerete a sviluppare un gadget per google. A titolo di esempio sarà realizzato un lettore di feed
+che potrete aggiungere alla vostra iGoogle, ossia la vostra home page Google personalizzata.<br/>
+[io Programmo N. 122 - Gennaio 2008 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=121">PHP ad oggetti: tecniche avanzate</a><br />
+I design pattern rappresentano i pilastri fondamentali di un progetto destinato al successo. Essi costituiscono il cuore
+pulsante della programmazione orientata agli oggetti. Vediamo come implementarne alcuni in PHP 5.<br/>
+[io Programmo N. 121 - Dicembre 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=120">Programmazione avanzata con PHP 5</a><br />
+Tra le modifiche di maggior rilievo introdotte da PHP 5 vi è, senza dubbio, il nuovo modello ad oggetti.
+In quest&#8217;articolo vedremo alcune caratteristiche avanzate della programmazione orientata agli oggetti (OOP)<br /> in PHP 5.<br/>
+[io Programmo N. 120 - Novembre 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=117">Utilizziamo Ajax senza XML</a><br />
+In questo articolo imparerete ad utilizzare Ajax per processare i più svariati tipi di response. Partiremo dal semplice
+Plain Text fino ad arrivare a JSON, passando da HTML ed XML.<br/>
+[io Programmo N. 117 - Agosto 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=116">Il sistema di log del codice perfetto</a><br />
+In questo articolo imparerete ad utilizzare le due soluzioni per il logging più usate in ambito Java.
+Vedremo com&#8217;è possibile loggare errori, warning e quant&#8217;altro usando queste comode API.<br/>
+[io Programmo N. 116 - Luglio 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=116">Parsing di XML in JavaScript</a><br />
+In questo articolo apprenderete come manipolare XML usando JavaScript. Vedremo il codice necessario per costruire
+un parser che funzioni sia su Internet Explorer sia su Firefox. Illustreremo, inoltre, come muoversi tra i nodi di
+un documento per mezzo di XPath.<br/>
+[io Programmo N. 116 - Luglio 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=114">JavaScript cross-domain</a><br />
+In questo articolo imparerete ad utilizzare JavaScript per effettuare chiamate asincrone ad un server diverso da quello
+di appartenenza. Come vedremo, questa tecnica ci permetterà di scrivere applicazioni molto potenti con una
+semplicità incredibile.<br/>
+[io Programmo N. 114 - Maggio 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=114">Aggiorna il blog con il cellulare</a><br />
+In questo articolo vedremo come sviluppare un&#8217;applicazione client/server che ci permetterà di aggiornare il nostro blog,
+ospitato da un Web server, attraverso un comune telefono cellulare che supporta Java ME.<br/>
+[io Programmo N. 114 - Maggio 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=113">Web 2.0? Facile con Prototype</a><br />
+Prototype è un framework JavaScript che facilita enormemente lo sviluppo di applicazioni web.
+In questo articolo imparerete a sfruttare Prototype per ottenere il meglio dalle vostre applicazioni basate su Ajax.<br/>
+[io Programmo N. 113 - Aprile 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=112">Java 6 e JavaScript coppia perfetta</a><br />
+In questo articolo vedremo una potente feature della versione 6 del linguaggio della Sun. Parleremo dell&#8217;integrazione
+tra Java ed i linguaggi di scripting. In particolare, apprenderete come è possibile invocare codice JavaScript
+direttamente da Java e viceversa.<br/>
+[io Programmo N. 112 - Marzo 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=111">Un news ticker in stile Web 2.0</a><br />
+In questo articolo imparerete ad utilizzare JavaScript per scrivere codice orientato agli oggetti. A tal proposito
+vedremo come implementare l&#8217;Observer Pattern costruendo un news ticker che recupera le notizie dal Web attraverso Ajax.<br/>
+[io Programmo N. 111 - Febbraio 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=110">JavaScript e le Regular Expression</a><br />
+In questo articolo apprenderete cosa sono le espressioni regolari e come utilizzarle in JavaScript. Vedremo come
+sarà possibile validare, lato client, e-mail e quant&#8217;altro e come estrarre parti di stringhe in modo molto potente.<br/>
+[io Programmo N. 110 - Gennaio 2007 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=108">JSON: Il Web di nuova generazione</a><br />
+In questo articolo apprenderemo come utilizzare JSON per spingere al massimo le nostre applicazioni AJAX-based.
+Vedremo, inoltre, che XML non sempre costituisce la soluzione ottima all&#8217;interscambio di dati.<br/>
+[io Programmo N. 108 - Novembre 2006 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=107">Generazione di report in Java</a><br />
+In questo articolo impareremo a sfruttare JasperReports per generare efficaci report in vari formati quali:
+PDF, Excel, Word, HTML. Per rendere le cose ulteriormente interessanti vedremo anche come visualizzare tali report
+all&#8217;interno di un comune Web browser.<br/>
+[io Programmo N. 107 - Ottobre 2006 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=101">Aggregatore di feed RSS per cellulari</a><br />
+Vedremo come progettare e sviluppare un aggregatore di contenuti pubblicati tramite feed RSS che potrà essere installato
+sui comuni telefoni cellulari moderni.<br/>
+[io Programmo N. 101 - Aprile 2006 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=99">J2ME e la Push Technology</a><br />
+Una delle caratteristiche più interessanti, introdotte con MIDP 2.0, è il cosiddetto Push Registry.
+Tramite esso, infatti, una MIDlet può essere attivata da un evento esterno, come un timer programmato.
+In questo articolo vedremo di cosa si tratta.<br/>
+[io Programmo N. 99 - Febbraio 2006 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=95">Quando PHP incontra J2ME</a><br />
+In questo articolo impareremo a far comunicare Java, da un dispositivo mobile, con un server sul quale gira PHP.
+Anche se la cosa può sembrare &ldquo;innaturale&rdquo;, scopriremo gli innumerevoli vantaggi forniti da questo tipo di approccio.<br/>
+[io Programmo N. 95 - Ottobre 2005 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=92">Mono, un ponte fra Windows e Linux</a><br />
+Vedremo cosa è Mono e perché interessarsi ad esso, sia se si sviluppa sotto Linux sia se si preferisce programmare
+in ambiente Windows. Il tutto accompagnato da esempi pratici sia di tipo Console che GUI.<br/>
+[io Programmo N. 92 - Giugno 2005 - Edizioni Master]</p>
+
+<p><a href="http://arretrati.edmaster.it/?sez=magazine&amp;cat=3&amp;prod=4&amp;num=87">Messaggi segreti nelle immagini</a><br />
+In questo articolo vedremo cosa è la steganografia, analizzeremo le principali tecniche utilizzate e infine
+realizzeremo un nostro progetto che ci permetterà di nascondere un messaggio all&#8217;interno di un&#8217;immagine
+apparentemente innocua. Il tutto verrà realizzato sfruttando la potenza di .NET e il codice unmanaged.<br/>
+[io Programmo N. 87 - Gennaio 2005 - Edizioni Master]</p>
+
+  
+    <footer>
+      <p class="meta">
+        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+        
+
+
+
+
+
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lambdista.github.io/articles/index.html" data-via="lambdista" data-counturl="http://lambdista.github.io/articles/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

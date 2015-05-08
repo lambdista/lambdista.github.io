@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="You can create a backup of a table (structure and data) in Oracle by using the following syntax: 1
+CREATE TABLE customers_backup AS (SELECT * FROM &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lambdista.github.io/posts/4">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lambdista.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-create-a-copybackup-of-a-table-in-oracle/">How to Create a Copy/backup of a Table In Oracle</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-07-04T10:16:50+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>10:16 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>You can create a backup of a table (structure and data) in Oracle by using the following syntax:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">customers_backup</span> <span class="k">AS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">customers</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previous example creates the <code>customers_backup</code> table which mirrors the structure and data of the <code>customers</code> table.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/">How to Exclude Subversion Hidden Directories (.svn) Using Ant</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-06-04T12:43:49+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>12:43 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Many Java developers already know that <a href="http://ant.apache.org/">Ant</a> is a great build tool. Besides a build tool you also need a good version control system to manage the various versions of your code. For this purpose I often use <a href="http://subversion.tigris.org/">Subversion</a>. Now, there might be time when you need to exclude the Subversion hidden directories from, for example, a backup Ant target you built. To do that you just need to use the following attribute to your zipfileset or other directory-based task:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;zipfileset</span> <span class="na">dir=</span><span class="s">&quot;${basedir}&quot;</span> <span class="na">excludes=</span><span class="s">&quot;**/.svn/*&quot;</span> <span class="na">prefix=</span><span class="s">&quot;${ant.project.name}&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In particular, the previous code excludes all the <code>.svn</code> directories, that are under the basedir directory and its subdirectories, recursively.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/">How to Commit a Single DML Statement In Oracle (PL/SQL)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-24T14:52:20+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:52 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes you might need to commit a single <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statement and not the whole main transaction.
+In such a case you can use an <code>AUTONOMOUS TRANSACTION</code> which is a feature available since Oracle 8i.
+The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">PROCEDURE</span> <span class="n">p_insert</span>
+</span><span class='line'><span class="k">AS</span>
+</span><span class='line'><span class="n">PRAGMA</span> <span class="n">AUTONOMOUS_TRANSACTION</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">BEGIN</span> <span class="c1">-- Main transaction suspends here.</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">your_table</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">-- Autonomous transaction begins here.</span>
+</span><span class='line'><span class="k">COMMIT</span><span class="p">;</span> <span class="c1">-- Autonomous transaction ends here.</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">END</span><span class="p">;</span> <span class="c1">-- Main transaction resumes here.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After calling this proc from another transaction (main transaction) your_table will have another row with 1 as the
+value of its only column. If, after calling <code>p_insert</code>, you call <code>ROLLBACK</code> in your main transaction you will
+have that the changes made within <code>p_insert</code> will be permanent. However the changes made in your main transaction will be rollbacked.</p>
+
+<p>A tipical scenario where you need an autonomous transaction is a table used to log errors and/or other info.
+For example if something goes wrong you might want to log the reason into a table before rollbacking the main transaction.
+In such a case you would write a procedure using the pragma <code>AUTONOMOUS_TRANSACTION</code> and call this proc before rollbacking.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/two-useful-windows-shortcuts/">Useful Windows Shortcuts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-10T13:29:54+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>1:29 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Try these nice shortcuts and you&rsquo;ll find yourself using them on and on.</p>
+
+<ol>
+<li><p>Windows Key + d shows the desktop</p></li>
+<li><p>Windows Key + e opens the explorer on My Computer</p></li>
+<li><p>Windows Key + f opens the &ldquo;Find&rdquo; window</p></li>
+<li><p>Windows Key + l logs out the current user</p></li>
+<li><p>Windows Key + m minimizes all windows</p></li>
+<li><p>Windows Key + r opens the &ldquo;Run&rdquo; window</p></li>
+<li><p>Windows Key + u opens the &ldquo;Utility Manager&rdquo; window</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-format-a-decimal-number-in-javascript/">How to Format a Decimal Number In JavaScript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-04T13:02:16+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>1:02 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In JavaScript you can use a built-in method to format a decimal number so that it is displayed using, at most, x
+decimal places. Here is an example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="mf">3.1356</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span><span class='line'><span class="nx">alert</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span> <span class="c1">// displays 3.136</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you may have guessed the method is <code>toFixed</code>. It accepts one parameter which is the number of decimal places
+to take into account.</p>
+
+<p>Note: The number gets rounded as you can notice by the example above.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/">How to Put a Set of Rows Into a Single Row In Oracle</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-04-27T16:11:27+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>4:11 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In Oracle you can execute hierarchical queries using some cool operators&ndash;<code>CONNECT BY PRIOR</code>, <code>START WITH</code> and
+the pseudocolumn <code>SYS_CONNECT_BY_PATH</code>, namely. However, using your fantasy you can exploit these operators
+to put in a single row&ndash;with each item separated by the next through a separator, such as a comma&ndash;what you have
+in multiple rows. For example if you have more than one telephone number in different rows and you want to put them
+in a single comma-separated row you could use a query similar to the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="n">ltrim</span><span class="p">(</span><span class="n">sys_connect_by_path</span><span class="p">(</span><span class="n">telephone</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="p">),</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span> <span class="n">tel</span>
+</span><span class='line'><span class="k">FROM</span> <span class="p">(</span>
+</span><span class='line'>  <span class="k">SELECT</span> <span class="n">telephone</span><span class="p">,</span> <span class="n">rownum</span> <span class="n">num_of_rows</span>
+</span><span class='line'>  <span class="k">FROM</span> <span class="p">(</span><span class="c1">-- Select the first 9 rows    (1)</span>
+</span><span class='line'>    <span class="k">SELECT</span> <span class="n">ds_number</span> <span class="n">telephone</span>
+</span><span class='line'>    <span class="k">FROM</span> <span class="n">telephones</span> <span class="n">t</span>
+</span><span class='line'>    <span class="k">WHERE</span> <span class="n">cd_customer</span> <span class="o">=</span> <span class="mi">50</span>
+</span><span class='line'>    <span class="k">AND</span> <span class="n">rownum</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">))</span> <span class="n">x</span>
+</span><span class='line'>  <span class="k">WHERE</span> <span class="n">num_of_rows</span> <span class="o">=</span> <span class="p">(</span><span class="c1">-- Count the # of rows selected in (1)</span>
+</span><span class='line'>    <span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">FROM</span> <span class="n">telephones</span> <span class="n">t</span>
+</span><span class='line'>    <span class="k">WHERE</span> <span class="n">cd_customer</span> <span class="o">=</span> <span class="mi">50</span>
+</span><span class='line'>    <span class="k">AND</span> <span class="n">rownum</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">)</span>
+</span><span class='line'><span class="k">START</span> <span class="k">WITH</span> <span class="n">num_of_rows</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'><span class="k">CONNECT</span> <span class="k">BY</span> <span class="k">PRIOR</span> <span class="n">x</span><span class="p">.</span><span class="n">num_of_rows</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">num_of_rows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previuos query selects all the telephone numbers for the customer with cd_customer = 50 and put them in a
+single comma-separated row.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/">How to Tell Oracle to Use More Than One Byte Per Character</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-04-26T16:05:31+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>4:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When you create a table, by default, the number of bytes used to represent a character in a <code>VARCHAR2</code> type is 1,
+irrespective of the characterset of the DB. This may be fine if the characterset is such that it uses just one byte per
+character. However, if the characterset of the DB is such that there might take more than one byte to represent a
+character (for example for characterset = <code>AL32UTF8</code>) you might run into troubles, such as the error:
+<strong>ORA-01401: inserted value too large for column</strong>. However you can specify, at creation time, that the size of
+characters is expressed in CHARs instead of bytes. For example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test</span> <span class="p">(</span><span class="n">col_test</span> <span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">10</span> <span class="nb">CHAR</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previous code creates a table with just one column. The column will be able to contain 10 characters irrespective
+of the number of bytes used to represent the characters internally.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/">How to Exploit UltraEdit-32 to Highlight Code Based on File Extensions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-03-14T09:27:14+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>9:27 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.ultraedit.com/">UltraEdit-32</a> (UE for short from now on) is a wonderful text editor. You can use it as a simple text editor or to write programs using your favorite languages. Besides other features, UE offers syntax highlighting for the most common programming languages out there. UE recognizes the type of file by looking at its extension. However, sometimes, you might want to use one syntax highlighting for an extension that is not mapped in UE. For example if you use Pro<em>C, which file extension is .pc, you may want UE to default to the C highlighting for Pro</em>C files. You can do that by editing the UE&rsquo;s wordfile.txt file. UE uses this file to understand how to highlight words. To edit this file, from the UE menu go to: Advanced -> Configuration -> Editor Display -> Syntax Highlighting. From this window you can open wordfile.txt by clicking on the Open button in the Full path name word list section. In this file you&rsquo;ll find all the languages that UE highlight. Each language start with /Ln, where n is a number. At the end of the row where /Ln is you can see &ldquo;File Extensions = <em>extensions</em>&rdquo;. Just append the extension you need to highlight for that language and save the file. Restart UE and open the file with the extension you just mapped. Enjoy the result! :-)</p>
+
+<p>Here is an example for the Pro*C extension (.pc):</p>
+
+<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK</p>
+
+<p>This line is extracted from the wordfile.txt file. To add the Pro*C extension I just added PC at the end of File Extensions, that is after AWK:</p>
+
+<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK PC</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-display-an-element-to-the-center-of-the-browser/">How to Display an Element to the Center of the Browser</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-02-16T11:55:53+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>11:55 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of
+how you can do it using JavaScript and CSS.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// Reference to the element</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;loading&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// The div&#39;s width, set within the CSS class</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">loadingWidth</span> <span class="o">=</span> <span class="nx">loading</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// The div&#39;s width, set within the CSS class</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">loadingHeight</span> <span class="o">=</span> <span class="nx">loading</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// The browser&#39;s body&#39;s width</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">documentWidth</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// The browser&#39;s body&#39;s height</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">documentHeight</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// Position the element absolutely</span>
+</span><span class='line'>  <span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="s2">&quot;absolute&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// Center horizontally</span>
+</span><span class='line'>  <span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="p">(</span><span class="nx">documentWidth</span> <span class="o">-</span> <span class="nx">loadingWidth</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// Center vertically</span>
+</span><span class='line'>  <span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="p">(</span><span class="nx">documentHeight</span> <span class="o">-</span> <span class="nx">loadingHeight</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This code supposes you have a div element within your page with id=&ldquo;loading&rdquo;, for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;loading&quot;</span> <span class="na">class=</span><span class="s">&quot;loading&quot;</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- Other HTML code --&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The CSS class could be the following</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.loading</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#90A6B8</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#FFFF80</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#000000</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">18px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The result should be that the browser displays the div centered within the browser.</p>
+
+<p>Of course you need to take care of the div hiding and showing according to your needs. For example, when an Ajax
+call starts/ends you might want to show/hide it, maybe with a &ldquo;loading gif&rdquo; within it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-detect-the-selected-checkboxes-using-javascript/">How to Detect the Selected Checkboxes Using JavaScript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-01-16T17:31:26+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>5:31 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here is an example of how you can retrieve the selected checkboxes using a JavaScript function:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">getSelectedValues</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">elemNumber</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">selectedElems</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">elemNumber</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">elem</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">selectedElems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">elem</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">selectedElems</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;myForm&quot;</span> <span class="na">name=</span><span class="s">&quot;myForm&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">name=</span><span class="s">&quot;myCheckBox&quot;</span> <span class="na">value=</span><span class="s">&quot;test1&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>Test 1
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">name=</span><span class="s">&quot;myCheckBox&quot;</span> <span class="na">value=</span><span class="s">&quot;test2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>Test 2
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Click Here&quot;</span>
+</span><span class='line'>  <span class="na">onclick=</span><span class="s">&quot;alert(getSelectedValues(document.myForm.myCheckBox));&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/form&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the previous example when the user clicks on the button the selected checkboxes are displayed through an alert.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/5">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/3">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

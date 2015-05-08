@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Implicits | Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/blog/categories/implicits/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Internal DSLs In Scala]]></title>
+    <link href="http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala/"/>
+    <updated>2015-03-26T09:41:48+01:00</updated>
+    <id>http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on developing an internal DSL in Scala for currency-related operations
+on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
+]]></content>
+  </entry>
+  
+</feed>

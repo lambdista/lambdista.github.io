@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Try-Success-Failure API for Java 8 - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="Try-Success-Failure API: Java implementation of the famous Scala counterpart Source code: Try-Success-Failure API for Java This API is a Java &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lambdista.github.io/blog/try-success-failure-api-for-java">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lambdista.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Try-Success-Failure API for Java 8</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-20T16:03:33+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:03 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
+
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+
+<p>This API is a Java implementation of <a href="http://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
+originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
+
+<p>The <code>Try</code> type represents a computation that may fail. If the computation is successful returns
+the value wrapped in a <code>Try.Success</code> otherwise returns the
+<code>java.lang.Exception</code> wrapped in a <code>Try.Failure</code>.</p>
+
+<p>To use <code>Try</code> you need to call the <code>Try.apply(FailableSupplier)</code> method passing in a lambda with
+the same signature used for a common <code>java.util.function.Supplier</code>.
+Indeed <code>FailableSupplier</code> is just a <code>java.util.function.Supplier</code> with a
+<code>throws Exception</code> added to its <code>get</code> method.</p>
+
+<p>For example, <code>Try</code> can be used to perform division on a user-defined input, without the need to do explicit
+exception-handling in all of the places that an exception might occur.</p>
+
+<p>An important property of <code>Try</code> shown in the <code>divide</code> method of the <code>MainExample</code> class is its ability
+to <em>pipeline (chain if you prefer)</em>  operations, catching exceptions along the way thanks to its <code>flatMap</code> method.
+If you are not a seasoned functional programming geek concepts such as <code>flatMap/map</code> might not be easy to grasp
+at first. However you&rsquo;ll get used to them and, in the end, you&rsquo;ll love them. Moreover you&rsquo;re going to encounter
+these methods more and more often since some important Java 8 classes already implement them
+(e.g. <code>java.util.Optional</code> and <code>java.util.stream.Stream</code>. Anyway for the moment just take for
+granted that to pipeline more than two operations, say N, you just need to chain them by using N - 1
+<code>flatMap</code> calls and a last call to <code>map</code>. E.g.: Suppose you have 3 variables (x, y and z) being
+of type <code>Try</code> and you just want to sum them up. The code you need for doing that is the
+following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">x</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">y</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="o">)))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Apart from <code>map</code> and <code>flatMap</code>, <code>Try</code> has many other useful methods. See the <code>TryTest</code>
+class for a thorough coverage of all methods.</p>
+
+<h3>Usage example</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Integer division&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Enter the dividend press Return and then enter the divisor: &quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">Scanner</span> <span class="n">dividend</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+</span><span class='line'><span class="n">Scanner</span> <span class="n">divisor</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">num</span> <span class="o">=</span> <span class="n">Try</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="nl">dividend:</span><span class="o">:</span><span class="n">nextInt</span><span class="o">);</span>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">denom</span> <span class="o">=</span> <span class="n">Try</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="nl">divisor:</span><span class="o">:</span><span class="n">nextInt</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">denom</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">y</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="o">));</span>
+</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">resultTryStr</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="s">&quot;The result of division is: &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+</span><span class='line'><span class="n">String</span> <span class="n">resultStr</span> <span class="o">=</span> <span class="n">resultTryStr</span><span class="o">.</span><span class="na">getOrElse</span><span class="o">(</span><span class="s">&quot;You must&#39;ve divided by zero or entered something that&#39;s not an Int. Try again!&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">resultStr</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the previous example if you enter two valid integers with the second one&ndash;the divisor&ndash;being different from zero
+then the code prints out <code>The result of division is: $RESULT</code>, where <code>$RESULT</code> is the division between the first
+and the second number. On the other hand, if you either enter non valid integers&ndash;such as a string&ndash;or the second
+number is zero then you&rsquo;ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
+printed out.</p>
+
+<p>Anyway, as I already said, see the <code>TryTest</code> class for a thorough coverage of all methods.</p>
+
+<h3>Final Notes</h3>
+
+<p>Any criticism/suggestion is more than welcome!</p>
+
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-06-20T16:03:33+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:03 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/functional-programming/'>functional programming</a>, <a class='category' href='/blog/categories/java-8/'>java 8</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lambdista.github.io/blog/try-success-failure-api-for-java/" data-via="lambdista" data-counturl="http://lambdista.github.io/blog/try-success-failure-api-for-java/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/" title="Previous Post: Combine JavaScript and a Template Engine for Flexible Web Apps">&laquo; Combine JavaScript and a Template Engine for Flexible Web Apps</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/scala-dsl-for-currency-related-operations/" title="Next Post: Scala DSL for currency-related operations">Scala DSL for currency-related operations &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="If you need to customize a list box then the &lt;select&gt; HTML element might not be enough. In such a case you&rsquo;d like
+to have something that &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lambdista.github.io/posts/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lambdista.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-add-scrollbars-to-a-block-eg-a-element/">How to Add Scrollbars to a Block (e.g. A &lt;div&gt; Element)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-11-24T10:21:30+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>10:21 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you need to customize a list box then the <code>&lt;select&gt;</code> HTML element might not be enough. In such a case you&rsquo;d like
+to have something that simulates the <code>&lt;select&gt;</code> behaviour.</p>
+
+<p>Here is the code to use to obtain a custom list box:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width: 200px; height: 200px; overflow: auto;&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;table</span> <span class="na">width=</span><span class="s">&quot;100%&quot;</span> <span class="na">height=</span><span class="s">&quot;100%&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;script&gt;</span>
+</span><span class='line'>          <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span>
+</span><span class='line'>              <span class="s2">&quot;&lt;tr style=&#39;background-color:#0066ff; color: #ffffff&#39;&gt;&quot;</span> <span class="o">+</span>
+</span><span class='line'>              <span class="s2">&quot;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>              <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span>
+</span><span class='line'>              <span class="s2">&quot;&lt;tr style=&#39;background-color:#ff6600; color: #ffffff&#39;&gt;&quot;</span> <span class="o">+</span>
+</span><span class='line'>              <span class="s2">&quot;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>        <span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/table&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The key CSS element is <code>overflow</code>. If you use <code>overflow: auto</code> then the scrollbars are displayed only if they are needed.
+If you want to display them in any case then you need to use <code>overflow: scroll</code>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/sorting-an-array-of-objects-with-the-sortby-method/">Sorting an Array of Objects With the sortBy Method of Prototype</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-11-20T16:34:48+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>4:34 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here is an example of how easy it is to sort an array of objects using the <code>Enumerable.sortBy</code> method of the Prototype framework:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">lastName</span> <span class="o">:</span> <span class="s2">&quot;Lacava&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">firstName</span> <span class="o">:</span> <span class="s2">&quot;Alessandro&quot;</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">lastName</span> <span class="o">:</span> <span class="s2">&quot;Brown&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">firstName</span> <span class="o">:</span> <span class="s2">&quot;John&quot;</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">obj3</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">lastName</span> <span class="o">:</span> <span class="s2">&quot;Simpson&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">firstName</span> <span class="o">:</span> <span class="s2">&quot;Bart&quot;</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="nx">obj1</span><span class="p">,</span> <span class="nx">obj2</span><span class="p">,</span> <span class="nx">obj3</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//order by last name</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">sortBy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">sorted</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">str</span> <span class="o">+=</span> <span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">firstName</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//display the elements ordered by last name</span>
+</span><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/why-you-shouldnt-be-concerned-about-optimization/">Why You Shouldn&#8217;t Be Concerned About Optimization</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-10-11T18:26:34+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>6:26 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When you were at the university or in any programming course, you&ndash;like me&ndash;were probably thought of the importance of
+optimization. In the real world though, you should strive for writing good code&ndash;possibly using bullet-proof
+Design Patterns&ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing,
+you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot
+but know:</p>
+
+<ol>
+<li><p>More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other
+single reason, including blind stupidity.<br />
+<strong>William A. Wulf</strong></p></li>
+<li><p>We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil.<br />
+<strong> Donald E. Knuth</strong></p></li>
+<li><p>We follow two rules in the matter of optimization:
+Rule 1 Don&rsquo;t do it.
+Rule 2 (for experts only). Don&rsquo;t do it yet, that is, not until you have a perfectly clear and unoptimized solution.<br />
+<strong> M. A. Jackson</strong></p></li>
+</ol>
+
+
+<p>Notice that these great computer scientists wrote these aphorisms when computers were much slower than today&rsquo;s!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-select-any-character-across-multiple-lines-in-java/">How to Select Any Character Across Multiple Lines In Java</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-10-10T10:52:06+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>10:52 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>You can do that using the following pattern in the <code>compile</code> static method of the <code>java.util.regex.Pattern</code> class.
+The pattern is <code>(.|n|r)*?</code> which means: any character (the .) or (the |) n or r. Zero or more times (the *)
+of the whole stuff.</p>
+
+<p>Example: The following method strips the multiline comments (those between /* and */) from a string passed in and
+returns the resulting string:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.regex</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// ... other code </span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Strip multiline comments</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteMultilineComments</span><span class="o">(</span><span class="n">String</span> <span class="n">subject</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">Pattern</span> <span class="n">pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">&quot;(/\\*(.|n|r)*?\\*/)&quot;</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">subject</span><span class="o">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">matcher</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: rn works for Windows systems. n works for Unix-like systems. r works for Mac systems.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-include-a-js-file-a-javascript-file-within-another-js-file/">How to Include a .js File (a JavaScript File) Within Another .js File</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-22T11:43:45+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2006</span></span> <span class='time'>11:43 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Actually, there is no function you can call to include a JavaScript file within another one. This is the bad news.
+The good news is that you can use a trick to accomplish this task. Suppose you have two JavaScript files,
+say <code>file1.js</code> and <code>file2.js</code>. You want to include <code>file1.js</code> within <code>file2.js</code> because you want to use file1&rsquo;s functions.
+Here is the code you can use:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">//this is file2.js</span>
+</span><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;script src=&#39;file1.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// here you can use functions defined in file1.js</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see it suffices &ldquo;to write&rdquo; in the browser the code you generally use to include a JavaScript file within an
+HTML file and you&rsquo;re done!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/java-passes-everything-by-value/">Java Passes EVERYTHING by Value!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-13T10:51:47+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>10:51 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects
+by reference. Actually, everything in Java is passed by value as well as object references.</p>
+
+<p>When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a
+local effect. For example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>  <span class="n">increment</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">);</span> <span class="c1">//it prints 0 so increment didn&#39;t work as expected</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">increment</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="o">++</span><span class="n">a</span><span class="o">;</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">);</span> <span class="c1">//it prints 1</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see the change made to the parameter passed to <code>increment</code>, that is <code>a</code>, affects only the local copy of it.
+This proves that Java passes primitives by value.</p>
+
+<p>Well, this is no surprise to anyone since you already knew that.</p>
+
+<p>I&rsquo;ll prove now, that also object references are passed by value, that is only a copy of the reference is passed.
+Suppose you want to write a <code>swap</code> method to swap two integers. Since you know you can&rsquo;t use primitives you might
+think to write the method using the wrapper class for int values, that is <code>Integer</code>. Let&rsquo;s try that:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">Integer</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Integer</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">Integer</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Integer</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">swap</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">intValue</span><span class="o">());</span> <span class="c1">//it prints 5 so swap didn&#39;t work!</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="n">Integer</span> <span class="n">a</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">Integer</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+</span><span class='line'>  <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+</span><span class='line'>  <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">intValue</span><span class="o">());</span> <span class="c1">//it prints 1!</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This means that, even the object references are passed by value, as I stated at the beginning of this post!</p>
+
+<p>What really happens is that, in case of references, a copy of the reference is passed and not the reference itself.
+This means that, if the class is not immutable, you can change it&rsquo;s state but you CANNOT change the actual memory address
+the reference points to. Since <code>Integer</code> is an immutable class you cannot change its state. So if you want to swap
+two <code>int</code> values, you need to write your own class that wraps an <code>int</code> and provides a method to change the state of
+this instance variable. In this case you can pass the <em>copy</em> of the references to a <code>swap</code> method and call the method
+that lets you change the state of the object. This is left as an exercise though. :-)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/what-happens-if-you-write-something-like-a-a-in-java/">What Happens if You Write Something Like a = a++ In Java?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-13T09:58:27+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>9:58 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">++;</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What does it print?</p>
+
+<p>More than 50% of the programmers will answer 1, some of the remaining will say &ldquo;I don&rsquo;t know&rdquo; and the others will say 0.
+Well &ldquo;the others&rdquo; are right!</p>
+
+<p>Provided that such a code <strong>MUST NEVER BE WRITTEN</strong>, let&rsquo;s try to understand, for academic purposes, why it prints 0.</p>
+
+<p>The reason lies in the JLS (Java Language Specification). The JLS mandates that, in an assignment expression,
+the right side of the = must be evaluated first and then the value of the expression must be assigned to the left side.
+When the right side gets evaluated, <code>a++</code> evaluates to <code>0</code> since it is a post-increment. This value is then saved into
+some temporary variable. At this point the post-increment takes place -> <code>a = a + 1</code> and, finally, the value of the
+temporary variable is assigned to <code>a</code>, losing the increment previously done!</p>
+
+<p>If we translate that code in pseudo-code we have:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">(</span><span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">a</span><span class="o">++</span> <span class="n">expression</span><span class="o">)</span>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">(</span><span class="n">the</span> <span class="n">effect</span> <span class="n">of</span> <span class="n">the</span> <span class="n">post</span><span class="o">-</span><span class="n">increment</span><span class="o">)</span>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s why you get 0! I hope this is clear enough.</p>
+
+<p>An important thing to say is that, if you use a good IDE you&rsquo;ll get a warning about that assignment. For example,
+using Eclipse (my version is 3.1.1 at the time or writing this post) I get: &ldquo;The assignment to variable <code>a</code> has no effect&rdquo;.</p>
+
+<p>Final Note: In C and C++ that expression gives an &ldquo;undefined behaviour&rdquo;! That means that there&rsquo;s no specification about it.
+Indeed, some compilers give 0 and others give 1 as the final value of <code>a</code>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/using-dynamic-sql-statements-from-plsql/">Using Dynamic SQL Statements From PL/SQL</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-06T12:24:18+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:24 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+<code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
+</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
+The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
+<code>your_parameter_for_field1</code> parameter.</p>
+
+<p>Now let&rsquo;s see another example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1 AND field2 = :2&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
+</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see this example is similar to the previous one but here I showed how you can use more than one parameter.</p>
+
+<p>One last example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_insert</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;INSERT INTO your_table VALUES (:1, :2)&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_insert</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This last example shows how you can use <code>EXECUTE IMMEDIATE</code> to execute an <code>INSERT</code> statement. Here you don&rsquo;t need an
+explicit cursor. Of course, in a similar way, you can use <code>EXECUTE IMMEDIATE</code> to execute <code>UPDATE</code> and <code>DELETE</code>
+statements as well.</p>
+
+<p>Of course, you could have accomplished the &ldquo;same&rdquo; result using string concatenation but binding the variables using
+the method just shown is much better from a performance viewpoint.</p>
+
+<p>One last note: you CANNOT use bind variables to replace actual object names like table names, columns and so on.
+In this case you can turn back to string concatenation.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/">How to Hide/show an HTML Form Element Depending on a Combo Box Choice</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-01T15:04:03+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2006</span></span> <span class='time'>3:04 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is an example of how you can show/hide an HTML form element depending on a combo box choice.</p>
+
+<p>Put the following JavaScript code between your <code>&lt;head&gt;&lt;/head&gt;</code> section (or within a <code>.js</code> file if you prefer).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">language=</span><span class="s">&quot;javascript&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">hide</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">formName</span><span class="p">.</span><span class="nx">textBox</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">formName</span><span class="p">.</span><span class="nx">combo</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="s2">&quot;hide&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">text</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span> <span class="o">=</span> <span class="s2">&quot;hidden&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">text</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span> <span class="o">=</span> <span class="s2">&quot;visible&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The following snippet of code instead is the HTML code to use to  call the <code>hide</code> function.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;form</span> <span class="na">name=</span><span class="s">&quot;formName&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;combo&quot;</span> <span class="na">onchange=</span><span class="s">&quot;hide()&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;show&quot;</span><span class="nt">&gt;</span>show<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;hide&quot;</span><span class="nt">&gt;</span>hide<span class="nt">&lt;/option&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/select&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;textBox&quot;</span> <span class="na">id=</span><span class="s">&quot;textBox&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/form&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It is very simple. When you choose <code>hide</code> the textbox disappears. If you choose <code>show</code> it appears.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/pojo-plain-old-java-object-the-simplerthe-better/">POJO (Plain Old Java Object): The simpler&#8230; The Better.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-08-21T17:31:02+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2006</span></span> <span class='time'>5:31 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A  POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined
+by the EJB 2 framework. An example of a POJO is a class composed by only:</p>
+
+<ol>
+<li>Properties, representing the object&rsquo;s state.</li>
+<li>Getter and setter methods for the properties.</li>
+<li>Business methods, representing behaviour.</li>
+</ol>
+
+
+<p>Some properties can represent associations with other POJOs. Here is an example of implementation of the
+<code>Person</code> entity using a POJO:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">//1. properties</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">String</span> <span class="n">secondName</span><span class="o">;</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">Address</span> <span class="n">address</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//2. getters and setters</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFirstName</span><span class="o">(</span><span class="n">String</span> <span class="n">firstName</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFirstName</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="c1">// ... the other getters and setters</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//3. business methods</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">computeAge</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="c1">//here the business logic to compute the person&#39;s age</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see the <code>address</code> property represents an association to another hypothetical   POJO.</p>
+
+<p>That&rsquo;s all! Code that handles database connections and so on shouldn&rsquo;t be contained within a POJO.</p>
+
+<p>There are many advantages in using POJOs. First of all they&rsquo;re simple. Second they&rsquo;re very suitable to
+represent domain models. Many tools, like <a href="http://www.hibernate.org">Hibernate</a>, work best with domain
+models implemented using POJOs.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/6">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/4">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Scriptaculous | Alessandro Lacava]]></title>
+  <link href="http://lambdista.github.io/blog/categories/scriptaculous/atom.xml" rel="self"/>
+  <link href="http://lambdista.github.io/"/>
+  <updated>2015-05-08T10:37:47+02:00</updated>
+  <id>http://lambdista.github.io/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Script.aculo.us Controls: Do Your Web Users a Favor]]></title>
+    <link href="http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
+    <updated>2011-10-26T17:32:32+02:00</updated>
+    <id>http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
+    <content type="html"><![CDATA[<h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
+
+<p>In a previous DevX article, I wrote about the JavaScript framework Prototype, which aims to ease the development of dynamic web applications. That article ended with just a few words about Script.aculo.us, which is a fantastic UI library based on Prototype. This article gives Script.aculo.us its due by examining the web controls it provides: autocompleters, sliders, and in-place editors.</p>
+
+<p>Script.aculo.us is a pretty big library, so no single article can cover it completely. However, the knowledge you will gain will enable you to leverage the power of Script.aculo.us web controls to improve the end-user experience.</p>
+
+<p>Go to <a href="http://www.devx.com/webdev/Article/37574">DevX</a> to read the rest of the article: <strong>Script.aculo.us Controls: Do Your Web Users a Favor</strong>.</p>
+]]></content>
+  </entry>
+  
+</feed>
