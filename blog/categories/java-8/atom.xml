@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java 8 | Alessandro Lacava]]></title>
   <link href="http://lambdista.github.io/blog/categories/java-8/atom.xml" rel="self"/>
   <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T12:16:48+02:00</updated>
+  <updated>2015-05-08T13:58:21+02:00</updated>
   <id>http://lambdista.github.io/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
@@ -20,7 +20,7 @@
     <id>http://lambdista.github.io/blog/try-success-failure-api-for-java</id>
     <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
 
-<p>.Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
 
 <p>This API is a Java implementation of <a href="http://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
 originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
