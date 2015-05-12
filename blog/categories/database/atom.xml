@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Database | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/database/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Build Brilliant Client/Server Apps With J2ME, PHP, and MySQL]]></title>
-    <link href="http://lambdista.github.io/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
+    <link href="http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
     <updated>2011-10-26T16:53:41+02:00</updated>
-    <id>http://lambdista.github.io/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
+    <id>http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
     <content type="html"><![CDATA[<h3>In this article you&rsquo;ll see how to make the three technologies work together by developing a simple and useful application that lets you update a multi-user blog and download the latest posts from it.</h3>
 
 <p>Write once, run anywhere. This Java motto seems to hold true even for mobile devices. Indeed, since it was born J2ME has had an ever-increasing impact on mobile development. Some may argue that J2ME is not as portable as other Java technologies, but even so, the result obtained on different mobile devices is, in most cases, still acceptable.</p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Performance Differences Between IN and EXISTS]]></title>
-    <link href="http://lambdista.github.io/blog/performance-differences-between-in-and-exists/"/>
+    <link href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/"/>
     <updated>2008-06-04T15:33:24+02:00</updated>
-    <id>http://lambdista.github.io/blog/performance-differences-between-in-and-exists</id>
+    <id>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists</id>
     <content type="html"><![CDATA[<p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
 Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
 (see <a href="/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
@@ -80,9 +80,9 @@ which method to use.</p>
   
   <entry>
     <title type="html"><![CDATA[NOT IN vs. NOT EXISTS When NULL Values Are Involved]]></title>
-    <link href="http://lambdista.github.io/blog/not-in-vs-not-exists-when-null-values-are-involved/"/>
+    <link href="http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/"/>
     <updated>2008-06-04T15:24:09+02:00</updated>
-    <id>http://lambdista.github.io/blog/not-in-vs-not-exists-when-null-values-are-involved</id>
+    <id>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved</id>
     <content type="html"><![CDATA[<p><code>NOT IN</code> does not behave as you would expect when <code>NULL</code> values are involved.
 Suppose you have the following tables:</p>
 
@@ -162,9 +162,9 @@ which is not present in table_b.cd_field.</p>
   
   <entry>
     <title type="html"><![CDATA[How to Get the Number of Columns In a ResultSet In Java]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/"/>
     <updated>2007-12-12T11:32:31+01:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java</id>
     <content type="html"><![CDATA[<p>In Java it is possible to retrieve the number of columns of a <code>ResultSet</code> dinamically, thanks to the <code>ResultSetMetaData</code>
 class. Here&rsquo;s an example:</p>
 

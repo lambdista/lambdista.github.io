@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Css | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to Display an Element to the Center of the Browser]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-display-an-element-to-the-center-of-the-browser/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/"/>
     <updated>2007-02-16T11:55:53+01:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-display-an-element-to-the-center-of-the-browser</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser</id>
     <content type="html"><![CDATA[<p>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of
 how you can do it using JavaScript and CSS.</p>
 
@@ -78,9 +78,9 @@ call starts/ends you might want to show/hide it, maybe with a &ldquo;loading gif
   
   <entry>
     <title type="html"><![CDATA[How to Add Scrollbars to a Block (e.g. A &lt;div&gt; Element)]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-add-scrollbars-to-a-block-eg-a-element/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/"/>
     <updated>2006-11-24T10:21:30+01:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-add-scrollbars-to-a-block-eg-a-element</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element</id>
     <content type="html"><![CDATA[<p>If you need to customize a list box then the <code>&lt;select&gt;</code> HTML element might not be enough. In such a case you&rsquo;d like
 to have something that simulates the <code>&lt;select&gt;</code> behaviour.</p>
 

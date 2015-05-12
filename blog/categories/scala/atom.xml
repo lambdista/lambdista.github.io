@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Scala | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/scala/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/scala/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
-    <link href="http://lambdista.github.io/blog/scala-self-recursive-types/"/>
+    <link href="http://www.alessandrolacava.com/blog/scala-self-recursive-types/"/>
     <updated>2015-03-30T14:59:24+02:00</updated>
-    <id>http://lambdista.github.io/blog/scala-self-recursive-types</id>
+    <id>http://www.alessandrolacava.com/blog/scala-self-recursive-types</id>
     <content type="html"><![CDATA[<p>One of the advantages of using a statically typed language is that you can use the type system to enforce
 some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
 that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
@@ -126,9 +126,9 @@ But this is another story for a future post.</p>
   
   <entry>
     <title type="html"><![CDATA[Introduction to Internal DSLs In Scala]]></title>
-    <link href="http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala/"/>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala/"/>
     <updated>2015-03-26T09:41:48+01:00</updated>
-    <id>http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala</id>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala</id>
     <content type="html"><![CDATA[<p>My introductory article on developing an internal DSL in Scala for currency-related operations
 on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
 ]]></content>
@@ -136,9 +136,9 @@ on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scal
   
   <entry>
     <title type="html"><![CDATA[Introduction to Functional Programming In Scala]]></title>
-    <link href="http://lambdista.github.io/blog/introduction-to-functional-programming-in-scala/"/>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala/"/>
     <updated>2015-02-28T09:29:30+01:00</updated>
-    <id>http://lambdista.github.io/blog/introduction-to-functional-programming-in-scala</id>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala</id>
     <content type="html"><![CDATA[<p>My introductory article on Functional Programming in Scala
 on <a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">DevX</a></p>
 ]]></content>
@@ -146,9 +146,9 @@ on <a href="http://www.devx.com/enterprise/introduction-to-functional-programmin
   
   <entry>
     <title type="html"><![CDATA[Scala DSL for Currency-related Operations]]></title>
-    <link href="http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations/"/>
+    <link href="http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/"/>
     <updated>2015-02-20T15:09:06+01:00</updated>
-    <id>http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations</id>
+    <id>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations</id>
     <content type="html"><![CDATA[<h3>A simple internal DSL in Scala for money-related operations</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>

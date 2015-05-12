@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
-    <link href="http://lambdista.github.io/blog/scala-self-recursive-types/"/>
+    <link href="http://www.alessandrolacava.com/blog/scala-self-recursive-types/"/>
     <updated>2015-03-30T14:59:24+02:00</updated>
-    <id>http://lambdista.github.io/blog/scala-self-recursive-types</id>
+    <id>http://www.alessandrolacava.com/blog/scala-self-recursive-types</id>
     <content type="html"><![CDATA[<p>One of the advantages of using a statically typed language is that you can use the type system to enforce
 some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
 that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
@@ -171,9 +171,9 @@ But this is another story for a future post.</p>
   
   <entry>
     <title type="html"><![CDATA[Introduction to Internal DSLs In Scala]]></title>
-    <link href="http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala/"/>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala/"/>
     <updated>2015-03-26T09:41:48+01:00</updated>
-    <id>http://lambdista.github.io/blog/introduction-to-internal-dsls-in-scala</id>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala</id>
     <content type="html"><![CDATA[<p>My introductory article on developing an internal DSL in Scala for currency-related operations
 on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
 ]]></content>
@@ -181,9 +181,9 @@ on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scal
   
   <entry>
     <title type="html"><![CDATA[Introduction to Functional Programming In Scala]]></title>
-    <link href="http://lambdista.github.io/blog/introduction-to-functional-programming-in-scala/"/>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala/"/>
     <updated>2015-02-28T09:29:30+01:00</updated>
-    <id>http://lambdista.github.io/blog/introduction-to-functional-programming-in-scala</id>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala</id>
     <content type="html"><![CDATA[<p>My introductory article on Functional Programming in Scala
 on <a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">DevX</a></p>
 ]]></content>
@@ -191,9 +191,9 @@ on <a href="http://www.devx.com/enterprise/introduction-to-functional-programmin
   
   <entry>
     <title type="html"><![CDATA[Scala DSL for Currency-related Operations]]></title>
-    <link href="http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations/"/>
+    <link href="http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/"/>
     <updated>2015-02-20T15:09:06+01:00</updated>
-    <id>http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations</id>
+    <id>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations</id>
     <content type="html"><![CDATA[<h3>A simple internal DSL in Scala for money-related operations</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
@@ -308,9 +308,9 @@ Have a look at the <code>Money</code> class for a complete coverage.</p>
   
   <entry>
     <title type="html"><![CDATA[Try-Success-Failure API for Java 8]]></title>
-    <link href="http://lambdista.github.io/blog/try-success-failure-api-for-java/"/>
+    <link href="http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/"/>
     <updated>2014-06-20T16:03:33+02:00</updated>
-    <id>http://lambdista.github.io/blog/try-success-failure-api-for-java</id>
+    <id>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java</id>
     <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
@@ -396,9 +396,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Combine JavaScript and a Template Engine for Flexible Web Apps]]></title>
-    <link href="http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
+    <link href="http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
     <updated>2011-10-26T17:34:17+02:00</updated>
-    <id>http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
+    <id>http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
     <content type="html"><![CDATA[<h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
 
 <p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>
@@ -409,9 +409,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Script.aculo.us Controls: Do Your Web Users a Favor]]></title>
-    <link href="http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
+    <link href="http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
     <updated>2011-10-26T17:32:32+02:00</updated>
-    <id>http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
+    <id>http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
     <content type="html"><![CDATA[<h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
 
 <p>In a previous DevX article, I wrote about the JavaScript framework Prototype, which aims to ease the development of dynamic web applications. That article ended with just a few words about Script.aculo.us, which is a fantastic UI library based on Prototype. This article gives Script.aculo.us its due by examining the web controls it provides: autocompleters, sliders, and in-place editors.</p>
@@ -424,9 +424,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Will Your Next Web Application Be a Google Gadget?]]></title>
-    <link href="http://lambdista.github.io/blog/will-your-next-web-application-be-a-google-gadget/"/>
+    <link href="http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget/"/>
     <updated>2011-10-26T17:31:04+02:00</updated>
-    <id>http://lambdista.github.io/blog/will-your-next-web-application-be-a-google-gadget</id>
+    <id>http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget</id>
     <content type="html"><![CDATA[<h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
 
 <p>Since AJAX first appeared, developer interest in JavaScript has increased exponentially—and toolsets for building functionality in JavaScript have burgeoned as well. One of the latest tools for JavaScript-related development is Google Gadgets. Many web sites already provide gadgets built with the Google tools, and you can, too. This article shows you how to develop a Google Gadget that fetches DevX RSS feeds and displays them to the user.</p>
@@ -437,9 +437,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[The Productivity Perks Behind Prototype's Popularity]]></title>
-    <link href="http://lambdista.github.io/blog/the-productivity-perks-behind-prototypes-popularity-2/"/>
+    <link href="http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2/"/>
     <updated>2011-10-26T17:29:31+02:00</updated>
-    <id>http://lambdista.github.io/blog/the-productivity-perks-behind-prototypes-popularity-2</id>
+    <id>http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2</id>
     <content type="html"><![CDATA[<h3>Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in an object-oriented way.</h3>
 
 <p>The Prototype home page claims that &ldquo;Prototype is a JavaScript framework that aims to ease the development of dynamic Web applications.&rdquo; By using many object-oriented paradigms such as class-driven development and inheritance to enable JavaScript application development, Prototype completely accomplishes its aim. In fact, this framework contains a lot of useful functionalities, which you cannot help but apply to every application you develop once you&rsquo;ve started using them.</p>
@@ -452,9 +452,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Speed Up Your AJAX-based Apps With JSON]]></title>
-    <link href="http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json/"/>
+    <link href="http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json/"/>
     <updated>2011-10-26T16:54:43+02:00</updated>
-    <id>http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json</id>
+    <id>http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json</id>
     <content type="html"><![CDATA[<h3>Find out how to improve your Web application performance by leveraging AJAX and JSON. In particular, you&rsquo;ll see the advantages of using JSON over XML as a lightweight JavaScript data-interchange format.</h3>
 
 <p>JSON stands for JavaScript Object Notation and is a lightweight data-interchange format. Because it is text-based it is easy for humans to read and write, and it has a regular syntax that&rsquo;s easy to parse programmatically. JSON is basically a subset of JavaScript and, as you&rsquo;ll see, is even easier to parse than XML.</p>
@@ -465,9 +465,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Build Brilliant Client/Server Apps With J2ME, PHP, and MySQL]]></title>
-    <link href="http://lambdista.github.io/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
+    <link href="http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
     <updated>2011-10-26T16:53:41+02:00</updated>
-    <id>http://lambdista.github.io/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
+    <id>http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
     <content type="html"><![CDATA[<h3>In this article you&rsquo;ll see how to make the three technologies work together by developing a simple and useful application that lets you update a multi-user blog and download the latest posts from it.</h3>
 
 <p>Write once, run anywhere. This Java motto seems to hold true even for mobile devices. Indeed, since it was born J2ME has had an ever-increasing impact on mobile development. Some may argue that J2ME is not as portable as other Java technologies, but even so, the result obtained on different mobile devices is, in most cases, still acceptable.</p>
@@ -478,9 +478,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Producing Professional MSDN-style Documentation With .NET and NDoc]]></title>
-    <link href="http://lambdista.github.io/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/"/>
+    <link href="http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/"/>
     <updated>2011-10-26T16:52:33+02:00</updated>
-    <id>http://lambdista.github.io/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc</id>
+    <id>http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc</id>
     <content type="html"><![CDATA[<h3>Tired of trying to keep your documentation synchronized with the source? You can help alleviate the problem by creating professional documentation directly from the built-in XML documentation features of the C# language using the brilliant NDoc open-source application.</h3>
 
 <p>The .NET framework provides a nice way to insert XML documentation tags inside C# source code. These tags can then be extracted to an XML file, and using NDoc, transformed into fully-functional MSDN-style documentation.</p>
@@ -491,9 +491,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Obtaining Wireless News With J2ME and PHP]]></title>
-    <link href="http://lambdista.github.io/blog/obtaining-wireless-news-with-j2me-and-php/"/>
+    <link href="http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php/"/>
     <updated>2011-10-26T16:49:06+02:00</updated>
-    <id>http://lambdista.github.io/blog/obtaining-wireless-news-with-j2me-and-php</id>
+    <id>http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php</id>
     <content type="html"><![CDATA[<h3>J2ME and PHP are both powerful technologies used to develop applications for mobile devices and Web applications, respectively. In this article, you&rsquo;ll see how to make them work together by developing a simple and useful application that retrieves the latest news from the Web and displays that on a mobile device.</h3>
 
 <p>The Java 2 Platform, Micro Edition (J2ME) is targeted at cell phones, smart cards, pagers, and other consumer devices. J2ME technology consists of a virtual machine and a set of APIs suitable for tailored runtime environments for these devices. PHP, on the other hand, is a widely used server-based language to build Web applications. But these two radically different technologies work very well together. In this article you&rsquo;ll see how they can interact via HTTP (Hyper Text Transfer Protocol). Of course, this is not intended to be a thorough explanation of how HTTP works—you only need to know that HTTP is a request/response protocol. That simply means that the client application performs a request and the server application returns a response.</p>
@@ -504,9 +504,9 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Keeping Secrets Secret: Steganography With .NET]]></title>
-    <link href="http://lambdista.github.io/blog/keeping-secrets-secret-steganography-with-net/"/>
+    <link href="http://www.alessandrolacava.com/blog/keeping-secrets-secret-steganography-with-net/"/>
     <updated>2011-10-26T16:47:19+02:00</updated>
-    <id>http://lambdista.github.io/blog/keeping-secrets-secret-steganography-with-net</id>
+    <id>http://www.alessandrolacava.com/blog/keeping-secrets-secret-steganography-with-net</id>
     <content type="html"><![CDATA[<h3>Steganography is a way to protect information by hiding it &ldquo;in plain sight&rdquo; within other types of digital content. Steganography complements rather than replaces encryption by adding another layer of security—it&rsquo;s much more difficult to decrypt a message if you don&rsquo;t know that there is a message. See how to leverage .NET to create steganographic techniques that hide encrypted information inside common digital data files.</h3>
 
 <p>Steganography, literally &ldquo;hidden writing,&rdquo; is nowadays most often associated with embedding data in some form of electronic media. Data is hidden by adding or altering insignificant bits of information of a file. For example, an algorithm designed to embed a text message might slightly alter information describing the RGB composition of a pixel for an image file.</p>
@@ -517,10 +517,10 @@ printed out.</p>
   
   <entry>
     <title type="html"><![CDATA[Goodbye Dennis Ritchie (Dmr)]]></title>
-    <link href="http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
+    <link href="http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
     <updated>2011-10-13T14:56:36+02:00</updated>
-    <id>http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://lambdista.github.io/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
+    <id>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://www.alessandrolacava.com/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
 <a href="http://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)</a>
 This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language     and the key developer of the Unix operating system.</p>
 
@@ -547,9 +547,9 @@ I think he would have said goodbye this way:</p>
   
   <entry>
     <title type="html"><![CDATA[Undo Close Tab In Eclipse]]></title>
-    <link href="http://lambdista.github.io/blog/undo-close-tab-in-eclipse/"/>
+    <link href="http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/"/>
     <updated>2009-03-26T10:33:59+01:00</updated>
-    <id>http://lambdista.github.io/blog/undo-close-tab-in-eclipse</id>
+    <id>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse</id>
     <content type="html"><![CDATA[<p>I don&rsquo;t know about you, but I love the Firefox&rsquo;s <strong>undo-close-tab</strong> feature (Ctrl+Shift+T). If you use <strong>Eclipse</strong> you might be glad to know you can undo the close-tab action in Eclipse as well. You can do that both using your mouse by clicking on the yellow left arrow you can see in the Eclipse toolbar and through the keybord using the Alt+Left Arrow key combination.</p>
 
 <p>I hope this helps.</p>
@@ -558,9 +558,9 @@ I think he would have said goodbye this way:</p>
   
   <entry>
     <title type="html"><![CDATA[Object Not Found | EasyPHP | MySQL | phpMyAdmin]]></title>
-    <link href="http://lambdista.github.io/blog/object-not-found-easyphp-mysql-phpmyadmin/"/>
+    <link href="http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/"/>
     <updated>2009-01-30T10:46:05+01:00</updated>
-    <id>http://lambdista.github.io/blog/object-not-found-easyphp-mysql-phpmyadmin</id>
+    <id>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin</id>
     <content type="html"><![CDATA[<p>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:</p>
 
 <p><strong>Object not found!</strong></p>
@@ -597,9 +597,9 @@ I think he would have said goodbye this way:</p>
   
   <entry>
     <title type="html"><![CDATA[Java Split() of String | Multiple Whitespace Characters]]></title>
-    <link href="http://lambdista.github.io/blog/java-split-of-string-multiple-whitespace-characters/"/>
+    <link href="http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/"/>
     <updated>2008-12-03T11:47:02+01:00</updated>
-    <id>http://lambdista.github.io/blog/java-split-of-string-multiple-whitespace-characters</id>
+    <id>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters</id>
     <content type="html"><![CDATA[<p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
 in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
 be careful when you want to split a string using the whitespace character as a delimiter. Consider the
@@ -665,9 +665,9 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
   
   <entry>
     <title type="html"><![CDATA[OutOfMemoryError In Eclipse | Java Virtual Machine (JVM)]]></title>
-    <link href="http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
+    <link href="http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
     <updated>2008-07-22T10:53:07+02:00</updated>
-    <id>http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
+    <id>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
     <content type="html"><![CDATA[<h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
 
 <p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
@@ -706,12 +706,12 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
   
   <entry>
     <title type="html"><![CDATA[Performance Differences Between IN and EXISTS]]></title>
-    <link href="http://lambdista.github.io/blog/performance-differences-between-in-and-exists/"/>
+    <link href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/"/>
     <updated>2008-06-04T15:33:24+02:00</updated>
-    <id>http://lambdista.github.io/blog/performance-differences-between-in-and-exists</id>
+    <id>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists</id>
     <content type="html"><![CDATA[<p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
 Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
-(see <a href="http://lambdista.github.io/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
+(see <a href="http://www.alessandrolacava.com/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
 
 <p>If you are sure that the field used to join the tables does not include <code>NULL</code> values then the <code>IN</code> operator &ldquo;generally&rdquo;
 performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ndoc | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/ndoc/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/ndoc/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Producing Professional MSDN-style Documentation With .NET and NDoc]]></title>
-    <link href="http://lambdista.github.io/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/"/>
+    <link href="http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/"/>
     <updated>2011-10-26T16:52:33+02:00</updated>
-    <id>http://lambdista.github.io/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc</id>
+    <id>http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc</id>
     <content type="html"><![CDATA[<h3>Tired of trying to keep your documentation synchronized with the source? You can help alleviate the problem by creating professional documentation directly from the built-in XML documentation features of the C# language using the brilliant NDoc open-source application.</h3>
 
 <p>The .NET framework provides a nice way to insert XML documentation tags inside C# source code. These tags can then be extracted to an XML file, and using NDoc, transformed into fully-functional MSDN-style documentation.</p>

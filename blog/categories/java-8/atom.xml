@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Java 8 | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/java-8/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/java-8/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Try-Success-Failure API for Java 8]]></title>
-    <link href="http://lambdista.github.io/blog/try-success-failure-api-for-java/"/>
+    <link href="http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/"/>
     <updated>2014-06-20T16:03:33+02:00</updated>
-    <id>http://lambdista.github.io/blog/try-success-failure-api-for-java</id>
+    <id>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java</id>
     <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Rip | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/rip/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/rip/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Goodbye Dennis Ritchie (Dmr)]]></title>
-    <link href="http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
+    <link href="http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
     <updated>2011-10-13T14:56:36+02:00</updated>
-    <id>http://lambdista.github.io/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
+    <id>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
     <content type="html"><![CDATA[<p><img class="left" src="/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
 <a href="http://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)</a>
 This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language     and the key developer of the Unix operating system.</p>

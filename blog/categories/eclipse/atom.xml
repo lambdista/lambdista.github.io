@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Eclipse | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/eclipse/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/eclipse/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Undo Close Tab In Eclipse]]></title>
-    <link href="http://lambdista.github.io/blog/undo-close-tab-in-eclipse/"/>
+    <link href="http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/"/>
     <updated>2009-03-26T10:33:59+01:00</updated>
-    <id>http://lambdista.github.io/blog/undo-close-tab-in-eclipse</id>
+    <id>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse</id>
     <content type="html"><![CDATA[<p>I don&rsquo;t know about you, but I love the Firefox&rsquo;s <strong>undo-close-tab</strong> feature (Ctrl+Shift+T). If you use <strong>Eclipse</strong> you might be glad to know you can undo the close-tab action in Eclipse as well. You can do that both using your mouse by clicking on the yellow left arrow you can see in the Eclipse toolbar and through the keybord using the Alt+Left Arrow key combination.</p>
 
 <p>I hope this helps.</p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[OutOfMemoryError In Eclipse | Java Virtual Machine (JVM)]]></title>
-    <link href="http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
+    <link href="http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
     <updated>2008-07-22T10:53:07+02:00</updated>
-    <id>http://lambdista.github.io/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
+    <id>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
     <content type="html"><![CDATA[<h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
 
 <p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
@@ -67,9 +67,9 @@
   
   <entry>
     <title type="html"><![CDATA[Very Useful Shortcuts for Eclipse]]></title>
-    <link href="http://lambdista.github.io/blog/very-useful-shortcuts-for-eclipse/"/>
+    <link href="http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/"/>
     <updated>2007-09-25T13:10:01+02:00</updated>
-    <id>http://lambdista.github.io/blog/very-useful-shortcuts-for-eclipse</id>
+    <id>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse</id>
     <content type="html"><![CDATA[<p>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java.</p>
 
 <table cellpadding="3" style="border: 1px solid #0066ff; font-family: arial" cellspacing="0" >
@@ -236,9 +236,9 @@ Shortcut
   
   <entry>
     <title type="html"><![CDATA[How to Attach Source or Javadoc to Java Enterprise Edition API In Eclipse]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/"/>
     <updated>2007-09-14T14:50:48+02:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse</id>
     <content type="html"><![CDATA[<p>Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as <code>HttpServletRequest</code> you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:</p>
 
 <ol>

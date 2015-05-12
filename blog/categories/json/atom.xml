@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Json | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/json/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/json/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Speed Up Your AJAX-based Apps With JSON]]></title>
-    <link href="http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json/"/>
+    <link href="http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json/"/>
     <updated>2011-10-26T16:54:43+02:00</updated>
-    <id>http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json</id>
+    <id>http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json</id>
     <content type="html"><![CDATA[<h3>Find out how to improve your Web application performance by leveraging AJAX and JSON. In particular, you&rsquo;ll see the advantages of using JSON over XML as a lightweight JavaScript data-interchange format.</h3>
 
 <p>JSON stands for JavaScript Object Notation and is a lightweight data-interchange format. Because it is text-based it is easy for humans to read and write, and it has a regular syntax that&rsquo;s easy to parse programmatically. JSON is basically a subset of JavaScript and, as you&rsquo;ll see, is even easier to parse than XML.</p>

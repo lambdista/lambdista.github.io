@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Self-recursive Type | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/self-recursive-type/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/self-recursive-type/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
-    <link href="http://lambdista.github.io/blog/scala-self-recursive-types/"/>
+    <link href="http://www.alessandrolacava.com/blog/scala-self-recursive-types/"/>
     <updated>2015-03-30T14:59:24+02:00</updated>
-    <id>http://lambdista.github.io/blog/scala-self-recursive-types</id>
+    <id>http://www.alessandrolacava.com/blog/scala-self-recursive-types</id>
     <content type="html"><![CDATA[<p>One of the advantages of using a statically typed language is that you can use the type system to enforce
 some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
 that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>

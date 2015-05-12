@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Apache | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/apache/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/apache/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Object Not Found | EasyPHP | MySQL | phpMyAdmin]]></title>
-    <link href="http://lambdista.github.io/blog/object-not-found-easyphp-mysql-phpmyadmin/"/>
+    <link href="http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/"/>
     <updated>2009-01-30T10:46:05+01:00</updated>
-    <id>http://lambdista.github.io/blog/object-not-found-easyphp-mysql-phpmyadmin</id>
+    <id>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin</id>
     <content type="html"><![CDATA[<p>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:</p>
 
 <p><strong>Object not found!</strong></p>

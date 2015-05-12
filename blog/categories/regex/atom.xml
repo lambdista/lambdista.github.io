@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Regex | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/regex/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/regex/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Java Split() of String | Multiple Whitespace Characters]]></title>
-    <link href="http://lambdista.github.io/blog/java-split-of-string-multiple-whitespace-characters/"/>
+    <link href="http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/"/>
     <updated>2008-12-03T11:47:02+01:00</updated>
-    <id>http://lambdista.github.io/blog/java-split-of-string-multiple-whitespace-characters</id>
+    <id>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters</id>
     <content type="html"><![CDATA[<p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
 in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
 be careful when you want to split a string using the whitespace character as a delimiter. Consider the

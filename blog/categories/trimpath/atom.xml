@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Trimpath | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/trimpath/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/trimpath/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Combine JavaScript and a Template Engine for Flexible Web Apps]]></title>
-    <link href="http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
+    <link href="http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
     <updated>2011-10-26T17:34:17+02:00</updated>
-    <id>http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
+    <id>http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
     <content type="html"><![CDATA[<h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
 
 <p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>

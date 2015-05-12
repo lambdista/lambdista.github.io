@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Oracle | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/oracle/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/oracle/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Performance Differences Between IN and EXISTS]]></title>
-    <link href="http://lambdista.github.io/blog/performance-differences-between-in-and-exists/"/>
+    <link href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/"/>
     <updated>2008-06-04T15:33:24+02:00</updated>
-    <id>http://lambdista.github.io/blog/performance-differences-between-in-and-exists</id>
+    <id>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists</id>
     <content type="html"><![CDATA[<p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
 Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
 (see <a href="/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
@@ -67,9 +67,9 @@ which method to use.</p>
   
   <entry>
     <title type="html"><![CDATA[NOT IN vs. NOT EXISTS When NULL Values Are Involved]]></title>
-    <link href="http://lambdista.github.io/blog/not-in-vs-not-exists-when-null-values-are-involved/"/>
+    <link href="http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/"/>
     <updated>2008-06-04T15:24:09+02:00</updated>
-    <id>http://lambdista.github.io/blog/not-in-vs-not-exists-when-null-values-are-involved</id>
+    <id>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved</id>
     <content type="html"><![CDATA[<p><code>NOT IN</code> does not behave as you would expect when <code>NULL</code> values are involved.
 Suppose you have the following tables:</p>
 
@@ -149,9 +149,9 @@ which is not present in table_b.cd_field.</p>
   
   <entry>
     <title type="html"><![CDATA[How to Compute a Timestamp In Oracle (PL SQL)]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/"/>
     <updated>2007-10-09T11:41:18+02:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-compute-a-timestamp-in-oracle-pl-sql</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql</id>
     <content type="html"><![CDATA[<p>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on
 January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the
 number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.</p>
@@ -172,9 +172,9 @@ FROM dual
   
   <entry>
     <title type="html"><![CDATA[How to Create a Copy/backup of a Table In Oracle]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-create-a-copybackup-of-a-table-in-oracle/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle/"/>
     <updated>2007-07-04T10:16:50+02:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-create-a-copybackup-of-a-table-in-oracle</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle</id>
     <content type="html"><![CDATA[<p>You can create a backup of a table (structure and data) in Oracle by using the following syntax:</p>
 
 <pre><code class="sql">CREATE TABLE customers_backup AS (SELECT * FROM customers)
@@ -186,9 +186,9 @@ FROM dual
   
   <entry>
     <title type="html"><![CDATA[How to Commit a Single DML Statement In Oracle (PL/SQL)]]></title>
-    <link href="http://lambdista.github.io/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/"/>
+    <link href="http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/"/>
     <updated>2007-05-24T14:52:20+02:00</updated>
-    <id>http://lambdista.github.io/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql</id>
+    <id>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql</id>
     <content type="html"><![CDATA[<p>Sometimes you might need to commit a single <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statement and not the whole main transaction.
 In such a case you can use an <code>AUTONOMOUS TRANSACTION</code> which is a feature available since Oracle 8i.
 The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p>

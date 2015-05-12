@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Javascript | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/javascript/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Combine JavaScript and a Template Engine for Flexible Web Apps]]></title>
-    <link href="http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
+    <link href="http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
     <updated>2011-10-26T17:34:17+02:00</updated>
-    <id>http://lambdista.github.io/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
+    <id>http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
     <content type="html"><![CDATA[<h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
 
 <p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Script.aculo.us Controls: Do Your Web Users a Favor]]></title>
-    <link href="http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
+    <link href="http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
     <updated>2011-10-26T17:32:32+02:00</updated>
-    <id>http://lambdista.github.io/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
+    <id>http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
     <content type="html"><![CDATA[<h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
 
 <p>In a previous DevX article, I wrote about the JavaScript framework Prototype, which aims to ease the development of dynamic web applications. That article ended with just a few words about Script.aculo.us, which is a fantastic UI library based on Prototype. This article gives Script.aculo.us its due by examining the web controls it provides: autocompleters, sliders, and in-place editors.</p>
@@ -43,9 +43,9 @@
   
   <entry>
     <title type="html"><![CDATA[Will Your Next Web Application Be a Google Gadget?]]></title>
-    <link href="http://lambdista.github.io/blog/will-your-next-web-application-be-a-google-gadget/"/>
+    <link href="http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget/"/>
     <updated>2011-10-26T17:31:04+02:00</updated>
-    <id>http://lambdista.github.io/blog/will-your-next-web-application-be-a-google-gadget</id>
+    <id>http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget</id>
     <content type="html"><![CDATA[<h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
 
 <p>Since AJAX first appeared, developer interest in JavaScript has increased exponentially—and toolsets for building functionality in JavaScript have burgeoned as well. One of the latest tools for JavaScript-related development is Google Gadgets. Many web sites already provide gadgets built with the Google tools, and you can, too. This article shows you how to develop a Google Gadget that fetches DevX RSS feeds and displays them to the user.</p>
@@ -56,9 +56,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Productivity Perks Behind Prototype's Popularity]]></title>
-    <link href="http://lambdista.github.io/blog/the-productivity-perks-behind-prototypes-popularity-2/"/>
+    <link href="http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2/"/>
     <updated>2011-10-26T17:29:31+02:00</updated>
-    <id>http://lambdista.github.io/blog/the-productivity-perks-behind-prototypes-popularity-2</id>
+    <id>http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2</id>
     <content type="html"><![CDATA[<h3>Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in an object-oriented way.</h3>
 
 <p>The Prototype home page claims that &ldquo;Prototype is a JavaScript framework that aims to ease the development of dynamic Web applications.&rdquo; By using many object-oriented paradigms such as class-driven development and inheritance to enable JavaScript application development, Prototype completely accomplishes its aim. In fact, this framework contains a lot of useful functionalities, which you cannot help but apply to every application you develop once you&rsquo;ve started using them.</p>
@@ -71,9 +71,9 @@
   
   <entry>
     <title type="html"><![CDATA[Speed Up Your AJAX-based Apps With JSON]]></title>
-    <link href="http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json/"/>
+    <link href="http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json/"/>
     <updated>2011-10-26T16:54:43+02:00</updated>
-    <id>http://lambdista.github.io/blog/speed-up-your-ajax-based-apps-with-json</id>
+    <id>http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json</id>
     <content type="html"><![CDATA[<h3>Find out how to improve your Web application performance by leveraging AJAX and JSON. In particular, you&rsquo;ll see the advantages of using JSON over XML as a lightweight JavaScript data-interchange format.</h3>
 
 <p>JSON stands for JavaScript Object Notation and is a lightweight data-interchange format. Because it is text-based it is easy for humans to read and write, and it has a regular syntax that&rsquo;s easy to parse programmatically. JSON is basically a subset of JavaScript and, as you&rsquo;ll see, is even easier to parse than XML.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Implicit | Alessandro Lacava]]></title>
-  <link href="http://lambdista.github.io/blog/categories/implicit/atom.xml" rel="self"/>
-  <link href="http://lambdista.github.io/"/>
-  <updated>2015-05-08T14:09:47+02:00</updated>
-  <id>http://lambdista.github.io/</id>
+  <link href="http://www.alessandrolacava.com/blog/categories/implicit/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-12T14:27:54+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Scala DSL for Currency-related Operations]]></title>
-    <link href="http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations/"/>
+    <link href="http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/"/>
     <updated>2015-02-20T15:09:06+01:00</updated>
-    <id>http://lambdista.github.io/blog/scala-dsl-for-currency-related-operations</id>
+    <id>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations</id>
     <content type="html"><![CDATA[<h3>A simple internal DSL in Scala for money-related operations</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
