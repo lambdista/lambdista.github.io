@@ -9,8 +9,8 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="NOT IN does not behave as you would expect when NULL values are involved.
-Suppose you have the following tables: CD_FIELD DS_FIELD 1 ALPHA 2 BETA &hellip;">
+  <meta name="description" content="Very often I hear people wondering if it&rsquo;s better the EXISTS or the IN operator.
+Let&rsquo;s start by saying that the two operators behave &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,6 +98,96 @@ Suppose you have the following tables: CD_FIELD DS_FIELD 1 ALPHA 2 BETA &hellip;
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/performance-differences-between-in-and-exists/">Performance Differences Between IN and EXISTS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2008-06-04T15:33:24+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>3:33 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
+Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
+(see <a href="/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
+
+<p>If you are sure that the field used to join the tables does not include <code>NULL</code> values then the <code>IN</code> operator &ldquo;generally&rdquo;
+performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span>
+</span><span class='line'><span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previous query is processed more or less as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">cd_field</span> <span class="k">FROM</span> <span class="n">table_b</span><span class="p">)</span> <span class="n">b</span>
+</span><span class='line'><span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The subquery is evaluated and the duplicates removed from the result.
+Then it is joined to the outer table. Now lets analyze the same query using <code>NOT EXISTS</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span>
+</span><span class='line'><span class="k">WHERE</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span> <span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The previous query is processed more or less as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">FOR</span> <span class="n">x</span> <span class="k">IN</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">table_a</span> <span class="p">)</span> <span class="n">LOOP</span>
+</span><span class='line'>  <span class="n">IF</span> <span class="p">(</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span> <span class="p">)</span> <span class="k">THEN</span>
+</span><span class='line'>    <span class="c1">--output the record</span>
+</span><span class='line'>  <span class="k">END</span> <span class="n">IF</span>
+</span><span class='line'><span class="k">END</span> <span class="n">LOOP</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This means that using <code>NOT EXISTS</code> always results in a full scan of the outer table whereas the query which uses <code>NOT IN</code>
+can exploit an index on table_a.cd_field. In general <code>NOT IN</code> performs better when the result of the subquery is small
+and there&rsquo;s an index on the field used by the join. On the other hand, <code>NOT EXISTS</code> is to prefer when the subquery has
+many rows, the outer query is relatively small and there&rsquo;s an index on the field used to join the two tables.
+In this latter case the cost of removing duplicates (<code>DISTINCT</code>) could be greater than the cost of the full scan of the outer table.</p>
+
+<p>Of course this is a very general guideline, you should always conduct some test using indexes and so on to figure out
+which method to use.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -886,44 +976,6 @@ Shortcut
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/">How to Attach Source or Javadoc to Java Enterprise Edition API In Eclipse</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2007-09-14T14:50:48+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:50 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as <code>HttpServletRequest</code> you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:</p>
-
-<ol>
-<li><p>Right click on servlet-api.jar in your project.</p></li>
-<li><p>Choose Properties from the menu.</p></li>
-<li><p>In Javadoc location path put the URL where the Java EE documentation is located (e.g. <a href="http://java.sun.com/j2ee/1.4/docs/api/">http://java.sun.com/j2ee/1.4/docs/api/</a>) or, alternatively, indicate the path where the Javadoc is located in your disk, such as file:/c:/path/to/your/documentation.</p></li>
-</ol>
-
-
-<p>Hope this helps!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -941,6 +993,10 @@ Shortcut
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
       </li>
     
@@ -954,10 +1010,6 @@ Shortcut
     
       <li class="post">
         <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
       </li>
     
   </ul>

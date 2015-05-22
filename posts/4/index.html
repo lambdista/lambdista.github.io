@@ -9,8 +9,7 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="You can create a backup of a table (structure and data) in Oracle by using the following syntax: 1
-CREATE TABLE customers_backup AS (SELECT * FROM &hellip;">
+  <meta name="description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,6 +97,44 @@ CREATE TABLE customers_backup AS (SELECT * FROM &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/">How to Attach Source or Javadoc to Java Enterprise Edition API In Eclipse</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-09-14T14:50:48+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:50 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as <code>HttpServletRequest</code> you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:</p>
+
+<ol>
+<li><p>Right click on servlet-api.jar in your project.</p></li>
+<li><p>Choose Properties from the menu.</p></li>
+<li><p>In Javadoc location path put the URL where the Java EE documentation is located (e.g. <a href="http://java.sun.com/j2ee/1.4/docs/api/">http://java.sun.com/j2ee/1.4/docs/api/</a>) or, alternatively, indicate the path where the Javadoc is located in your disk, such as file:/c:/path/to/your/documentation.</p></li>
+</ol>
+
+
+<p>Hope this helps!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -577,106 +614,6 @@ call starts/ends you might want to show/hide it, maybe with a &ldquo;loading gif
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/how-to-detect-the-selected-checkboxes-using-javascript/">How to Detect the Selected Checkboxes Using JavaScript</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2007-01-16T17:31:26+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>5:31 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here is an example of how you can retrieve the selected checkboxes using a JavaScript function:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
-</span><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'><span class="nt">&lt;script&gt;</span>
-</span><span class='line'><span class="kd">function</span> <span class="nx">getSelectedValues</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">elemNumber</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">selectedElems</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">elemNumber</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">elem</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="nx">selectedElems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">elem</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">selectedElems</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;myForm&quot;</span> <span class="na">name=</span><span class="s">&quot;myForm&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">name=</span><span class="s">&quot;myCheckBox&quot;</span> <span class="na">value=</span><span class="s">&quot;test1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>Test 1
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;test&quot;</span> <span class="na">name=</span><span class="s">&quot;myCheckBox&quot;</span> <span class="na">value=</span><span class="s">&quot;test2&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>Test 2
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Click Here&quot;</span>
-</span><span class='line'>  <span class="na">onclick=</span><span class="s">&quot;alert(getSelectedValues(document.myForm.myCheckBox));&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;/form&gt;</span>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In the previous example when the user clicks on the button the selected checkboxes are displayed through an alert.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -694,6 +631,10 @@ call starts/ends you might want to show/hide it, maybe with a &ldquo;loading gif
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
       </li>
     
@@ -707,10 +648,6 @@ call starts/ends you might want to show/hide it, maybe with a &ldquo;loading gif
     
       <li class="post">
         <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
       </li>
     
   </ul>

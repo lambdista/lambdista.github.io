@@ -4,7 +4,7 @@
   <title><![CDATA[Alessandro Lacava]]></title>
   <link href="http://www.alessandrolacava.com/atom.xml" rel="self"/>
   <link href="http://www.alessandrolacava.com/"/>
-  <updated>2015-05-19T09:09:09+02:00</updated>
+  <updated>2015-05-22T12:29:18+02:00</updated>
   <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
@@ -12,6 +12,273 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Scala Case Classes In Depth]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/"/>
+    <updated>2015-05-22T08:12:07+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth</id>
+    <content type="html"><![CDATA[<p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">birthYear</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Common knowledge about case classes</h2>
+
+<p>When you declare a case class the Scala compiler does the following for you:</p>
+
+<ul>
+<li>Creates a class and its companion object.</li>
+<li>Implements the <code>apply</code> method that you can use as a factory. This lets you create
+instances of the class without the <code>new</code> keyword. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// instead if the slightly more verbose:</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Prefixes all arguments, in the parameter list, with <code>val</code>. This means the class is immutable, hence
+you get the accessors but no mutators. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">lastname</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">lastname</span>
+</span><span class='line'><span class="c1">// the following won&#39;t compile:</span>
+</span><span class='line'><span class="n">p</span><span class="o">.</span><span class="n">lastname</span> <span class="k">=</span> <span class="s">&quot;Brown&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Adds <em>natural</em> implementations of <code>hashCode</code>, <code>equals</code> and <code>toString</code>. Since <code>==</code> in Scala always
+delegates to equals, this means that case class instances are always compared structurally. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p_1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Brown&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="mi">1969</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p_2</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_1</span> <span class="c1">// false</span>
+</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_2</span> <span class="c1">// true</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Generates a <code>copy</code> method to your class to create other instances starting from another one and keeping
+some arguments the same. E.g.: Create another instance keeping the <code>lastname</code> and changing <code>firstname</code>
+and <code>birthYear</code>:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// the result is: Person(Lacava,Michele,1972), my brother :)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p_3</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">firstname</span> <span class="k">=</span> <span class="s">&quot;Michele&quot;</span><span class="o">,</span> <span class="n">birthYear</span> <span class="k">=</span> <span class="mi">1972</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Probably, most importantly, since the compiler implements the <code>unapply</code> method, a case class
+supports pattern matching. This is especially important when you define an Algebraic Data Type (ADT). E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span>
+</span><span class='line'><span class="nc">case</span> <span class="k">class</span> <span class="nc">Value</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+</span><span class='line'><span class="k">case</span> <span class="k">object</span> <span class="nc">NoValue</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">v</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Value</span><span class="o">(</span><span class="mi">42</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">v_1</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">NoValue</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="n">logValue</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">value</span> <span class="k">match</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="nc">Value</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;We have a value here: $v&quot;</span><span class="o">)</span>
+</span><span class='line'>  <span class="k">case</span> <span class="nc">NoValue</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;I&#39;m sorry, no value&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="c1">// prints We have a value here: 42</span>
+</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v_1</span><span class="o">)</span> <span class="c1">// prints I&#39;m sorry, no value</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you probably already know, when your class has no argument you use a <code>case object</code>
+instead of a <code>case class</code> with an empty parameter list.</p>
+
+<p>Apart from being used in pattern matching the <code>unapply</code> method lets you <em>deconstruct</em> a case class to extract
+it&rsquo;s fields, both during pattern matching and as a simple expression to extract some of its fields. E.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="o">,</span> <span class="k">_</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=</span> <span class="n">p</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">println</span><span class="o">(</span><span class="n">lastname</span><span class="o">)</span> <span class="c1">// prints Lacava</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2><em>Not so common</em> knowledge about case classes</h2>
+
+<ul>
+<li>What if you need a function that, given your case class arguments as parameters, creates an instance of the class?
+Here&rsquo;s how you can do it by partially applying <code>apply</code> (no pun intended :)):</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">personCreator</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">apply</span> <span class="k">_</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// the result is: Person(Brown,John,1969)</span>
+</span><span class='line'><span class="n">personCreator</span><span class="o">(</span><span class="s">&quot;Brown&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="mi">1969</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>What if you want your function, from the previous point, to be curried? Enters the <code>curried</code> method:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">curriedPerson</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">String</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">curried</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">lacavaBuilder</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="n">curriedPerson</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">me</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(</span><span class="s">&quot;Alessandro&quot;</span><span class="o">)(</span><span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">myBrother</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(</span><span class="s">&quot;Michele&quot;</span><span class="o">)(</span><span class="mi">1972</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>What about obtaining a function that accepts a tuple whose arity is equal to the number of the case class
+arguments, and produces an instance of the class? Well, there&rsquo;s the <code>tupled</code> method for that:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">tupledPerson</span><span class="k">:</span> <span class="o">((</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="kt">Int</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">tupled</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">meAsTuple</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">meAsPersonAgain</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="n">tupledPerson</span><span class="o">(</span><span class="n">meAsTuple</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>You could also need a function that, given an instance of your class as input, produces an
+<code>Option[TupleN[A1, A2, ..., AN]]</code> as output, where <code>N</code> is the number of the case class arguments and
+<code>A1, A2, ..., AN</code> are their types. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">toOptionOfTuple</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=&gt;</span> <span class="nc">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">unapply</span> <span class="k">_</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">x</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="n">toOptionOfTuple</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="c1">// Some((Lacava,Alessandro,1976))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>For the most curious ones</h2>
+
+<p>Furthermore, since each case class extends the <code>Product</code> trait it inherits the following methods:</p>
+
+<ul>
+<li><code>def productArity: Int</code>, returns the size of this product. In this case it corresponds to the number of arguments in the
+case class. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">arity</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productArity</span> <span class="c1">// equals to 3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>def productElement(n: Int): Any</code>, returns the n-th element of this product, 0-based. In this case it corresponds to
+the n-th argument of the class. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">lastname</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productElement</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="c1">// Lacava</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p><code>def productIterator: Iterator[Any]</code>, returns an iterator over all the elements of this product which,
+in the case class context, they are its arguments.</p></li>
+<li><p><code>def productPrefix: String</code>, returns a string used in the <code>toString</code> method of the derived classes.
+In this case it&rsquo;s the name of the class. E.g.:</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">className</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productPrefix</span> <span class="c1">// the result is Person</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Final Notes</h2>
+
+<ul>
+<li><p>I used type declarations in many expressions just to make things clearer. Of course I could have left them out
+and let the type inferer do its job.</p></li>
+<li><p>Some <code>Product</code>&rsquo;s methods return <em>Any-based</em> types, namely <code>productElement</code> and <code>productIterator</code>. For example,
+<code>p.productElement(0)</code> returns the <code>lastname</code> but it is of type <code>Any</code> so if you need to use it as <code>String</code> you have to
+cast it, which is an operation you should strive to avoid as much as possible.</p></li>
+<li><p><code>Product</code> extends <code>Equals</code> so every case class also inherits the <code>canEqual</code> method but, of course,
+going into its details is not the scope of this post. Besides, you don&rsquo;t have to worry about it because it&rsquo;s
+used interally by the autogenerated <code>equals</code> method.</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
@@ -701,76 +968,6 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
 <p>or whatever you prefer, depending on the hardware you possess.</p>
 
 <p><strong>IMPORTANT NOTE: It is strongly recommended that you make a backup copy of your eclipse.ini file before editing it in any way.</strong></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Performance Differences Between IN and EXISTS]]></title>
-    <link href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/"/>
-    <updated>2008-06-04T15:33:24+02:00</updated>
-    <id>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists</id>
-    <content type="html"><![CDATA[<p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
-Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
-(see <a href="http://www.alessandrolacava.com/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
-
-<p>If you are sure that the field used to join the tables does not include <code>NULL</code> values then the <code>IN</code> operator &ldquo;generally&rdquo;
-performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
-</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span>
-</span><span class='line'><span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The previous query is processed more or less as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
-</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">cd_field</span> <span class="k">FROM</span> <span class="n">table_b</span><span class="p">)</span> <span class="n">b</span>
-</span><span class='line'><span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The subquery is evaluated and the duplicates removed from the result.
-Then it is joined to the outer table. Now lets analyze the same query using <code>NOT EXISTS</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span>
-</span><span class='line'><span class="k">FROM</span> <span class="n">table_a</span> <span class="n">a</span>
-</span><span class='line'><span class="k">WHERE</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span> <span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The previous query is processed more or less as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">FOR</span> <span class="n">x</span> <span class="k">IN</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">table_a</span> <span class="p">)</span> <span class="n">LOOP</span>
-</span><span class='line'>  <span class="n">IF</span> <span class="p">(</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">table_b</span> <span class="n">b</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">cd_field</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">cd_field</span> <span class="p">)</span> <span class="k">THEN</span>
-</span><span class='line'>    <span class="c1">--output the record</span>
-</span><span class='line'>  <span class="k">END</span> <span class="n">IF</span>
-</span><span class='line'><span class="k">END</span> <span class="n">LOOP</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This means that using <code>NOT EXISTS</code> always results in a full scan of the outer table whereas the query which uses <code>NOT IN</code>
-can exploit an index on table_a.cd_field. In general <code>NOT IN</code> performs better when the result of the subquery is small
-and there&rsquo;s an index on the field used by the join. On the other hand, <code>NOT EXISTS</code> is to prefer when the subquery has
-many rows, the outer query is relatively small and there&rsquo;s an index on the field used to join the two tables.
-In this latter case the cost of removing duplicates (<code>DISTINCT</code>) could be greater than the cost of the full scan of the outer table.</p>
-
-<p>Of course this is a very general guideline, you should always conduct some test using indexes and so on to figure out
-which method to use.</p>
 ]]></content>
   </entry>
   

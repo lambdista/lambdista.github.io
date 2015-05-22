@@ -9,8 +9,8 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="It is possible, using JavaScript, to call a function pertaining to the opener window, that is the window that, calling
-window.open, opened the &hellip;">
+  <meta name="description" content="A POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined
+by the EJB 2 framework. An &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,6 +98,97 @@ window.open, opened the &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/pojo-plain-old-java-object-the-simplerthe-better/">POJO (Plain Old Java Object): The simpler&#8230; The Better.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-08-21T17:31:02+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2006</span></span> <span class='time'>5:31 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A  POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined
+by the EJB 2 framework. An example of a POJO is a class composed by only:</p>
+
+<ol>
+<li>Properties, representing the object&rsquo;s state.</li>
+<li>Getter and setter methods for the properties.</li>
+<li>Business methods, representing behaviour.</li>
+</ol>
+
+
+<p>Some properties can represent associations with other POJOs. Here is an example of implementation of the
+<code>Person</code> entity using a POJO:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">//1. properties</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">String</span> <span class="n">secondName</span><span class="o">;</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">Address</span> <span class="n">address</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//2. getters and setters</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFirstName</span><span class="o">(</span><span class="n">String</span> <span class="n">firstName</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFirstName</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="c1">// ... the other getters and setters</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//3. business methods</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">computeAge</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="c1">//here the business logic to compute the person&#39;s age</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see the <code>address</code> property represents an association to another hypothetical   POJO.</p>
+
+<p>That&rsquo;s all! Code that handles database connections and so on shouldn&rsquo;t be contained within a POJO.</p>
+
+<p>There are many advantages in using POJOs. First of all they&rsquo;re simple. Second they&rsquo;re very suitable to
+represent domain models. Many tools, like <a href="http://www.hibernate.org">Hibernate</a>, work best with domain
+models implemented using POJOs.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -731,40 +822,9 @@ field separator of the <code>java.io.File</code> class.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/hello-world/">Hello World!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2006-04-14T00:32:24+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:32 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Welcome to my blog. This is my first post.
-About myself:
-My name is Alessandro Lacava and I am a software engineer. I love designing and developing software. So,
-as you may have guessed, my blog is going to mainly contain articles, techniques, tips &amp; tricks and
-much more about computer programming. Stay tuned.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/7">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -777,6 +837,10 @@ much more about computer programming. Stay tuned.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
+      </li>
     
       <li class="post">
         <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
@@ -792,10 +856,6 @@ much more about computer programming. Stay tuned.</p>
     
       <li class="post">
         <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a>
       </li>
     
   </ul>
