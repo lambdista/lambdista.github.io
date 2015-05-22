@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Commit a Single DML Statement In Oracle (PL/SQL) - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="Sometimes you might need to commit a single INSERT, UPDATE or DELETE statement and not the whole main transaction.
+In such a case you can use an &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.alessandrolacava.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Commit a Single DML Statement In Oracle (PL/SQL)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-05-24T14:52:20+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:52 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Sometimes you might need to commit a single <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statement and not the whole main transaction.
+In such a case you can use an <code>AUTONOMOUS TRANSACTION</code> which is a feature available since Oracle 8i.
+The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">PROCEDURE</span> <span class="n">p_insert</span>
+</span><span class='line'><span class="k">AS</span>
+</span><span class='line'><span class="n">PRAGMA</span> <span class="n">AUTONOMOUS_TRANSACTION</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">BEGIN</span> <span class="c1">-- Main transaction suspends here.</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">your_table</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">-- Autonomous transaction begins here.</span>
+</span><span class='line'><span class="k">COMMIT</span><span class="p">;</span> <span class="c1">-- Autonomous transaction ends here.</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">END</span><span class="p">;</span> <span class="c1">-- Main transaction resumes here.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After calling this proc from another transaction (main transaction) your_table will have another row with 1 as the
+value of its only column. If, after calling <code>p_insert</code>, you call <code>ROLLBACK</code> in your main transaction you will
+have that the changes made within <code>p_insert</code> will be permanent. However the changes made in your main transaction will be rollbacked.</p>
+
+<p>A tipical scenario where you need an autonomous transaction is a table used to log errors and/or other info.
+For example if something goes wrong you might want to log the reason into a table before rollbacking the main transaction.
+In such a case you would write a procedure using the pragma <code>AUTONOMOUS_TRANSACTION</code> and call this proc before rollbacking.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-05-24T14:52:20+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>2:52 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/oracle/'>oracle</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/" data-via="lambdista" data-counturl="http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/two-useful-windows-shortcuts/" title="Previous Post: Useful Windows shortcuts">&laquo; Useful Windows shortcuts</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/" title="Next Post: How to exclude subversion hidden directories (.svn) using Ant">How to exclude subversion hidden directories (.svn) using Ant &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+	    skip_repos: [ "lambdista.github.io" ],
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lambdista';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/';
+        var disqus_url = 'http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

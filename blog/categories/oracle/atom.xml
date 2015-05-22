@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Oracle | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/oracle/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Performance Differences Between IN and EXISTS]]></title>
+    <link href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/"/>
+    <updated>2008-06-04T15:33:24+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists</id>
+    <content type="html"><![CDATA[<p>Very often I hear people wondering if it&rsquo;s better the <code>EXISTS</code> or the <code>IN</code> operator.
+Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
+(see <a href="/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
+
+<p>If you are sure that the field used to join the tables does not include <code>NULL</code> values then the <code>IN</code> operator &ldquo;generally&rdquo;
+performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p>
+
+<pre><code class="sql">SELECT *
+FROM table_a a
+WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b);
+</code></pre>
+
+<p>The previous query is processed more or less as follows:</p>
+
+<pre><code class="sql">SELECT *
+FROM table_a a, (SELECT DISTINCT cd_field FROM table_b) b
+WHERE a.cd_field != b.cd_field;
+</code></pre>
+
+<p>The subquery is evaluated and the duplicates removed from the result.
+Then it is joined to the outer table. Now lets analyze the same query using <code>NOT EXISTS</code>:</p>
+
+<pre><code class="sql">SELECT *
+FROM table_a a
+WHERE NOT EXISTS (SELECT 1 FROM table_b b WHERE a.cd_field = b.cd_field);
+</code></pre>
+
+<p>The previous query is processed more or less as follows:</p>
+
+<pre><code class="sql   ">FOR x IN ( SELECT * FROM table_a ) LOOP
+  IF ( NOT EXISTS ( SELECT 1 FROM table_b b WHERE x.cd_field = b.cd_field ) THEN
+    --output the record
+  END IF
+END LOOP
+</code></pre>
+
+<p>This means that using <code>NOT EXISTS</code> always results in a full scan of the outer table whereas the query which uses <code>NOT IN</code>
+can exploit an index on table_a.cd_field. In general <code>NOT IN</code> performs better when the result of the subquery is small
+and there&rsquo;s an index on the field used by the join. On the other hand, <code>NOT EXISTS</code> is to prefer when the subquery has
+many rows, the outer query is relatively small and there&rsquo;s an index on the field used to join the two tables.
+In this latter case the cost of removing duplicates (<code>DISTINCT</code>) could be greater than the cost of the full scan of the outer table.</p>
+
+<p>Of course this is a very general guideline, you should always conduct some test using indexes and so on to figure out
+which method to use.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NOT IN vs. NOT EXISTS When NULL Values Are Involved]]></title>
+    <link href="http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/"/>
+    <updated>2008-06-04T15:24:09+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved</id>
+    <content type="html"><![CDATA[<p><code>NOT IN</code> does not behave as you would expect when <code>NULL</code> values are involved.
+Suppose you have the following tables:</p>
+
+<table>
+  <tr >
+    <td style="color: #696969">CD_FIELD</td>
+    <td style="color: #696969">DS_FIELD</td>
+  </tr>
+  <tr >
+    <td>1</td>
+    <td>ALPHA</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>BETA</td>
+  </tr>
+</table>
+
+
+<p><strong>TABLE_A</strong></p>
+
+<table>
+  <tr >
+    <td style="color: #696969">CD_FIELD</td>
+    <td style="color: #696969">DS_FIELD</td>
+  </tr>
+  <tr >
+    <td>1</td>
+    <td>GAMMA</td>
+  </tr>
+  <tr>
+    <td>NULL</td>
+    <td>DELTA</td>
+  </tr>
+</table>
+
+
+<p><strong>TABLE_B</strong></p>
+
+<p>Now try the following query:</p>
+
+<pre><code class="sql  ">SELECT *
+FROM table_a a
+WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b);
+</code></pre>
+
+<p>Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field
+which is not present in table_b.cd_field.</p>
+
+<p>I think this is because <code>NOT IN</code> internally uses the inequality operator.
+You should never use the equality or inequality operators with <code>NULL</code>, but <code>IS NULL</code> and <code>IS NOT NULL</code>, respectively.
+For this reason, in SQL, <code>NULL</code> is not equal to <code>NULL</code>.
+If you don&rsquo;t believe me then try the following query:</p>
+
+<pre><code class="sql   ">SELECT 'test' c
+FROM dual
+WHERE NULL = NULL;
+</code></pre>
+
+<p>It returns 0 rows.</p>
+
+<p>So how can you work this out? Enter the <code>EXISTS</code> (and <code>NOT EXISTS</code>) operator.</p>
+
+<p>Try the following query:</p>
+
+<pre><code class="sql    ">SELECT *
+FROM table_a a
+WHERE NOT EXISTS (SELECT 1 FROM table_b b WHERE a.cd_field = b.cd_field);
+</code></pre>
+
+<p>The previous query returns 1 row, that is what you would expect since there is a row in table_a with cd_field = 2
+which is not present in table_b.cd_field.</p>
+
+<p>From now on beware of using <code>NOT IN</code> and <code>IN</code> when <code>NULL</code> values are involved.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Compute a Timestamp In Oracle (PL SQL)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/"/>
+    <updated>2007-10-09T11:41:18+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql</id>
+    <content type="html"><![CDATA[<p>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on
+January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the
+number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.</p>
+
+<pre><code class="sql  ">SELECT (to_date('09-10-2007', 'DD-MM-YYYY') -
+to_date('01-01-1970', 'DD-MM-YYYY')) * 60 * 60 * 24
+FROM dual
+</code></pre>
+
+<p>The result of the preceding query should be 1191888000.</p>
+
+<p><strong>How it works:</strong></p>
+
+<p>The subtraction between two dates returns the number of days between them. Multiplying this number by
+60 * 60 * 24&ndash;the number of seconds in one day&ndash;you obtain the number of seconds between those dates.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Create a Copy/backup of a Table In Oracle]]></title>
+    <link href="http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle/"/>
+    <updated>2007-07-04T10:16:50+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle</id>
+    <content type="html"><![CDATA[<p>You can create a backup of a table (structure and data) in Oracle by using the following syntax:</p>
+
+<pre><code class="sql">CREATE TABLE customers_backup AS (SELECT * FROM customers)
+</code></pre>
+
+<p>The previous example creates the <code>customers_backup</code> table which mirrors the structure and data of the <code>customers</code> table.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Commit a Single DML Statement In Oracle (PL/SQL)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/"/>
+    <updated>2007-05-24T14:52:20+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql</id>
+    <content type="html"><![CDATA[<p>Sometimes you might need to commit a single <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statement and not the whole main transaction.
+In such a case you can use an <code>AUTONOMOUS TRANSACTION</code> which is a feature available since Oracle 8i.
+The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p>
+
+<pre><code class="sql  ">CREATE OR REPLACE PROCEDURE p_insert
+AS
+PRAGMA AUTONOMOUS_TRANSACTION;
+
+BEGIN -- Main transaction suspends here.
+
+INSERT INTO your_table VALUES (1); -- Autonomous transaction begins here.
+COMMIT; -- Autonomous transaction ends here.
+
+END; -- Main transaction resumes here.
+</code></pre>
+
+<p>After calling this proc from another transaction (main transaction) your_table will have another row with 1 as the
+value of its only column. If, after calling <code>p_insert</code>, you call <code>ROLLBACK</code> in your main transaction you will
+have that the changes made within <code>p_insert</code> will be permanent. However the changes made in your main transaction will be rollbacked.</p>
+
+<p>A tipical scenario where you need an autonomous transaction is a table used to log errors and/or other info.
+For example if something goes wrong you might want to log the reason into a table before rollbacking the main transaction.
+In such a case you would write a procedure using the pragma <code>AUTONOMOUS_TRANSACTION</code> and call this proc before rollbacking.</p>
+]]></content>
+  </entry>
+  
+</feed>

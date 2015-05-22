@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Dennis Ritchie | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/dennis-ritchie/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Goodbye Dennis Ritchie (Dmr)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
+    <updated>2011-10-13T14:56:36+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
+<a href="http://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)</a>
+This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language     and the key developer of the Unix operating system.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/The_C_Programming_Language_%28book%29">The C programming language</a> is the book he wrote along with <a href="http://en.wikipedia.org/wiki/Brian_Kernighan">Brian Kernighan</a>.   In my humble opinion, it is one of the best book ever written about computer programming.</p>
+
+<p>Without further ado, I just want to say goodbye to one of the people I respect most when it comes to computer science. I have to thank Mr. Ritchie if I can read declarations such as (The C programming Language, chapter 5):
+<code>c
+char (*(*x())[])()
+</code>
+x is a function returning a pointer to an array of pointers to functions returning char. :-)
+I think he would have said goodbye this way:
+<code>c
+printf("goodbye, world\n");
+</code>
+R.I.P. Dennis Ritchie.</p>
+]]></content>
+  </entry>
+  
+</feed>

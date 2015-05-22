@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Force One or More Metacharacters to Be Treated as Ordinary Characters In a Java Regular Expression (RegEx) - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.alessandrolacava.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Force One or More Metacharacters to Be Treated as Ordinary Characters In a Java Regular Expression (RegEx)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-07-12T15:24:03+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>3:24 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters.  As a reminder the metacharacters in a Java RegEx are:</p>
+
+<p><code>([{^$|)?*+.</code></p>
+
+<p>If you want to treat them as ordinary characters you have two options:</p>
+
+<ol>
+<li>Escape the metacharacter with a backslash,</li>
+<li>Enclose the whole string that contains metacharacters within <code>Q</code> and <code>E</code></li>
+</ol>
+
+
+<p><code>Q</code> means: &ldquo;quotes all characters until E&rdquo;, while <code>E</code> ends the quotes.</p>
+
+<p>The following example will hopefully to clarify the subject:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">test</span> <span class="o">=</span> <span class="s">&quot;I want to replace the . with the ,&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">replaced</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&quot;.&quot;</span><span class="o">,</span> <span class="s">&quot;,&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">replaced</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What do you expect the above method will do? Do you think the following string will be displayed?</p>
+
+<p><code>I want to replace the , with the ,</code></p>
+
+<p>If yes then you might be surprised to find out that what you really get is instead:</p>
+
+<p><code>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,</code></p>
+
+<p>The problem is that the <code>replaceAll</code> method of the <code>String</code> class accept a RegExp as its first parameter.
+Since <code>.</code> means any character, so writing <code>test.replaceAll(".", ",");</code> is translated in:
+&ldquo;Replace ANY character of the <code>test</code> string with a comma&rdquo;. As I said previously you can fix that in two ways.
+Either you escape the . with a  or enclose it within <code>Q</code> and <code>E</code>. What I didn&rsquo;t say is that, since the  is a
+metacharacter itself, you need to escape it too. :-)</p>
+
+<p>Translating this in Java you have:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">test</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&quot;\.&quot;</span><span class="o">,</span> <span class="s">&quot;,&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">test</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&quot;\Q.\E&quot;</span><span class="o">,</span> <span class="s">&quot;,&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I prefer to use the first method when the metacharacter is just one. However, when I have more metacharacters or
+I don&rsquo;t know at compile time what my string is going to be, I use the second method.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">admin</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2006-07-12T15:24:03+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>3:24 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/programming/'>programming</a>, <a class='category' href='/blog/categories/regexp/'>regexp</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/" data-via="lambdista" data-counturl="http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/" title="Previous Post: Creating an instance of the object used to make AJAX calls">&laquo; Creating an instance of the object used to make AJAX calls</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/creating-class-definition-in-javascript/" title="Next Post: Creating a Class definition in JavaScript">Creating a Class definition in JavaScript &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+	    skip_repos: [ "lambdista.github.io" ],
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lambdista';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/';
+        var disqus_url = 'http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

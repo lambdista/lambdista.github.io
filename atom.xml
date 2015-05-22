@@ -1,126 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Alessandro Lacava</title>
-  <meta name="author" content="Alessandro Lacava">
-
-  
-  <meta name="description" content="For this post I&rsquo;ll consider the following simple case class unless otherwise specified: 1
-case class Person(lastname: String, firstname: String &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://www.alessandrolacava.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
-  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="manifest" href="/images/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-348808-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Alessandro Lacava</a></h1>
-  
-    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:www.alessandrolacava.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/articles">Articles</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
     
-      <h1 class="entry-title"><a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a></h1>
-    
-    
-      <p class="meta">
-        
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-
-
-
-<time class='entry-date' datetime='2015-05-22T08:12:07+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>8:12 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:</p>
+  
+  <entry>
+    <title type="html"><![CDATA[Scala Case Classes In Depth]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/"/>
+    <updated>2015-05-22T08:12:07+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth</id>
+    <content type="html"><![CDATA[<p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">birthYear</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
@@ -379,35 +277,15 @@ going into its details is not the scope of this post. Besides, you don&rsquo;t h
 used interally by the autogenerated <code>equals</code> method.</p></li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-03-30T14:59:24+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:59 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>One of the advantages of using a statically typed language is that you can use the type system to enforce
+  <entry>
+    <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-self-recursive-types/"/>
+    <updated>2015-03-30T14:59:24+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-self-recursive-types</id>
+    <content type="html"><![CDATA[<p>One of the advantages of using a statically typed language is that you can use the type system to enforce
 some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
 that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
 
@@ -555,95 +433,35 @@ always a good thing in my humble opinion.</p></li>
 
 <p>Are there alternatives to this type of problems? Yes indeed, <em>Type Classes</em>, which is by the way the option I prefer.
 But this is another story for a future post.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-03-26T09:41:48+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:41 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My introductory article on developing an internal DSL in Scala for currency-related operations
+  <entry>
+    <title type="html"><![CDATA[Introduction to Internal DSLs In Scala]]></title>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala/"/>
+    <updated>2015-03-26T09:41:48+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on developing an internal DSL in Scala for currency-related operations
 on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-28T09:29:30+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:29 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My introductory article on Functional Programming in Scala
+  <entry>
+    <title type="html"><![CDATA[Introduction to Functional Programming In Scala]]></title>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala/"/>
+    <updated>2015-02-28T09:29:30+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on Functional Programming in Scala
 on <a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">DevX</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-20T15:09:06+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:09 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>A simple internal DSL in Scala for money-related operations</h3>
+  <entry>
+    <title type="html"><![CDATA[Scala DSL for Currency-related Operations]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/"/>
+    <updated>2015-02-20T15:09:06+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations</id>
+    <content type="html"><![CDATA[<h3>A simple internal DSL in Scala for money-related operations</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
 
@@ -752,35 +570,15 @@ in order to use the DSL. The operations shown in the previous code are only a fe
 Have a look at the <code>Money</code> class for a complete coverage.</p>
 
 <p>You can find the source code here: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-06-20T16:03:33+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:03 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
+  <entry>
+    <title type="html"><![CDATA[Try-Success-Failure API for Java 8]]></title>
+    <link href="http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/"/>
+    <updated>2014-06-20T16:03:33+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java</id>
+    <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
 
 <p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
 
@@ -860,265 +658,317 @@ printed out.</p>
 <p>Any criticism/suggestion is more than welcome!</p>
 
 <p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/">Combine JavaScript and a Template Engine for Flexible Web Apps</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:34:17+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:34 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
+  <entry>
+    <title type="html"><![CDATA[Combine JavaScript and a Template Engine for Flexible Web Apps]]></title>
+    <link href="http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/"/>
+    <updated>2011-10-26T17:34:17+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps</id>
+    <content type="html"><![CDATA[<h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
 
 <p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>
 
 <p>Go to <a href="http://www.developer.com/open/article.php/3864011/Combine-JavaScript-and-a-Template-Engine-for-Flexible-Web-Apps.htm">developer.com</a> to read the rest of the article: <strong>Combine JavaScript and a Template Engine for Flexible Web Apps</strong>.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/script-aculo-us-controls-do-your-web-users-a-favor/">Script.aculo.us Controls: Do Your Web Users a Favor</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:32:32+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:32 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
+  <entry>
+    <title type="html"><![CDATA[Script.aculo.us Controls: Do Your Web Users a Favor]]></title>
+    <link href="http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor/"/>
+    <updated>2011-10-26T17:32:32+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor</id>
+    <content type="html"><![CDATA[<h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
 
 <p>In a previous DevX article, I wrote about the JavaScript framework Prototype, which aims to ease the development of dynamic web applications. That article ended with just a few words about Script.aculo.us, which is a fantastic UI library based on Prototype. This article gives Script.aculo.us its due by examining the web controls it provides: autocompleters, sliders, and in-place editors.</p>
 
 <p>Script.aculo.us is a pretty big library, so no single article can cover it completely. However, the knowledge you will gain will enable you to leverage the power of Script.aculo.us web controls to improve the end-user experience.</p>
 
 <p>Go to <a href="http://www.devx.com/webdev/Article/37574">DevX</a> to read the rest of the article: <strong>Script.aculo.us Controls: Do Your Web Users a Favor</strong>.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/will-your-next-web-application-be-a-google-gadget/">Will Your Next Web Application Be a Google Gadget?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:31:04+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:31 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
+  <entry>
+    <title type="html"><![CDATA[Will Your Next Web Application Be a Google Gadget?]]></title>
+    <link href="http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget/"/>
+    <updated>2011-10-26T17:31:04+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget</id>
+    <content type="html"><![CDATA[<h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
 
 <p>Since AJAX first appeared, developer interest in JavaScript has increased exponentially—and toolsets for building functionality in JavaScript have burgeoned as well. One of the latest tools for JavaScript-related development is Google Gadgets. Many web sites already provide gadgets built with the Google tools, and you can, too. This article shows you how to develop a Google Gadget that fetches DevX RSS feeds and displays them to the user.</p>
 
 <p>Go to <a href="http://www.devx.com/webdev/Article/35007">DevX</a> to read the rest of the article: <strong>Will Your Next Web Application Be a Google Gadget?</strong>.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/the-productivity-perks-behind-prototypes-popularity-2/">The Productivity Perks Behind Prototype&#8217;s Popularity</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:29:31+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:29 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in an object-oriented way.</h3>
+  <entry>
+    <title type="html"><![CDATA[The Productivity Perks Behind Prototype's Popularity]]></title>
+    <link href="http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2/"/>
+    <updated>2011-10-26T17:29:31+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2</id>
+    <content type="html"><![CDATA[<h3>Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in an object-oriented way.</h3>
 
 <p>The Prototype home page claims that &ldquo;Prototype is a JavaScript framework that aims to ease the development of dynamic Web applications.&rdquo; By using many object-oriented paradigms such as class-driven development and inheritance to enable JavaScript application development, Prototype completely accomplishes its aim. In fact, this framework contains a lot of useful functionalities, which you cannot help but apply to every application you develop once you&rsquo;ve started using them.</p>
 
 <p>Prototype&rsquo;s main claim to fame is its rich AJAX (Asynchronous JavaScript and XML) library, which simplifies the now popular Web development technique for making non-blocking calls to the server through JavaScript. (It topped the recent Ajaxian.com 2006 Survey as the most popular AJAX framework.) Of course, everything you can do with Prototype you also can do using plain JavaScript—upon which Prototype is built. But why would you want to complicate your life? For example, which would you rather type to accomplish the same task: document.getElementById(&ldquo;myElement&rdquo;) or $(&ldquo;myElement&rdquo;)? If you answered $(&ldquo;myElement&rdquo;), then read the remainder of this article for an in-depth discussion of some useful Prototype functions—$ is just one.</p>
 
 <p>Go to <a href="http://www.devx.com/AJAXRoundup/Article/33174">DevX</a> to read the rest of the article: <strong>The Productivity Perks Behind Prototype&rsquo;s Popularity</strong>.</p>
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Speed Up Your AJAX-based Apps With JSON]]></title>
+    <link href="http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json/"/>
+    <updated>2011-10-26T16:54:43+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json</id>
+    <content type="html"><![CDATA[<h3>Find out how to improve your Web application performance by leveraging AJAX and JSON. In particular, you&rsquo;ll see the advantages of using JSON over XML as a lightweight JavaScript data-interchange format.</h3>
+
+<p>JSON stands for JavaScript Object Notation and is a lightweight data-interchange format. Because it is text-based it is easy for humans to read and write, and it has a regular syntax that&rsquo;s easy to parse programmatically. JSON is basically a subset of JavaScript and, as you&rsquo;ll see, is even easier to parse than XML.</p>
+
+<p>Go to <a href="http://www.devx.com/webdev/Article/32651">DevX</a> to read the rest of the article: <strong>Speed Up Your AJAX-based Apps with JSON</strong>.</p>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Build Brilliant Client/Server Apps With J2ME, PHP, and MySQL]]></title>
+    <link href="http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
+    <updated>2011-10-26T16:53:41+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
+    <content type="html"><![CDATA[<h3>In this article you&rsquo;ll see how to make the three technologies work together by developing a simple and useful application that lets you update a multi-user blog and download the latest posts from it.</h3>
 
+<p>Write once, run anywhere. This Java motto seems to hold true even for mobile devices. Indeed, since it was born J2ME has had an ever-increasing impact on mobile development. Some may argue that J2ME is not as portable as other Java technologies, but even so, the result obtained on different mobile devices is, in most cases, still acceptable.</p>
 
-    </article>
+<p>Go to <a href="http://www.devx.com/Java/Article/32069">DevX</a> to read the rest of the article: <strong>Build Brilliant Client/Server Apps with J2ME, PHP, and MySQL</strong>.</p>
+]]></content>
+  </entry>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/posts/2">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
+  <entry>
+    <title type="html"><![CDATA[Producing Professional MSDN-style Documentation With .NET and NDoc]]></title>
+    <link href="http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/"/>
+    <updated>2011-10-26T16:52:33+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc</id>
+    <content type="html"><![CDATA[<h3>Tired of trying to keep your documentation synchronized with the source? You can help alleviate the problem by creating professional documentation directly from the built-in XML documentation features of the C# language using the brilliant NDoc open-source application.</h3>
+
+<p>The .NET framework provides a nice way to insert XML documentation tags inside C# source code. These tags can then be extracted to an XML file, and using NDoc, transformed into fully-functional MSDN-style documentation.</p>
+
+<p>Go to <a href="http://www.devx.com/dotnet/Article/29646">DevX</a> to read the rest of the article: <strong>Producing Professional MSDN-style Documentation with .NET and NDoc</strong>.</p>
+]]></content>
+  </entry>
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
-      </li>
-    
-  </ul>
-</section>
+  <entry>
+    <title type="html"><![CDATA[Obtaining Wireless News With J2ME and PHP]]></title>
+    <link href="http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php/"/>
+    <updated>2011-10-26T16:49:06+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php</id>
+    <content type="html"><![CDATA[<h3>J2ME and PHP are both powerful technologies used to develop applications for mobile devices and Web applications, respectively. In this article, you&rsquo;ll see how to make them work together by developing a simple and useful application that retrieves the latest news from the Web and displays that on a mobile device.</h3>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
+<p>The Java 2 Platform, Micro Edition (J2ME) is targeted at cell phones, smart cards, pagers, and other consumer devices. J2ME technology consists of a virtual machine and a set of APIs suitable for tailored runtime environments for these devices. PHP, on the other hand, is a widely used server-based language to build Web applications. But these two radically different technologies work very well together. In this article you&rsquo;ll see how they can interact via HTTP (Hyper Text Transfer Protocol). Of course, this is not intended to be a thorough explanation of how HTTP works—you only need to know that HTTP is a request/response protocol. That simply means that the client application performs a request and the server application returns a response.</p>
+
+<p>Go to <a href="http://www.devx.com/wireless/Article/28404">DevX</a> to read the rest of the article: <strong>Obtaining Wireless News with J2ME and PHP</strong>.</p>
+]]></content>
+  </entry>
   
-  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  <entry>
+    <title type="html"><![CDATA[Keeping Secrets Secret: Steganography With .NET]]></title>
+    <link href="http://www.alessandrolacava.com/blog/keeping-secrets-secret-steganography-with-net/"/>
+    <updated>2011-10-26T16:47:19+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/keeping-secrets-secret-steganography-with-net</id>
+    <content type="html"><![CDATA[<h3>Steganography is a way to protect information by hiding it &ldquo;in plain sight&rdquo; within other types of digital content. Steganography complements rather than replaces encryption by adding another layer of security—it&rsquo;s much more difficult to decrypt a message if you don&rsquo;t know that there is a message. See how to leverage .NET to create steganographic techniques that hide encrypted information inside common digital data files.</h3>
+
+<p>Steganography, literally &ldquo;hidden writing,&rdquo; is nowadays most often associated with embedding data in some form of electronic media. Data is hidden by adding or altering insignificant bits of information of a file. For example, an algorithm designed to embed a text message might slightly alter information describing the RGB composition of a pixel for an image file.</p>
+
+<p>Go to <a href="http://www.devx.com/dotnet/Article/22667">DevX</a> to read the rest of the article: <strong>Keeping Secrets Secret: Steganography with .NET</strong>.</p>
+]]></content>
+  </entry>
   
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
+  <entry>
+    <title type="html"><![CDATA[Goodbye Dennis Ritchie (Dmr)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/"/>
+    <updated>2011-10-13T14:56:36+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://www.alessandrolacava.com/images/dennis-ritchie.jpg" title="Dennis MacAlistair Ritchie (dmr)" >
+<a href="http://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)</a>
+This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language     and the key developer of the Unix operating system.</p>
 
-        github.showRepos({
-            user: 'lambdista',
-            count: 0,
-            skip_forks: true,
-	    skip_repos: [ "lambdista.github.io" ],
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
+<p><a href="http://en.wikipedia.org/wiki/The_C_Programming_Language_%28book%29">The C programming language</a> is the book he wrote along with <a href="http://en.wikipedia.org/wiki/Brian_Kernighan">Brian Kernighan</a>.   In my humble opinion, it is one of the best book ever written about computer programming.</p>
+
+<p>Without further ado, I just want to say goodbye to one of the people I respect most when it comes to computer science. I have to thank Mr. Ritchie if I can read declarations such as (The C programming Language, chapter 5):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">char</span> <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">())[])()</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>x is a function returning a pointer to an array of pointers to functions returning char. :-)
+I think he would have said goodbye this way:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;goodbye, world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-
+<p>R.I.P. Dennis Ritchie.</p>
+]]></content>
+  </entry>
   
-</aside>
+  <entry>
+    <title type="html"><![CDATA[Undo Close Tab In Eclipse]]></title>
+    <link href="http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/"/>
+    <updated>2009-03-26T10:33:59+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse</id>
+    <content type="html"><![CDATA[<p>I don&rsquo;t know about you, but I love the Firefox&rsquo;s <strong>undo-close-tab</strong> feature (Ctrl+Shift+T). If you use <strong>Eclipse</strong> you might be glad to know you can undo the close-tab action in Eclipse as well. You can do that both using your mouse by clicking on the yellow left arrow you can see in the Eclipse toolbar and through the keybord using the Alt+Left Arrow key combination.</p>
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Alessandro Lacava -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
+<p>I hope this helps.</p>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Object Not Found | EasyPHP | MySQL | phpMyAdmin]]></title>
+    <link href="http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/"/>
+    <updated>2009-01-30T10:46:05+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin</id>
+    <content type="html"><![CDATA[<p>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:</p>
 
-<script type="text/javascript">
-      var disqus_shortname = 'lambdista';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+<p><strong>Object not found!</strong></p>
 
+<p><strong>The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.</strong></p>
 
+<p>This might be due to the fact that it tries the following URL:</p>
 
+<p><strong><code>http://127.0.0.1/mysql/</code></strong></p>
 
+<p>Try this one instead:</p>
 
+<p><strong><code>http://127.0.0.1/home/mysql/</code></strong></p>
 
+<p>If it works then you can work it out by adding the following line to the httpd.conf file of Apache (you can find it under the %EASYPHP_HOME%/apache/conf path, where %EASYPHP_HOME% is the home directory of your EasyPHP installation). Open the file with a text editor and look up the following string: <strong>Alias /home/mysql</strong></p>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+<p>You should find something similar to the following line:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">Alias</span> <span class="sx">/home/mysql</span> <span class="s2">&quot;C:/Program Files/EasyPHP 3.0/phpmyadmin&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>Just add, to the next line, the following string:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">Alias</span> <span class="sx">/mysql</span> <span class="s2">&quot;C:/Program Files/EasyPHP 3.0/phpmyadmin&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>Restart EasyPHP. Now try to open <a href="http://127.0.0.1/mysql/.">http://127.0.0.1/mysql/.</a> It should work.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java Split() of String | Multiple Whitespace Characters]]></title>
+    <link href="http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/"/>
+    <updated>2008-12-03T11:47:02+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters</id>
+    <content type="html"><![CDATA[<p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
+in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
+be careful when you want to split a string using the whitespace character as a delimiter. Consider the
+following snippet of code:</p>
 
-</body>
-</html>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Testing split using two  whitespace characters&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">token</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What&rsquo;s the output produced by the previous code? If you think it is the following one you&rsquo;re wrong:</p>
+
+<ul>
+<li>-Testing-</li>
+<li>-split-</li>
+<li>-using-</li>
+<li>-two-</li>
+<li>-whitespace-</li>
+<li>-characters-</li>
+</ul>
+
+
+<p>The actual output is instead this one:</p>
+
+<ul>
+<li>-Testing-</li>
+<li>-split-</li>
+<li>-using-</li>
+<li>-two-</li>
+<li>&ndash;</li>
+<li>-whitespace-</li>
+<li>-characters-</li>
+</ul>
+
+
+<p>Where in the hell did that empty string come out from? It comes out from the two whitespace characters that
+are between the word <strong>two</strong> and <strong>whitespace</strong> of the <strong>str</strong> string. If this is what you want OK. However,
+most of the time, you will want to discard that empty string from your resulting string array. You can obtain this
+result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previuos code becomes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Testing split using two  whitespace characters&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s+&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">token</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OutOfMemoryError In Eclipse | Java Virtual Machine (JVM)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"/>
+    <updated>2008-07-22T10:53:07+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm</id>
+    <content type="html"><![CDATA[<h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
+
+<p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
+
+<ol>
+<li>By editing your <strong>eclipse.ini</strong> file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones:</li>
+</ol>
+
+
+<p><strong>-Xms40m</strong>
+<strong> -Xmx512m</strong></p>
+
+<p>You might want to change them depending on your hardware. For example I changed them as follows:</p>
+
+<p><strong>-Xms256m</strong>
+<strong>-Xmx1024m</strong></p>
+
+<p>It means: &ldquo;start with an initial heap size of 256 MB and grow to a maximum of 1024MB, that is 1GB.&rdquo;</p>
+
+<ol>
+<li>By editing the <strong>Run Configurations in Eclipse</strong>. To do this, right-click on the class you want to run (the one with the main method) and then select:</li>
+</ol>
+
+
+<p><strong>Run As -> Run Configurations</strong></p>
+
+<p>Click on the <strong>Arguments</strong> tab. In the VM Arguments box type:</p>
+
+<p><strong>-Xms256m -Xmx1024m</strong></p>
+
+<p>or whatever you prefer, depending on the hardware you possess.</p>
+
+<p><strong>IMPORTANT NOTE: It is strongly recommended that you make a backup copy of your eclipse.ini file before editing it in any way.</strong></p>
+]]></content>
+  </entry>
+  
+</feed>

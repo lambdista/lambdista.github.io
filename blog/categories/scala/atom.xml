@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Scala | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/scala/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Scala Case Classes In Depth]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/"/>
+    <updated>2015-05-22T08:12:07+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth</id>
+    <content type="html"><![CDATA[<p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:
+<code>scala
+case class Person(lastname: String, firstname: String, birthYear: Int)
+</code></p>
+
+<h2>Common knowledge about case classes</h2>
+
+<p>When you declare a case class the Scala compiler does the following for you:</p>
+
+<ul>
+<li>Creates a class and its companion object.</li>
+<li>Implements the <code>apply</code> method that you can use as a factory. This lets you create
+instances of the class without the <code>new</code> keyword. E.g.:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Lacava</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Alessandro</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="mi">1976</span><span class="o">)&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;//</span> <span class="n">instead</span> <span class="k">if</span> <span class="n">the</span> <span class="n">slightly</span> <span class="n">more</span> <span class="n">verbose</span><span class="k">:</span>
+</span><span class='line'><span class="kt">val</span> <span class="kt">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Lacava</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Alessandro</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="mi">1976</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><p>Prefixes all arguments, in the parameter list, with <code>val</code>. This means the class is immutable, hence
+you get the accessors but no mutators. E.g.:
+<code>scala
+val lastname = p.lastname
+// the following won't compile:
+p.lastname = "Brown"
+</code></p></li>
+<li><p>Adds <em>natural</em> implementations of <code>hashCode</code>, <code>equals</code> and <code>toString</code>. Since <code>==</code> in Scala always
+delegates to equals, this means that case class instances are always compared structurally. E.g.:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p_1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Brown</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">John</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="mi">1969</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p_2</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Lacava</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Alessandro</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="mi">1976</span><span class="o">)&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">p</span> <span class="o">==</span> <span class="n">p_1</span> <span class="c1">// false</span>
+</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_2</span> <span class="c1">// true</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><p>Generates a <code>copy</code> method to your class to create other instances starting from another one and keeping
+some arguments the same. E.g.: Create another instance keeping the <code>lastname</code> and changing <code>firstname</code>
+and <code>birthYear</code>:
+<code>scala
+// the result is: Person(Lacava,Michele,1972), my brother :)
+val p_3 = p.copy(firstname = "Michele", birthYear = 1972)
+</code></p></li>
+<li><p>Probably, most importantly, since the compiler implements the <code>unapply</code> method, a case class
+supports pattern matching. This is especially important when you define an Algebraic Data Type (ADT). E.g.:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span>
+</span><span class='line'><span class="nc">case</span> <span class="k">class</span> <span class="nc">Value</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;value:%20T&quot;</span><span class="o">&gt;</span><span class="n">T</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+</span><span class='line'><span class="k">case</span> <span class="k">object</span> <span class="nc">NoValue</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">v</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Value</span><span class="o">(</span><span class="mi">42</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">v_1</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">NoValue</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">logValue</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;value:%20Maybe[T]&quot;</span><span class="o">&gt;</span><span class="n">T</span><span class="o">&lt;/</span><span class="n">a</span><span class="k">&gt;:</span> <span class="nc">Unit</span> <span class="k">=</span> <span class="n">value</span> <span class="k">match</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="nc">Value</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;We have a value here: $v&quot;</span><span class="o">)</span>
+</span><span class='line'>  <span class="k">case</span> <span class="nc">NoValue</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">I</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="o">;</span><span class="n">m</span> <span class="n">sorry</span><span class="o">,</span> <span class="n">no</span> <span class="n">value</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;)</span>
+</span><span class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">logValue</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="c1">// prints We have a value here: 42</span>
+</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v_1</span><span class="o">)</span> <span class="c1">// prints I&amp;rsquo;m sorry, no value</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>As you probably already know, when your class has no argument you use a <code>case object</code>
+instead of a <code>case class</code> with an empty parameter list.</p>
+
+<p>Apart from being used in pattern matching the <code>unapply</code> method lets you <em>deconstruct</em> a case class to extract
+it&rsquo;s fields, both during pattern matching and as a simple expression to extract some of its fields. E.g.:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="o">,</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;,</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;)</span> <span class="k">=</span> <span class="n">p</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">println</span><span class="o">(</span><span class="n">lastname</span><span class="o">)</span> <span class="c1">// prints Lacava</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h2><em>Not so common</em> knowledge about case classes</h2>
+
+<ul>
+<li>What if you need a function that, given your case class arguments as parameters, creates an instance of the class?
+Here&rsquo;s how you can do it by partially applying <code>apply</code> (no pun intended :)):
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">personCreator</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">apply</span> <span class="k">_</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;//</span> <span class="n">the</span> <span class="n">result</span> <span class="n">is</span><span class="k">:</span> <span class="kt">Person</span><span class="o">(</span><span class="kt">Brown</span><span class="o">,</span><span class="kt">John</span><span class="o">,</span><span class="mi">1969</span><span class="o">)</span>
+</span><span class='line'><span class="n">personCreator</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Brown</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">John</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="mi">1969</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>What if you want your function, from the previous point, to be curried? Enters the <code>curried</code> method:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">curriedPerson</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">String</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">curried</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">lacavaBuilder</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="n">curriedPerson</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Lacava</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;)&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">me</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Alessandro</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;)(</span><span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">myBrother</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Michele</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;)(</span><span class="mi">1972</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>What about obtaining a function that accepts a tuple whose arity is equal to the number of the case class
+arguments, and produces an instance of the class? Well, there&rsquo;s the <code>tupled</code> method for that:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">tupledPerson</span><span class="k">:</span> <span class="o">((</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="kt">Int</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">tupled</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">meAsTuple</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Lacava</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">Alessandro</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;,</span> <span class="mi">1976</span><span class="o">)&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">meAsPersonAgain</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="n">tupledPerson</span><span class="o">(</span><span class="n">meAsTuple</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li>You could also need a function that, given an instance of your class as input, produces an
+<code>Option[TupleN[A1, A2, ..., AN]]</code> as output, where <code>N</code> is the number of the case class arguments and
+<code>A1, A2, ..., AN</code> are their types. E.g.:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">toOptionOfTuple</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=&gt;</span> <span class="nc">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">unapply</span> <span class="k">_</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">x</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="n">toOptionOfTuple</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="c1">// Some((Lacava,Alessandro,1976))</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h2>For the most curious ones</h2>
+
+<p>Furthermore, since each case class extends the <code>Product</code> trait it inherits the following methods:</p>
+
+<ul>
+<li><code>def productArity: Int</code>, returns the size of this product. In this case it corresponds to the number of arguments in the
+case class. E.g.:</li>
+</ul>
+
+
+<pre><code class="scala">val p = Person("Lacava", "Alessandro", 1976)
+
+val arity = p.productArity // equals to 3
+</code></pre>
+
+<ul>
+<li><p><code>def productElement(n: Int): Any</code>, returns the n-th element of this product, 0-based. In this case it corresponds to
+the n-th argument of the class. E.g.:
+<code>scala
+val lastname: Any = p.productElement(0) // Lacava
+</code></p></li>
+<li><p><code>def productIterator: Iterator[Any]</code>, returns an iterator over all the elements of this product which,
+in the case class context, they are its arguments.</p></li>
+<li><p><code>def productPrefix: String</code>, returns a string used in the <code>toString</code> method of the derived classes.
+In this case it&rsquo;s the name of the class. E.g.:
+<code>scala
+val className: String = p.productPrefix // the result is Person
+</code></p></li>
+</ul>
+
+
+<h2>Final Notes</h2>
+
+<ul>
+<li><p>I used type declarations in many expressions just to make things clearer. Of course I could have left them out
+and let the type inferer do its job.</p></li>
+<li><p>Some <code>Product</code>&rsquo;s methods return <em>Any-based</em> types, namely <code>productElement</code> and <code>productIterator</code>. For example,
+<code>p.productElement(0)</code> returns the <code>lastname</code> but it is of type <code>Any</code> so if you need to use it as <code>String</code> you have to
+cast it, which is an operation you should strive to avoid as much as possible.</p></li>
+<li><p><code>Product</code> extends <code>Equals</code> so every case class also inherits the <code>canEqual</code> method but, of course,
+going into its details is not the scope of this post. Besides, you don&rsquo;t have to worry about it because it&rsquo;s
+used interally by the autogenerated <code>equals</code> method.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Scala's Self-recursive Types]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-self-recursive-types/"/>
+    <updated>2015-03-30T14:59:24+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-self-recursive-types</id>
+    <content type="html"><![CDATA[<p>One of the advantages of using a statically typed language is that you can use the type system to enforce
+some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
+that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
+
+<h2>Self-recursive type definition</h2>
+
+<p>Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example
+which does not use a self-recursive type:</p>
+
+<pre><code class="scala">trait Doubler[T] {
+  def double: T
+}
+</code></pre>
+
+<pre><code class="scala">case class Square(base: Double) extends Doubler[Square] {
+  override def double: Square = Square(base * 2)
+}
+</code></pre>
+
+<p>So far so good, the compiler will not complain. The problem is that it won&rsquo;t complain even if you write
+something outrageous like the following code:</p>
+
+<pre><code class="scala">case class Person(firstname: String, lastname: String, age: Int)
+
+case class Square(base: Double) extends Doubler[Person] {
+  override def double: Person = Person("John", "Smith", 42)
+}
+</code></pre>
+
+<p>You want to avoid something like that by enforcing a compile-time check. Enters a self-recursive type:</p>
+
+<pre><code class="scala">trait Doubler[T &lt;: Doubler[T]] {
+  def double: T
+}   
+</code></pre>
+
+<p>By using this definition of <code>Doubler</code> you&rsquo;re saying: &ldquo;Hey, if someone tries to extends <code>Doubler</code> with a type
+which doesn&rsquo;t extend <code>Doubler</code> in turn (hence <em>self-recursive</em>), do not compile it&rdquo;.
+In this case the previous definition of <code>Square</code>, which extends <code>Doubler[Person]</code>, doesn&rsquo;t compile.</p>
+
+<p>Note that self-recursive types are not specific to Scala. Indeed Java uses them too.
+Take, for example, the <code>Enum</code> definition:</p>
+
+<pre><code class="java">public abstract class Enum&lt;E extends Enum&lt;E&gt;&gt; implements Comparable&lt;E&gt;, Serializable {
+...
+}
+</code></pre>
+
+<p><code>E extends Enum&lt;E&gt;</code> in <em>Javanese</em> means exactly <code>E &lt;: Enum[E]</code></p>
+
+<h2>Self type definition</h2>
+
+<p>F-bounded polymorphic types are of great help but sometimes they are not enough to enforce the constraints you need.
+Indeed, the previous definition of <code>Doubler</code> has still one problem. Consider the next code:</p>
+
+<pre><code class="scala">trait Doubler[T &lt;: Doubler[T]] {
+  def double: T
+}
+
+case class Square(base: Double) extends Doubler[Square] {
+  override def double: Square = Square(base * 2)
+}
+
+case class Apple(kind: String) extends Doubler[Square] {
+  override def double: Square = Square(5)
+}
+</code></pre>
+
+<p>Can you spot the problem? Look at the <code>Apple</code> definition, it extends <code>Doubler[Square]</code> instead of <code>Doubler[Apple]</code>.</p>
+
+<p>This code compiles because it respects the constraint put by the <code>Doubler</code> definition.
+Indeed <code>Square</code> extends <code>Doubler</code> so it can be used in <code>Apple</code>. Sometimes this is what you want in which case
+the self-recursive type will do. In cases when you don’t want this to happen a self type can work this out:</p>
+
+<pre><code class="scala">trait Doubler[T &lt;: Doubler[T]] { self: T =&gt;
+  def double: T
+}
+</code></pre>
+
+<p>Now if you try to compile the previous definition of <code>Apple</code> the compiler will complain by saying something like:</p>
+
+<pre><code class="scala">error: illegal inheritance;
+ self-type Apple does not conform to Doubler[Square]'s selftype Square
+       case class Apple(kind: String) extends Doubler[Square] {
+                                              ^
+</code></pre>
+
+<h2>Conclusions</h2>
+
+<p>If you&rsquo;re thinking: &ldquo;Come on! I would never extend <code>Apple</code> that way because I know what I meant when I wrote
+my <code>Doubler</code> abstraction. I don&rsquo;t need then the self type annotation and, since I know what I&rsquo;m doing,
+I don&rsquo;t need the self-recursive type either&rdquo;. Well you may be right but I&rsquo;d have two objections:</p>
+
+<ol>
+<li><p>Generally you are not the only one working on a project and, anyway, a good rule of thumb is to design your
+software as if you&rsquo;re designing a public API. In this case you want to be sure no one will use your API in the wrong way.</p></li>
+<li><p>Compilers are implemented by smart guys, generally. Having the compiler help by your side is
+always a good thing in my humble opinion.</p></li>
+</ol>
+
+
+<p>Are there alternatives to this type of problems? Yes indeed, <em>Type Classes</em>, which is by the way the option I prefer.
+But this is another story for a future post.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Internal DSLs In Scala]]></title>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala/"/>
+    <updated>2015-03-26T09:41:48+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on developing an internal DSL in Scala for currency-related operations
+on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Functional Programming In Scala]]></title>
+    <link href="http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala/"/>
+    <updated>2015-02-28T09:29:30+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala</id>
+    <content type="html"><![CDATA[<p>My introductory article on Functional Programming in Scala
+on <a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">DevX</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Scala DSL for Currency-related Operations]]></title>
+    <link href="http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/"/>
+    <updated>2015-02-20T15:09:06+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations</id>
+    <content type="html"><![CDATA[<h3>A simple internal DSL in Scala for money-related operations</h3>
+
+<p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
+
+<p>This Domain-Specific Language (DSL) lets you perform operations among different currencies,
+by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.</p>
+
+<h3>Usage Example</h3>
+
+<p>Here&rsquo;s a simple usage example:</p>
+
+<pre><code class="scala">import com.lambdista.money._
+import com.lambdista.money.Currency._
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val conversion: Conversion = Map(
+      (GBP, EUR) -&gt; 1.270,
+      (EUR, USD) -&gt; 1.268,
+      (GBP, USD) -&gt; 1.611
+    )
+
+    implicit val converter = Converter(conversion)
+
+    val sumAndConversion1 = 100.001(USD) + 200(EUR) to GBP
+    println(s"sumAndConversion1: $sumAndConversion1")
+
+    val sumAndConversion2: Money = 100(USD) + 210.4(EUR) to EUR
+    println(s"sumAndConversion2: $sumAndConversion2")
+
+    val sum = 100.001(USD) + 200(EUR)
+    val simpleConversion = sum(GBP)
+    println(s"simpleConversion: $simpleConversion")
+
+    val sumWithSimpleNumber = 100(USD) + 23.560
+    println(s"sumWithSimpleNumber: $sumWithSimpleNumber")
+
+    val multiplicationWithSimpleNumber = 100(USD) * 23
+    println(s"multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber")
+
+    val usd = Currency("USD")
+
+    val multiplication = 100(usd) * 23(EUR)
+    println(s"multiplication: $multiplication")
+
+    val divisionWithSimpleNumber = 100(USD) / 23
+    println(s"divisionWithSimpleNumber: $divisionWithSimpleNumber")
+
+    val comparison = 100(USD) &gt; 90(EUR)
+    println(s"100 USD &gt; 90 EUR? $comparison")
+
+  }
+
+}
+</code></pre>
+
+<p>As you can see the client code just needs two simple imports and an implicit value of type <code>Converter</code>
+in order to use the DSL. The operations shown in the previous code are only a few among the available ones.
+Have a look at the <code>Money</code> class for a complete coverage.</p>
+
+<p>You can find the source code here: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
+]]></content>
+  </entry>
+  
+</feed>

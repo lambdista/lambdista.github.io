@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java Me | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/java-me/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Build Brilliant Client/Server Apps With J2ME, PHP, and MySQL]]></title>
+    <link href="http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/"/>
+    <updated>2011-10-26T16:53:41+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql</id>
+    <content type="html"><![CDATA[<h3>In this article you&rsquo;ll see how to make the three technologies work together by developing a simple and useful application that lets you update a multi-user blog and download the latest posts from it.</h3>
+
+<p>Write once, run anywhere. This Java motto seems to hold true even for mobile devices. Indeed, since it was born J2ME has had an ever-increasing impact on mobile development. Some may argue that J2ME is not as portable as other Java technologies, but even so, the result obtained on different mobile devices is, in most cases, still acceptable.</p>
+
+<p>Go to <a href="http://www.devx.com/Java/Article/32069">DevX</a> to read the rest of the article: <strong>Build Brilliant Client/Server Apps with J2ME, PHP, and MySQL</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Obtaining Wireless News With J2ME and PHP]]></title>
+    <link href="http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php/"/>
+    <updated>2011-10-26T16:49:06+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php</id>
+    <content type="html"><![CDATA[<h3>J2ME and PHP are both powerful technologies used to develop applications for mobile devices and Web applications, respectively. In this article, you&rsquo;ll see how to make them work together by developing a simple and useful application that retrieves the latest news from the Web and displays that on a mobile device.</h3>
+
+<p>The Java 2 Platform, Micro Edition (J2ME) is targeted at cell phones, smart cards, pagers, and other consumer devices. J2ME technology consists of a virtual machine and a set of APIs suitable for tailored runtime environments for these devices. PHP, on the other hand, is a widely used server-based language to build Web applications. But these two radically different technologies work very well together. In this article you&rsquo;ll see how they can interact via HTTP (Hyper Text Transfer Protocol). Of course, this is not intended to be a thorough explanation of how HTTP works—you only need to know that HTTP is a request/response protocol. That simply means that the client application performs a request and the server application returns a response.</p>
+
+<p>Go to <a href="http://www.devx.com/wireless/Article/28404">DevX</a> to read the rest of the article: <strong>Obtaining Wireless News with J2ME and PHP</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Proguard Obfuscator Through the Wireless Toolkit]]></title>
+    <link href="http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/"/>
+    <updated>2006-06-20T22:53:38+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit</id>
+    <content type="html"><![CDATA[<p>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation.
+<a href="http://proguard.sourceforge.net/">Proguard</a> is a good open-source tool you can use for this purpose.
+To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find
+the obfuscator. You can do that by editing the file <strong>ktools.properties</strong> that you can find under <strong>%WTK%wtklibWindows</strong>,
+where <strong>%WTK%</strong> is the root directory of the Wireless Toolkit. Basically, you just need to add the two following lines
+to the aforementioned file:</p>
+
+<pre><code class="properties">obfuscator.runner.class.name: proguard.wtk.ProGuardObfuscator
+obfuscator.runner.classpath: proguard_path
+</code></pre>
+
+<p>where <strong>proguard_path</strong> is the absolute path to the <strong>proguard.jar</strong> file that you can find under the <strong>lib</strong> directory
+of proguard&rsquo;s home folder. So the <strong>proguard_path</strong> will be (under a Windows system) something like:
+<strong>C:\Programs\proguard\lib\proguard.jar</strong>. After that, creating obfuscated code using the WTK is as easy as selecting
+<strong>Project->Package->Create Obfuscated Package</strong> from the WTK menu</p>
+]]></content>
+  </entry>
+  
+</feed>

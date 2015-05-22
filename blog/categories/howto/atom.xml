@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Howto | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/howto/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Exploit UltraEdit-32 to Highlight Code Based on File Extensions]]></title>
+    <link href="http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/"/>
+    <updated>2007-03-14T09:27:14+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions</id>
+    <content type="html"><![CDATA[<p><a href="http://www.ultraedit.com/">UltraEdit-32</a> (UE for short from now on) is a wonderful text editor. You can use it as a simple text editor or to write programs using your favorite languages. Besides other features, UE offers syntax highlighting for the most common programming languages out there. UE recognizes the type of file by looking at its extension. However, sometimes, you might want to use one syntax highlighting for an extension that is not mapped in UE. For example if you use Pro<em>C, which file extension is .pc, you may want UE to default to the C highlighting for Pro</em>C files. You can do that by editing the UE&rsquo;s wordfile.txt file. UE uses this file to understand how to highlight words. To edit this file, from the UE menu go to: Advanced -> Configuration -> Editor Display -> Syntax Highlighting. From this window you can open wordfile.txt by clicking on the Open button in the Full path name word list section. In this file you&rsquo;ll find all the languages that UE highlight. Each language start with /Ln, where n is a number. At the end of the row where /Ln is you can see &ldquo;File Extensions = <em>extensions</em>&rdquo;. Just append the extension you need to highlight for that language and save the file. Restart UE and open the file with the extension you just mapped. Enjoy the result! :-)</p>
+
+<p>Here is an example for the Pro*C extension (.pc):</p>
+
+<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK</p>
+
+<p>This line is extracted from the wordfile.txt file. To add the Pro*C extension I just added PC at the end of File Extensions, that is after AWK:</p>
+
+<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK PC</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Css | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Display an Element to the Center of the Browser]]></title>
+    <link href="http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/"/>
+    <updated>2007-02-16T11:55:53+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser</id>
+    <content type="html"><![CDATA[<p>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of
+how you can do it using JavaScript and CSS.</p>
+
+<pre><code class="javascript ">function init() {
+  // Reference to the element
+  var loading = document.getElementById("loading");
+  // The div's width, set within the CSS class
+  var loadingWidth = loading.offsetWidth;
+  // The div's width, set within the CSS class
+  var loadingHeight = loading.offsetHeight;
+  // The browser's body's width
+  var documentWidth = document.body.clientWidth;
+  // The browser's body's height
+  var documentHeight = document.body.clientHeight;
+  // Position the element absolutely
+  loading.style.position = "absolute";
+  // Center horizontally
+  loading.style.left = (documentWidth - loadingWidth) / 2;
+  // Center vertically
+  loading.style.top = (documentHeight - loadingHeight) / 2;
+}
+</code></pre>
+
+<p>This code supposes you have a div element within your page with id=&ldquo;loading&rdquo;, for example:</p>
+
+<p>&#8220;`html</p>
+
+<div id="loading" class="loading">Loading&#8230;</div>
+
+
+<!-- Other HTML code -->
+
+
+<pre><code>
+The CSS class could be the following
+</code></pre>
+
+<p>.loading {
+  border: 1px solid #90A6B8;
+  background-color: #FFFF80;
+  height: 100px;
+  width: 300px;
+  z-index: 1000;
+  text-align: center;
+  padding: 20px;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+}
+&#8220;`</p>
+
+<p>The result should be that the browser displays the div centered within the browser.</p>
+
+<p>Of course you need to take care of the div hiding and showing according to your needs. For example, when an Ajax
+call starts/ends you might want to show/hide it, maybe with a &ldquo;loading gif&rdquo; within it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Add Scrollbars to a Block (e.g. A &lt;div&gt; Element)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/"/>
+    <updated>2006-11-24T10:21:30+01:00</updated>
+    <id>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element</id>
+    <content type="html"><![CDATA[<p>If you need to customize a list box then the <code>&lt;select&gt;</code> HTML element might not be enough. In such a case you&rsquo;d like
+to have something that simulates the <code>&lt;select&gt;</code> behaviour.</p>
+
+<p>Here is the code to use to obtain a custom list box:</p>
+
+<pre><code class="html    ">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div style="width: 200px; height: 200px; overflow: auto;"&gt;
+      &lt;table width="100%" height="100%"&gt;
+        &lt;script&gt;
+          for (var i = 0; i &lt; 30; i++) {
+            if (i % 2 == 0) {
+              document.write(
+              "&lt;tr style='background-color:#0066ff; color: #ffffff'&gt;" +
+              "&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;");
+            }
+            else {
+              document.write(
+              "&lt;tr style='background-color:#ff6600; color: #ffffff'&gt;" +
+              "&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;");
+            }
+          }
+        &lt;/script&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>The key CSS element is <code>overflow</code>. If you use <code>overflow: auto</code> then the scrollbars are displayed only if they are needed.
+If you want to display them in any case then you need to use <code>overflow: scroll</code>.</p>
+]]></content>
+  </entry>
+  
+</feed>

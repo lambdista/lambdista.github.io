@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java 8 | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/java-8/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2015-05-22T19:44:18+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Try-Success-Failure API for Java 8]]></title>
+    <link href="http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/"/>
+    <updated>2014-06-20T16:03:33+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java</id>
+    <content type="html"><![CDATA[<h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
+
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+
+<p>This API is a Java implementation of <a href="http://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
+originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
+
+<p>The <code>Try</code> type represents a computation that may fail. If the computation is successful returns
+the value wrapped in a <code>Try.Success</code> otherwise returns the
+<code>java.lang.Exception</code> wrapped in a <code>Try.Failure</code>.</p>
+
+<p>To use <code>Try</code> you need to call the <code>Try.apply(FailableSupplier)</code> method passing in a lambda with
+the same signature used for a common <code>java.util.function.Supplier</code>.
+Indeed <code>FailableSupplier</code> is just a <code>java.util.function.Supplier</code> with a
+<code>throws Exception</code> added to its <code>get</code> method.</p>
+
+<p>For example, <code>Try</code> can be used to perform division on a user-defined input, without the need to do explicit
+exception-handling in all of the places that an exception might occur.</p>
+
+<p>An important property of <code>Try</code> shown in the <code>divide</code> method of the <code>MainExample</code> class is its ability
+to <em>pipeline (chain if you prefer)</em>  operations, catching exceptions along the way thanks to its <code>flatMap</code> method.
+If you are not a seasoned functional programming geek concepts such as <code>flatMap/map</code> might not be easy to grasp
+at first. However you&rsquo;ll get used to them and, in the end, you&rsquo;ll love them. Moreover you&rsquo;re going to encounter
+these methods more and more often since some important Java 8 classes already implement them
+(e.g. <code>java.util.Optional</code> and <code>java.util.stream.Stream</code>. Anyway for the moment just take for
+granted that to pipeline more than two operations, say N, you just need to chain them by using N - 1
+<code>flatMap</code> calls and a last call to <code>map</code>. E.g.: Suppose you have 3 variables (x, y and z) being
+of type <code>Try</code> and you just want to sum them up. The code you need for doing that is the
+following:</p>
+
+<pre><code class="java">x.flatMap(a -&gt; y.flatMap(b -&gt; z.map(c -&gt; a + b + c)))
+</code></pre>
+
+<p>Apart from <code>map</code> and <code>flatMap</code>, <code>Try</code> has many other useful methods. See the <code>TryTest</code>
+class for a thorough coverage of all methods.</p>
+
+<h3>Usage example</h3>
+
+<pre><code class="java   ">System.out.println("Integer division");
+System.out.println("Enter the dividend press Return and then enter the divisor: ");
+Scanner dividend = new Scanner(System.in);
+Scanner divisor = new Scanner(System.in);
+
+Try&lt;Integer&gt; num = Try.apply(dividend::nextInt);
+Try&lt;Integer&gt; denom = Try.apply(divisor::nextInt);
+
+Try&lt;Integer&gt; result = num.flatMap(x -&gt; denom.map(y -&gt; x / y));
+Try&lt;String&gt; resultTryStr = result.map(i -&gt; "The result of division is: " + i);
+String resultStr = resultTryStr.getOrElse("You must've divided by zero or entered something that's not an Int. Try again!");
+System.out.println(resultStr);
+</code></pre>
+
+<p>In the previous example if you enter two valid integers with the second one&ndash;the divisor&ndash;being different from zero
+then the code prints out <code>The result of division is: $RESULT</code>, where <code>$RESULT</code> is the division between the first
+and the second number. On the other hand, if you either enter non valid integers&ndash;such as a string&ndash;or the second
+number is zero then you&rsquo;ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
+printed out.</p>
+
+<p>Anyway, as I already said, see the <code>TryTest</code> class for a thorough coverage of all methods.</p>
+
+<h3>Final Notes</h3>
+
+<p>Any criticism/suggestion is more than welcome!</p>
+
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Scala Case Classes In Depth - Alessandro Lacava</title>
+  <meta name="author" content="Alessandro Lacava">
+
+  
+  <meta name="description" content="For this post I&rsquo;ll consider the following simple case class unless otherwise specified: 1
+case class Person(lastname: String, firstname: String &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
+  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-348808-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alessandro Lacava</a></h1>
+  
+    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.alessandrolacava.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/articles">Articles</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Scala Case Classes In Depth</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-22T08:12:07+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>8:12 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">birthYear</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Common knowledge about case classes</h2>
+
+<p>When you declare a case class the Scala compiler does the following for you:</p>
+
+<ul>
+<li>Creates a class and its companion object.</li>
+<li>Implements the <code>apply</code> method that you can use as a factory. This lets you create
+instances of the class without the <code>new</code> keyword. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// instead if the slightly more verbose:</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Prefixes all arguments, in the parameter list, with <code>val</code>. This means the class is immutable, hence
+you get the accessors but no mutators. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">lastname</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">lastname</span>
+</span><span class='line'><span class="c1">// the following won&#39;t compile:</span>
+</span><span class='line'><span class="n">p</span><span class="o">.</span><span class="n">lastname</span> <span class="k">=</span> <span class="s">&quot;Brown&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Adds <em>natural</em> implementations of <code>hashCode</code>, <code>equals</code> and <code>toString</code>. Since <code>==</code> in Scala always
+delegates to equals, this means that case class instances are always compared structurally. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p_1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Brown&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="mi">1969</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p_2</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_1</span> <span class="c1">// false</span>
+</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_2</span> <span class="c1">// true</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Generates a <code>copy</code> method to your class to create other instances starting from another one and keeping
+some arguments the same. E.g.: Create another instance keeping the <code>lastname</code> and changing <code>firstname</code>
+and <code>birthYear</code>:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// the result is: Person(Lacava,Michele,1972), my brother :)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">p_3</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">firstname</span> <span class="k">=</span> <span class="s">&quot;Michele&quot;</span><span class="o">,</span> <span class="n">birthYear</span> <span class="k">=</span> <span class="mi">1972</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Probably, most importantly, since the compiler implements the <code>unapply</code> method, a case class
+supports pattern matching. This is especially important when you define an Algebraic Data Type (ADT). E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span>
+</span><span class='line'><span class="nc">case</span> <span class="k">class</span> <span class="nc">Value</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+</span><span class='line'><span class="k">case</span> <span class="k">object</span> <span class="nc">NoValue</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">v</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Value</span><span class="o">(</span><span class="mi">42</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">v_1</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">NoValue</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="n">logValue</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">value</span> <span class="k">match</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="nc">Value</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;We have a value here: $v&quot;</span><span class="o">)</span>
+</span><span class='line'>  <span class="k">case</span> <span class="nc">NoValue</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;I&#39;m sorry, no value&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="c1">// prints We have a value here: 42</span>
+</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v_1</span><span class="o">)</span> <span class="c1">// prints I&#39;m sorry, no value</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you probably already know, when your class has no argument you use a <code>case object</code>
+instead of a <code>case class</code> with an empty parameter list.</p>
+
+<p>Apart from being used in pattern matching the <code>unapply</code> method lets you <em>deconstruct</em> a case class to extract
+it&rsquo;s fields, both during pattern matching and as a simple expression to extract some of its fields. E.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="o">,</span> <span class="k">_</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=</span> <span class="n">p</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">println</span><span class="o">(</span><span class="n">lastname</span><span class="o">)</span> <span class="c1">// prints Lacava</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2><em>Not so common</em> knowledge about case classes</h2>
+
+<ul>
+<li>What if you need a function that, given your case class arguments as parameters, creates an instance of the class?
+Here&rsquo;s how you can do it by partially applying <code>apply</code> (no pun intended :)):</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">personCreator</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">apply</span> <span class="k">_</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// the result is: Person(Brown,John,1969)</span>
+</span><span class='line'><span class="n">personCreator</span><span class="o">(</span><span class="s">&quot;Brown&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="mi">1969</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>What if you want your function, from the previous point, to be curried? Enters the <code>curried</code> method:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">curriedPerson</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">String</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">curried</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">lacavaBuilder</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="n">curriedPerson</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">me</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(</span><span class="s">&quot;Alessandro&quot;</span><span class="o">)(</span><span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'><span class="k">val</span> <span class="n">myBrother</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(</span><span class="s">&quot;Michele&quot;</span><span class="o">)(</span><span class="mi">1972</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>What about obtaining a function that accepts a tuple whose arity is equal to the number of the case class
+arguments, and produces an instance of the class? Well, there&rsquo;s the <code>tupled</code> method for that:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">tupledPerson</span><span class="k">:</span> <span class="o">((</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="kt">Int</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">tupled</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">meAsTuple</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">meAsPersonAgain</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="n">tupledPerson</span><span class="o">(</span><span class="n">meAsTuple</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>You could also need a function that, given an instance of your class as input, produces an
+<code>Option[TupleN[A1, A2, ..., AN]]</code> as output, where <code>N</code> is the number of the case class arguments and
+<code>A1, A2, ..., AN</code> are their types. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">toOptionOfTuple</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=&gt;</span> <span class="nc">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">unapply</span> <span class="k">_</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">x</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="n">toOptionOfTuple</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="c1">// Some((Lacava,Alessandro,1976))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>For the most curious ones</h2>
+
+<p>Furthermore, since each case class extends the <code>Product</code> trait it inherits the following methods:</p>
+
+<ul>
+<li><code>def productArity: Int</code>, returns the size of this product. In this case it corresponds to the number of arguments in the
+case class. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">arity</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productArity</span> <span class="c1">// equals to 3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>def productElement(n: Int): Any</code>, returns the n-th element of this product, 0-based. In this case it corresponds to
+the n-th argument of the class. E.g.:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">lastname</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productElement</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="c1">// Lacava</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p><code>def productIterator: Iterator[Any]</code>, returns an iterator over all the elements of this product which,
+in the case class context, they are its arguments.</p></li>
+<li><p><code>def productPrefix: String</code>, returns a string used in the <code>toString</code> method of the derived classes.
+In this case it&rsquo;s the name of the class. E.g.:</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">className</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productPrefix</span> <span class="c1">// the result is Person</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Final Notes</h2>
+
+<ul>
+<li><p>I used type declarations in many expressions just to make things clearer. Of course I could have left them out
+and let the type inferer do its job.</p></li>
+<li><p>Some <code>Product</code>&rsquo;s methods return <em>Any-based</em> types, namely <code>productElement</code> and <code>productIterator</code>. For example,
+<code>p.productElement(0)</code> returns the <code>lastname</code> but it is of type <code>Any</code> so if you need to use it as <code>String</code> you have to
+cast it, which is an operation you should strive to avoid as much as possible.</p></li>
+<li><p><code>Product</code> extends <code>Equals</code> so every case class also inherits the <code>canEqual</code> method but, of course,
+going into its details is not the scope of this post. Besides, you don&rsquo;t have to worry about it because it&rsquo;s
+used interally by the autogenerated <code>equals</code> method.</p></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Alessandro Lacava</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-05-22T08:12:07+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>8:12 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/case-class/'>case class</a>, <a class='category' href='/blog/categories/companion-object/'>companion object</a>, <a class='category' href='/blog/categories/scala/'>scala</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/" data-via="lambdista" data-counturl="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/scala-self-recursive-types/" title="Previous Post: Scala's self-recursive types">&laquo; Scala&#8217;s self-recursive types</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lambdista',
+            count: 0,
+            skip_forks: true,
+	    skip_repos: [ "lambdista.github.io" ],
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alessandro Lacava -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'lambdista';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/';
+        var disqus_url = 'http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
