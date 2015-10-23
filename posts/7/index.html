@@ -9,9 +9,8 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="Welcome to my blog. This is my first post.
-About myself:
-My name is Alessandro Lacava and I am a software engineer. I love designing and developing &hellip;">
+  <meta name="description" content="Java was born as a platform-independent programming language. Some features that grant the platform independence are
+achieved using the APIs of the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -114,6 +113,46 @@ My name is Alessandro Lacava and I am a software engineer. I love designing and 
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/the-name-separator-character-in-java/">The Name-separator Character In Java</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-05-02T15:54:38+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2006</span></span> <span class='time'>3:54 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Java was born as a platform-independent programming language. Some features that grant the platform independence are
+achieved using the APIs of the language itself. For example, to construct a filename path, you can use the public static
+field separator of the <code>java.io.File</code> class.</p>
+
+<p>Example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">&quot;foldername&quot;</span> <span class="o">+</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">&quot;filename&quot;</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This produces the string <code>/foldername/filename</code> under Unix-like systems and <code>\foldername\filename</code> under Windows systems.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/hello-world/">Hello World!</a></h1>
     
     
@@ -157,6 +196,10 @@ much more about computer programming. Stay tuned.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
       </li>
     
@@ -170,10 +213,6 @@ much more about computer programming. Stay tuned.</p>
     
       <li class="post">
         <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
       </li>
     
   </ul>

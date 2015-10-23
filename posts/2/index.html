@@ -9,7 +9,7 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="Find out how to improve your Web application performance by leveraging AJAX and JSON. In particular, you&rsquo;ll see the advantages of using JSON &hellip;">
+  <meta name="description" content="Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +106,41 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/the-productivity-perks-behind-prototypes-popularity-2/">The Productivity Perks Behind Prototype&#8217;s Popularity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-10-26T17:29:31+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:29 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in an object-oriented way.</h3>
+
+<p>The Prototype home page claims that &ldquo;Prototype is a JavaScript framework that aims to ease the development of dynamic Web applications.&rdquo; By using many object-oriented paradigms such as class-driven development and inheritance to enable JavaScript application development, Prototype completely accomplishes its aim. In fact, this framework contains a lot of useful functionalities, which you cannot help but apply to every application you develop once you&rsquo;ve started using them.</p>
+
+<p>Prototype&rsquo;s main claim to fame is its rich AJAX (Asynchronous JavaScript and XML) library, which simplifies the now popular Web development technique for making non-blocking calls to the server through JavaScript. (It topped the recent Ajaxian.com 2006 Survey as the most popular AJAX framework.) Of course, everything you can do with Prototype you also can do using plain JavaScript—upon which Prototype is built. But why would you want to complicate your life? For example, which would you rather type to accomplish the same task: document.getElementById(&ldquo;myElement&rdquo;) or $(&ldquo;myElement&rdquo;)? If you answered $(&ldquo;myElement&rdquo;), then read the remainder of this article for an in-depth discussion of some useful Prototype functions—$ is just one.</p>
+
+<p>Go to <a href="http://www.devx.com/AJAXRoundup/Article/33174">DevX</a> to read the rest of the article: <strong>The Productivity Perks Behind Prototype&rsquo;s Popularity</strong>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -500,67 +535,6 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/">OutOfMemoryError In Eclipse | Java Virtual Machine (JVM)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-07-22T10:53:07+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2008</span></span> <span class='time'>10:53 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
-
-<p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
-
-<ol>
-<li>By editing your <strong>eclipse.ini</strong> file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones:</li>
-</ol>
-
-
-<p><strong>-Xms40m</strong>
-<strong> -Xmx512m</strong></p>
-
-<p>You might want to change them depending on your hardware. For example I changed them as follows:</p>
-
-<p><strong>-Xms256m</strong>
-<strong>-Xmx1024m</strong></p>
-
-<p>It means: &ldquo;start with an initial heap size of 256 MB and grow to a maximum of 1024MB, that is 1GB.&rdquo;</p>
-
-<ol>
-<li>By editing the <strong>Run Configurations in Eclipse</strong>. To do this, right-click on the class you want to run (the one with the main method) and then select:</li>
-</ol>
-
-
-<p><strong>Run As -> Run Configurations</strong></p>
-
-<p>Click on the <strong>Arguments</strong> tab. In the VM Arguments box type:</p>
-
-<p><strong>-Xms256m -Xmx1024m</strong></p>
-
-<p>or whatever you prefer, depending on the hardware you possess.</p>
-
-<p><strong>IMPORTANT NOTE: It is strongly recommended that you make a backup copy of your eclipse.ini file before editing it in any way.</strong></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -578,6 +552,10 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
       </li>
     
@@ -591,10 +569,6 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
     
       <li class="post">
         <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a>
       </li>
     
   </ul>
