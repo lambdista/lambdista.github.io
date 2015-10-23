@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Set | Alessandro Lacava]]></title>
   <link href="http://www.alessandrolacava.com/blog/categories/set/atom.xml" rel="self"/>
   <link href="http://www.alessandrolacava.com/"/>
-  <updated>2015-10-23T17:50:22+02:00</updated>
+  <updated>2015-10-23T17:57:33+02:00</updated>
   <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
@@ -192,7 +192,7 @@ java.util.NoSuchElementException: key not found: b
 </code></pre>
 
 <p>This is because <code>map</code> accepts a function and providing a partial function instead you get the exception for not valid
-inputs as I said in the <a href="#functions_vs_partial_functions">functions vs partial functions section</a></p>
+inputs as I said in the <a href="#functions_vs_partial_functions">functions vs partial functions section</a>.</p>
 
 <p>From now on, whenever you have a collection hanging around, consider looking at it as a
 function. This could help to solve your problem without using pattern matching or other boilerplate.</p>
