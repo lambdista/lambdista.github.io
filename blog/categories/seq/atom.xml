@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Seq | Alessandro Lacava]]></title>
   <link href="http://www.alessandrolacava.com/blog/categories/seq/atom.xml" rel="self"/>
   <link href="http://www.alessandrolacava.com/"/>
-  <updated>2015-10-23T19:51:48+02:00</updated>
+  <updated>2015-10-26T09:56:19+01:00</updated>
   <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
@@ -116,7 +116,7 @@ res2: String = a
 <p>I assigned the list to <code>f1</code> just to emphasise the fact that it&rsquo;s a partial function. It corresponds to the
 index-based lookup.</p>
 
-<p><strong>Performance concern</strong>: Take into account tha the index-based lookup on <code>List</code> has a cost of <code>O(n)</code>. For this type
+<p><strong>Performance concern</strong>: Take into account that the index-based lookup on <code>List</code> has a cost of <code>O(n)</code>. For this type
 of access you may consider using a <code>Vector</code> which has constant-time access cost. Anyway this post is not about
 performance concerns about the collection API so I won&rsquo;t dig into this topic.</p>
 
