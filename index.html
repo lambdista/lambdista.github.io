@@ -166,7 +166,7 @@ Well, it turns out that <code>Map</code> <em>is</em> a <code>PartialFunction</co
 
 <p>In short, a function is a mapping <code>A =&gt; B</code> that relates each value of type <code>A</code> to a
 value of type <code>B</code>&ndash;modulo <em>bottom</em>. <code>A</code> and <code>B</code> are called <em>domain</em> and <em>codomain</em>, respectively. If you&rsquo;re not a math
-addict, roughly speaking, the domain is the set of all values that you can provide as input to your function,
+addict, roughly speaking, the domain is the set of all values that you may provide as input to your function,
 while the codomain is the result of the function application to the input, that is your function output.<br/>
 On the other hand a partial function from <code>A</code> to <code>B</code> is not defined for some inputs of type <code>A</code>. E.g.:</p>
 
@@ -364,8 +364,8 @@ verbose <code>Function[A, Boolean]</code>. Example:</p>
 <p>As a final consideration take into account that <code>Seq</code>s and <code>Map</code>s are partial functions while <code>Set</code> is a
 function. Partial functions could introduce insidious bugs.
 For instance, consider the very first example of this post.
-If the <code>Map</code> didn&rsquo;t contain all the elements of the <code>List</code> and I used
-the <code>map</code> method instead of <code>collect</code> I would introduce a bug:</p>
+If the <code>Map</code> hadn&rsquo;t contained all the elements of the <code>List</code> and I had used
+the <code>map</code> method instead of <code>collect</code> I would have introduced a bug:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
