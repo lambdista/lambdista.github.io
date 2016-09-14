@@ -9,8 +9,10 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want
-a List[Int] where its values are those of the Map whose &hellip;">
+  <meta name="description" content="Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type
+in Scala.
+You can find it here.
+I couldn&rsquo;t agree more &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,6 +109,124 @@ a List[Int] where its values are those of the Map whose &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-09-14T14:27:23+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:27 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently, Daniel Westheide wrote an interesting post about the abuse of the <code>Option</code> type
+in Scala.
+You can find it <a href="http://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html">here</a>.
+I couldn&rsquo;t agree more with Daniel.</p>
+
+<p>This short story is another example that demonstrates how using <code>Option</code> is not always
+the best option (pun intended).</p>
+
+<p>I&rsquo;m developing an advertising service for a customer using Scala.
+A simplified version of the <code>Ad</code> data structure is the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Ad</span><span class="o">(</span>
+</span><span class='line'>    <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">description2</span><span class="k">:</span> <span class="kt">String</span>
+</span><span class='line'><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
+two types of ad: standard and expanded.
+They said: &ldquo;If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
+If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
+Users won&rsquo;t include <code>headline2</code> when the ad is intended to be standard, and won&rsquo;t include <code>description2</code>
+when the ad is intended to be expanded.&rdquo;</p>
+
+<p>The optionality of the <code>headline2</code> and <code>description2</code> fields could put you in the wrong direction.
+Indeed, you could think of changing the data structure as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Ad</span><span class="o">(</span>
+</span><span class='line'>    <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">headline2</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">],</span>
+</span><span class='line'>    <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">description2</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+</span><span class='line'><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This may sound fine but you could reach a much cleaner and type-safe
+solution using a simple Algebraic Data Type (ADT). Here&rsquo;s how:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Ad</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">object</span> <span class="nc">Ad</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Standard</span><span class="o">(</span>
+</span><span class='line'>      <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">description2</span><span class="k">:</span> <span class="kt">String</span>
+</span><span class='line'>  <span class="o">)</span> <span class="k">extends</span> <span class="nc">Ad</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Expanded</span><span class="o">(</span>
+</span><span class='line'>      <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">headline2</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span>
+</span><span class='line'>  <span class="o">)</span> <span class="k">extends</span> <span class="nc">Ad</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This way you don&rsquo;t need to inspect the <code>headline2</code> and/or <code>description2</code> value
+to find out the ad type you&rsquo;re dealing with.
+Indeed, the ad type is encoded in the type system which is always a <em>desirata</em>.</p>
+
+<p>Bottom line: use <code>Option</code> with caution.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1332,39 +1452,6 @@ printed out.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/will-your-next-web-application-be-a-google-gadget/">Will Your Next Web Application Be a Google Gadget?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:31:04+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:31 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
-
-<p>Since AJAX first appeared, developer interest in JavaScript has increased exponentially—and toolsets for building functionality in JavaScript have burgeoned as well. One of the latest tools for JavaScript-related development is Google Gadgets. Many web sites already provide gadgets built with the Google tools, and you can, too. This article shows you how to develop a Google Gadget that fetches DevX RSS feeds and displays them to the user.</p>
-
-<p>Go to <a href="http://www.devx.com/webdev/Article/35007">DevX</a> to read the rest of the article: <strong>Will Your Next Web Application Be a Google Gadget?</strong>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -1380,6 +1467,10 @@ printed out.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
       </li>
     
@@ -1393,10 +1484,6 @@ printed out.</p>
     
       <li class="post">
         <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
       </li>
     
   </ul>

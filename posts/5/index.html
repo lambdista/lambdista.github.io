@@ -9,8 +9,7 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of
-how you can do it using &hellip;">
+  <meta name="description" content="UltraEdit-32 (UE for short from now on) is a wonderful text editor. You can use it as a simple text editor or to write programs using your favorite &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,6 +106,43 @@ how you can do it using &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/">How to Exploit UltraEdit-32 to Highlight Code Based on File Extensions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-03-14T09:27:14+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>9:27 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.ultraedit.com/">UltraEdit-32</a> (UE for short from now on) is a wonderful text editor. You can use it as a simple text editor or to write programs using your favorite languages. Besides other features, UE offers syntax highlighting for the most common programming languages out there. UE recognizes the type of file by looking at its extension. However, sometimes, you might want to use one syntax highlighting for an extension that is not mapped in UE. For example if you use Pro<em>C, which file extension is .pc, you may want UE to default to the C highlighting for Pro</em>C files. You can do that by editing the UE&rsquo;s wordfile.txt file. UE uses this file to understand how to highlight words. To edit this file, from the UE menu go to: Advanced -> Configuration -> Editor Display -> Syntax Highlighting. From this window you can open wordfile.txt by clicking on the Open button in the Full path name word list section. In this file you&rsquo;ll find all the languages that UE highlight. Each language start with /Ln, where n is a number. At the end of the row where /Ln is you can see &ldquo;File Extensions = <em>extensions</em>&rdquo;. Just append the extension you need to highlight for that language and save the file. Restart UE and open the file with the extension you just mapped. Enjoy the result! :-)</p>
+
+<p>Here is an example for the Pro*C extension (.pc):</p>
+
+<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK</p>
+
+<p>This line is extracted from the wordfile.txt file. To add the Pro*C extension I just added PC at the end of File Extensions, that is after AWK:</p>
+
+<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK PC</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -832,87 +868,6 @@ Indeed, some compilers give 0 and others give 1 as the final value of <code>a</c
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/using-dynamic-sql-statements-from-plsql/">Using Dynamic SQL Statements From PL/SQL</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2006-09-06T12:24:18+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:24 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
-<code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
-</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
-</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
-The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
-<code>your_parameter_for_field1</code> parameter.</p>
-
-<p>Now let&rsquo;s see another example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1 AND field2 = :2&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
-</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
-</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see this example is similar to the previous one but here I showed how you can use more than one parameter.</p>
-
-<p>One last example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_insert</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;INSERT INTO your_table VALUES (:1, :2)&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_insert</span>
-</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This last example shows how you can use <code>EXECUTE IMMEDIATE</code> to execute an <code>INSERT</code> statement. Here you don&rsquo;t need an
-explicit cursor. Of course, in a similar way, you can use <code>EXECUTE IMMEDIATE</code> to execute <code>UPDATE</code> and <code>DELETE</code>
-statements as well.</p>
-
-<p>Of course, you could have accomplished the &ldquo;same&rdquo; result using string concatenation but binding the variables using
-the method just shown is much better from a performance viewpoint.</p>
-
-<p>One last note: you CANNOT use bind variables to replace actual object names like table names, columns and so on.
-In this case you can turn back to string concatenation.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -930,6 +885,10 @@ In this case you can turn back to string concatenation.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
       </li>
     
@@ -943,10 +902,6 @@ In this case you can turn back to string concatenation.</p>
     
       <li class="post">
         <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
       </li>
     
   </ul>

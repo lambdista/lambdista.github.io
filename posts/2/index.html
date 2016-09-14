@@ -9,7 +9,7 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="Learn how to leverage the popular Prototype JavaScript framework to speed up your AJAX-based development. You&rsquo;ll see how to use JavaScript in &hellip;">
+  <meta name="description" content="Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +106,39 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/will-your-next-web-application-be-a-google-gadget/">Will Your Next Web Application Be a Google Gadget?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-10-26T17:31:04+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:31 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Learn how to leverage the Google Gadget API to make your web applications more reachable. As an example, you&rsquo;ll see how to build a real-world gadget that fetches and displays the DevX feeds.</h3>
+
+<p>Since AJAX first appeared, developer interest in JavaScript has increased exponentially—and toolsets for building functionality in JavaScript have burgeoned as well. One of the latest tools for JavaScript-related development is Google Gadgets. Many web sites already provide gadgets built with the Google tools, and you can, too. This article shows you how to develop a Google Gadget that fetches DevX RSS feeds and displays them to the user.</p>
+
+<p>Go to <a href="http://www.devx.com/webdev/Article/35007">DevX</a> to read the rest of the article: <strong>Will Your Next Web Application Be a Google Gadget?</strong>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -447,94 +480,6 @@ I think he would have said goodbye this way:</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/java-split-of-string-multiple-whitespace-characters/">Java Split() of String | Multiple Whitespace Characters</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-12-03T11:47:02+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2008</span></span> <span class='time'>11:47 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
-in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
-be careful when you want to split a string using the whitespace character as a delimiter. Consider the
-following snippet of code:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Testing split using two  whitespace characters&quot;</span><span class="o">;</span>
-</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">token</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>What&rsquo;s the output produced by the previous code? If you think it is the following one you&rsquo;re wrong:</p>
-
-<ul>
-<li>-Testing-</li>
-<li>-split-</li>
-<li>-using-</li>
-<li>-two-</li>
-<li>-whitespace-</li>
-<li>-characters-</li>
-</ul>
-
-
-<p>The actual output is instead this one:</p>
-
-<ul>
-<li>-Testing-</li>
-<li>-split-</li>
-<li>-using-</li>
-<li>-two-</li>
-<li>&ndash;</li>
-<li>-whitespace-</li>
-<li>-characters-</li>
-</ul>
-
-
-<p>Where in the hell did that empty string come out from? It comes out from the two whitespace characters that
-are between the word <strong>two</strong> and <strong>whitespace</strong> of the <strong>str</strong> string. If this is what you want OK. However,
-most of the time, you will want to discard that empty string from your resulting string array. You can obtain this
-result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previuos code becomes:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Testing split using two  whitespace characters&quot;</span><span class="o">;</span>
-</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\s+&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">token</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -552,6 +497,10 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
       </li>
     
@@ -565,10 +514,6 @@ result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. 
     
       <li class="post">
         <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
       </li>
     
   </ul>

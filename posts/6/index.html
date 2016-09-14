@@ -9,7 +9,8 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="This is an example of how you can show/hide an HTML form element depending on a combo box choice. Put the following JavaScript code between your &lt; &hellip;">
+  <meta name="description" content="Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+EXECUTE IMMEDIATE statement. Here &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +107,87 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/using-dynamic-sql-statements-from-plsql/">Using Dynamic SQL Statements From PL/SQL</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-09-06T12:24:18+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:24 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+<code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
+</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
+The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
+<code>your_parameter_for_field1</code> parameter.</p>
+
+<p>Now let&rsquo;s see another example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_select</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;SELECT * FROM your_table WHERE field1 = :1 AND field2 = :2&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_select</span>
+</span><span class='line'><span class="k">INTO</span> <span class="n">your_cursor</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see this example is similar to the previous one but here I showed how you can use more than one parameter.</p>
+
+<p>One last example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">sql_insert</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;INSERT INTO your_table VALUES (:1, :2)&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="k">EXECUTE</span> <span class="k">IMMEDIATE</span> <span class="n">sql_insert</span>
+</span><span class='line'><span class="k">USING</span> <span class="n">your_parameter_for_field1</span><span class="p">,</span> <span class="n">your_parameter_for_field2</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This last example shows how you can use <code>EXECUTE IMMEDIATE</code> to execute an <code>INSERT</code> statement. Here you don&rsquo;t need an
+explicit cursor. Of course, in a similar way, you can use <code>EXECUTE IMMEDIATE</code> to execute <code>UPDATE</code> and <code>DELETE</code>
+statements as well.</p>
+
+<p>Of course, you could have accomplished the &ldquo;same&rdquo; result using string concatenation but binding the variables using
+the method just shown is much better from a performance viewpoint.</p>
+
+<p>One last note: you CANNOT use bind variables to replace actual object names like table names, columns and so on.
+In this case you can turn back to string concatenation.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -790,83 +872,6 @@ the URI indicating your namespace.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/using-javascript-to-detect-the-key-pressed/">Using Javascript to Detect the Key Pressed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2006-05-12T14:23:55+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>2:23 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on.
-For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of
-code you can use&ndash;of course adapting it to your needs.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">keyPressed</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">code</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">){</span> <span class="c1">//IE</span>
-</span><span class='line'>   <span class="nx">code</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">else</span><span class="p">{</span> <span class="c1">//other browsers</span>
-</span><span class='line'>    <span class="nx">code</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">which</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="c1">//check, for example, if the Enter key was pressed (code 13)</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">code</span> <span class="o">==</span> <span class="mi">13</span><span class="p">){</span>
-</span><span class='line'>    <span class="c1">//Enter key pressed</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">else</span><span class="p">{</span>
-</span><span class='line'>    <span class="c1">//Another key pressed</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note: <code>keyCode</code> is used by Internet Explorer while <code>which</code> is used by the other browsers.</p>
-
-<p>Then, from within a form, you can call this function. For example</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;input</span> <span class="na">onkeypress=</span><span class="s">&quot;javascript:keyPressed(event);&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -884,6 +889,10 @@ code you can use&ndash;of course adapting it to your needs.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
       </li>
     
@@ -897,10 +906,6 @@ code you can use&ndash;of course adapting it to your needs.</p>
     
       <li class="post">
         <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
       </li>
     
   </ul>

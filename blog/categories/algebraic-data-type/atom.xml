@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Algebraic Data Type | Alessandro Lacava]]></title>
+  <link href="http://www.alessandrolacava.com/blog/categories/algebraic-data-type/atom.xml" rel="self"/>
+  <link href="http://www.alessandrolacava.com/"/>
+  <updated>2016-09-14T15:02:51+02:00</updated>
+  <id>http://www.alessandrolacava.com/</id>
+  <author>
+    <name><![CDATA[Alessandro Lacava]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Keep Your Code Clean With Algebraic Data Types (ADTs)]]></title>
+    <link href="http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/"/>
+    <updated>2016-09-14T14:27:23+02:00</updated>
+    <id>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts</id>
+    <content type="html"><![CDATA[<p>Recently, Daniel Westheide wrote an interesting post about the abuse of the <code>Option</code> type
+in Scala.
+You can find it <a href="http://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html">here</a>.
+I couldn&rsquo;t agree more with Daniel.</p>
+
+<p>This short story is another example that demonstrates how using <code>Option</code> is not always
+the best option (pun intended).</p>
+
+<p>I&rsquo;m developing an advertising service for a customer using Scala.
+A simplified version of the <code>Ad</code> data structure is the following:</p>
+
+<pre><code class="scala">final case class Ad(
+    headline: String, 
+    description1: String, 
+    description2: String
+)
+</code></pre>
+
+<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
+two types of ad: standard and expanded.
+They said: &ldquo;If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
+If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
+Users won&rsquo;t include <code>headline2</code> when the ad is intended to be standard, and won&rsquo;t include <code>description2</code>
+when the ad is intended to be expanded.&rdquo;</p>
+
+<p>The optionality of the <code>headline2</code> and <code>description2</code> fields could put you in the wrong direction.
+Indeed, you could think of changing the data structure as follows:</p>
+
+<pre><code class="scala">final case class Ad(
+    headline: String, 
+    headline2: Option[String], 
+    description1: String, 
+    description2: Option[String]
+)
+</code></pre>
+
+<p>This may sound fine but you could reach a much cleaner and type-safe
+solution using a simple Algebraic Data Type (ADT). Here&rsquo;s how:</p>
+
+<pre><code class="scala">sealed trait Ad
+
+object Ad {
+  final case class Standard(
+      headline: String, 
+      description1: String, 
+      description2: String
+  ) extends Ad
+
+  final case class Expanded(
+      headline: String, 
+      headline2: String, 
+      description1: String
+  ) extends Ad
+}
+</code></pre>
+
+<p>This way you don&rsquo;t need to inspect the <code>headline2</code> and/or <code>description2</code> value
+to find out the ad type you&rsquo;re dealing with.
+Indeed, the ad type is encoded in the type system which is always a <em>desirata</em>.</p>
+
+<p>Bottom line: use <code>Option</code> with caution.</p>
+]]></content>
+  </entry>
+  
+</feed>

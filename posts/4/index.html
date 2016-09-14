@@ -9,7 +9,8 @@
   <meta name="author" content="Alessandro Lacava">
 
   
-  <meta name="description" content="Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in &hellip;">
+  <meta name="description" content="Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on
+January 1, 1970. In Oracle you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +107,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/">How to Compute a Timestamp In Oracle (PL SQL)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-10-09T11:41:18+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>11:41 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on
+January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the
+number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="p">(</span><span class="n">to_date</span><span class="p">(</span><span class="s1">&#39;09-10-2007&#39;</span><span class="p">,</span> <span class="s1">&#39;DD-MM-YYYY&#39;</span><span class="p">)</span> <span class="o">-</span>
+</span><span class='line'><span class="n">to_date</span><span class="p">(</span><span class="s1">&#39;01-01-1970&#39;</span><span class="p">,</span> <span class="s1">&#39;DD-MM-YYYY&#39;</span><span class="p">))</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+</span><span class='line'><span class="k">FROM</span> <span class="n">dual</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The result of the preceding query should be 1191888000.</p>
+
+<p><strong>How it works:</strong></p>
+
+<p>The subtraction between two dates returns the number of days between them. Multiplying this number by
+60 * 60 * 24&ndash;the number of seconds in one day&ndash;you obtain the number of seconds between those dates.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -663,43 +711,6 @@ of the number of bytes used to represent the characters internally.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/">How to Exploit UltraEdit-32 to Highlight Code Based on File Extensions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2007-03-14T09:27:14+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>9:27 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.ultraedit.com/">UltraEdit-32</a> (UE for short from now on) is a wonderful text editor. You can use it as a simple text editor or to write programs using your favorite languages. Besides other features, UE offers syntax highlighting for the most common programming languages out there. UE recognizes the type of file by looking at its extension. However, sometimes, you might want to use one syntax highlighting for an extension that is not mapped in UE. For example if you use Pro<em>C, which file extension is .pc, you may want UE to default to the C highlighting for Pro</em>C files. You can do that by editing the UE&rsquo;s wordfile.txt file. UE uses this file to understand how to highlight words. To edit this file, from the UE menu go to: Advanced -> Configuration -> Editor Display -> Syntax Highlighting. From this window you can open wordfile.txt by clicking on the Open button in the Full path name word list section. In this file you&rsquo;ll find all the languages that UE highlight. Each language start with /Ln, where n is a number. At the end of the row where /Ln is you can see &ldquo;File Extensions = <em>extensions</em>&rdquo;. Just append the extension you need to highlight for that language and save the file. Restart UE and open the file with the extension you just mapped. Enjoy the result! :-)</p>
-
-<p>Here is an example for the Pro*C extension (.pc):</p>
-
-<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK</p>
-
-<p>This line is extracted from the wordfile.txt file. To add the Pro*C extension I just added PC at the end of File Extensions, that is after AWK:</p>
-
-<p>/L1&#8221;C/C++&ldquo; C_LANG Line Comment = // Block Comment On = /<em> Block Comment Off = </em>/ Escape Char =  String Chars = &rdquo;&lsquo; File Extensions = C CPP CC CXX H HPP AWK PC</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -717,6 +728,10 @@ of the number of bytes used to represent the characters internally.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
       </li>
     
@@ -730,10 +745,6 @@ of the number of bytes used to represent the characters internally.</p>
     
       <li class="post">
         <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a>
       </li>
     
   </ul>
