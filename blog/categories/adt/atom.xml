@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Adt | Alessandro Lacava]]></title>
   <link href="http://www.alessandrolacava.com/blog/categories/adt/atom.xml" rel="self"/>
   <link href="http://www.alessandrolacava.com/"/>
-  <updated>2016-09-14T15:02:51+02:00</updated>
+  <updated>2016-09-14T15:11:17+02:00</updated>
   <id>http://www.alessandrolacava.com/</id>
   <author>
     <name><![CDATA[Alessandro Lacava]]></name>
@@ -76,7 +76,7 @@ object Ad {
 
 <p>This way you don&rsquo;t need to inspect the <code>headline2</code> and/or <code>description2</code> value
 to find out the ad type you&rsquo;re dealing with.
-Indeed, the ad type is encoded in the type system which is always a <em>desirata</em>.</p>
+Indeed, the ad type is encoded in the type system which is always a <em>desiderata</em>.</p>
 
 <p>Bottom line: use <code>Option</code> with caution.</p>
 ]]></content>
