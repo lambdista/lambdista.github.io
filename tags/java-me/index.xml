@@ -13,10 +13,10 @@
     
     <item>
       <title>Using proguard obfuscator through the Wireless Toolkit</title>
-      <link>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
+      <link>http://www.alessandrolacava.com/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
       <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
+      <guid>http://www.alessandrolacava.com/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
       <description>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source tool you can use for this purpose. To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find the obfuscator. You can do that by editing the file ktools.properties that you can find under %WTK%wtklibWindows, where %WTK% is the root directory of the Wireless Toolkit.</description>
     </item>
     

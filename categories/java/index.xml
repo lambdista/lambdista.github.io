@@ -13,40 +13,40 @@
     
     <item>
       <title>Java split() of String | Multiple whitespace characters</title>
-      <link>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</link>
+      <link>http://www.alessandrolacava.com/posts/java-split-of-string-multiple-whitespace-characters/</link>
       <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</guid>
+      <guid>http://www.alessandrolacava.com/posts/java-split-of-string-multiple-whitespace-characters/</guid>
       <description>The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
 Stringstr=&amp;#34;Testing split using two whitespace characters&amp;#34;;String[]tokens=str.split(&amp;#34;\\s&amp;#34;);for(Stringtoken:tokens){System.out.println(&amp;#34;-&amp;#34;+token+&amp;#34;-&amp;#34;);}  What&amp;rsquo;s the output produced by the previous code?</description>
     </item>
     
     <item>
       <title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</title>
-      <link>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
+      <link>http://www.alessandrolacava.com/posts/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
       <pubDate>Tue, 22 Jul 2008 08:53:07 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
+      <guid>http://www.alessandrolacava.com/posts/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
       <description>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
  By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
     </item>
     
     <item>
       <title>How to get the number of columns in a ResultSet in Java</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
       <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
       <description>In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&amp;rsquo;s an example:
 // Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...); Statementst=conn.createStatement();ResultSetrs=st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;);ResultSetMetaDatarsmd=rs.getMetaData();intnumCols=rsmd.getColumnCount();System.out.println(&amp;#34;Number of columns in your_table: &amp;#34;+numCols);  The previous code retrieves and displays the number of columns of your_table.</description>
     </item>
     
     <item>
       <title>Very Useful Shortcuts for Eclipse</title>
-      <link>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</link>
+      <link>http://www.alessandrolacava.com/posts/very-useful-shortcuts-for-eclipse/</link>
       <pubDate>Tue, 25 Sep 2007 11:10:01 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
+      <guid>http://www.alessandrolacava.com/posts/very-useful-shortcuts-for-eclipse/</guid>
       <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java. Action Shortcut  Toggle Comment 
 Ctrl+7   Show Tooltip 
 F2   Format Code 
@@ -58,28 +58,28 @@ Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up</description>
     
     <item>
       <title>How to attach source or Javadoc to Java Enterprise Edition API in Eclipse</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</link>
       <pubDate>Fri, 14 Sep 2007 12:50:48 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</guid>
       <description>Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there&amp;rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:</description>
     </item>
     
     <item>
       <title>How to exclude subversion hidden directories (.svn) using Ant</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-exclude-subversion-hidden-directories-svn-using-ant/</link>
       <pubDate>Mon, 04 Jun 2007 10:43:49 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-exclude-subversion-hidden-directories-svn-using-ant/</guid>
       <description>Many Java developers already know that Ant is a great build tool. Besides a build tool you also need a good version control system to manage the various versions of your code. For this purpose I often use Subversion. Now, there might be time when you need to exclude the Subversion hidden directories from, for example, a backup Ant target you built. To do that you just need to use the following attribute to your zipfileset or other directory-based task:</description>
     </item>
     
     <item>
       <title>How to select any character across multiple lines in Java</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-select-any-character-across-multiple-lines-in-java/</link>
       <pubDate>Tue, 10 Oct 2006 08:52:06 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-select-any-character-across-multiple-lines-in-java/</guid>
       <description>You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
 importjava.util.regex;// ... other code // Strip multiline comments publicvoiddeleteMultilineComments(Stringsubject){Patternpattern=Pattern.</description>
@@ -87,10 +87,10 @@ importjava.util.regex;// ... other code // Strip multiline comments publicvoidde
     
     <item>
       <title>Java passes EVERYTHING by value!</title>
-      <link>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</link>
+      <link>http://www.alessandrolacava.com/posts/java-passes-everything-by-value/</link>
       <pubDate>Wed, 13 Sep 2006 08:51:47 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</guid>
+      <guid>http://www.alessandrolacava.com/posts/java-passes-everything-by-value/</guid>
       <description>It&amp;rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
 publicstaticvoidmain(String[]args){inta=0;increment(a);System.out.println(a);//it prints 0 so increment didn&amp;#39;t work as expected }publicstaticintincrement(inta){++a;System.</description>
@@ -98,10 +98,10 @@ publicstaticvoidmain(String[]args){inta=0;increment(a);System.out.println(a);//i
     
     <item>
       <title>What happens if you write something like a = a&#43;&#43; in Java?</title>
-      <link>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</link>
+      <link>http://www.alessandrolacava.com/posts/what-happens-if-you-write-something-like-a-a-in-java/</link>
       <pubDate>Wed, 13 Sep 2006 07:58:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</guid>
+      <guid>http://www.alessandrolacava.com/posts/what-happens-if-you-write-something-like-a-a-in-java/</guid>
       <description>I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:
 inta=0;a=a++;System.out.println(a);  What does it print?
 More than 50% of the programmers will answer 1, some of the remaining will say &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; and the others will say 0. Well &amp;ldquo;the others&amp;rdquo; are right!
@@ -110,20 +110,20 @@ Provided that such a code MUST NEVER BE WRITTEN, let&amp;rsquo;s try to understa
     
     <item>
       <title>POJO (Plain Old Java Object): The simpler...the better.</title>
-      <link>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simplerthe-better/</link>
+      <link>http://www.alessandrolacava.com/posts/pojo-plain-old-java-object-the-simplerthe-better/</link>
       <pubDate>Mon, 21 Aug 2006 15:31:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simplerthe-better/</guid>
+      <guid>http://www.alessandrolacava.com/posts/pojo-plain-old-java-object-the-simplerthe-better/</guid>
       <description>A POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined by the EJB 2 framework. An example of a POJO is a class composed by only:
  Properties, representing the object&amp;rsquo;s state. Getter and setter methods for the properties. Business methods, representing behaviour.  Some properties can represent associations with other POJOs. Here is an example of implementation of the Person entity using a POJO:</description>
     </item>
     
     <item>
       <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
       <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
       <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*+.
 If you want to treat them as ordinary characters you have two options:
@@ -132,19 +132,19 @@ If you want to treat them as ordinary characters you have two options:
     
     <item>
       <title>Using proguard obfuscator through the Wireless Toolkit</title>
-      <link>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
+      <link>http://www.alessandrolacava.com/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
       <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
+      <guid>http://www.alessandrolacava.com/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
       <description>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source tool you can use for this purpose. To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find the obfuscator. You can do that by editing the file ktools.properties that you can find under %WTK%wtklibWindows, where %WTK% is the root directory of the Wireless Toolkit.</description>
     </item>
     
     <item>
       <title>The name-separator character in Java</title>
-      <link>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</link>
+      <link>http://www.alessandrolacava.com/posts/the-name-separator-character-in-java/</link>
       <pubDate>Tue, 02 May 2006 13:54:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</guid>
+      <guid>http://www.alessandrolacava.com/posts/the-name-separator-character-in-java/</guid>
       <description>Java was born as a platform-independent programming language. Some features that grant the platform independence are achieved using the APIs of the language itself. For example, to construct a filename path, you can use the public static field separator of the java.io.File class.
 Example:
 Stringpath=java.io.File.separator+&amp;#34;foldername&amp;#34;+java.io.File.separator+&amp;#34;filename&amp;#34;;  This produces the string /foldername/filename under Unix-like systems and \foldername\filename under Windows systems.</description>

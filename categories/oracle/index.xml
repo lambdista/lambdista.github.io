@@ -13,20 +13,20 @@
     
     <item>
       <title>Performance differences between IN and EXISTS</title>
-      <link>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</link>
+      <link>http://www.alessandrolacava.com/posts/performance-differences-between-in-and-exists/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</guid>
+      <guid>http://www.alessandrolacava.com/posts/performance-differences-between-in-and-exists/</guid>
       <description>Very often I hear people wondering if it&amp;rsquo;s better the EXISTS or the IN operator. Let&amp;rsquo;s start by saying that the two operators behave differently when NULL values are involved (see this post).
 If you are sure that the field used to join the tables does not include NULL values then the IN operator &amp;ldquo;generally&amp;rdquo; performs better than EXISTS. I say &amp;ldquo;generally&amp;rdquo; because this is not always the case. For example consider the following query:</description>
     </item>
     
     <item>
       <title>NOT IN vs. NOT EXISTS when NULL values are involved</title>
-      <link>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</link>
+      <link>http://www.alessandrolacava.com/posts/not-in-vs-not-exists-when-null-values-are-involved/</link>
       <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
+      <guid>http://www.alessandrolacava.com/posts/not-in-vs-not-exists-when-null-values-are-involved/</guid>
       <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
  CD_FIELD DS_FIELD  1 ALPHA   2 BETA   TABLE_A
  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   TABLE_B
@@ -36,10 +36,10 @@ SELECT*FROMtable_aaWHEREa.cd_fieldNOTIN(SELECTb.cd_fieldFROMtable_bb);  Does the
     
     <item>
       <title>How to compute a timestamp in Oracle (PL SQL)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-compute-a-timestamp-in-oracle-pl-sql/</link>
       <pubDate>Tue, 09 Oct 2007 09:41:18 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
       <description>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.
 SELECT(to_date(&amp;#39;09-10-2007&amp;#39;,&amp;#39;DD-MM-YYYY&amp;#39;)-to_date(&amp;#39;01-01-1970&amp;#39;,&amp;#39;DD-MM-YYYY&amp;#39;))*60*60*24FROMdual  The result of the preceding query should be 1191888000.
 How it works:
@@ -48,57 +48,57 @@ The subtraction between two dates returns the number of days between them.</desc
     
     <item>
       <title>How to create a copy/backup of a table in Oracle</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-create-a-copybackup-of-a-table-in-oracle/</link>
       <pubDate>Wed, 04 Jul 2007 08:16:50 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-create-a-copybackup-of-a-table-in-oracle/</guid>
       <description>You can create a backup of a table (structure and data) in Oracle by using the following syntax:
 CREATETABLEcustomers_backupAS(SELECT*FROMcustomers)  The previous example creates the customers_backup table which mirrors the structure and data of the customers table.</description>
     </item>
     
     <item>
       <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
       <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
       <description>Sometimes you might need to commit a single INSERT, UPDATE or DELETE statement and not the whole main transaction. In such a case you can use an AUTONOMOUS TRANSACTION which is a feature available since Oracle 8i. The trick is to encapsulate the statement in a procedure and use the pragma AUTONOMOUS_TRANSACTION. Here is an example, suppose you have a table, your_table, which has just one column of type NUMBER and you want to insert the value 1, irrespective of the state of the main transaction:</description>
     </item>
     
     <item>
       <title>How to put a set of rows into a single row in Oracle</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</link>
       <pubDate>Fri, 27 Apr 2007 14:11:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</guid>
       <description>In Oracle you can execute hierarchical queries using some cool operators&amp;ndash;CONNECT BY PRIOR, START WITH and the pseudocolumn SYS_CONNECT_BY_PATH, namely. However, using your fantasy you can exploit these operators to put in a single row&amp;ndash;with each item separated by the next through a separator, such as a comma&amp;ndash;what you have in multiple rows. For example if you have more than one telephone number in different rows and you want to put them in a single comma-separated row you could use a query similar to the following:</description>
     </item>
     
     <item>
       <title>How to tell Oracle to use more than one byte per character</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</link>
       <pubDate>Thu, 26 Apr 2007 14:05:31 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</guid>
       <description>When you create a table, by default, the number of bytes used to represent a character in a VARCHAR2 type is 1, irrespective of the characterset of the DB. This may be fine if the characterset is such that it uses just one byte per character. However, if the characterset of the DB is such that there might take more than one byte to represent a character (for example for characterset = AL32UTF8) you might run into troubles, such as the error: ORA-01401: inserted value too large for column.</description>
     </item>
     
     <item>
       <title>Using dynamic SQL statements from PL/SQL</title>
-      <link>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-plsql/</link>
+      <link>http://www.alessandrolacava.com/posts/using-dynamic-sql-statements-from-plsql/</link>
       <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-plsql/</guid>
+      <guid>http://www.alessandrolacava.com/posts/using-dynamic-sql-statements-from-plsql/</guid>
       <description>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the EXECUTE IMMEDIATE statement. Here are three examples of how you can take advantage of this great statement.
 sql_select:=&amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;;EXECUTEIMMEDIATEsql_selectINTOyour_cursorUSINGyour_parameter_for_field1;  In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor. The USING your_parameter_for_field1 part replaces the :1 bind variable with the value contained in the your_parameter_for_field1 parameter.</description>
     </item>
     
     <item>
       <title>How to store and extract XML data in and from an Oracle DataBase (DB)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
       <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
       <description>Here are some snippets of code showing how to accomplish this:
 CREATETABLESampleTable(idnumberprimarykey,personXMLType)  This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&amp;rsquo;s insert one row in the table.

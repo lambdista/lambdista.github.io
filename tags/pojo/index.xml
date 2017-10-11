@@ -13,10 +13,10 @@
     
     <item>
       <title>POJO (Plain Old Java Object): The simpler...the better.</title>
-      <link>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simplerthe-better/</link>
+      <link>http://www.alessandrolacava.com/posts/pojo-plain-old-java-object-the-simplerthe-better/</link>
       <pubDate>Mon, 21 Aug 2006 15:31:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simplerthe-better/</guid>
+      <guid>http://www.alessandrolacava.com/posts/pojo-plain-old-java-object-the-simplerthe-better/</guid>
       <description>A POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined by the EJB 2 framework. An example of a POJO is a class composed by only:
  Properties, representing the object&amp;rsquo;s state. Getter and setter methods for the properties. Business methods, representing behaviour.  Some properties can represent associations with other POJOs. Here is an example of implementation of the Person entity using a POJO:</description>
     </item>

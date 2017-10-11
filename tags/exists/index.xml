@@ -13,10 +13,10 @@
     
     <item>
       <title>Performance differences between IN and EXISTS</title>
-      <link>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</link>
+      <link>http://www.alessandrolacava.com/posts/performance-differences-between-in-and-exists/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</guid>
+      <guid>http://www.alessandrolacava.com/posts/performance-differences-between-in-and-exists/</guid>
       <description>Very often I hear people wondering if it&amp;rsquo;s better the EXISTS or the IN operator. Let&amp;rsquo;s start by saying that the two operators behave differently when NULL values are involved (see this post).
 If you are sure that the field used to join the tables does not include NULL values then the IN operator &amp;ldquo;generally&amp;rdquo; performs better than EXISTS. I say &amp;ldquo;generally&amp;rdquo; because this is not always the case. For example consider the following query:</description>
     </item>

@@ -13,10 +13,10 @@
     
     <item>
       <title>How to store and extract XML data in and from an Oracle DataBase (DB)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
       <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
       <description>Here are some snippets of code showing how to accomplish this:
 CREATETABLESampleTable(idnumberprimarykey,personXMLType)  This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&amp;rsquo;s insert one row in the table.

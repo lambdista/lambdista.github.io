@@ -13,10 +13,10 @@
     
     <item>
       <title>Object not found | EasyPHP | MySQL | phpMyAdmin</title>
-      <link>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</link>
+      <link>http://www.alessandrolacava.com/posts/object-not-found-easyphp-mysql-phpmyadmin/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</guid>
+      <guid>http://www.alessandrolacava.com/posts/object-not-found-easyphp-mysql-phpmyadmin/</guid>
       <description>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:
 Object not found!
 The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.

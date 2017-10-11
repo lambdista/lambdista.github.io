@@ -13,10 +13,10 @@
     
     <item>
       <title>Scala Self Recursive Types</title>
-      <link>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</link>
+      <link>http://www.alessandrolacava.com/posts/scala-self-recursive-types/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</guid>
+      <guid>http://www.alessandrolacava.com/posts/scala-self-recursive-types/</guid>
       <description>One of the advantages of using a statically typed language is that you can use the type system to enforce some constraints. Scala provides self-recursive types, aka F-bounded polymorphic types that&amp;ndash;along with self types&amp;ndash;let you put powerful constraint to your type definitions.
 Self-recursive type definition Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example which does not use a self-recursive type:</description>
     </item>

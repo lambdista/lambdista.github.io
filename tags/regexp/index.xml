@@ -13,20 +13,20 @@
     
     <item>
       <title>Capturing groups using regular expressions (RegEx) in JavaScript</title>
-      <link>http://www.alessandrolacava.com/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</link>
+      <link>http://www.alessandrolacava.com/posts/capturing-groups-in-regular-expressions-regex-in-javascript/</link>
       <pubDate>Mon, 26 Nov 2007 14:21:20 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</guid>
+      <guid>http://www.alessandrolacava.com/posts/capturing-groups-in-regular-expressions-regex-in-javascript/</guid>
       <description>There are whole books about regular expressions so this post shouldn&amp;rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
 varstr=&amp;#34;http://www.alessandrolacava.com/?code=ALE69&amp;#34;;varregex=/code=(w+)&amp;amp;?/;varresults=regex.exec(str);if(!results){alert(&amp;#34;no match&amp;#34;);}else{// first group alert(results[1]);}  The previous code extracts the string that follows the code= part of str.</description>
     </item>
     
     <item>
       <title>How to select any character across multiple lines in Java</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-select-any-character-across-multiple-lines-in-java/</link>
       <pubDate>Tue, 10 Oct 2006 08:52:06 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-select-any-character-across-multiple-lines-in-java/</guid>
       <description>You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
 importjava.util.regex;// ... other code // Strip multiline comments publicvoiddeleteMultilineComments(Stringsubject){Patternpattern=Pattern.</description>
@@ -34,10 +34,10 @@ importjava.util.regex;// ... other code // Strip multiline comments publicvoidde
     
     <item>
       <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
+      <link>http://www.alessandrolacava.com/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
       <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
+      <guid>http://www.alessandrolacava.com/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
       <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*+.
 If you want to treat them as ordinary characters you have two options:
