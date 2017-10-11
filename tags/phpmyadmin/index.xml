@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phpmyadmin on Alessandro Lacava</title>
+    <link>http://www.alessandrolacava.com/tags/phpmyadmin/</link>
+    <description>Recent content in Phpmyadmin on Alessandro Lacava</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jan 2009 09:46:05 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.alessandrolacava.com/tags/phpmyadmin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Object not found | EasyPHP | MySQL | phpMyAdmin</title>
+      <link>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</link>
+      <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</guid>
+      <description>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:
+Object not found!
+The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.
+This might be due to the fact that it tries the following URL:
+http://127.0.0.1/mysql/
+Try this one instead:
+http://127.0.0.1/home/mysql/
+If it works then you can work it out by adding the following line to the httpd.</description>
+    </item>
+    
+  </channel>
+</rss>

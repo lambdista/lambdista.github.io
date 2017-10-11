@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Function on Alessandro Lacava</title>
+    <link>http://www.alessandrolacava.com/tags/function/</link>
+    <description>Recent content in Function on Alessandro Lacava</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Oct 2015 10:24:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://www.alessandrolacava.com/tags/function/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scala: Seq, Map and Set as Functions</title>
+      <link>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</link>
+      <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
+      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:</description>
+    </item>
+    
+    <item>
+      <title>The Function class in JavaScript</title>
+      <link>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</link>
+      <pubDate>Wed, 14 Jun 2006 21:38:22 +0000</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</guid>
+      <description>Most programmers know how to define and use a function in JavaScript. For example the following function displays an alert containing the string passed in as a parameter:
+functiondisplayAlert(sText){alert(sText);}// Then you call it this way displayAlert(&amp;#34;Hello World!&amp;#34;);  How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
+vardisplayAlert=newFunction(&amp;#34;sText&amp;#34;,&amp;#34;alert(sText);&amp;#34;);//...and you call it the same way displayAlert(&amp;#34;Hello World!&amp;#34;);  For those who didn&amp;rsquo;t figure it out, the syntax of the Function class is the following:</description>
+    </item>
+    
+  </channel>
+</rss>

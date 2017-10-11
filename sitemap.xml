@@ -1,2827 +1,689 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</loc>
-      
-        <lastmod>2016-09-14T14:27:23+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</loc>
-      
-        <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</loc>
-      
-        <lastmod>2015-05-22T08:12:07+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</loc>
-      
-        <lastmod>2015-03-30T14:59:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/introduction-to-internal-dsls-in-scala/</loc>
-      
-        <lastmod>2015-03-26T09:41:48+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/introduction-to-functional-programming-in-scala/</loc>
-      
-        <lastmod>2015-02-28T09:29:30+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</loc>
-      
-        <lastmod>2015-02-20T15:09:06+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/</loc>
-      
-        <lastmod>2014-06-20T16:03:33+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/</loc>
-      
-        <lastmod>2011-10-26T17:34:17+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/script-aculo-us-controls-do-your-web-users-a-favor/</loc>
-      
-        <lastmod>2011-10-26T17:32:32+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/will-your-next-web-application-be-a-google-gadget/</loc>
-      
-        <lastmod>2011-10-26T17:31:04+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/the-productivity-perks-behind-prototypes-popularity-2/</loc>
-      
-        <lastmod>2011-10-26T17:29:31+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/speed-up-your-ajax-based-apps-with-json/</loc>
-      
-        <lastmod>2011-10-26T16:54:43+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/build-brilliant-clientserver-apps-with-j2me-php-and-mysql/</loc>
-      
-        <lastmod>2011-10-26T16:53:41+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/producing-professional-msdn-style-documentation-with-net-and-ndoc/</loc>
-      
-        <lastmod>2011-10-26T16:52:33+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/obtaining-wireless-news-with-j2me-and-php/</loc>
-      
-        <lastmod>2011-10-26T16:49:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/keeping-secrets-secret-steganography-with-net/</loc>
-      
-        <lastmod>2011-10-26T16:47:19+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/</loc>
-      
-        <lastmod>2011-10-13T14:56:36+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</loc>
-      
-        <lastmod>2009-03-26T10:33:59+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</loc>
-      
-        <lastmod>2009-01-30T10:46:05+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</loc>
-      
-        <lastmod>2008-12-03T11:47:02+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</loc>
-      
-        <lastmod>2008-07-22T10:53:07+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</loc>
-      
-        <lastmod>2008-06-04T15:33:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</loc>
-      
-        <lastmod>2008-06-04T15:24:09+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
-      
-        <lastmod>2008-05-09T15:49:38+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
-      
-        <lastmod>2008-05-09T15:25:27+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</loc>
-      
-        <lastmod>2008-03-31T15:41:13+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</loc>
-      
-        <lastmod>2007-12-12T11:32:31+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</loc>
-      
-        <lastmod>2007-11-26T15:21:20+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</loc>
-      
-        <lastmod>2007-10-09T13:20:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</loc>
-      
-        <lastmod>2007-10-09T11:41:18+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</loc>
-      
-        <lastmod>2007-09-25T13:10:01+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</loc>
-      
-        <lastmod>2007-09-14T14:50:48+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle/</loc>
-      
-        <lastmod>2007-07-04T10:16:50+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</loc>
-      
-        <lastmod>2007-06-04T12:43:49+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</loc>
-      
-        <lastmod>2007-05-24T14:52:20+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/two-useful-windows-shortcuts/</loc>
-      
-        <lastmod>2007-05-10T13:29:54+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</loc>
-      
-        <lastmod>2007-05-04T13:02:16+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</loc>
-      
-        <lastmod>2007-04-27T16:11:27+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</loc>
-      
-        <lastmod>2007-04-26T16:05:31+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</loc>
-      
-        <lastmod>2007-03-14T09:27:14+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</loc>
-      
-        <lastmod>2007-02-16T11:55:53+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</loc>
-      
-        <lastmod>2007-01-16T17:31:26+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</loc>
-      
-        <lastmod>2006-11-24T10:21:30+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method/</loc>
-      
-        <lastmod>2006-11-20T16:34:48+01:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</loc>
-      
-        <lastmod>2006-10-11T18:26:34+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</loc>
-      
-        <lastmod>2006-10-10T10:52:06+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-include-a-js-file-a-javascript-file-within-another-js-file/</loc>
-      
-        <lastmod>2006-09-22T11:43:45+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</loc>
-      
-        <lastmod>2006-09-13T10:51:47+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</loc>
-      
-        <lastmod>2006-09-13T09:58:27+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-plsql/</loc>
-      
-        <lastmod>2006-09-06T12:24:18+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/</loc>
-      
-        <lastmod>2006-09-01T15:04:03+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simplerthe-better/</loc>
-      
-        <lastmod>2006-08-21T17:31:02+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</loc>
-      
-        <lastmod>2006-07-27T17:16:22+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/creating-class-definition-in-javascript/</loc>
-      
-        <lastmod>2006-07-24T18:28:27+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</loc>
-      
-        <lastmod>2006-07-12T15:24:03+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</loc>
-      
-        <lastmod>2006-07-11T17:54:40+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</loc>
-      
-        <lastmod>2006-06-20T22:53:38+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</loc>
-      
-        <lastmod>2006-06-14T23:38:22+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</loc>
-      
-        <lastmod>2006-06-08T17:05:27+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</loc>
-      
-        <lastmod>2006-05-12T14:23:55+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</loc>
-      
-        <lastmod>2006-05-02T15:54:38+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/hello-world/</loc>
-      
-        <lastmod>2006-04-14T00:32:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/archives/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/privacy-policy/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/articles/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/about-me/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/robots.txt</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/it/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/it/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/programming/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/programming/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/java/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/java/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/javascript/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/javascript/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/oracle/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/oracle/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/java-me/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/java-me/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ajax/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ajax/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/regexp/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/regexp/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/aphorisms/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/aphorisms/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/optimization/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/optimization/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/prototype/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/prototype/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/css/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/css/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/howto/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/howto/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ultraedit-32/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ultraedit-32/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/windows/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/windows/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/eclipse/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/eclipse/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ide/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ide/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/database/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/database/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/regex/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/regex/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/apache/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/apache/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/dennis-ritchie/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/dennis-ritchie/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/rip/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/rip/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/dot-net/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/dot-net/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/c-number/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/c-number/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/security/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/security/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/php/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/php/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/rss-feed/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/rss-feed/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ndoc/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/ndoc/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/mysql/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/mysql/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/json/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/json/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/google-gadget/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/google-gadget/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/scriptaculous/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/scriptaculous/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/template-engine/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/template-engine/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/trimpath/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/trimpath/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/functional-programming/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/functional-programming/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/java-8/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/java-8/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/scala/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/scala/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/dsl/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/dsl/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/implicit/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/implicit/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/implicits/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/implicits/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/type-system/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/type-system/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/self-recursive-type/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/self-recursive-type/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/self-type/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/self-type/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/case-class/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/case-class/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/companion-object/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/companion-object/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/collections/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/collections/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/list/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/list/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/vector/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/vector/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/seq/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/seq/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/map/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/map/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/set/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/set/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/function/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/function/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/partialfunction/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/partialfunction/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/algebraic-data-type/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/algebraic-data-type/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/adt/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/adt/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/option/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/blog/categories/option/atom.xml</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/posts/2/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/posts/3/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/posts/4/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/posts/5/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/posts/6/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://www.alessandrolacava.com/posts/7/</loc>
-      
-        <lastmod>2017-10-02T15:08:51+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/privacy-policy/</loc>
+    <lastmod>2015-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</loc>
+    <lastmod>2015-05-22T08:12:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</loc>
+    <lastmod>2015-03-30T14:59:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/about-me/</loc>
+    <lastmod>2015-03-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/articles/</loc>
+    <lastmod>2015-03-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</loc>
+    <lastmod>2015-02-20T15:09:06+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/</loc>
+    <lastmod>2014-06-20T14:03:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/</loc>
+    <lastmod>2011-10-13T12:56:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</loc>
+    <lastmod>2009-03-26T09:33:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</loc>
+    <lastmod>2008-12-03T10:47:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</loc>
+    <lastmod>2008-07-22T08:53:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</loc>
+    <lastmod>2008-06-04T13:24:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
+    <lastmod>2008-05-09T13:49:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
+    <lastmod>2008-05-09T13:25:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</loc>
+    <lastmod>2008-03-31T13:41:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</loc>
+    <lastmod>2007-12-12T10:32:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</loc>
+    <lastmod>2007-11-26T14:21:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</loc>
+    <lastmod>2007-10-09T11:20:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</loc>
+    <lastmod>2007-10-09T09:41:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</loc>
+    <lastmod>2007-09-25T11:10:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</loc>
+    <lastmod>2007-09-14T12:50:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-create-a-copybackup-of-a-table-in-oracle/</loc>
+    <lastmod>2007-07-04T08:16:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</loc>
+    <lastmod>2007-06-04T10:43:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</loc>
+    <lastmod>2007-05-24T12:52:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</loc>
+    <lastmod>2007-05-04T11:02:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</loc>
+    <lastmod>2007-04-27T14:11:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</loc>
+    <lastmod>2007-04-26T14:05:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</loc>
+    <lastmod>2007-03-14T08:27:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</loc>
+    <lastmod>2007-02-16T10:55:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</loc>
+    <lastmod>2007-01-16T16:31:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</loc>
+    <lastmod>2006-11-24T09:21:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method/</loc>
+    <lastmod>2006-11-20T15:34:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</loc>
+    <lastmod>2006-10-11T16:26:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</loc>
+    <lastmod>2006-10-10T08:52:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-include-a-js-file-a-javascript-file-within-another-js-file/</loc>
+    <lastmod>2006-09-22T09:43:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</loc>
+    <lastmod>2006-09-13T08:51:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</loc>
+    <lastmod>2006-09-13T07:58:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-plsql/</loc>
+    <lastmod>2006-09-06T10:24:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/</loc>
+    <lastmod>2006-09-01T13:04:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simplerthe-better/</loc>
+    <lastmod>2006-08-21T15:31:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</loc>
+    <lastmod>2006-07-27T15:16:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/creating-class-definition-in-javascript/</loc>
+    <lastmod>2006-07-24T16:28:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</loc>
+    <lastmod>2006-07-12T13:24:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</loc>
+    <lastmod>2006-07-11T15:54:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</loc>
+    <lastmod>2006-06-20T20:53:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</loc>
+    <lastmod>2006-06-14T21:38:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</loc>
+    <lastmod>2006-06-08T15:05:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</loc>
+    <lastmod>2006-05-12T12:23:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</loc>
+    <lastmod>2006-05-02T13:54:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/hello-world/</loc>
+    <lastmod>2006-04-13T22:32:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/</loc>
+    <lastmod>2008-06-04T13:24:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/adt/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/ajax/</loc>
+    <lastmod>2006-07-11T15:54:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/algebraic-data-type/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/ant/</loc>
+    <lastmod>2007-06-04T10:43:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/apache/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/aphorisms/</loc>
+    <lastmod>2008-05-09T13:49:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/blog/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/case-class/</loc>
+    <lastmod>2015-05-22T08:12:07+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/class/</loc>
+    <lastmod>2006-07-24T16:28:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/collections/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/companion-object/</loc>
+    <lastmod>2015-05-22T08:12:07+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/css/</loc>
+    <lastmod>2007-02-16T10:55:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/database/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/dennis-ritchie/</loc>
+    <lastmod>2011-10-13T12:56:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/dml/</loc>
+    <lastmod>2007-05-24T12:52:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/dsl/</loc>
+    <lastmod>2015-02-20T15:09:06+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/dynamic-statement/</loc>
+    <lastmod>2006-09-06T10:24:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/easyphp/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/eclipse/</loc>
+    <lastmod>2009-03-26T09:33:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/editor/</loc>
+    <lastmod>2007-03-14T08:27:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/exists/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/function/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/ide/</loc>
+    <lastmod>2009-03-26T09:33:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/implicit/</loc>
+    <lastmod>2015-02-20T15:09:06+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/in/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/j2me/</loc>
+    <lastmod>2006-06-20T20:53:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/java/</loc>
+    <lastmod>2008-12-03T10:47:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/java-8/</loc>
+    <lastmod>2014-06-20T14:03:33+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/java-me/</loc>
+    <lastmod>2006-06-20T20:53:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/javascript/</loc>
+    <lastmod>2008-03-31T13:41:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/jvm/</loc>
+    <lastmod>2008-07-22T08:53:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/list/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/map/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/metacharacter/</loc>
+    <lastmod>2006-07-12T13:24:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/mysql/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/not-exists/</loc>
+    <lastmod>2008-06-04T13:24:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/not-in/</loc>
+    <lastmod>2008-06-04T13:24:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/optimization/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/option/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/oracle/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/partial-function/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/performance/</loc>
+    <lastmod>2008-06-04T13:33:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/php/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/phpmyadmin/</loc>
+    <lastmod>2009-01-30T09:46:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/pojo/</loc>
+    <lastmod>2006-08-21T15:31:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/programming/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/prototype/</loc>
+    <lastmod>2006-11-20T15:34:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/regex/</loc>
+    <lastmod>2008-12-03T10:47:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/regexp/</loc>
+    <lastmod>2007-11-26T14:21:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/resultset/</loc>
+    <lastmod>2007-12-12T10:32:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/resultsetmetadata/</loc>
+    <lastmod>2007-12-12T10:32:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/rip/</loc>
+    <lastmod>2011-10-13T12:56:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/categories/scala/</loc>
+    <lastmod>2016-09-14T14:27:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/self-recursive-type/</loc>
+    <lastmod>2015-03-30T14:59:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/self-type/</loc>
+    <lastmod>2015-03-30T14:59:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/seq/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/set/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/statement/</loc>
+    <lastmod>2007-05-24T12:52:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/svn/</loc>
+    <lastmod>2007-06-04T10:43:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/</loc>
+    <lastmod>2008-06-04T13:24:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/timestamp/</loc>
+    <lastmod>2007-10-09T11:20:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/try/</loc>
+    <lastmod>2014-06-20T14:03:33+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/type-system/</loc>
+    <lastmod>2015-03-30T14:59:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/ultraedit-32/</loc>
+    <lastmod>2007-03-14T08:27:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/vector/</loc>
+    <lastmod>2015-10-23T10:24:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.alessandrolacava.com/tags/xml/</loc>
+    <lastmod>2006-06-08T15:05:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
   
 </urlset>

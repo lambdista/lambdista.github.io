@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on Alessandro Lacava</title>
+    <link>http://www.alessandrolacava.com/tags/collections/</link>
+    <description>Recent content in Collections on Alessandro Lacava</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Oct 2015 10:24:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://www.alessandrolacava.com/tags/collections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scala: Seq, Map and Set as Functions</title>
+      <link>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</link>
+      <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
+      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:</description>
+    </item>
+    
+  </channel>
+</rss>

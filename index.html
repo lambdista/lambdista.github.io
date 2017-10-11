@@ -1,1573 +1,192 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <title>Alessandro Lacava</title>
-  <meta name="author" content="Alessandro Lacava">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessandro Lacava</title>
+<meta name="description" content="Alessandro Lacava&#39;s Personal blog">
+<meta name="generator" content="Hugo 0.29" />
+<meta property="og:title" content="Alessandro Lacava" />
+<meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.alessandrolacava.com/" />
 
-  
-  <meta name="description" content="Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type
-in Scala.
-You can find it here.
-I couldn&rsquo;t agree more &hellip;">
-  
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://www.alessandrolacava.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Alessandro Lacava" type="application/atom+xml">
-  <link href="/stylesheets/table.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="manifest" href="/images/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on it","dismiss":"I'm fine with this","learnMore":"More info","link":"/privacy-policy","theme":"dark-top"};
-</script>
+<meta property="og:updated_time" content="2016-09-14T14:27:23&#43;02:00"/>
 
-<script type="text/javascript" src="/cookieconsent.js"></script>
-<!-- End Cookie Consent plugin -->
 
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-348808-1']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push (['_gat._anonymizeIp']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="Alessandro Lacava Feed" href="http://www.alessandrolacava.com/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
 
 </head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Alessandro Lacava</a></h1>
-  
-    <h2>on Designing and Developing Software. In love with Functional Programming.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:www.alessandrolacava.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/articles">Articles</a></li>
-  <li><a href="/about-me">About Me</a></li>
-  <li><a href="/privacy-policy">Privacy Policy</a></li>
-</ul>
-
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
+						<h1 class="logo__title">Alessandro Lacava</h1>
+						<h2 class="logo__tagline">on Designing and Developing Software. In love with Functional Programming and Type Systems.</h2>
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/about-me/">ABOUT ME</a></li>
+		<li class="menu__item "><a class="menu__link" href="/articles/">ARTICLES</a></li>
+		<li class="menu__item "><a class="menu__link" href="/privacy-policy/">PRIVACY POLICY</a></li>
+	</ul>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a></h1>
-    
-    
-      <p class="meta">
-        
 
+		</header>
+		<div class="wrapper clearfix">
 
+	<main class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/" rel="bookmark">Keep your code clean with Algebraic Data Types (ADTs)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2016-09-14T14:27:23">September 14, 2016</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
+This short story is another example that demonstrates how using Option is not always the best option (pun intended).
+I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
+finalcaseclassAd(headline:String,description1:String,description2:String)  At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/blog/scala-seq-map-and-set-as-functions/" rel="bookmark">Scala: Seq, Map and Set as Functions</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-10-23T10:24:00">October 23, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/blog/scala-case-classes-in-depth/" rel="bookmark">Scala case classes in depth</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-05-22T08:12:07">May 22, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			For this post I&rsquo;ll consider the following simple case class unless otherwise specified: caseclassPerson(lastname:String,firstname:String,birthYear:Int) 
+Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:
+ Creates a class and its companion object. Implements the apply method that you can use as a factory. This lets you create instances of the class without the new keyword. E.g.:  valp=Person(&#34;Lacava&#34;,&#34;Alessandro&#34;,1976)// instead of the slightly more verbose: valp=newPerson(&#34;Lacava&#34;,&#34;Alessandro&#34;,1976)   Prefixes all arguments, in the parameter list, with val.
+		</div>
+	</div>
+</article>
 
+		
 
-<time class='entry-date' datetime='2016-09-14T14:27:23+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:27 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Recently, Daniel Westheide wrote an interesting post about the abuse of the <code>Option</code> type
-in Scala.
-You can find it <a href="http://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html">here</a>.
-I couldn&rsquo;t agree more with Daniel.</p>
-
-<p>This short story is another example that demonstrates how using <code>Option</code> is not always
-the best option (pun intended).</p>
-
-<p>I&rsquo;m developing an advertising service for a customer using Scala.
-A simplified version of the <code>Ad</code> data structure is the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Ad</span><span class="o">(</span>
-</span><span class='line'>    <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>    <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>    <span class="n">description2</span><span class="k">:</span> <span class="kt">String</span>
-</span><span class='line'><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
-two types of ad: standard and expanded.
-They said: &ldquo;If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
-If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
-Users won&rsquo;t include <code>headline2</code> when the ad is intended to be standard, and won&rsquo;t include <code>description2</code>
-when the ad is intended to be expanded.&rdquo;</p>
-
-<p>The optionality of the <code>headline2</code> and <code>description2</code> fields could put you in the wrong direction.
-Indeed, you could think of changing the data structure as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Ad</span><span class="o">(</span>
-</span><span class='line'>    <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>    <span class="n">headline2</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">],</span>
-</span><span class='line'>    <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>    <span class="n">description2</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
-</span><span class='line'><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This may sound fine but you could reach a much cleaner and type-safe
-solution using a simple Algebraic Data Type (ADT). Here&rsquo;s how:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Ad</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">object</span> <span class="nc">Ad</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Standard</span><span class="o">(</span>
-</span><span class='line'>      <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>      <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>      <span class="n">description2</span><span class="k">:</span> <span class="kt">String</span>
-</span><span class='line'>  <span class="o">)</span> <span class="k">extends</span> <span class="nc">Ad</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Expanded</span><span class="o">(</span>
-</span><span class='line'>      <span class="n">headline</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>      <span class="n">headline2</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-</span><span class='line'>      <span class="n">description1</span><span class="k">:</span> <span class="kt">String</span>
-</span><span class='line'>  <span class="o">)</span> <span class="k">extends</span> <span class="nc">Ad</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This way you don&rsquo;t need to inspect the <code>headline2</code> and/or <code>description2</code> value
-to find out the ad type you&rsquo;re dealing with.
-Indeed, the ad type is encoded in the type system which is always a <em>desiderata</em>.</p>
-
-<p>Bottom line: use <code>Option</code> with caution.</p>
+		
+<div class="pagination clearfix">
+	<span class="pagination__item pagination__item--current">1/17</span>
+	<a class="pagination__item pagination__item--next" href="/page/2/">»</a>
 </div>
-  
-  
 
+	</main>
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-10-23T10:24:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>10:24 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Yesterday my mate asked me: &ldquo;I have a <code>List[String]</code> and a <code>Map[String, Int]</code> and I want
-a <code>List[Int]</code> where its values are those of the <code>Map</code> whose keys match the <code>List[String]</code> elements,
-maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the
-code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;b&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;c&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">)</span>
-</span><span class='line'><span class="n">m</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Map</span><span class="o">[</span><span class="kt">String</span>,<span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="n">c</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">l</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;c&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">c</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">l</span> <span class="n">collect</span> <span class="n">m</span>
-</span><span class='line'><span class="n">res0</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Hold on, how does it work? If you look at the definition of the <code>collect</code> method you&rsquo;ll see it accepts a
-<code>PartialFunction</code>, instead I passed a <code>Map</code> to it.
-Well, it turns out that <code>Map</code> <em>is</em> a <code>PartialFunction</code>.</p>
-
-<p>Since this peculiarity surprised him I decided to write a small post showing how Scala&rsquo;s <code>Map</code>,
-<code>List</code> (actually <code>Seq</code>) and <code>Set</code> can be viewed as functions.</p>
-
-<p><a name="functions_vs_partial_functions"></a></p>
-
-<h2>Before starting: functions vs partial functions</h2>
-
-<p>In short, a function is a mapping <code>A =&gt; B</code> that relates each value of type <code>A</code> to a
-value of type <code>B</code>&ndash;modulo <em>bottom</em>. <code>A</code> and <code>B</code> are called <em>domain</em> and <em>codomain</em>, respectively. If you&rsquo;re not a math
-addict, roughly speaking, the domain is the set of all values that you may provide as input to your function,
-while the codomain is the result of the function application to the input, that is your function output.<br/>
-On the other hand a partial function from <code>A</code> to <code>B</code> is not defined for some inputs of type <code>A</code>. E.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// function</span>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">abs</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=&gt;</span> <span class="nc">Double</span> <span class="k">=</span> <span class="n">x</span> <span class="k">=&gt;</span> <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="n">x</span> <span class="k">else</span> <span class="o">-</span><span class="n">x</span>
-</span><span class='line'><span class="n">abs</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=&gt;</span> <span class="nc">Double</span> <span class="k">=</span> <span class="o">&lt;</span><span class="n">function1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">abs</span><span class="o">(</span><span class="mi">42</span><span class="o">)</span>
-</span><span class='line'><span class="n">res1</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">42.0</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">abs</span><span class="o">(-</span><span class="mi">42</span><span class="o">)</span>
-</span><span class='line'><span class="n">res2</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">42.0</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// partial function</span>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">sqrt</span><span class="k">:</span> <span class="kt">PartialFunction</span><span class="o">[</span><span class="kt">Double</span>, <span class="kt">Double</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-</span><span class='line'>     <span class="o">|</span>   <span class="k">case</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">=&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="o">(</span><span class="n">x</span><span class="o">)</span>
-</span><span class='line'>     <span class="o">|</span> <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">sqrt</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
-</span><span class='line'><span class="n">res3</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">2.0</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">sqrt</span><span class="o">(-</span><span class="mi">1</span><span class="o">)</span>
-</span><span class='line'><span class="n">scala</span><span class="o">.</span><span class="nc">MatchError</span><span class="k">:</span> <span class="kt">-</span><span class="err">1</span><span class="kt">.</span><span class="err">0</span> <span class="o">(</span><span class="kt">of</span> <span class="kt">class</span> <span class="kt">java.lang.Double</span><span class="o">)</span>
-</span><span class='line'>  <span class="kt">at</span> <span class="kt">scala.PartialFunction$$anon$1.apply</span><span class="o">(</span><span class="kt">PartialFunction.scala:</span><span class="err">253</span><span class="o">)</span>
-</span><span class='line'>  <span class="kt">at</span> <span class="kt">scala.PartialFunction$$anon$1.apply</span><span class="o">(</span><span class="kt">PartialFunction.scala:</span><span class="err">251</span><span class="o">)</span>
-</span><span class='line'>  <span class="kt">at</span> <span class="kt">$anonfun$1.applyOrElse</span><span class="o">(</span><span class="kt">&lt;console</span><span class="k">&gt;:</span><span class="err">7</span><span class="o">)</span>
-</span><span class='line'>  <span class="kt">at</span> <span class="kt">$anonfun$1.applyOrElse</span><span class="o">(</span><span class="kt">&lt;console</span><span class="k">&gt;:</span><span class="err">7</span><span class="o">)</span>
-</span><span class='line'>  <span class="kt">at</span> <span class="kt">scala.runtime.AbstractPartialFunction$mcDD$sp.apply$mcDD$sp</span><span class="o">(</span><span class="kt">AbstractPartialFunction.scala:</span><span class="err">36</span><span class="o">)</span>
-</span><span class='line'>  <span class="kt">...</span> <span class="err">33</span> <span class="kt">elided</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note that the <code>PartialFunction</code> definition is the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">PartialFunction</span><span class="o">[</span><span class="kt">-A</span>, <span class="kt">+B</span><span class="o">]</span> <span class="nc">extends</span> <span class="o">(</span><span class="n">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That is a <code>PartialFunction</code> is a <code>Function</code> that will just <em>throw</em> for those inputs the partial function is not
-defined at. So you can use a <code>PartialFunction</code> wherever a <code>Function</code> is expected. Just keep in mind you&rsquo;ll get
-an exception for some input values.</p>
-
-<h2>Seq[A] as PartialFunction[Int, A]</h2>
-
-<p>Being <code>List</code> an indirect subclass of <code>collection.Seq</code> and given that the latter has the following definition, you
-can see clearly that every <code>Seq[A]</code> is also a <code>PartialFunction[Int, A]</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Seq</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="nc">extends</span> <span class="nc">PartialFunction</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">with</span> <span class="o">...</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here&rsquo;s an example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">xs</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;c&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">c</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">f1</span><span class="k">:</span> <span class="kt">PartialFunction</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="n">xs</span>
-</span><span class='line'><span class="n">f1</span><span class="k">:</span> <span class="kt">PartialFunction</span><span class="o">[</span><span class="kt">Int</span>,<span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">c</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">f1</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
-</span><span class='line'><span class="n">res4</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">a</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Of course I could have used <code>xs</code> directly without the assignment to <code>f1</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">xs</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
-</span><span class='line'><span class="n">res2</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">a</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I assigned the list to <code>f1</code> just to emphasise the fact that it&rsquo;s a partial function. It corresponds to the
-index-based lookup.</p>
-
-<p><strong>Performance concern</strong>: Take into account that the index-based lookup on <code>List</code> has a cost of <code>O(n)</code>. For this type
-of access you may consider using a <code>Vector</code> which has constant-time access cost. Anyway this post is not about
-performance concerns about the collection API so I won&rsquo;t dig into this topic.</p>
-
-<h2>Map[A, B] as PartialFunction[A, B]</h2>
-
-<p>If you look at the <code>Map</code> definition you&rsquo;ll see that it extends <code>MapLike</code> which, in turn, extends <code>PartialFunction</code>.
-So you can use it as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;b&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;c&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">,</span> <span class="s">&quot;d&quot;</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">)</span>
-</span><span class='line'><span class="n">m</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Map</span><span class="o">[</span><span class="kt">String</span>,<span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="n">c</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">,</span> <span class="n">d</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">f2</span><span class="k">:</span> <span class="kt">PartialFunction</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="n">m</span>
-</span><span class='line'><span class="n">f2</span><span class="k">:</span> <span class="kt">PartialFunction</span><span class="o">[</span><span class="kt">String</span>,<span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="n">c</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">,</span> <span class="n">d</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">f2</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">res5</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Set[A] as A => Boolean</h2>
-
-<p>Here&rsquo;s the definition of <code>Set</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="nc">extends</span> <span class="o">(</span><span class="n">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Boolean</span> <span class="k">with</span> <span class="o">...</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It, evidently, extends <code>A =&gt; Boolean</code> which, as you probably already know, is just syntactic sugar for the more
-verbose <code>Function[A, Boolean]</code>. Example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;c&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">s</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Set</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">f3</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span> <span class="k">=</span> <span class="n">s</span>
-</span><span class='line'><span class="n">f3</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">f3</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">res6</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So, for instance, you can use a set to filter a list:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">xs</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;c&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">xs</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">c</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">s</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;d&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">s</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Set</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">d</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">xs</span> <span class="n">filter</span> <span class="n">s</span>
-</span><span class='line'><span class="n">res7</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Conclusions</h2>
-
-<p>As a final consideration take into account that <code>Seq</code>s and <code>Map</code>s are partial functions while <code>Set</code> is a
-function. Partial functions could introduce insidious bugs.
-For instance, consider the very first example of this post.
-If the <code>Map</code> hadn&rsquo;t contained all the elements of the <code>List</code> and I had used
-the <code>map</code> method instead of <code>collect</code> I would have introduced a bug:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">xs</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;c&quot;</span><span class="o">,</span> <span class="s">&quot;d&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="n">xs</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)</span>
-</span><span class='line'><span class="n">m</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Map</span><span class="o">[</span><span class="kt">String</span>,<span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scala</span><span class="o">&gt;</span> <span class="n">xs</span> <span class="n">map</span> <span class="n">m</span>
-</span><span class='line'><span class="n">java</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="nc">NoSuchElementException</span><span class="k">:</span> <span class="kt">key</span> <span class="kt">not</span> <span class="kt">found:</span> <span class="kt">b</span>
-</span><span class='line'>  <span class="n">at</span> <span class="n">scala</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="nc">MapLike$class</span><span class="o">.</span><span class="n">default</span><span class="o">(</span><span class="nc">MapLike</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">228</span><span class="o">)</span>
-</span><span class='line'>  <span class="n">at</span> <span class="n">scala</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="nc">AbstractMap</span><span class="o">.</span><span class="n">default</span><span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">59</span><span class="o">)</span>
-</span><span class='line'>  <span class="n">at</span> <span class="n">scala</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="nc">MapLike$class</span><span class="o">.</span><span class="n">apply</span><span class="o">(</span><span class="nc">MapLike</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">141</span><span class="o">)</span>
-</span><span class='line'>  <span class="n">at</span> <span class="n">scala</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="nc">AbstractMap</span><span class="o">.</span><span class="n">apply</span><span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">59</span><span class="o">)</span>
-</span><span class='line'>  <span class="n">at</span> <span class="n">scala</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">immutable</span><span class="o">.</span><span class="nc">List</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="nc">List</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">277</span><span class="o">)</span>
-</span><span class='line'>  <span class="o">...</span> <span class="mi">33</span> <span class="n">elided</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is because <code>map</code> accepts a function and providing a partial function instead you get the exception for not valid
-inputs as I said in the <a href="#functions_vs_partial_functions">functions vs partial functions section</a>.</p>
-
-<p>From now on, whenever you have a collection hanging around, consider looking at it as a
-function. This could help to solve your problem without using pattern matching or other boilerplate.</p>
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://www.alessandrolacava.com" />
+	</form>
 </div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-05-22T08:12:07+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>8:12 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">birthYear</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Common knowledge about case classes</h2>
-
-<p>When you declare a case class the Scala compiler does the following for you:</p>
-
-<ul>
-<li>Creates a class and its companion object.</li>
-<li>Implements the <code>apply</code> method that you can use as a factory. This lets you create
-instances of the class without the <code>new</code> keyword. E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// instead if the slightly more verbose:</span>
-</span><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Prefixes all arguments, in the parameter list, with <code>val</code>. This means the class is immutable, hence
-you get the accessors but no mutators. E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">lastname</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">lastname</span>
-</span><span class='line'><span class="c1">// the following won&#39;t compile:</span>
-</span><span class='line'><span class="n">p</span><span class="o">.</span><span class="n">lastname</span> <span class="k">=</span> <span class="s">&quot;Brown&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Adds <em>natural</em> implementations of <code>hashCode</code>, <code>equals</code> and <code>toString</code>. Since <code>==</code> in Scala always
-delegates to equals, this means that case class instances are always compared structurally. E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p_1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Brown&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="mi">1969</span><span class="o">)</span>
-</span><span class='line'><span class="k">val</span> <span class="n">p_2</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_1</span> <span class="c1">// false</span>
-</span><span class='line'><span class="n">p</span> <span class="o">==</span> <span class="n">p_2</span> <span class="c1">// true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Generates a <code>copy</code> method to your class to create other instances starting from another one and keeping
-some arguments the same. E.g.: Create another instance keeping the <code>lastname</code> and changing <code>firstname</code>
-and <code>birthYear</code>:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// the result is: Person(Lacava,Michele,1972), my brother :)</span>
-</span><span class='line'><span class="k">val</span> <span class="n">p_3</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="o">(</span><span class="n">firstname</span> <span class="k">=</span> <span class="s">&quot;Michele&quot;</span><span class="o">,</span> <span class="n">birthYear</span> <span class="k">=</span> <span class="mi">1972</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Probably, most importantly, since the compiler implements the <code>unapply</code> method, a case class
-supports pattern matching. This is especially important when you define an Algebraic Data Type (ADT). E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span>
-</span><span class='line'><span class="nc">case</span> <span class="k">class</span> <span class="nc">Value</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
-</span><span class='line'><span class="k">case</span> <span class="k">object</span> <span class="nc">NoValue</span> <span class="k">extends</span> <span class="nc">Maybe</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">v</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Value</span><span class="o">(</span><span class="mi">42</span><span class="o">)</span>
-</span><span class='line'><span class="k">val</span> <span class="n">v_1</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">NoValue</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="n">logValue</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">Maybe</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">value</span> <span class="k">match</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">case</span> <span class="nc">Value</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;We have a value here: $v&quot;</span><span class="o">)</span>
-</span><span class='line'>  <span class="k">case</span> <span class="nc">NoValue</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;I&#39;m sorry, no value&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="c1">// prints We have a value here: 42</span>
-</span><span class='line'><span class="n">logValue</span><span class="o">(</span><span class="n">v_1</span><span class="o">)</span> <span class="c1">// prints I&#39;m sorry, no value</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you probably already know, when your class has no argument you use a <code>case object</code>
-instead of a <code>case class</code> with an empty parameter list.</p>
-
-<p>Apart from being used in pattern matching the <code>unapply</code> method lets you <em>deconstruct</em> a case class to extract
-it&rsquo;s fields, both during pattern matching and as a simple expression to extract some of its fields. E.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="nc">Person</span><span class="o">(</span><span class="n">lastname</span><span class="o">,</span> <span class="k">_</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=</span> <span class="n">p</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">println</span><span class="o">(</span><span class="n">lastname</span><span class="o">)</span> <span class="c1">// prints Lacava</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><em>Not so common</em> knowledge about case classes</h2>
-
-<ul>
-<li>What if you need a function that, given your case class arguments as parameters, creates an instance of the class?
-Here&rsquo;s how you can do it by partially applying <code>apply</code> (no pun intended :)):</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">personCreator</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">apply</span> <span class="k">_</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// the result is: Person(Brown,John,1969)</span>
-</span><span class='line'><span class="n">personCreator</span><span class="o">(</span><span class="s">&quot;Brown&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="mi">1969</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>What if you want your function, from the previous point, to be curried? Enters the <code>curried</code> method:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">curriedPerson</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">String</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">curried</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">lacavaBuilder</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="n">curriedPerson</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">me</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(</span><span class="s">&quot;Alessandro&quot;</span><span class="o">)(</span><span class="mi">1976</span><span class="o">)</span>
-</span><span class='line'><span class="k">val</span> <span class="n">myBrother</span> <span class="k">=</span> <span class="n">lacavaBuilder</span><span class="o">(</span><span class="s">&quot;Michele&quot;</span><span class="o">)(</span><span class="mi">1972</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>What about obtaining a function that accepts a tuple whose arity is equal to the number of the case class
-arguments, and produces an instance of the class? Well, there&rsquo;s the <code>tupled</code> method for that:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">tupledPerson</span><span class="k">:</span> <span class="o">((</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="kt">Int</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="nc">Person</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">tupled</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">meAsTuple</span><span class="k">:</span> <span class="o">(</span><span class="kt">String</span><span class="o">,</span> <span class="kt">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">meAsPersonAgain</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="n">tupledPerson</span><span class="o">(</span><span class="n">meAsTuple</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>You could also need a function that, given an instance of your class as input, produces an
-<code>Option[TupleN[A1, A2, ..., AN]]</code> as output, where <code>N</code> is the number of the case class arguments and
-<code>A1, A2, ..., AN</code> are their types. E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">toOptionOfTuple</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=&gt;</span> <span class="nc">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">unapply</span> <span class="k">_</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">x</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="n">toOptionOfTuple</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="c1">// Some((Lacava,Alessandro,1976))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The <code>curried</code> and <code>tupled</code> methods are inherited from <code>AbstractFunctionN</code> which is extended by the autogenerated
-companion object. <code>N</code> is the number of the case class formal parameters.
-Note that, of course, if <code>N = 1</code> you won&rsquo;t get <code>curried</code> and <code>tupled</code> because
-they wouldn&rsquo;t make sense for just one parameter!</p>
-
-<h2>Defining a case class using the <em>curried</em> form</h2>
-
-<p>There&rsquo;s another less-known way of defining a case class, e.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Keyword</span><span class="o">(</span><span class="n">text</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="n">source</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">foo</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The formal parameters in the first parameter section of a case class (just <code>text</code> in this case) are called <em>elements</em>;
-they are treated specially. All the goodies you get when you define a case class (accessors, pattern matching support,
-copy method, &hellip;) only apply to the first section. For example you don&rsquo;t have an accessor for <code>source</code> since
-the compiler didn&rsquo;t implicitly prefix it with <code>val</code>, like it did for <code>text</code> instead. E.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">k1</span> <span class="k">=</span> <span class="nc">Keyword</span><span class="o">(</span><span class="s">&quot;restaurant&quot;</span><span class="o">)(</span><span class="s">&quot;storage&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// won&#39;t compile</span>
-</span><span class='line'><span class="k">val</span> <span class="n">source</span> <span class="k">=</span> <span class="n">k1</span><span class="o">.</span><span class="n">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You can solve the accessor problem by prefixing the parameters with <code>val</code>. E.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Keyword</span><span class="o">(</span><span class="n">text</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="k">val</span> <span class="n">source</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="k">val</span> <span class="n">foo</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Anyway you still won&rsquo;t get all the other case class features.
-For instance, you cannot use the <code>copy</code> method by specifying only the <code>source</code> parameter. You have to specify, at least, all the parameters
-of the sections successive to the first. E.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// won&#39;t compile</span>
-</span><span class='line'><span class="k">val</span> <span class="n">k2</span> <span class="k">=</span> <span class="n">k1</span><span class="o">.</span><span class="n">copy</span><span class="o">()(</span><span class="n">source</span> <span class="k">=</span> <span class="s">&quot;web&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// will compile</span>
-</span><span class='line'><span class="k">val</span> <span class="n">k3</span> <span class="k">=</span> <span class="n">k1</span><span class="o">.</span><span class="n">copy</span><span class="o">()(</span><span class="n">source</span> <span class="k">=</span> <span class="s">&quot;web&quot;</span><span class="o">,</span> <span class="n">foo</span> <span class="k">=</span> <span class="mi">1</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Finally, the companion object of a case class defined in such a way won&rsquo;t extend <code>AbstractFunctionN</code>, so the <code>tupled</code>
-and <code>curried</code> methods are not available.</p>
-
-<p>At this point the natural question that may arise is: &ldquo;Why on earth should I want to define a case class in such a way?&rdquo;
-Apparently there are cases when it could be a <em>reasonable</em> choice. For example suppose that, for your business model,
-two instances of <code>Keyword</code> are to be considered equal iff they have the same <code>text</code> field. Well, in such a case by defining the
-case class using the <em>curried</em> form you&rsquo;ll get what you want. E.g.:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">k1</span> <span class="k">=</span> <span class="nc">Keyword</span><span class="o">(</span><span class="s">&quot;restaurant&quot;</span><span class="o">)(</span><span class="s">&quot;storage&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
-</span><span class='line'><span class="k">val</span> <span class="n">k2</span> <span class="k">=</span> <span class="nc">Keyword</span><span class="o">(</span><span class="s">&quot;restaurant&quot;</span><span class="o">)(</span><span class="s">&quot;web&quot;</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">k1</span> <span class="o">==</span> <span class="n">k2</span> <span class="c1">// true!</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That&rsquo;s because also the <code>equals</code> implementation, you get for free for case classes, only applies to the first
-parameter section, so only to <code>text</code> in this case. I&rsquo;m not saying here that this is always the best choice
-but it could be of help in certain situations.</p>
-
-<p>In fact, you could define your case class as usual and override <code>equals</code> on your own. However overriding
-<code>equals</code> is not very trivial. Indeed, before doing that
-I recommend you read the <a name="programmingInScala"></a>chapter 30 of
-<strong>Programming in Scala: A Comprehensive Step-by-Step Guide,
-2nd Edition - Odersky, Spoon, Venners</strong>. Its title is
-<strong>Object Equality</strong> and it&rsquo;s just 25 pages long!</p>
-
-<h2>For the most curious ones</h2>
-
-<p>Furthermore, since each case class extends the <code>Product</code> trait it inherits the following methods:</p>
-
-<ul>
-<li><code>def productArity: Int</code>, returns the size of this product. In this case it corresponds to the number of arguments in the
-case class. E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;Lacava&quot;</span><span class="o">,</span> <span class="s">&quot;Alessandro&quot;</span><span class="o">,</span> <span class="mi">1976</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">val</span> <span class="n">arity</span> <span class="k">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productArity</span> <span class="c1">// equals to 3</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>def productElement(n: Int): Any</code>, returns the n-th element of this product, 0-based. In this case it corresponds to
-the n-th argument of the class. E.g.:</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">lastname</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productElement</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="c1">// Lacava</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><p><code>def productIterator: Iterator[Any]</code>, returns an iterator over all the elements of this product which,
-in the case class context, they are its arguments.</p></li>
-<li><p><code>def productPrefix: String</code>, returns a string used in the <code>toString</code> method of the derived classes.
-In this case it&rsquo;s the name of the class. E.g.:</p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">className</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">productPrefix</span> <span class="c1">// the result is Person</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Final Notes</h2>
-
-<ul>
-<li><p>I used type declarations in many expressions just to make things clearer. Of course I could have left them out
-and let the type inferer do its job.</p></li>
-<li><p>Some <code>Product</code>&rsquo;s methods return <em>Any-based</em> types, namely <code>productElement</code> and <code>productIterator</code>. For example,
-<code>p.productElement(0)</code> returns the <code>lastname</code> but it is of type <code>Any</code> so if you need to use it as <code>String</code> you have to
-cast it, which is an operation you should strive to avoid as much as possible.</p></li>
-<li><p><code>Product</code> extends <code>Equals</code> so every case class also inherits the <code>canEqual</code> method but, of course,
-going into its details is not the scope of this post. Besides, you don&rsquo;t have to worry about it because it&rsquo;s
-used interally by the autogenerated <code>equals</code> method, unless you decide to implement your own version of <code>equals</code>
-in which case you need to take into account <code>canEqual</code>. Again, in such a case I strongly suggest you read the
-chapter cited <a href="#programmingInScala">here</a>.</p></li>
-</ul>
-
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with Algebraic Data Types (ADTs)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blog/scala-self-recursive-types/">Scala Self Recursive Types</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for currency-related operations</a></li>
+		</ul>
+	</div>
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-03-30T14:59:24+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:59 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>One of the advantages of using a statically typed language is that you can use the type system to enforce
-some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
-that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
-
-<h2>Self-recursive type definition</h2>
-
-<p>Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example
-which does not use a self-recursive type:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So far so good, the compiler will not complain. The problem is that it won&rsquo;t complain even if you write
-something outrageous like the following code:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">firstname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">lastname</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="nc">Person</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Smith&quot;</span><span class="o">,</span> <span class="mi">42</span><span class="o">)</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You want to avoid something like that by enforcing a compile-time check. Enters a self-recursive type:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By using this definition of <code>Doubler</code> you&rsquo;re saying: &ldquo;Hey, if someone tries to extends <code>Doubler</code> with a type
-which doesn&rsquo;t extend <code>Doubler</code> in turn (hence <em>self-recursive</em>), do not compile it&rdquo;.
-In this case the previous definition of <code>Square</code>, which extends <code>Doubler[Person]</code>, doesn&rsquo;t compile.</p>
-
-<p>Note that self-recursive types are not specific to Scala. Indeed Java uses them too.
-Take, for example, the <code>Enum</code> definition:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="n">E</span> <span class="kd">extends</span> <span class="n">Enum</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&gt;</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;,</span> <span class="n">Serializable</span> <span class="o">{</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>E extends Enum&lt;E&gt;</code> in <em>Javanese</em> means exactly <code>E &lt;: Enum[E]</code></p>
-
-<h2>Self type definition</h2>
-
-<p>F-bounded polymorphic types are of great help but sometimes they are not enough to enforce the constraints you need.
-Indeed, the previous definition of <code>Doubler</code> has still one problem. Consider the next code:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="n">base</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">case</span> <span class="k">class</span> <span class="nc">Apple</span><span class="o">(</span><span class="n">kind</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">override</span> <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">Square</span> <span class="o">=</span> <span class="nc">Square</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Can you spot the problem? Look at the <code>Apple</code> definition, it extends <code>Doubler[Square]</code> instead of <code>Doubler[Apple]</code>.</p>
-
-<p>This code compiles because it respects the constraint put by the <code>Doubler</code> definition.
-Indeed <code>Square</code> extends <code>Doubler</code> so it can be used in <code>Apple</code>. Sometimes this is what you want in which case
-the self-recursive type will do. In cases when you don’t want this to happen a self type can work this out:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span> <span class="o">{</span> <span class="n">self</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">double</span><span class="k">:</span> <span class="kt">T</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now if you try to compile the previous definition of <code>Apple</code> the compiler will complain by saying something like:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">error</span><span class="k">:</span> <span class="kt">illegal</span> <span class="kt">inheritance</span><span class="o">;</span>
-</span><span class='line'> <span class="n">self</span><span class="o">-</span><span class="k">type</span> <span class="kt">Apple</span> <span class="kt">does</span> <span class="kt">not</span> <span class="kt">conform</span> <span class="kt">to</span> <span class="kt">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span><span class="-Symbol">&#39;s</span> <span class="n">selftype</span> <span class="nc">Square</span>
-</span><span class='line'>       <span class="k">case</span> <span class="k">class</span> <span class="nc">Apple</span><span class="o">(</span><span class="n">kind</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Doubler</span><span class="o">[</span><span class="kt">Square</span><span class="o">]</span> <span class="o">{</span>
-</span><span class='line'>                                              <span class="o">^</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Conclusions</h2>
-
-<p>If you&rsquo;re thinking: &ldquo;Come on! I would never extend <code>Apple</code> that way because I know what I meant when I wrote
-my <code>Doubler</code> abstraction. I don&rsquo;t need then the self type annotation and, since I know what I&rsquo;m doing,
-I don&rsquo;t need the self-recursive type either&rdquo;. Well you may be right but I&rsquo;d have two objections:</p>
-
-<ol>
-<li><p>Generally you are not the only one working on a project and, anyway, a good rule of thumb is to design your
-software as if you&rsquo;re designing a public API. In this case you want to be sure no one will use your API in the wrong way.</p></li>
-<li><p>Compilers are implemented by smart guys, generally. Having the compiler help by your side is
-always a good thing in my humble opinion.</p></li>
-</ol>
-
-
-<p>Are there alternatives to this type of problems? Yes indeed, <em>Type Classes</em>, which is by the way the option I prefer.
-But this is another story for a future post.</p>
+	
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/lambdista" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="" rel="noopener noreferrer" href="https://linkedin.com/in/alessandrolacava" target="_blank">
+				<svg class="widget-social__link-icon icon-linkedin" viewBox="0 0 352 352" width="24" height="24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/lambdista" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-03-26T09:41:48+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:41 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My introductory article on developing an internal DSL in Scala for currency-related operations
-on <a href="http://www.devx.com/enterprise/introduction-to-internal-dsls-in-scala.html">DevX</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/introduction-to-functional-programming-in-scala/">Introduction to Functional Programming In Scala</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-28T09:29:30+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:29 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My introductory article on Functional Programming in Scala
-on <a href="http://www.devx.com/enterprise/introduction-to-functional-programming-in-scala.html">DevX</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for Currency-related Operations</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-20T15:09:06+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:09 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>A simple internal DSL in Scala for money-related operations</h3>
-
-<p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
-
-<p>This Domain-Specific Language (DSL) lets you perform operations among different currencies,
-by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.</p>
-
-<h3>Usage Example</h3>
-
-<p>Here&rsquo;s a simple usage example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">com.lambdista.money._</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">com.lambdista.money.Currency._</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">object</span> <span class="nc">Main</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">conversion</span><span class="k">:</span> <span class="kt">Conversion</span> <span class="o">=</span> <span class="nc">Map</span><span class="o">(</span>
-</span><span class='line'>      <span class="o">(</span><span class="nc">GBP</span><span class="o">,</span> <span class="nc">EUR</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="mf">1.270</span><span class="o">,</span>
-</span><span class='line'>      <span class="o">(</span><span class="nc">EUR</span><span class="o">,</span> <span class="nc">USD</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="mf">1.268</span><span class="o">,</span>
-</span><span class='line'>      <span class="o">(</span><span class="nc">GBP</span><span class="o">,</span> <span class="nc">USD</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="mf">1.611</span>
-</span><span class='line'>    <span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">implicit</span> <span class="k">val</span> <span class="n">converter</span> <span class="k">=</span> <span class="nc">Converter</span><span class="o">(</span><span class="n">conversion</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">sumAndConversion1</span> <span class="k">=</span> <span class="mf">100.001</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mi">200</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span> <span class="n">to</span> <span class="nc">GBP</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;sumAndConversion1: $sumAndConversion1&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">sumAndConversion2</span><span class="k">:</span> <span class="kt">Money</span> <span class="o">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mf">210.4</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span> <span class="n">to</span> <span class="nc">EUR</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;sumAndConversion2: $sumAndConversion2&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">sum</span> <span class="k">=</span> <span class="mf">100.001</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mi">200</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span>
-</span><span class='line'>    <span class="k">val</span> <span class="n">simpleConversion</span> <span class="k">=</span> <span class="n">sum</span><span class="o">(</span><span class="nc">GBP</span><span class="o">)</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;simpleConversion: $simpleConversion&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">sumWithSimpleNumber</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">+</span> <span class="mf">23.560</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;sumWithSimpleNumber: $sumWithSimpleNumber&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">multiplicationWithSimpleNumber</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">*</span> <span class="mi">23</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">usd</span> <span class="k">=</span> <span class="nc">Currency</span><span class="o">(</span><span class="s">&quot;USD&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">multiplication</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="n">usd</span><span class="o">)</span> <span class="o">*</span> <span class="mi">23</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;multiplication: $multiplication&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">divisionWithSimpleNumber</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">/</span> <span class="mi">23</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;divisionWithSimpleNumber: $divisionWithSimpleNumber&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">val</span> <span class="n">comparison</span> <span class="k">=</span> <span class="mi">100</span><span class="o">(</span><span class="nc">USD</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="o">(</span><span class="nc">EUR</span><span class="o">)</span>
-</span><span class='line'>    <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">&quot;100 USD &gt; 90 EUR? $comparison&quot;</span><span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see the client code just needs two simple imports and an implicit value of type <code>Converter</code>
-in order to use the DSL. The operations shown in the previous code are only a few among the available ones.
-Have a look at the <code>Money</code> class for a complete coverage.</p>
-
-<p>You can find the source code here: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/try-success-failure-api-for-java/">Try-Success-Failure API for Java 8</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-06-20T16:03:33+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:03 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
-
-<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
-
-<p>This API is a Java implementation of <a href="http://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
-originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
-
-<p>The <code>Try</code> type represents a computation that may fail. If the computation is successful returns
-the value wrapped in a <code>Try.Success</code> otherwise returns the
-<code>java.lang.Exception</code> wrapped in a <code>Try.Failure</code>.</p>
-
-<p>To use <code>Try</code> you need to call the <code>Try.apply(FailableSupplier)</code> method passing in a lambda with
-the same signature used for a common <code>java.util.function.Supplier</code>.
-Indeed <code>FailableSupplier</code> is just a <code>java.util.function.Supplier</code> with a
-<code>throws Exception</code> added to its <code>get</code> method.</p>
-
-<p>For example, <code>Try</code> can be used to perform division on a user-defined input, without the need to do explicit
-exception-handling in all of the places that an exception might occur.</p>
-
-<p>An important property of <code>Try</code> shown in the <code>divide</code> method of the <code>MainExample</code> class is its ability
-to <em>pipeline (chain if you prefer)</em>  operations, catching exceptions along the way thanks to its <code>flatMap</code> method.
-If you are not a seasoned functional programming geek concepts such as <code>flatMap/map</code> might not be easy to grasp
-at first. However you&rsquo;ll get used to them and, in the end, you&rsquo;ll love them. Moreover you&rsquo;re going to encounter
-these methods more and more often since some important Java 8 classes already implement them
-(e.g. <code>java.util.Optional</code> and <code>java.util.stream.Stream</code>. Anyway for the moment just take for
-granted that to pipeline more than two operations, say N, you just need to chain them by using N - 1
-<code>flatMap</code> calls and a last call to <code>map</code>. E.g.: Suppose you have 3 variables (x, y and z) being
-of type <code>Try</code> and you just want to sum them up. The code you need for doing that is the
-following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">x</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">y</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="o">)))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Apart from <code>map</code> and <code>flatMap</code>, <code>Try</code> has many other useful methods. See the <code>TryTest</code>
-class for a thorough coverage of all methods.</p>
-
-<h3>Usage example</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Integer division&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Enter the dividend press Return and then enter the divisor: &quot;</span><span class="o">);</span>
-</span><span class='line'><span class="n">Scanner</span> <span class="n">dividend</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-</span><span class='line'><span class="n">Scanner</span> <span class="n">divisor</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">num</span> <span class="o">=</span> <span class="n">Try</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="nl">dividend:</span><span class="o">:</span><span class="n">nextInt</span><span class="o">);</span>
-</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">denom</span> <span class="o">=</span> <span class="n">Try</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="nl">divisor:</span><span class="o">:</span><span class="n">nextInt</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">denom</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">y</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="o">));</span>
-</span><span class='line'><span class="n">Try</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">resultTryStr</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="s">&quot;The result of division is: &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
-</span><span class='line'><span class="n">String</span> <span class="n">resultStr</span> <span class="o">=</span> <span class="n">resultTryStr</span><span class="o">.</span><span class="na">getOrElse</span><span class="o">(</span><span class="s">&quot;You must&#39;ve divided by zero or entered something that&#39;s not an Int. Try again!&quot;</span><span class="o">);</span>
-</span><span class='line'><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">resultStr</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In the previous example if you enter two valid integers with the second one&ndash;the divisor&ndash;being different from zero
-then the code prints out <code>The result of division is: $RESULT</code>, where <code>$RESULT</code> is the division between the first
-and the second number. On the other hand, if you either enter non valid integers&ndash;such as a string&ndash;or the second
-number is zero then you&rsquo;ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
-printed out.</p>
-
-<p>Anyway, as I already said, see the <code>TryTest</code> class for a thorough coverage of all methods.</p>
-
-<h3>Final Notes</h3>
-
-<p>Any criticism/suggestion is more than welcome!</p>
-
-<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/combine-javascript-and-a-template-engine-for-flexible-web-apps/">Combine JavaScript and a Template Engine for Flexible Web Apps</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:34:17+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:34 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Combine the power and simplicity of the TrimPath template engine with JavaScript and Ajax to develop next-generation web applications.</h3>
-
-<p>Template engines (TEs) can be very useful in web development scenarios where you need to generate and format text automatically according to specific processing rules. These engines can also help you build your applications based on the Model-View-Controller (MVC) pattern, making them more robust and maintainable than applications based on spaghetti code. Most programming languages provide built-in or third-party TEs. Java, for example, has Velocity and FreeMarker, among others. For PHP, Smarty is the most used TE.</p>
-
-<p>Go to <a href="http://www.developer.com/open/article.php/3864011/Combine-JavaScript-and-a-Template-Engine-for-Flexible-Web-Apps.htm">developer.com</a> to read the rest of the article: <strong>Combine JavaScript and a Template Engine for Flexible Web Apps</strong>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/script-aculo-us-controls-do-your-web-users-a-favor/">Script.aculo.us Controls: Do Your Web Users a Favor</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-10-26T17:32:32+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>5:32 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Learn how to integrate Script.aculo.us web controls into your web applications to make the end-user experience more pleasant.</h3>
-
-<p>In a previous DevX article, I wrote about the JavaScript framework Prototype, which aims to ease the development of dynamic web applications. That article ended with just a few words about Script.aculo.us, which is a fantastic UI library based on Prototype. This article gives Script.aculo.us its due by examining the web controls it provides: autocompleters, sliders, and in-place editors.</p>
-
-<p>Script.aculo.us is a pretty big library, so no single article can cover it completely. However, the knowledge you will gain will enable you to leverage the power of Script.aculo.us web controls to improve the end-user experience.</p>
-
-<p>Go to <a href="http://www.devx.com/webdev/Article/37574">DevX</a> to read the rest of the article: <strong>Script.aculo.us Controls: Do Your Web Users a Favor</strong>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/posts/2">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep Your Code Clean With Algebraic Data Types (ADTs)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as Functions</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-case-classes-in-depth/">Scala Case Classes In Depth</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scala-self-recursive-types/">Scala&#8217;s Self-recursive Types</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/introduction-to-internal-dsls-in-scala/">Introduction to Internal DSLs In Scala</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/lambdista">@lambdista</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'lambdista',
-            count: 0,
-            skip_forks: true,
-	    skip_repos: [ "lambdista.github.io" ],
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
+	
 </aside>
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Alessandro Lacava -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
 
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'alessandrolacava';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
 </script>
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
 </body>
 </html>

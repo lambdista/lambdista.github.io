@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prototype on Alessandro Lacava</title>
+    <link>http://www.alessandrolacava.com/tags/prototype/</link>
+    <description>Recent content in Prototype on Alessandro Lacava</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Nov 2006 15:34:48 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.alessandrolacava.com/tags/prototype/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sorting an array of objects with the sortBy method of Prototype</title>
+      <link>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method/</link>
+      <pubDate>Mon, 20 Nov 2006 15:34:48 +0000</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method/</guid>
+      <description>Here is an example of how easy it is to sort an array of objects using the Enumerable.sortBy method of the Prototype framework:
+varobj1={lastName:&amp;#34;Lacava&amp;#34;,firstName:&amp;#34;Alessandro&amp;#34;};varobj2={lastName:&amp;#34;Brown&amp;#34;,firstName:&amp;#34;John&amp;#34;};varobj3={lastName:&amp;#34;Simpson&amp;#34;,firstName:&amp;#34;Bart&amp;#34;};vararr=[obj1,obj2,obj3];//order by last name varsorted=arr.sortBy(function(obj){returnobj.lastName.toLowerCase();});varstr=&amp;#34;&amp;#34;;sorted.each(function(obj,index){str+=index+1+&amp;#34; - &amp;#34;+obj.lastName+&amp;#34; &amp;#34;+obj.firstName;});//display the elements ordered by last name document.write(str);  </description>
+    </item>
+    
+  </channel>
+</rss>

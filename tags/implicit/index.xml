@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Implicit on Alessandro Lacava</title>
+    <link>http://www.alessandrolacava.com/tags/implicit/</link>
+    <description>Recent content in Implicit on Alessandro Lacava</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Feb 2015 15:09:06 +0100</lastBuildDate>
+    
+	<atom:link href="http://www.alessandrolacava.com/tags/implicit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scala DSL for currency-related operations</title>
+      <link>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</link>
+      <pubDate>Fri, 20 Feb 2015 15:09:06 +0100</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</guid>
+      <description>A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
+This Domain-Specific Language (DSL) lets you perform operations among different currencies, by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.
+Usage Example Here&amp;rsquo;s a simple usage example:
+importcom.lambdista.money._importcom.lambdista.money.Currency._objectMain{defmain(args:Array[String]):Unit={valconversion:Conversion=Map((GBP,EUR)-&amp;gt;1.270,(EUR,USD)-&amp;gt;1.268,(GBP,USD)-&amp;gt;1.611)implicitvalconverter=Converter(conversion)valsumAndConversion1=100.001(USD)+200(EUR)toGBPprintln(s&amp;#34;sumAndConversion1: $sumAndConversion1&amp;#34;)valsumAndConversion2:Money=100(USD)+210.4(EUR)toEURprintln(s&amp;#34;sumAndConversion2: $sumAndConversion2&amp;#34;)valsum=100.001(USD)+200(EUR)valsimpleConversion=sum(GBP)println(s&amp;#34;simpleConversion: $simpleConversion&amp;#34;)valsumWithSimpleNumber=100(USD)+23.560println(s&amp;#34;sumWithSimpleNumber: $sumWithSimpleNumber&amp;#34;)valmultiplicationWithSimpleNumber=100(USD)*23println(s&amp;#34;multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber&amp;#34;)valusd=Currency(&amp;#34;USD&amp;#34;)valmultiplication=100(usd)*23(EUR)println(s&amp;#34;multiplication: $multiplication&amp;#34;)valdivisionWithSimpleNumber=100(USD)/23println(s&amp;#34;divisionWithSimpleNumber: $divisionWithSimpleNumber&amp;#34;)valcomparison=100(USD)&amp;gt;90(EUR)println(s&amp;#34;100 USD &amp;gt; 90 EUR? $comparison&amp;#34;)}}  As you can see the client code just needs two simple imports and an implicit value of type Converter in order to use the DSL.</description>
+    </item>
+    
+  </channel>
+</rss>
