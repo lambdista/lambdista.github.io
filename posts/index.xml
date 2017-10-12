@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Keep your code clean with Algebraic Data Types (ADTs)</title>
+      <title>Keep your code clean with algebraic data types (ADTs)</title>
       <link>http://www.alessandrolacava.com/posts/keep-your-code-clean-with-algebraic-data-types-adts/</link>
       <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
       
@@ -24,7 +24,7 @@ finalcaseclassAd(headline:String,description1:String,description2:String)  At so
     </item>
     
     <item>
-      <title>Scala: Seq, Map and Set as Functions</title>
+      <title>Scala: Seq, Map and Set as functions</title>
       <link>http://www.alessandrolacava.com/posts/scala-seq-map-and-set-as-functions/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
@@ -44,7 +44,7 @@ Common knowledge about case classes When you declare a case class the Scala comp
     </item>
     
     <item>
-      <title>Scala Self Recursive Types</title>
+      <title>Scala self-recursive types</title>
       <link>http://www.alessandrolacava.com/posts/scala-self-recursive-types/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
       
