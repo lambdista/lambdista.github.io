@@ -13,10 +13,10 @@
     
     <item>
       <title>Java split() of String | Multiple whitespace characters</title>
-      <link>http://www.alessandrolacava.com/posts/java-split-of-string-multiple-whitespace-characters/</link>
+      <link>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</link>
       <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/posts/java-split-of-string-multiple-whitespace-characters/</guid>
+      <guid>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</guid>
       <description>The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
 Stringstr=&amp;#34;Testing split using two whitespace characters&amp;#34;;String[]tokens=str.split(&amp;#34;\\s&amp;#34;);for(Stringtoken:tokens){System.out.println(&amp;#34;-&amp;#34;+token+&amp;#34;-&amp;#34;);}  What&amp;rsquo;s the output produced by the previous code?</description>
     </item>

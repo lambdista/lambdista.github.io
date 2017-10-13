@@ -13,10 +13,10 @@
     
     <item>
       <title>Using dynamic SQL statements from PL/SQL</title>
-      <link>http://www.alessandrolacava.com/posts/using-dynamic-sql-statements-from-plsql/</link>
+      <link>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-plsql/</link>
       <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/posts/using-dynamic-sql-statements-from-plsql/</guid>
+      <guid>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-plsql/</guid>
       <description>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the EXECUTE IMMEDIATE statement. Here are three examples of how you can take advantage of this great statement.
 sql_select:=&amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;;EXECUTEIMMEDIATEsql_selectINTOyour_cursorUSINGyour_parameter_for_field1;  In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor. The USING your_parameter_for_field1 part replaces the :1 bind variable with the value contained in the your_parameter_for_field1 parameter.</description>
     </item>

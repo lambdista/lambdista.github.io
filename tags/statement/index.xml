@@ -13,10 +13,10 @@
     
     <item>
       <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
-      <link>http://www.alessandrolacava.com/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
+      <link>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
       <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
+      <guid>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
       <description>Sometimes you might need to commit a single INSERT, UPDATE or DELETE statement and not the whole main transaction. In such a case you can use an AUTONOMOUS TRANSACTION which is a feature available since Oracle 8i. The trick is to encapsulate the statement in a procedure and use the pragma AUTONOMOUS_TRANSACTION. Here is an example, suppose you have a table, your_table, which has just one column of type NUMBER and you want to insert the value 1, irrespective of the state of the main transaction:</description>
     </item>
     

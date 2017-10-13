@@ -13,10 +13,10 @@
     
     <item>
       <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
-      <link>http://www.alessandrolacava.com/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
+      <link>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
       <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
+      <guid>http://www.alessandrolacava.com/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
       <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*+.
 If you want to treat them as ordinary characters you have two options:

@@ -13,10 +13,10 @@
     
     <item>
       <title>NOT IN vs. NOT EXISTS when NULL values are involved</title>
-      <link>http://www.alessandrolacava.com/posts/not-in-vs-not-exists-when-null-values-are-involved/</link>
+      <link>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</link>
       <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/posts/not-in-vs-not-exists-when-null-values-are-involved/</guid>
+      <guid>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
       <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
  CD_FIELD DS_FIELD  1 ALPHA   2 BETA   TABLE_A
  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   TABLE_B
