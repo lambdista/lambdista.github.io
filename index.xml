@@ -43,8 +43,7 @@ Combine the power and simplicity of the TrimPath template engine with JavaScript
       <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.alessandrolacava.com/talks/</guid>
-      <description>In English Raising the abstraction level with HKTs and type classes I suppose it’s an objective of every developer writing reusable code. Statically typed FP and higher-kinded types lets you raise the abstraction level enormously with respect to OOP and, more generally, languages which don’t have HKTs and type classes.
-In this talk, after an introduction to some funny-named type classes, you’ll see how to take advantage of them to implement a very reusable function.</description>
+      <description>In English Internal DSL design in Scala A domain-specific language (DSL) is a language that you design with a specific domain in mind. There are two types of domain-specific languages (DSLs): external and internal. The former implicates — in the simplest case — parsing a string into the programming language syntax. The latter, on the other hand, involves implementing a language within your own programming language. Quoting Martin Fowler, &amp;ldquo;Internal DSLs are particular ways of using a host language to give the host language the feel of a particular language&amp;rdquo;.</description>
     </item>
     
     <item>
