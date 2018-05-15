@@ -5,17 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to add scrollbars to a block (e.g. a &lt;div&gt; element)</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="How to add scrollbars to a block (e.g. a &lt;div&gt; element)" />
 <meta property="og:description" content="If you need to customize a list box then the &lt;select&gt; HTML element might not be enough. In such a case you&rsquo;d like to have something that simulates the &lt;select&gt; behaviour.
 Here is the code to use to obtain a custom list box:
-&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;divstyle=&#34;width: 200px; height: 200px; overflow: auto;&#34;&gt;&lt;tablewidth=&#34;100%&#34;height=&#34;100%&#34;&gt;&lt;script&gt;for(vari=0;i&lt;30;i&#43;&#43;){if(i%2==0){document.write(&#34;&lt;tr style=&#39;background-color:#0066ff; color: #ffffff&#39;&gt;&#34;&#43;&#34;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&#34;);}else{document.write(&#34;&lt;tr style=&#39;background-color:#ff6600; color: #ffffff&#39;&gt;&#34;&#43;&#34;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&#34;);}}&lt;/script&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;  The key CSS element is overflow. If you use overflow: auto then the scrollbars are displayed only if they are needed." />
+&lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; &lt;div style=&#34;width: 200px; height: 200px; overflow: auto;&#34;&gt; &lt;table width=&#34;100%&#34; height=&#34;100%&#34;&gt; &lt;script&gt; for (var i = 0; i &lt; 30; i&#43;&#43;) { if (i % 2 == 0) { document." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/" />
 
 
 
 <meta property="article:published_time" content="2006-11-24T09:21:30&#43;00:00"/>
+
 <meta property="article:modified_time" content="2006-11-24T09:21:30&#43;00:00"/>
 
 
@@ -92,33 +93,32 @@ to have something that simulates the <code>&lt;select&gt;</code> behaviour.</p>
 
 <p>Here is the code to use to obtain a custom list box:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="">     
-</span><span style=""></span><span style="">&lt;</span><span style=""></span><span style="color:#f92672">html</span><span style=""></span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">  </span><span style="">&lt;</span><span style=""></span><span style="color:#f92672">head</span><span style=""></span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">  </span><span style="">&lt;</span><span style=""></span><span style="">/</span><span style=""></span><span style="color:#f92672">head</span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">  
-</span><span style="">  </span><span style="">&lt;</span><span style=""></span><span style="color:#f92672">body</span><span style=""></span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">    </span><span style="">&lt;</span><span style=""></span><span style="color:#f92672">div</span><span style=""> </span><span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style=""></span><span style="color:#e6db74">&#34;width: 200px; height: 200px; overflow: auto;&#34;</span><span style=""></span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">      </span><span style="">&lt;</span><span style=""></span><span style="color:#f92672">table</span><span style=""> </span><span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style=""></span><span style="color:#e6db74">&#34;100%&#34;</span><span style=""> </span><span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style=""></span><span style="color:#e6db74">&#34;100%&#34;</span><span style=""></span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">        </span><span style="">&lt;</span><span style=""></span><span style="color:#f92672">script</span><span style=""></span><span style=""></span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">          </span><span style="color:#66d9ef">for</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">var</span><span style=""> </span><span style="color:#a6e22e">i</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="color:#ae81ff">0</span><span style="">;</span><span style=""> </span><span style="color:#a6e22e">i</span><span style=""> </span><span style="color:#f92672">&lt;</span><span style=""> </span><span style="color:#ae81ff">30</span><span style="">;</span><span style=""> </span><span style="color:#a6e22e">i</span><span style="color:#f92672">++</span><span style="">)</span><span style=""> </span><span style="">{</span><span style="">
-</span><span style="">            </span><span style="color:#66d9ef">if</span><span style=""> </span><span style="">(</span><span style="color:#a6e22e">i</span><span style=""> </span><span style="color:#f92672">%</span><span style=""> </span><span style="color:#ae81ff">2</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#ae81ff">0</span><span style="">)</span><span style=""> </span><span style="">{</span><span style="">
-</span><span style="">              </span><span style="">document</span><span style="">.</span><span style="color:#a6e22e">write</span><span style="">(</span><span style="">
-</span><span style="">              </span><span style="color:#e6db74">&#34;&lt;tr style=&#39;background-color:#0066ff; color: #ffffff&#39;&gt;&#34;</span><span style=""> </span><span style="color:#f92672">+</span><span style="">
-</span><span style="">              </span><span style="color:#e6db74">&#34;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&#34;</span><span style="">);</span><span style="">
-</span><span style="">            </span><span style="">}</span><span style="">
-</span><span style="">            </span><span style="color:#66d9ef">else</span><span style=""> </span><span style="">{</span><span style="">
-</span><span style="">              </span><span style="">document</span><span style="">.</span><span style="color:#a6e22e">write</span><span style="">(</span><span style="">
-</span><span style="">              </span><span style="color:#e6db74">&#34;&lt;tr style=&#39;background-color:#ff6600; color: #ffffff&#39;&gt;&#34;</span><span style=""> </span><span style="color:#f92672">+</span><span style="">
-</span><span style="">              </span><span style="color:#e6db74">&#34;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&#34;</span><span style="">);</span><span style="">
-</span><span style="">            </span><span style="">}</span><span style="">
-</span><span style="">          </span><span style="">}</span><span style="">
-</span><span style="">        </span><span style="">&lt;</span><span style=""></span><span style="">/</span><span style=""></span><span style="color:#f92672">script</span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">      </span><span style="">&lt;</span><span style=""></span><span style="">/</span><span style=""></span><span style="color:#f92672">table</span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">    </span><span style="">&lt;</span><span style=""></span><span style="">/</span><span style=""></span><span style="color:#f92672">div</span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style="">  </span><span style="">&lt;</span><span style=""></span><span style="">/</span><span style=""></span><span style="color:#f92672">body</span><span style=""></span><span style="">&gt;</span><span style="">
-</span><span style=""></span><span style="">&lt;</span><span style=""></span><span style="">/</span><span style=""></span><span style="color:#f92672">html</span><span style=""></span><span style="">&gt;</span></code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">     
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 200px; height: 200px; overflow: auto;&#34;</span>&gt;
+      &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100%&#34;</span>&gt;
+        &lt;<span style="color:#f92672">script</span>&gt;
+          <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">30</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+              document.<span style="color:#a6e22e">write</span>(
+              <span style="color:#e6db74">&#34;&lt;tr style=&#39;background-color:#0066ff; color: #ffffff&#39;&gt;&#34;</span> <span style="color:#f92672">+</span>
+              <span style="color:#e6db74">&#34;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&#34;</span>);
+            }
+            <span style="color:#66d9ef">else</span> {
+              document.<span style="color:#a6e22e">write</span>(
+              <span style="color:#e6db74">&#34;&lt;tr style=&#39;background-color:#ff6600; color: #ffffff&#39;&gt;&#34;</span> <span style="color:#f92672">+</span>
+              <span style="color:#e6db74">&#34;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;&#34;</span>);
+            }
+          }
+        &lt;/<span style="color:#f92672">script</span>&gt;
+      &lt;/<span style="color:#f92672">table</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
 
 <p>The key CSS element is <code>overflow</code>. If you use <code>overflow: auto</code> then the scrollbars are displayed only if they are needed.
 If you want to display them in any case then you need to use <code>overflow: scroll</code>.</p>

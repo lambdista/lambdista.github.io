@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Not In</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="Not In" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
@@ -89,7 +89,7 @@
  CD_FIELD DS_FIELD  1 ALPHA   2 BETA   TABLE_A
  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   TABLE_B
 Now try the following query:
-SELECT*FROMtable_aaWHEREa.cd_fieldNOTIN(SELECTb.cd_fieldFROMtable_bb);  Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.
+SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?
 		</div>
 	</div>
 </article>

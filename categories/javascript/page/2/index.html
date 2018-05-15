@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Javascript</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="Javascript" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
@@ -86,7 +86,7 @@
 		</header>
 		<div class="list__excerpt">
 			In JavaScript you can use a built-in method to format a decimal number so that it is displayed using, at most, x decimal places. Here is an example:
-varnum=3.1356;varx=3;alert(num.toFixed(x));// displays 3.136  As you may have guessed the method is toFixed. It accepts one parameter which is the number of decimal places to take into account.
+var num = 3.1356; var x = 3; alert(num.toFixed(x)); // displays 3.136  As you may have guessed the method is toFixed. It accepts one parameter which is the number of decimal places to take into account.
 Note: The number gets rounded as you can notice by the example above.
 		</div>
 	</div>
@@ -104,7 +104,7 @@ Note: The number gets rounded as you can notice by the example above.
 		</header>
 		<div class="list__excerpt">
 			Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of how you can do it using JavaScript and CSS.
-functioninit(){// Reference to the element varloading=document.getElementById(&#34;loading&#34;);// The div&#39;s width, set within the CSS class varloadingWidth=loading.offsetWidth;// The div&#39;s width, set within the CSS class varloadingHeight=loading.offsetHeight;// The browser&#39;s body&#39;s width vardocumentWidth=document.body.clientWidth;// The browser&#39;s body&#39;s height vardocumentHeight=document.body.clientHeight;// Position the element absolutely loading.
+function init() { // Reference to the element  var loading = document.getElementById(&#34;loading&#34;); // The div&#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth; // The div&#39;s width, set within the CSS class  var loadingHeight = loading.
 		</div>
 	</div>
 </article>
@@ -121,7 +121,7 @@ functioninit(){// Reference to the element varloading=document.getElementById(&#
 		</header>
 		<div class="list__excerpt">
 			Here is an example of how you can retrieve the selected checkboxes using a JavaScript function:
-&lt;html&gt;&lt;head&gt;&lt;script&gt;functiongetSelectedValues(elem){varelemNumber=document.myForm.test.length;varselectedElems=[];for(j=0;j&lt;elemNumber;j++){if(elem[j].checked){selectedElems.push(elem[j].value);}}returnselectedElems;}&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;formid=&#34;myForm&#34;name=&#34;myForm&#34;&gt;&lt;inputtype=&#34;checkbox&#34;id=&#34;test&#34;name=&#34;myCheckBox&#34;value=&#34;test1&#34;&gt;Test 1 &lt;inputtype=&#34;checkbox&#34;id=&#34;test&#34;name=&#34;myCheckBox&#34;value=&#34;test2&#34;&gt;Test 2 &lt;inputtype=&#34;button&#34;value=&#34;Click Here&#34;onclick=&#34;alert(getSelectedValues(document.myForm.myCheckBox));&#34;&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;  In the previous example when the user clicks on the button the selected checkboxes are displayed through an alert.
+&lt;html&gt; &lt;head&gt; &lt;script&gt; function getSelectedValues(elem) { var elemNumber = document.myForm.test.length; var selectedElems = []; for(j = 0; j &lt; elemNumber; j++) { if(elem[j].checked) { selectedElems.push(elem[j].value); } } return selectedElems; } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;form id=&#34;myForm&#34; name=&#34;myForm&#34;&gt; &lt;input type=&#34;checkbox&#34; id=&#34;test&#34; name=&#34;myCheckBox&#34; value=&#34;test1&#34;&gt; Test 1 &lt;input type=&#34;checkbox&#34; id=&#34;test&#34; name=&#34;myCheckBox&#34; value=&#34;test2&#34;&gt; Test 2 &lt;input type=&#34;button&#34; value=&#34;Click Here&#34; onclick=&#34;alert(getSelectedValues(document.
 		</div>
 	</div>
 </article>

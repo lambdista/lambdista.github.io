@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Regexp</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="Regexp" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
@@ -86,7 +86,7 @@
 		</header>
 		<div class="list__excerpt">
 			There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
-varstr=&#34;http://www.alessandrolacava.com/?code=ALE69&#34;;varregex=/code=(w+)&amp;?/;varresults=regex.exec(str);if(!results){alert(&#34;no match&#34;);}else{// first group alert(results[1]);}  The previous code extracts the string that follows the code= part of str.
+var str = &#34;http://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){ alert(&#34;no match&#34;); } else{ // first group  alert(results[1]); }  The previous code extracts the string that follows the code= part of str.
 		</div>
 	</div>
 </article>
@@ -104,7 +104,7 @@ varstr=&#34;http://www.alessandrolacava.com/?code=ALE69&#34;;varregex=/code=(w+)
 		<div class="list__excerpt">
 			You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
-importjava.util.regex;// ... other code // Strip multiline comments publicvoiddeleteMultilineComments(Stringsubject){Patternpattern=Pattern.
+import java.util.regex; // ... other code  // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.
 		</div>
 	</div>
 </article>

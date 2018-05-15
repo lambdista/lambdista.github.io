@@ -21,7 +21,7 @@
  CD_FIELD DS_FIELD  1 ALPHA   2 BETA   TABLE_A
  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   TABLE_B
 Now try the following query:
-SELECT*FROMtable_aaWHEREa.cd_fieldNOTIN(SELECTb.cd_fieldFROMtable_bb);  Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.</description>
+SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?</description>
     </item>
     
   </channel>

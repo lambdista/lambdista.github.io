@@ -5,17 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Java passes EVERYTHING by value!</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="Java passes EVERYTHING by value!" />
 <meta property="og:description" content="It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
-publicstaticvoidmain(String[]args){inta=0;increment(a);System.out.println(a);//it prints 0 so increment didn&#39;t work as expected }publicstaticintincrement(inta){&#43;&#43;a;System." />
+public static void main(String[] args) { int a = 0; increment(a); System." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.alessandrolacava.com/blog/java-passes-everything-by-value/" />
 
 
 
 <meta property="article:published_time" content="2006-09-13T08:51:47&#43;00:00"/>
+
 <meta property="article:modified_time" content="2006-09-13T08:51:47&#43;00:00"/>
 
 
@@ -93,19 +94,18 @@ by reference. Actually, everything in Java is passed by value as well as object 
 <p>When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a
 local effect. For example:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="">   
-</span><span style=""></span><span style="color:#66d9ef">public</span><span style=""> </span><span style="color:#66d9ef">static</span><span style=""> </span><span style="color:#66d9ef">void</span><span style=""> </span><span style="color:#a6e22e">main</span><span style=""></span><span style="color:#f92672">(</span><span style="">String</span><span style="color:#f92672">[]</span><span style=""> </span><span style="">args</span><span style="color:#f92672">)</span><span style=""> </span><span style="color:#f92672">{</span><span style="">
-</span><span style="">  </span><span style="color:#66d9ef">int</span><span style=""> </span><span style="">a</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">0</span><span style="color:#f92672">;</span><span style="">
-</span><span style="">  </span><span style="">increment</span><span style="color:#f92672">(</span><span style="">a</span><span style="color:#f92672">);</span><span style="">
-</span><span style="">  </span><span style="">System</span><span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="">a</span><span style="color:#f92672">);</span><span style=""> </span><span style="color:#75715e">//it prints 0 so increment didn&#39;t work as expected
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span><span style="">
-</span><span style="">
-</span><span style=""></span><span style="color:#66d9ef">public</span><span style=""> </span><span style="color:#66d9ef">static</span><span style=""> </span><span style="color:#66d9ef">int</span><span style=""> </span><span style="color:#a6e22e">increment</span><span style=""></span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style=""> </span><span style="">a</span><span style="color:#f92672">)</span><span style=""> </span><span style="color:#f92672">{</span><span style="">
-</span><span style="">  </span><span style="color:#f92672">++</span><span style="">a</span><span style="color:#f92672">;</span><span style="">
-</span><span style="">  </span><span style="">System</span><span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="">a</span><span style="color:#f92672">);</span><span style=""> </span><span style="color:#75715e">//it prints 1
-</span><span style="color:#75715e"></span><span style="">  </span><span style="color:#66d9ef">return</span><span style=""> </span><span style="">a</span><span style="color:#f92672">;</span><span style="">
-</span><span style=""></span><span style="color:#f92672">}</span></code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+  increment<span style="color:#f92672">(</span>a<span style="color:#f92672">);</span>
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a<span style="color:#f92672">);</span> <span style="color:#75715e">//it prints 0 so increment didn&#39;t work as expected
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">increment</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#f92672">++</span>a<span style="color:#f92672">;</span>
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a<span style="color:#f92672">);</span> <span style="color:#75715e">//it prints 1
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> a<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <p>As you can see the change made to the parameter passed to <code>increment</code>, that is <code>a</code>, affects only the local copy of it.
 This proves that Java passes primitives by value.</p>
@@ -116,21 +116,20 @@ This proves that Java passes primitives by value.</p>
 Suppose you want to write a <code>swap</code> method to swap two integers. Since you know you can&rsquo;t use primitives you might
 think to write the method using the wrapper class for int values, that is <code>Integer</code>. Let&rsquo;s try that:</p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="">   
-</span><span style=""></span><span style="color:#66d9ef">public</span><span style=""> </span><span style="color:#66d9ef">static</span><span style=""> </span><span style="color:#66d9ef">void</span><span style=""> </span><span style="color:#a6e22e">main</span><span style=""></span><span style="color:#f92672">(</span><span style="">String</span><span style="color:#f92672">[]</span><span style=""> </span><span style="">args</span><span style="color:#f92672">)</span><span style=""> </span><span style="color:#f92672">{</span><span style="">
-</span><span style="">  </span><span style="">Integer</span><span style=""> </span><span style="">a</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="color:#66d9ef">new</span><span style=""> </span><span style="">Integer</span><span style="color:#f92672">(</span><span style="">1</span><span style="color:#f92672">);</span><span style="">
-</span><span style="">  </span><span style="">Integer</span><span style=""> </span><span style="">b</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="color:#66d9ef">new</span><span style=""> </span><span style="">Integer</span><span style="color:#f92672">(</span><span style="">5</span><span style="color:#f92672">);</span><span style="">
-</span><span style="">  </span><span style="">swap</span><span style="color:#f92672">(</span><span style="">a</span><span style="color:#f92672">,</span><span style=""> </span><span style="">b</span><span style="color:#f92672">);</span><span style="">
-</span><span style="">  </span><span style="">System</span><span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span><span style=""> </span><span style="color:#75715e">//it prints 5 so swap didn&#39;t work!
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span><span style="">
-</span><span style="">
-</span><span style=""></span><span style="color:#66d9ef">public</span><span style=""> </span><span style="color:#66d9ef">static</span><span style=""> </span><span style="color:#66d9ef">void</span><span style=""> </span><span style="color:#a6e22e">swap</span><span style=""></span><span style="color:#f92672">(</span><span style="">Integer</span><span style=""> </span><span style="">a</span><span style="color:#f92672">,</span><span style=""> </span><span style="">Integer</span><span style=""> </span><span style="">b</span><span style="color:#f92672">)</span><span style=""> </span><span style="color:#f92672">{</span><span style="">
-</span><span style="">  </span><span style="">Integer</span><span style=""> </span><span style="">temp</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">a</span><span style="color:#f92672">;</span><span style="">
-</span><span style="">  </span><span style="">a</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">b</span><span style="color:#f92672">;</span><span style="">
-</span><span style="">  </span><span style="">b</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">temp</span><span style="color:#f92672">;</span><span style="">
-</span><span style="">  </span><span style="">System</span><span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span><span style=""> </span><span style="color:#75715e">//it prints 1!
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre>
-</div></p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  Integer a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+  Integer b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>5<span style="color:#f92672">);</span>
+  swap<span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">);</span>
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>b<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span> <span style="color:#75715e">//it prints 5 so swap didn&#39;t work!
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span><span style="color:#f92672">(</span>Integer a<span style="color:#f92672">,</span> Integer b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  Integer temp <span style="color:#f92672">=</span> a<span style="color:#f92672">;</span>
+  a <span style="color:#f92672">=</span> b<span style="color:#f92672">;</span>
+  b <span style="color:#f92672">=</span> temp<span style="color:#f92672">;</span>
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>b<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span> <span style="color:#75715e">//it prints 1!
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div></p>
 
 <p>This means that, even the object references are passed by value, as I stated at the beginning of this post!</p>
 

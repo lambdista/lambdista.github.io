@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programming</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="Programming" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
@@ -86,7 +86,7 @@
 		</header>
 		<div class="list__excerpt">
 			Here is an example of how easy it is to sort an array of objects using the Enumerable.sortBy method of the Prototype framework:
-varobj1={lastName:&#34;Lacava&#34;,firstName:&#34;Alessandro&#34;};varobj2={lastName:&#34;Brown&#34;,firstName:&#34;John&#34;};varobj3={lastName:&#34;Simpson&#34;,firstName:&#34;Bart&#34;};vararr=[obj1,obj2,obj3];//order by last name varsorted=arr.sortBy(function(obj){returnobj.lastName.toLowerCase();});varstr=&#34;&#34;;sorted.each(function(obj,index){str+=index+1+&#34; - &#34;+obj.lastName+&#34; &#34;+obj.firstName;});//display the elements ordered by last name document.write(str);  
+var obj1 = { lastName : &#34;Lacava&#34;, firstName : &#34;Alessandro&#34; }; var obj2 = { lastName : &#34;Brown&#34;, firstName : &#34;John&#34; }; var obj3 = { lastName : &#34;Simpson&#34;, firstName : &#34;Bart&#34; }; var arr = [obj1, obj2, obj3]; //order by last name var sorted = arr.sortBy(function(obj) { return obj.
 		</div>
 	</div>
 </article>
@@ -121,7 +121,7 @@ varobj1={lastName:&#34;Lacava&#34;,firstName:&#34;Alessandro&#34;};varobj2={last
 		<div class="list__excerpt">
 			You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
-importjava.util.regex;// ... other code // Strip multiline comments publicvoiddeleteMultilineComments(Stringsubject){Patternpattern=Pattern.
+import java.util.regex; // ... other code  // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.
 		</div>
 	</div>
 </article>

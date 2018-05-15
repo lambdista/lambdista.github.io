@@ -18,7 +18,7 @@
       
       <guid>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
       <description>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of how you can do it using JavaScript and CSS.
-functioninit(){// Reference to the element varloading=document.getElementById(&amp;#34;loading&amp;#34;);// The div&amp;#39;s width, set within the CSS class varloadingWidth=loading.offsetWidth;// The div&amp;#39;s width, set within the CSS class varloadingHeight=loading.offsetHeight;// The browser&amp;#39;s body&amp;#39;s width vardocumentWidth=document.body.clientWidth;// The browser&amp;#39;s body&amp;#39;s height vardocumentHeight=document.body.clientHeight;// Position the element absolutely loading.</description>
+function init() { // Reference to the element  var loading = document.getElementById(&amp;#34;loading&amp;#34;); // The div&amp;#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth; // The div&amp;#39;s width, set within the CSS class  var loadingHeight = loading.</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ functioninit(){// Reference to the element varloading=document.getElementById(&a
       <guid>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</guid>
       <description>If you need to customize a list box then the &amp;lt;select&amp;gt; HTML element might not be enough. In such a case you&amp;rsquo;d like to have something that simulates the &amp;lt;select&amp;gt; behaviour.
 Here is the code to use to obtain a custom list box:
-&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;divstyle=&amp;#34;width: 200px; height: 200px; overflow: auto;&amp;#34;&amp;gt;&amp;lt;tablewidth=&amp;#34;100%&amp;#34;height=&amp;#34;100%&amp;#34;&amp;gt;&amp;lt;script&amp;gt;for(vari=0;i&amp;lt;30;i++){if(i%2==0){document.write(&amp;#34;&amp;lt;tr style=&amp;#39;background-color:#0066ff; color: #ffffff&amp;#39;&amp;gt;&amp;#34;+&amp;#34;&amp;lt;td&amp;gt;JavaScript&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;#34;);}else{document.write(&amp;#34;&amp;lt;tr style=&amp;#39;background-color:#ff6600; color: #ffffff&amp;#39;&amp;gt;&amp;#34;+&amp;#34;&amp;lt;td&amp;gt;JavaScript&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;#34;);}}&amp;lt;/script&amp;gt;&amp;lt;/table&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;  The key CSS element is overflow. If you use overflow: auto then the scrollbars are displayed only if they are needed.</description>
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div style=&amp;#34;width: 200px; height: 200px; overflow: auto;&amp;#34;&amp;gt; &amp;lt;table width=&amp;#34;100%&amp;#34; height=&amp;#34;100%&amp;#34;&amp;gt; &amp;lt;script&amp;gt; for (var i = 0; i &amp;lt; 30; i++) { if (i % 2 == 0) { document.</description>
     </item>
     
   </channel>

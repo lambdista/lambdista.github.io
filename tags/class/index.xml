@@ -18,7 +18,7 @@
       
       <guid>http://www.alessandrolacava.com/blog/creating-class-definition-in-javascript/</guid>
       <description>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
-//class functionPerson(sLastName,sFirstName,iAge){this.lastName=sLastName;this.firstName=sFirstName;this.age=iAge;this.phoneNumbers=newArray();}//method Person.prototype.showFullName=function(){alert(this.lastName+&amp;#34; &amp;#34;+this.firstName);};//instances varoPerson1=newPerson(&amp;#34;Lacava&amp;#34;,&amp;#34;Alessandro&amp;#34;,30);varoPerson2=newPerson(&amp;#34;Brown&amp;#34;,&amp;#34;John&amp;#34;,50);oPerson1.phoneNumbers.push(&amp;#34;1234567&amp;#34;);oPerson2.phoneNumbers.push(&amp;#34;7654321&amp;#34;);oPerson1.showFullName();//outputs Lacava Alessandro alert(oPerson1.phoneNumbers);//outputs 1234567 oPerson2.showFullName();//outputs Brown John alert(oPerson2.phoneNumbers);//outputs 7654321  </description>
+//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName + &amp;#34; &amp;#34; + this.firstName); }; //instances var oPerson1 = new Person(&amp;#34;Lacava&amp;#34;, &amp;#34;Alessandro&amp;#34;, 30); var oPerson2 = new Person(&amp;#34;Brown&amp;#34;, &amp;#34;John&amp;#34;, 50); oPerson1.phoneNumbers.push(&amp;#34;1234567&amp;#34;); oPerson2.phoneNumbers.push(&amp;#34;7654321&amp;#34;); oPerson1.</description>
     </item>
     
   </channel>

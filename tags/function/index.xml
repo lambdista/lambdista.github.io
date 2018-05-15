@@ -27,8 +27,8 @@
       
       <guid>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</guid>
       <description>Most programmers know how to define and use a function in JavaScript. For example the following function displays an alert containing the string passed in as a parameter:
-functiondisplayAlert(sText){alert(sText);}// Then you call it this way displayAlert(&amp;#34;Hello World!&amp;#34;);  How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
-vardisplayAlert=newFunction(&amp;#34;sText&amp;#34;,&amp;#34;alert(sText);&amp;#34;);//...and you call it the same way displayAlert(&amp;#34;Hello World!&amp;#34;);  For those who didn&amp;rsquo;t figure it out, the syntax of the Function class is the following:</description>
+function displayAlert(sText) { alert(sText); } // Then you call it this way displayAlert(&amp;#34;Hello World!&amp;#34;);  How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
+var displayAlert = new Function(&amp;#34;sText&amp;#34;, &amp;#34;alert(sText);&amp;#34;); //.</description>
     </item>
     
   </channel>
