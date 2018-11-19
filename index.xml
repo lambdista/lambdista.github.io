@@ -94,8 +94,9 @@ final case class Ad( headline: String, description1: String, description2: Strin
       
       <guid>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</guid>
       <description>For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
-Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:
- Creates a class and its companion object. Implements the apply method that you can use as a factory. This lets you create instances of the class without the new keyword.</description>
+In this post:
+ Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
+Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
     </item>
     
     <item>

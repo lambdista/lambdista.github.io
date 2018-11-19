@@ -8,8 +8,9 @@
 <meta name="generator" content="Hugo 0.40.1" />
 <meta property="og:title" content="Scala case classes in depth" />
 <meta property="og:description" content="For this post I&rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
-Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:
- Creates a class and its companion object. Implements the apply method that you can use as a factory. This lets you create instances of the class without the new keyword." />
+In this post:
+ Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
+Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/" />
 
@@ -93,6 +94,19 @@ Common knowledge about case classes When you declare a case class the Scala comp
 <p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>lastname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> firstname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> birthYear<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></code></pre></div></p>
 
+<p>In this post:</p>
+
+<ul>
+<li><a href="#commonKnowledge">Common knowledge about case classes</a></li>
+<li><a href="#uncommonKnowledge"><em>Not so common</em> knowledge about case classes</a></li>
+<li><a href="#curried">Defining a case class using the <em>curried</em> form</a></li>
+<li><a href="#privateConstructor">Defining a case class with a private constructor</a></li>
+<li><a href="#mostCurious">For the most curious ones</a></li>
+<li><a href="#finalNotes">Final Notes</a></li>
+</ul>
+
+<p><a name="commonKnowledge"></a></p>
+
 <h2 id="common-knowledge-about-case-classes">Common knowledge about case classes</h2>
 
 <p>When you declare a case class the Scala compiler does the following for you:</p>
@@ -164,6 +178,8 @@ it&rsquo;s fields, both during pattern matching and as a simple expression to ex
 <span style="color:#75715e">// prints Lacava
 </span><span style="color:#75715e"></span>println<span style="color:#f92672">(</span>lastname<span style="color:#f92672">)</span> </code></pre></div>
 
+<p><a name="uncommonKnowledge"></a></p>
+
 <h2 id="not-so-common-knowledge-about-case-classes"><em>Not so common</em> knowledge about case classes</h2>
 
 <ul>
@@ -208,6 +224,8 @@ it&rsquo;s fields, both during pattern matching and as a simple expression to ex
 companion object. <code>N</code> is the number of the case class formal parameters.
 Note that, of course, if <code>N = 1</code> you won&rsquo;t get <code>curried</code> and <code>tupled</code> because
 they wouldn&rsquo;t make sense for just one parameter!</p>
+
+<p><a name="curried"></a></p>
 
 <h2 id="defining-a-case-class-using-the-curried-form">Defining a case class using the <em>curried</em> form</h2>
 
@@ -260,6 +278,8 @@ but it could be of help in certain situations.</p>
 <p>In fact, you could define your case class as usual and override <code>equals</code> on your own. However overriding
 <code>equals</code> is not very trivial. Indeed, before doing that
 I recommend you read the <a name="programmingInScala"></a>chapter 30 of <strong>Programming in Scala: A Comprehensive Step-by-Step Guide, 2nd Edition - Odersky, Spoon, Venners</strong>. Its title is <strong>Object Equality</strong> and it&rsquo;s just 25 pages long!</p>
+
+<p><a name="privateConstructor"></a></p>
 
 <h2 id="defining-a-case-class-with-a-private-constructor">Defining a case class with a private constructor</h2>
 
@@ -317,6 +337,8 @@ scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</sp
 
 <p>That said, a much better alternative, in my opinion, is defining a <code>sealed abstract case class</code>, as proposed by Rob Norris (<a href="https://twitter.com/tpolecat">@tpolecat</a>) in this <a href="https://gist.github.com/tpolecat/a5cb0dc9adeacc93f846835ed21c92d2">gist</a>. That way you don&rsquo;t even need to define the private <code>copy</code> method. Plus the name <code>fromInt</code> communicates more clearly the concept of a possible failure while one expects that <code>apply</code> is a <em>non-effectful</em> method.</p>
 
+<p><a name="mostCurious"></a></p>
+
 <h2 id="for-the-most-curious-ones">For the most curious ones</h2>
 
 <p>Furthermore, since each case class extends the <code>Product</code> trait it inherits the following methods:</p>
@@ -345,6 +367,8 @@ scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</sp
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// the result is Person
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> className<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>productPrefix </code></pre></div>
+
+<p><a name="finalNotes"></a></p>
 
 <h2 id="final-notes">Final Notes</h2>
 
