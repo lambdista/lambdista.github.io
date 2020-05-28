@@ -20,7 +20,7 @@ Compiler options Getting into the glory details of each and every compiler optio
 Compiler options Getting into the glory details of each and every compiler option is out of the scope of this post (see compiler options). Suffice to say you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.">
 <meta itemprop="datePublished" content="2020-05-28T11:26:32&#43;02:00" />
 <meta itemprop="dateModified" content="2020-05-28T11:26:32&#43;02:00" />
-<meta itemprop="wordCount" content="656">
+<meta itemprop="wordCount" content="660">
 
 
 
@@ -143,9 +143,7 @@ Alex did a very good write-up about the compiler options <a href="https://alexn.
 <span style="color:#f92672">[</span><span style="color:#66d9ef">warn</span><span style="color:#f92672">]</span>     b <span style="color:#66d9ef">&lt;-</span> optB
 <span style="color:#f92672">[</span><span style="color:#66d9ef">warn</span><span style="color:#f92672">]</span>     <span style="color:#f92672">^</span></code></pre></div>
 <p>At which point, if you know the nuts and bolts of for comprehensions you&rsquo;ll go &ldquo;oh right, let me fix that&rdquo;, but
-if you don&rsquo;t you could be like &ldquo;huh? I&rsquo;m actually using <code>b</code> in <code>if a != b</code>! Plus, what is this anonymous function the compiler is talking about?&quot;.
-Right after that you could think: &ldquo;it must be a compiler bug&rdquo;.
-I&rsquo;m sorry to disappoint you, it is not a compiler bug. By the way, most of the times it&rsquo;s not the case.</p>
+if you don&rsquo;t you could be like &ldquo;huh? I&rsquo;m actually using <code>b</code> in <code>if a != b</code>! Plus, what is this anonymous function the compiler is talking about?&quot;.</p>
 <p>In order to understand the reason behind that warning,
 you need to know how for expressions are translated—under the hood—by the Scala compiler.
 A for comprehension is just syntactic sugar for a chain of <code>foreach</code>, <code>flatMap</code>, <code>map</code>, <code>withFilter</code> or <code>filter</code> calls.
@@ -188,6 +186,9 @@ assert<span style="color:#f92672">(</span>x2 <span style="color:#f92672">==</spa
 assert<span style="color:#f92672">(</span>x3 <span style="color:#f92672">==</span> x4<span style="color:#f92672">)</span>
 assert<span style="color:#f92672">(</span>x4 <span style="color:#f92672">==</span> x5<span style="color:#f92672">)</span>
 assert<span style="color:#f92672">(</span>x5 <span style="color:#f92672">==</span> x6<span style="color:#f92672">)</span></code></pre></div>
+<p>At first I wasn&rsquo;t sure if it can be considered or not a compiler bug, but after a small
+chat with <a href="https://twitter.com/gabro27">Gabriele</a> on <a href="https://twitter.com/lambdista/status/1266008343140864000?s=20">twitter</a> I decided to file
+a <a href="https://github.com/scala/bug/issues/12018">bug issue</a> and see what they think about it.</p>
 
 		</div>
 		<footer class="post__footer">
