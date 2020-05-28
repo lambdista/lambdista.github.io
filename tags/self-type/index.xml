@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Self-type on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/self-type/</link>
+    <link>/tags/self-type/</link>
     <description>Recent content in Self-type on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Mar 2015 14:59:24 +0200</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/self-type/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/self-type/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scala self-recursive types</title>
-      <link>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</link>
+      <link>/blog/scala-self-recursive-types/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</guid>
+      <guid>/blog/scala-self-recursive-types/</guid>
       <description>One of the advantages of using a statically typed language is that you can use the type system to enforce some constraints. Scala provides self-recursive types, aka F-bounded polymorphic types that&amp;ndash;along with self types&amp;ndash;let you put powerful constraint to your type definitions.
 Self-recursive type definition Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example which does not use a self-recursive type:</description>
     </item>

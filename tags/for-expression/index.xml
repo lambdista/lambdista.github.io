@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>for expression on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/for-expression/</link>
+    <link>/tags/for-expression/</link>
     <description>Recent content in for expression on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/for-expression/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/for-expression/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Desugaring for comprehensions (AKA for expressions)</title>
-      <link>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
+      <link>/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
+      <guid>/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
       <description>Recently I stumbled upon a piece of Scala code that might leave you puzzled. Before showing you the code I must spend a few words about the compiler options.
 Compiler options Getting into the glory details of each and every compiler option is out of the scope of this post (see compiler options). Suffice to say you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.</description>
     </item>

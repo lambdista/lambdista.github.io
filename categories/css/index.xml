@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/categories/css/</link>
+    <link>/categories/css/</link>
     <description>Recent content in CSS on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Feb 2007 10:55:53 +0000</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/categories/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to display an element to the center of the browser</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</link>
+      <link>/blog/how-to-display-an-element-to-the-center-of-the-browser/</link>
       <pubDate>Fri, 16 Feb 2007 10:55:53 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
+      <guid>/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
       <description>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of how you can do it using JavaScript and CSS.
 function init() { // Reference to the element  var loading = document.getElementById(&amp;#34;loading&amp;#34;); // The div&amp;#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth; // The div&amp;#39;s width, set within the CSS class  var loadingHeight = loading.</description>
     </item>
     
     <item>
       <title>How to add scrollbars to a block (e.g. a &lt;div&gt; element)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</link>
+      <link>/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</link>
       <pubDate>Fri, 24 Nov 2006 09:21:30 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</guid>
+      <guid>/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</guid>
       <description>If you need to customize a list box then the &amp;lt;select&amp;gt; HTML element might not be enough. In such a case you&amp;rsquo;d like to have something that simulates the &amp;lt;select&amp;gt; behaviour.
 Here is the code to use to obtain a custom list box:
 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div style=&amp;#34;width: 200px; height: 200px; overflow: auto;&amp;#34;&amp;gt; &amp;lt;table width=&amp;#34;100%&amp;#34; height=&amp;#34;100%&amp;#34;&amp;gt; &amp;lt;script&amp;gt; for (var i = 0; i &amp;lt; 30; i++) { if (i % 2 == 0) { document.</description>

@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IDE on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/categories/ide/</link>
+    <link>/categories/ide/</link>
     <description>Recent content in IDE on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Mar 2009 09:33:59 +0000</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/categories/ide/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/ide/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Undo close tab in Eclipse</title>
-      <link>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</link>
+      <link>/blog/undo-close-tab-in-eclipse/</link>
       <pubDate>Thu, 26 Mar 2009 09:33:59 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</guid>
+      <guid>/blog/undo-close-tab-in-eclipse/</guid>
       <description>I don&amp;rsquo;t know about you, but I love the Firefox&amp;rsquo;s undo-close-tab feature (Ctrl+Shift+T). If you use Eclipse you might be glad to know you can undo the close-tab action in Eclipse as well. You can do that both using your mouse by clicking on the yellow left arrow you can see in the Eclipse toolbar and through the keybord using the Alt+Left Arrow key combination.
 I hope this helps.</description>
     </item>
     
     <item>
       <title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</title>
-      <link>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
+      <link>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
       <pubDate>Tue, 22 Jul 2008 08:53:07 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
+      <guid>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
       <description>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
  By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
     </item>
     
     <item>
       <title>Very Useful Shortcuts for Eclipse</title>
-      <link>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</link>
+      <link>/blog/very-useful-shortcuts-for-eclipse/</link>
       <pubDate>Tue, 25 Sep 2007 11:10:01 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
+      <guid>/blog/very-useful-shortcuts-for-eclipse/</guid>
       <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java.
 Action Shortcut</description>
     </item>
     
     <item>
       <title>How to attach source or Javadoc to Java Enterprise Edition API in Eclipse</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</link>
+      <link>/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</link>
       <pubDate>Fri, 14 Sep 2007 12:50:48 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</guid>
+      <guid>/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</guid>
       <description>Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there&amp;rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:</description>
     </item>
     

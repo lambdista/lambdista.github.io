@@ -2,129 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Programming</title>
-      <link>http://www.alessandrolacava.com/categories/programming/</link>
+      <link>/categories/programming/</link>
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/programming/</guid>
+      <guid>/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>http://www.alessandrolacava.com/categories/scala/</link>
+      <link>/categories/scala/</link>
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/scala/</guid>
+      <guid>/categories/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>http://www.alessandrolacava.com/categories/java/</link>
+      <link>/categories/java/</link>
       <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/java/</guid>
+      <guid>/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java 8</title>
-      <link>http://www.alessandrolacava.com/categories/java-8/</link>
+      <link>/categories/java-8/</link>
       <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/java-8/</guid>
+      <guid>/categories/java-8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IDE</title>
-      <link>http://www.alessandrolacava.com/categories/ide/</link>
+      <link>/categories/ide/</link>
       <pubDate>Thu, 26 Mar 2009 09:33:59 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/ide/</guid>
+      <guid>/categories/ide/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apache</title>
-      <link>http://www.alessandrolacava.com/categories/apache/</link>
+      <link>/categories/apache/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/apache/</guid>
+      <guid>/categories/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>http://www.alessandrolacava.com/categories/php/</link>
+      <link>/categories/php/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/php/</guid>
+      <guid>/categories/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Database</title>
-      <link>http://www.alessandrolacava.com/categories/database/</link>
+      <link>/categories/database/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/database/</guid>
+      <guid>/categories/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Oracle</title>
-      <link>http://www.alessandrolacava.com/categories/oracle/</link>
+      <link>/categories/oracle/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/oracle/</guid>
+      <guid>/categories/oracle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Aphorisms</title>
-      <link>http://www.alessandrolacava.com/categories/aphorisms/</link>
+      <link>/categories/aphorisms/</link>
       <pubDate>Fri, 09 May 2008 13:49:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/aphorisms/</guid>
+      <guid>/categories/aphorisms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>http://www.alessandrolacava.com/categories/javascript/</link>
+      <link>/categories/javascript/</link>
       <pubDate>Mon, 31 Mar 2008 13:41:13 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/javascript/</guid>
+      <guid>/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Editor</title>
-      <link>http://www.alessandrolacava.com/categories/editor/</link>
+      <link>/categories/editor/</link>
       <pubDate>Wed, 14 Mar 2007 08:27:14 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/editor/</guid>
+      <guid>/categories/editor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>http://www.alessandrolacava.com/categories/css/</link>
+      <link>/categories/css/</link>
       <pubDate>Fri, 16 Feb 2007 10:55:53 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/categories/css/</guid>
+      <guid>/categories/css/</guid>
       <description></description>
     </item>
     

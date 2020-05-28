@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>XML on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/xml/</link>
+    <link>/tags/xml/</link>
     <description>Recent content in XML on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Jun 2006 15:05:27 +0000</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to store and extract XML data in and from an Oracle DataBase (DB)</title>
-      <link>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
+      <link>/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
       <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
+      <guid>/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
       <description>Here are some snippets of code showing how to accomplish this:
 CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&amp;rsquo;s insert one row in the table.

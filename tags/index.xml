@@ -2,489 +2,489 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>for comprehension</title>
-      <link>http://www.alessandrolacava.com/tags/for-comprehension/</link>
+      <link>/tags/for-comprehension/</link>
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/for-comprehension/</guid>
+      <guid>/tags/for-comprehension/</guid>
       <description></description>
     </item>
     
     <item>
       <title>for expression</title>
-      <link>http://www.alessandrolacava.com/tags/for-expression/</link>
+      <link>/tags/for-expression/</link>
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/for-expression/</guid>
+      <guid>/tags/for-expression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ADT</title>
-      <link>http://www.alessandrolacava.com/tags/adt/</link>
+      <link>/tags/adt/</link>
       <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/adt/</guid>
+      <guid>/tags/adt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Algebraic Data Type</title>
-      <link>http://www.alessandrolacava.com/tags/algebraic-data-type/</link>
+      <link>/tags/algebraic-data-type/</link>
       <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/algebraic-data-type/</guid>
+      <guid>/tags/algebraic-data-type/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Option</title>
-      <link>http://www.alessandrolacava.com/tags/option/</link>
+      <link>/tags/option/</link>
       <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/option/</guid>
+      <guid>/tags/option/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Collections</title>
-      <link>http://www.alessandrolacava.com/tags/collections/</link>
+      <link>/tags/collections/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/collections/</guid>
+      <guid>/tags/collections/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Function</title>
-      <link>http://www.alessandrolacava.com/tags/function/</link>
+      <link>/tags/function/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/function/</guid>
+      <guid>/tags/function/</guid>
       <description></description>
     </item>
     
     <item>
       <title>List</title>
-      <link>http://www.alessandrolacava.com/tags/list/</link>
+      <link>/tags/list/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/list/</guid>
+      <guid>/tags/list/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Map</title>
-      <link>http://www.alessandrolacava.com/tags/map/</link>
+      <link>/tags/map/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/map/</guid>
+      <guid>/tags/map/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Partial Function</title>
-      <link>http://www.alessandrolacava.com/tags/partial-function/</link>
+      <link>/tags/partial-function/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/partial-function/</guid>
+      <guid>/tags/partial-function/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seq</title>
-      <link>http://www.alessandrolacava.com/tags/seq/</link>
+      <link>/tags/seq/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/seq/</guid>
+      <guid>/tags/seq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Set</title>
-      <link>http://www.alessandrolacava.com/tags/set/</link>
+      <link>/tags/set/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/set/</guid>
+      <guid>/tags/set/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vector</title>
-      <link>http://www.alessandrolacava.com/tags/vector/</link>
+      <link>/tags/vector/</link>
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/vector/</guid>
+      <guid>/tags/vector/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Case class</title>
-      <link>http://www.alessandrolacava.com/tags/case-class/</link>
+      <link>/tags/case-class/</link>
       <pubDate>Fri, 22 May 2015 08:12:07 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/case-class/</guid>
+      <guid>/tags/case-class/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Companion object</title>
-      <link>http://www.alessandrolacava.com/tags/companion-object/</link>
+      <link>/tags/companion-object/</link>
       <pubDate>Fri, 22 May 2015 08:12:07 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/companion-object/</guid>
+      <guid>/tags/companion-object/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Self-recursive type</title>
-      <link>http://www.alessandrolacava.com/tags/self-recursive-type/</link>
+      <link>/tags/self-recursive-type/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/self-recursive-type/</guid>
+      <guid>/tags/self-recursive-type/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Self-type</title>
-      <link>http://www.alessandrolacava.com/tags/self-type/</link>
+      <link>/tags/self-type/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/self-type/</guid>
+      <guid>/tags/self-type/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Type system</title>
-      <link>http://www.alessandrolacava.com/tags/type-system/</link>
+      <link>/tags/type-system/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/type-system/</guid>
+      <guid>/tags/type-system/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DSL</title>
-      <link>http://www.alessandrolacava.com/tags/dsl/</link>
+      <link>/tags/dsl/</link>
       <pubDate>Fri, 20 Feb 2015 15:09:06 +0100</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/dsl/</guid>
+      <guid>/tags/dsl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Implicit</title>
-      <link>http://www.alessandrolacava.com/tags/implicit/</link>
+      <link>/tags/implicit/</link>
       <pubDate>Fri, 20 Feb 2015 15:09:06 +0100</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/implicit/</guid>
+      <guid>/tags/implicit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Try</title>
-      <link>http://www.alessandrolacava.com/tags/try/</link>
+      <link>/tags/try/</link>
       <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/try/</guid>
+      <guid>/tags/try/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dennis Ritchie</title>
-      <link>http://www.alessandrolacava.com/tags/dennis-ritchie/</link>
+      <link>/tags/dennis-ritchie/</link>
       <pubDate>Thu, 13 Oct 2011 12:56:36 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/dennis-ritchie/</guid>
+      <guid>/tags/dennis-ritchie/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RIP</title>
-      <link>http://www.alessandrolacava.com/tags/rip/</link>
+      <link>/tags/rip/</link>
       <pubDate>Thu, 13 Oct 2011 12:56:36 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/rip/</guid>
+      <guid>/tags/rip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eclipse</title>
-      <link>http://www.alessandrolacava.com/tags/eclipse/</link>
+      <link>/tags/eclipse/</link>
       <pubDate>Thu, 26 Mar 2009 09:33:59 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/eclipse/</guid>
+      <guid>/tags/eclipse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EasyPHP</title>
-      <link>http://www.alessandrolacava.com/tags/easyphp/</link>
+      <link>/tags/easyphp/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/easyphp/</guid>
+      <guid>/tags/easyphp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>http://www.alessandrolacava.com/tags/mysql/</link>
+      <link>/tags/mysql/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/mysql/</guid>
+      <guid>/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phpMyAdmin</title>
-      <link>http://www.alessandrolacava.com/tags/phpmyadmin/</link>
+      <link>/tags/phpmyadmin/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/phpmyadmin/</guid>
+      <guid>/tags/phpmyadmin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RegEx</title>
-      <link>http://www.alessandrolacava.com/tags/regex/</link>
+      <link>/tags/regex/</link>
       <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/regex/</guid>
+      <guid>/tags/regex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JVM</title>
-      <link>http://www.alessandrolacava.com/tags/jvm/</link>
+      <link>/tags/jvm/</link>
       <pubDate>Tue, 22 Jul 2008 08:53:07 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/jvm/</guid>
+      <guid>/tags/jvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EXISTS</title>
-      <link>http://www.alessandrolacava.com/tags/exists/</link>
+      <link>/tags/exists/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/exists/</guid>
+      <guid>/tags/exists/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IN</title>
-      <link>http://www.alessandrolacava.com/tags/in/</link>
+      <link>/tags/in/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/in/</guid>
+      <guid>/tags/in/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Optimization</title>
-      <link>http://www.alessandrolacava.com/tags/optimization/</link>
+      <link>/tags/optimization/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/optimization/</guid>
+      <guid>/tags/optimization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Performance</title>
-      <link>http://www.alessandrolacava.com/tags/performance/</link>
+      <link>/tags/performance/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/performance/</guid>
+      <guid>/tags/performance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NOT EXISTS</title>
-      <link>http://www.alessandrolacava.com/tags/not-exists/</link>
+      <link>/tags/not-exists/</link>
       <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/not-exists/</guid>
+      <guid>/tags/not-exists/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NOT IN</title>
-      <link>http://www.alessandrolacava.com/tags/not-in/</link>
+      <link>/tags/not-in/</link>
       <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/not-in/</guid>
+      <guid>/tags/not-in/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ResultSet</title>
-      <link>http://www.alessandrolacava.com/tags/resultset/</link>
+      <link>/tags/resultset/</link>
       <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/resultset/</guid>
+      <guid>/tags/resultset/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ResultSetMetaData</title>
-      <link>http://www.alessandrolacava.com/tags/resultsetmetadata/</link>
+      <link>/tags/resultsetmetadata/</link>
       <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/resultsetmetadata/</guid>
+      <guid>/tags/resultsetmetadata/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RegExp</title>
-      <link>http://www.alessandrolacava.com/tags/regexp/</link>
+      <link>/tags/regexp/</link>
       <pubDate>Mon, 26 Nov 2007 14:21:20 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/regexp/</guid>
+      <guid>/tags/regexp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Timestamp</title>
-      <link>http://www.alessandrolacava.com/tags/timestamp/</link>
+      <link>/tags/timestamp/</link>
       <pubDate>Tue, 09 Oct 2007 11:20:28 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/timestamp/</guid>
+      <guid>/tags/timestamp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ant</title>
-      <link>http://www.alessandrolacava.com/tags/ant/</link>
+      <link>/tags/ant/</link>
       <pubDate>Mon, 04 Jun 2007 10:43:49 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/ant/</guid>
+      <guid>/tags/ant/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SVN</title>
-      <link>http://www.alessandrolacava.com/tags/svn/</link>
+      <link>/tags/svn/</link>
       <pubDate>Mon, 04 Jun 2007 10:43:49 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/svn/</guid>
+      <guid>/tags/svn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DML</title>
-      <link>http://www.alessandrolacava.com/tags/dml/</link>
+      <link>/tags/dml/</link>
       <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/dml/</guid>
+      <guid>/tags/dml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Statement</title>
-      <link>http://www.alessandrolacava.com/tags/statement/</link>
+      <link>/tags/statement/</link>
       <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/statement/</guid>
+      <guid>/tags/statement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UltraEdit-32</title>
-      <link>http://www.alessandrolacava.com/tags/ultraedit-32/</link>
+      <link>/tags/ultraedit-32/</link>
       <pubDate>Wed, 14 Mar 2007 08:27:14 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/ultraedit-32/</guid>
+      <guid>/tags/ultraedit-32/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Prototype</title>
-      <link>http://www.alessandrolacava.com/tags/prototype/</link>
+      <link>/tags/prototype/</link>
       <pubDate>Mon, 20 Nov 2006 15:34:48 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/prototype/</guid>
+      <guid>/tags/prototype/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dynamic statement</title>
-      <link>http://www.alessandrolacava.com/tags/dynamic-statement/</link>
+      <link>/tags/dynamic-statement/</link>
       <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/dynamic-statement/</guid>
+      <guid>/tags/dynamic-statement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>POJO</title>
-      <link>http://www.alessandrolacava.com/tags/pojo/</link>
+      <link>/tags/pojo/</link>
       <pubDate>Mon, 21 Aug 2006 15:31:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/pojo/</guid>
+      <guid>/tags/pojo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Class</title>
-      <link>http://www.alessandrolacava.com/tags/class/</link>
+      <link>/tags/class/</link>
       <pubDate>Mon, 24 Jul 2006 16:28:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/class/</guid>
+      <guid>/tags/class/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Metacharacter</title>
-      <link>http://www.alessandrolacava.com/tags/metacharacter/</link>
+      <link>/tags/metacharacter/</link>
       <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/metacharacter/</guid>
+      <guid>/tags/metacharacter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AJAX</title>
-      <link>http://www.alessandrolacava.com/tags/ajax/</link>
+      <link>/tags/ajax/</link>
       <pubDate>Tue, 11 Jul 2006 15:54:40 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/ajax/</guid>
+      <guid>/tags/ajax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>J2ME</title>
-      <link>http://www.alessandrolacava.com/tags/j2me/</link>
+      <link>/tags/j2me/</link>
       <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/j2me/</guid>
+      <guid>/tags/j2me/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java ME</title>
-      <link>http://www.alessandrolacava.com/tags/java-me/</link>
+      <link>/tags/java-me/</link>
       <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/java-me/</guid>
+      <guid>/tags/java-me/</guid>
       <description></description>
     </item>
     
     <item>
       <title>XML</title>
-      <link>http://www.alessandrolacava.com/tags/xml/</link>
+      <link>/tags/xml/</link>
       <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/tags/xml/</guid>
+      <guid>/tags/xml/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RIP on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/rip/</link>
+    <link>/tags/rip/</link>
     <description>Recent content in RIP on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Oct 2011 12:56:36 +0000</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/rip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/rip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Goodbye Dennis Ritchie (dmr)</title>
-      <link>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/</link>
+      <link>/blog/goodbye-dennis-macalistair-ritchie-dmr/</link>
       <pubDate>Thu, 13 Oct 2011 12:56:36 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/goodbye-dennis-macalistair-ritchie-dmr/</guid>
+      <guid>/blog/goodbye-dennis-macalistair-ritchie-dmr/</guid>
       <description>Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011) This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language and the key developer of the Unix operating system.
 The C programming language is the book he wrote along with Brian Kernighan. In my humble opinion, it is one of the best book ever written about computer programming.</description>
     </item>

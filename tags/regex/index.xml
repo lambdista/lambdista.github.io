@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RegEx on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/regex/</link>
+    <link>/tags/regex/</link>
     <description>Recent content in RegEx on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Dec 2008 10:47:02 +0000</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/regex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java split() of String | Multiple whitespace characters</title>
-      <link>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</link>
+      <link>/blog/java-split-of-string-multiple-whitespace-characters/</link>
       <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</guid>
+      <guid>/blog/java-split-of-string-multiple-whitespace-characters/</guid>
       <description>The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
 String str = &amp;#34;Testing split using two whitespace characters&amp;#34;; String[] tokens = str.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Option on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/option/</link>
+    <link>/tags/option/</link>
     <description>Recent content in Option on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Sep 2016 14:27:23 +0200</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/option/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/option/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Keep your code clean with algebraic data types (ADTs)</title>
-      <link>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>
+      <link>/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>
       <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</guid>
+      <guid>/blog/keep-your-code-clean-with-algebraic-data-types-adts/</guid>
       <description>Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&amp;rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&amp;rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:

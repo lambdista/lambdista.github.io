@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>J2ME on Alessandro Lacava</title>
-    <link>http://www.alessandrolacava.com/tags/j2me/</link>
+    <link>/tags/j2me/</link>
     <description>Recent content in J2ME on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Jun 2006 20:53:38 +0000</lastBuildDate>
     
-	<atom:link href="http://www.alessandrolacava.com/tags/j2me/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/j2me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using proguard obfuscator through the Wireless Toolkit</title>
-      <link>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
+      <link>/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
       <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
       
-      <guid>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
+      <guid>/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
       <description>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source tool you can use for this purpose. To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find the obfuscator. You can do that by editing the file ktools.properties that you can find under %WTK%wtklibWindows, where %WTK% is the root directory of the Wireless Toolkit.</description>
     </item>
     
