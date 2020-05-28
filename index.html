@@ -5,24 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alessandro Lacava</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.66.0" />
 <meta property="og:title" content="Alessandro Lacava" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.alessandrolacava.com/" />
-
-
-
-<meta property="og:updated_time" content="2017-10-11T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2017-10-11T00:00:00+00:00" />
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -74,53 +62,15 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
-				<a href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/" rel="bookmark">Keep your code clean with algebraic data types (ADTs)</a>
+				<a href="/blog/" rel="bookmark">Blogs</a>
 			</h3>
 			<div class="list__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2016-09-14T14:27:23">September 14, 2016</time>
+				<time class="list__meta-date" datetime="2020-05-28T11:26:32">May 28, 2020</time>
 			</div>
 		</header>
 		<div class="list__excerpt">
-			Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
-This short story is another example that demonstrates how using Option is not always the best option (pun intended).
-I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/blog/scala-seq-map-and-set-as-functions/" rel="bookmark">Scala: Seq, Map and Set as functions</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-10-23T10:24:00">October 23, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/blog/scala-case-classes-in-depth/" rel="bookmark">Scala case classes in depth</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-05-22T08:12:07">May 22, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			For this post I&rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
-In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
-Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:
+			
 		</div>
 	</div>
 </article>
@@ -128,11 +78,6 @@ Common knowledge about case classes When you declare a case class the Scala comp
 		
 
 		
-<div class="pagination clearfix">
-	<span class="pagination__item pagination__item--current">1/17</span>
-	<a class="pagination__item pagination__item--next" href="/page/2/">»</a>
-</div>
-
 	</main>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
@@ -152,11 +97,11 @@ Common knowledge about case classes When you declare a case class the Scala comp
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blog/desugaring-for-comprehensions-aka-for-expressions/">Desugaring for comprehensions (AKA for expressions)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with algebraic data types (ADTs)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as functions</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-self-recursive-types/">Scala self-recursive types</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for currency-related operations</a></li>
 		</ul>
 	</div>
 </div>
@@ -192,7 +137,7 @@ Common knowledge about case classes When you declare a case class the Scala comp
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2018 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+				<p class="footer__copyright">&copy; 2020 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
 			</div>
 		</footer>
 	</div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scala on Alessandro Lacava</title>
@@ -6,10 +6,20 @@
     <description>Recent content in Scala on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Sep 2016 14:27:23 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     
 	<atom:link href="http://www.alessandrolacava.com/categories/scala/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Desugaring for comprehensions (AKA for expressions)</title>
+      <link>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
+      <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
+      <description>Recently I stumbled upon a piece of Scala code that might leave you puzzled. Before showing you the code I must spend a few words about the compiler options.
+Compiler options Getting into the glory details of each and every compiler option is out of the scope of this post (see compiler options). Suffice to say you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.</description>
+    </item>
     
     <item>
       <title>Keep your code clean with algebraic data types (ADTs)</title>
@@ -29,7 +39,8 @@ final case class Ad( headline: String, description1: String, description2: Strin
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
-      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:</description>
+      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;quot;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:
+scala&amp;gt; val m = Map(&amp;#34;a&amp;#34; -&amp;gt; 1, &amp;#34;b&amp;#34; -&amp;gt; 2, &amp;#34;c&amp;#34; -&amp;gt; 3) m: scala.</description>
     </item>
     
     <item>
@@ -40,8 +51,7 @@ final case class Ad( headline: String, description1: String, description2: Strin
       <guid>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</guid>
       <description>For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
-Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
+ Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
     </item>
     
     <item>

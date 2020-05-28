@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Phpmyadmin on Alessandro Lacava</title>
+    <title>phpMyAdmin on Alessandro Lacava</title>
     <link>http://www.alessandrolacava.com/tags/phpmyadmin/</link>
-    <description>Recent content in Phpmyadmin on Alessandro Lacava</description>
+    <description>Recent content in phpMyAdmin on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Jan 2009 09:46:05 +0000</lastBuildDate>

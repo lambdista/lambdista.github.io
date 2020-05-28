@@ -5,24 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blogs</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.66.0" />
 <meta property="og:title" content="Blogs" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.alessandrolacava.com/blog/" />
-
-
-
-<meta property="og:updated_time" content="2007-10-09T11:20:28&#43;00:00"/>
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -77,6 +65,23 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/blog/capturing-groups-in-regular-expressions-regex-in-javascript/" rel="bookmark">Capturing groups using regular expressions (RegEx) in JavaScript</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2007-11-26T14:21:20">November 26, 2007</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
+var str = &#34;http://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){ alert(&#34;no match&#34;); } else{ // first group  alert(results[1]); }  The previous code extracts the string that follows the code= part of str.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/blog/how-to-compute-the-timestamp-in-javascript/" rel="bookmark">How to compute the timestamp in JavaScript</a>
 			</h3>
 			<div class="list__meta meta">
@@ -107,34 +112,12 @@ SELECT (to_date(&#39;09-10-2007&#39;, &#39;DD-MM-YYYY&#39;) - to_date(&#39;01-01
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/blog/very-useful-shortcuts-for-eclipse/" rel="bookmark">Very Useful Shortcuts for Eclipse</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2007-09-25T11:10:01">September 25, 2007</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java. Action Shortcut  Toggle Comment 
-Ctrl+7   Show Tooltip 
-F2   Format Code 
-Ctrl+Shift+F   Indent Line 
-Ctrl+I   Duplicate Lines Down 
-Ctrl+Alt+Down Arrow   Duplicate Lines Up 
-Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up
-		</div>
-	</div>
-</article>
 
 
 		
 <div class="pagination clearfix">
 	<a class="pagination__item pagination__item--prev" href="/blog/page/6/">«</a>
-	<span class="pagination__item pagination__item--current">7/17</span>
+	<span class="pagination__item pagination__item--current">7/18</span>
 	<a class="pagination__item pagination__item--next" href="/blog/page/8/">»</a>
 </div>
 
@@ -157,11 +140,11 @@ Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blog/desugaring-for-comprehensions-aka-for-expressions/">Desugaring for comprehensions (AKA for expressions)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with algebraic data types (ADTs)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as functions</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-self-recursive-types/">Scala self-recursive types</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for currency-related operations</a></li>
 		</ul>
 	</div>
 </div>
@@ -197,7 +180,7 @@ Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2018 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+				<p class="footer__copyright">&copy; 2020 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
 			</div>
 		</footer>
 	</div>

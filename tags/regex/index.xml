@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Regex on Alessandro Lacava</title>
+    <title>RegEx on Alessandro Lacava</title>
     <link>http://www.alessandrolacava.com/tags/regex/</link>
-    <description>Recent content in Regex on Alessandro Lacava</description>
+    <description>Recent content in RegEx on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Dec 2008 10:47:02 +0000</lastBuildDate>

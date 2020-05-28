@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Svn on Alessandro Lacava</title>
+    <title>SVN on Alessandro Lacava</title>
     <link>http://www.alessandrolacava.com/tags/svn/</link>
-    <description>Recent content in Svn on Alessandro Lacava</description>
+    <description>Recent content in SVN on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jun 2007 10:43:49 +0000</lastBuildDate>

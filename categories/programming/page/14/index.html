@@ -5,24 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programming</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.66.0" />
 <meta property="og:title" content="Programming" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.alessandrolacava.com/categories/programming/" />
-
-
-
-<meta property="og:updated_time" content="2006-07-27T15:16:22&#43;00:00"/>
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -77,6 +65,23 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/blog/pojo-plain-old-java-object-the-simplerthe-better/" rel="bookmark">POJO (Plain Old Java Object): The simpler...the better.</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2006-08-21T15:31:02">August 21, 2006</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			A POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined by the EJB 2 framework. An example of a POJO is a class composed by only:
+ Properties, representing the object&rsquo;s state. Getter and setter methods for the properties. Business methods, representing behaviour.  Some properties can represent associations with other POJOs. Here is an example of implementation of the Person entity using a POJO:
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/blog/calling-a-function-of-the-opener-window/" rel="bookmark">Calling a function of the opener window</a>
 			</h3>
 			<div class="list__meta meta">
@@ -104,25 +109,6 @@ if (window.opener) { window.close(); window.opener.foo(&#34;bar&#34;); }  First 
 		<div class="list__excerpt">
 			There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
 //class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName + &#34; &#34; + this.firstName); }; //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1.phoneNumbers.push(&#34;1234567&#34;); oPerson2.phoneNumbers.push(&#34;7654321&#34;); oPerson1.
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/" rel="bookmark">How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2006-07-12T13:24:03">July 12, 2006</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
-([{^$|)?*+.
-If you want to treat them as ordinary characters you have two options:
- Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E  Q means: &ldquo;quotes all characters until E&rdquo;, while E ends the quotes.
 		</div>
 	</div>
 </article>
@@ -154,11 +140,11 @@ If you want to treat them as ordinary characters you have two options:
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blog/desugaring-for-comprehensions-aka-for-expressions/">Desugaring for comprehensions (AKA for expressions)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with algebraic data types (ADTs)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as functions</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-self-recursive-types/">Scala self-recursive types</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for currency-related operations</a></li>
 		</ul>
 	</div>
 </div>
@@ -194,7 +180,7 @@ If you want to treat them as ordinary characters you have two options:
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2018 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+				<p class="footer__copyright">&copy; 2020 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
 			</div>
 		</footer>
 	</div>

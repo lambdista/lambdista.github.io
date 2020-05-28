@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vector on Alessandro Lacava</title>
@@ -17,7 +17,8 @@
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
-      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:</description>
+      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;quot;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:
+scala&amp;gt; val m = Map(&amp;#34;a&amp;#34; -&amp;gt; 1, &amp;#34;b&amp;#34; -&amp;gt; 2, &amp;#34;c&amp;#34; -&amp;gt; 3) m: scala.</description>
     </item>
     
   </channel>

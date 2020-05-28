@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Alessandro Lacava</title>
@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Sep 2016 14:27:23 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     
 	<atom:link href="http://www.alessandrolacava.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Desugaring for comprehensions (AKA for expressions)</title>
+      <link>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
+      <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
+      
+      <guid>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
+      <description>Recently I stumbled upon a piece of Scala code that might leave you puzzled. Before showing you the code I must spend a few words about the compiler options.
+Compiler options Getting into the glory details of each and every compiler option is out of the scope of this post (see compiler options). Suffice to say you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.</description>
+    </item>
     
     <item>
       <title>Keep your code clean with algebraic data types (ADTs)</title>
@@ -29,7 +39,8 @@ final case class Ad( headline: String, description1: String, description2: Strin
       <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
-      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;ldquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:</description>
+      <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;quot;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:
+scala&amp;gt; val m = Map(&amp;#34;a&amp;#34; -&amp;gt; 1, &amp;#34;b&amp;#34; -&amp;gt; 2, &amp;#34;c&amp;#34; -&amp;gt; 3) m: scala.</description>
     </item>
     
     <item>
@@ -40,8 +51,7 @@ final case class Ad( headline: String, description1: String, description2: Strin
       <guid>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</guid>
       <description>For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
-Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
+ Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
     </item>
     
     <item>
@@ -74,7 +84,8 @@ import com.lambdista.money._ import com.lambdista.money.Currency._ object Main {
       <guid>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java/</guid>
       <description>Try-Success-Failure API: Java implementation of the famous Scala counterpart Source code: Try-Success-Failure API for Java
 This API is a Java implementation of Scala Try API, originally implemented by the guys at Twitter and later added to the Scala Standard Library.
-The Try type represents a computation that may fail. If the computation is successful returns the value wrapped in a Try.Success otherwise returns the java.lang.Exception wrapped in a Try.Failure.</description>
+The Try type represents a computation that may fail. If the computation is successful returns the value wrapped in a Try.Success otherwise returns the java.lang.Exception wrapped in a Try.Failure.
+To use Try you need to call the Try.</description>
     </item>
     
     <item>
@@ -150,10 +161,9 @@ If you are sure that the field used to join the tables does not include NULL val
       
       <guid>http://www.alessandrolacava.com/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
       <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
- CD_FIELD DS_FIELD  1 ALPHA   2 BETA   TABLE_A
- CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   TABLE_B
 Now try the following query:
-SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?</description>
+SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
+I think this is because NOT IN internally uses the inequality operator.</description>
     </item>
     
     <item>
@@ -162,7 +172,7 @@ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b 
       <pubDate>Fri, 09 May 2008 13:49:38 +0000</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
-      <description>Here are some funny jokes and aphorisms about computer programmers and programming in general: A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says, &amp;ldquo;Can&amp;rsquo;t you see the warning on the cigarette pack? Smoking is hazardous to your health!&amp;ldquo;To which the man replies, &amp;ldquo;I am a programmer. We don&amp;rsquo;t worry about warnings; we only worry about errors.&amp;rdquo;</description>
+      <description>Here are some funny jokes and aphorisms about computer programmers and programming in general:  A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says, &amp;ldquo;Can&amp;rsquo;t you see the warning on the cigarette pack? Smoking is hazardous to your health!&amp;ldquo;To which the man replies, &amp;ldquo;I am a programmer. We don&amp;rsquo;t worry about warnings; we only worry about errors.&amp;rdquo;</description>
     </item>
     
     <item>
@@ -171,11 +181,10 @@ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b 
       <pubDate>Fri, 09 May 2008 13:25:27 +0000</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
-      <description>Here are some funny jokes and aphorisms about computer programming and programmers in general: There are only 10 types of people in the world: Those who understand binary, and those who don&amp;rsquo;t.
-It&amp;rsquo;s always a long day, 86,400 won&amp;rsquo;t fit into a short.
-Why do programmers always mix up Halloween and Christmas? Because Oct 31 equals Dec 25.
-&amp;ldquo;Knock, knock.&amp;rdquo; &amp;ldquo;Who&amp;rsquo;s there?&amp;rdquo; very long pause&amp;hellip; &amp;ldquo;Java.&amp;rdquo;
-Programming is like sex: One mistake and you have to support it for the rest of your life.</description>
+      <description>Here are some funny jokes and aphorisms about computer programming and programmers in general:  There are only 10 types of people in the world: Those who understand binary, and those who don&amp;rsquo;t.
+ It&amp;rsquo;s always a long day, 86,400 won&amp;rsquo;t fit into a short.
+ Why do programmers always mix up Halloween and Christmas? Because Oct 31 equals Dec 25.
+ &amp;ldquo;Knock, knock.&amp;rdquo; &amp;ldquo;Who&amp;rsquo;s there?&amp;rdquo; very long pause&amp;hellip; &amp;ldquo;Java.&amp;rdquo;</description>
     </item>
     
     <item>
@@ -234,13 +243,8 @@ SELECT (to_date(&amp;#39;09-10-2007&amp;#39;, &amp;#39;DD-MM-YYYY&amp;#39;) - to
       <pubDate>Tue, 25 Sep 2007 11:10:01 +0000</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
-      <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java. Action Shortcut  Toggle Comment 
-Ctrl+7   Show Tooltip 
-F2   Format Code 
-Ctrl+Shift+F   Indent Line 
-Ctrl+I   Duplicate Lines Down 
-Ctrl+Alt+Down Arrow   Duplicate Lines Up 
-Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up</description>
+      <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java.
+Action Shortcut</description>
     </item>
     
     <item>
@@ -366,7 +370,7 @@ var obj1 = { lastName : &amp;#34;Lacava&amp;#34;, firstName : &amp;#34;Alessandr
       
       <guid>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</guid>
       <description>When you were at the university or in any programming course, you&amp;ndash;like me&amp;ndash;were probably thought of the importance of optimization. In the real world though, you should strive for writing good code&amp;ndash;possibly using bullet-proof Design Patterns&amp;ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing, you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot but know:
- More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason, including blind stupidity.</description>
+  More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason, including blind stupidity.</description>
     </item>
     
     <item>

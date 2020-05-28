@@ -5,24 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programming</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.66.0" />
 <meta property="og:title" content="Programming" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.alessandrolacava.com/categories/programming/" />
-
-
-
-<meta property="og:updated_time" content="2006-11-20T15:34:48&#43;00:00"/>
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -77,6 +65,24 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/blog/how-to-add-scrollbars-to-a-block-eg-a-element/" rel="bookmark">How to add scrollbars to a block (e.g. a &lt;div&gt; element)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2006-11-24T09:21:30">November 24, 2006</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			If you need to customize a list box then the &lt;select&gt; HTML element might not be enough. In such a case you&rsquo;d like to have something that simulates the &lt;select&gt; behaviour.
+Here is the code to use to obtain a custom list box:
+&lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; &lt;div style=&#34;width: 200px; height: 200px; overflow: auto;&#34;&gt; &lt;table width=&#34;100%&#34; height=&#34;100%&#34;&gt; &lt;script&gt; for (var i = 0; i &lt; 30; i++) { if (i % 2 == 0) { document.
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/blog/sorting-an-array-of-objects-with-the-sortby-method/" rel="bookmark">Sorting an array of objects with the sortBy method of Prototype</a>
 			</h3>
 			<div class="list__meta meta">
@@ -103,25 +109,7 @@ var obj1 = { lastName : &#34;Lacava&#34;, firstName : &#34;Alessandro&#34; }; va
 		</header>
 		<div class="list__excerpt">
 			When you were at the university or in any programming course, you&ndash;like me&ndash;were probably thought of the importance of optimization. In the real world though, you should strive for writing good code&ndash;possibly using bullet-proof Design Patterns&ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing, you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot but know:
- More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason, including blind stupidity.
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/blog/how-to-select-any-character-across-multiple-lines-in-java/" rel="bookmark">How to select any character across multiple lines in Java</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2006-10-10T08:52:06">October 10, 2006</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
-Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
-import java.util.regex; // ... other code  // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.
+  More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason, including blind stupidity.
 		</div>
 	</div>
 </article>
@@ -153,11 +141,11 @@ import java.util.regex; // ... other code  // Strip multiline comments public vo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blog/desugaring-for-comprehensions-aka-for-expressions/">Desugaring for comprehensions (AKA for expressions)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with algebraic data types (ADTs)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as functions</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-self-recursive-types/">Scala self-recursive types</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for currency-related operations</a></li>
 		</ul>
 	</div>
 </div>
@@ -193,7 +181,7 @@ import java.util.regex; // ... other code  // Strip multiline comments public vo
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2018 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+				<p class="footer__copyright">&copy; 2020 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
 			</div>
 		</footer>
 	</div>

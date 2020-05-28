@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse on Alessandro Lacava</title>
@@ -37,13 +37,8 @@ I hope this helps.</description>
       <pubDate>Tue, 25 Sep 2007 11:10:01 +0000</pubDate>
       
       <guid>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
-      <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java. Action Shortcut  Toggle Comment 
-Ctrl+7   Show Tooltip 
-F2   Format Code 
-Ctrl+Shift+F   Indent Line 
-Ctrl+I   Duplicate Lines Down 
-Ctrl+Alt+Down Arrow   Duplicate Lines Up 
-Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up</description>
+      <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java.
+Action Shortcut</description>
     </item>
     
     <item>

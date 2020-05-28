@@ -5,24 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programming</title>
 <meta name="description" content="Alessandro Lacava&#39;s Personal blog">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.66.0" />
 <meta property="og:title" content="Programming" />
 <meta property="og:description" content="Alessandro Lacava&#39;s Personal blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.alessandrolacava.com/categories/programming/" />
-
-
-
-<meta property="og:updated_time" content="2008-06-04T13:24:09&#43;00:00"/>
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -77,6 +65,23 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/blog/performance-differences-between-in-and-exists/" rel="bookmark">Performance differences between IN and EXISTS</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2008-06-04T13:33:24">June 04, 2008</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Very often I hear people wondering if it&rsquo;s better the EXISTS or the IN operator. Let&rsquo;s start by saying that the two operators behave differently when NULL values are involved (see this post).
+If you are sure that the field used to join the tables does not include NULL values then the IN operator &ldquo;generally&rdquo; performs better than EXISTS. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/blog/not-in-vs-not-exists-when-null-values-are-involved/" rel="bookmark">NOT IN vs. NOT EXISTS when NULL values are involved</a>
 			</h3>
 			<div class="list__meta meta">
@@ -86,10 +91,9 @@
 		</header>
 		<div class="list__excerpt">
 			NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
- CD_FIELD DS_FIELD  1 ALPHA   2 BETA   TABLE_A
- CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   TABLE_B
 Now try the following query:
-SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?
+SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
+I think this is because NOT IN internally uses the inequality operator.
 		</div>
 	</div>
 </article>
@@ -105,27 +109,7 @@ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b 
 			</div>
 		</header>
 		<div class="list__excerpt">
-			Here are some funny jokes and aphorisms about computer programmers and programming in general: A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says, &ldquo;Can&rsquo;t you see the warning on the cigarette pack? Smoking is hazardous to your health!&ldquo;To which the man replies, &ldquo;I am a programmer. We don&rsquo;t worry about warnings; we only worry about errors.&rdquo;
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/" rel="bookmark">Funny short jokes and aphorisms about programming (and programmers of course)</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2008-05-09T13:25:27">May 09, 2008</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Here are some funny jokes and aphorisms about computer programming and programmers in general: There are only 10 types of people in the world: Those who understand binary, and those who don&rsquo;t.
-It&rsquo;s always a long day, 86,400 won&rsquo;t fit into a short.
-Why do programmers always mix up Halloween and Christmas? Because Oct 31 equals Dec 25.
-&ldquo;Knock, knock.&rdquo; &ldquo;Who&rsquo;s there?&rdquo; very long pause&hellip; &ldquo;Java.&rdquo;
-Programming is like sex: One mistake and you have to support it for the rest of your life.
+			Here are some funny jokes and aphorisms about computer programmers and programming in general:  A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says, &ldquo;Can&rsquo;t you see the warning on the cigarette pack? Smoking is hazardous to your health!&ldquo;To which the man replies, &ldquo;I am a programmer. We don&rsquo;t worry about warnings; we only worry about errors.&rdquo;
 		</div>
 	</div>
 </article>
@@ -157,11 +141,11 @@ Programming is like sex: One mistake and you have to support it for the rest of 
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blog/desugaring-for-comprehensions-aka-for-expressions/">Desugaring for comprehensions (AKA for expressions)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with algebraic data types (ADTs)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as functions</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blog/scala-self-recursive-types/">Scala self-recursive types</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blog/scala-dsl-for-currency-related-operations/">Scala DSL for currency-related operations</a></li>
 		</ul>
 	</div>
 </div>
@@ -197,7 +181,7 @@ Programming is like sex: One mistake and you have to support it for the rest of 
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2018 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+				<p class="footer__copyright">&copy; 2020 Alessandro Lacava. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
 			</div>
 		</footer>
 	</div>
