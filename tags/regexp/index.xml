@@ -6,11 +6,7 @@
     <description>Recent content in RegExp on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Nov 2007 14:21:20 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/regexp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 26 Nov 2007 14:21:20 +0000</lastBuildDate><atom:link href="/tags/regexp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capturing groups using regular expressions (RegEx) in JavaScript</title>
       <link>/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</link>
@@ -18,7 +14,7 @@
       
       <guid>/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</guid>
       <description>There are whole books about regular expressions so this post shouldn&amp;rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
-var str = &amp;#34;http://www.alessandrolacava.com/?code=ALE69&amp;#34;; var regex = /code=(w+)&amp;amp;?/; var results = regex.exec(str); if(!results){ alert(&amp;#34;no match&amp;#34;); } else{ // first group  alert(results[1]); }  The previous code extracts the string that follows the code= part of str.</description>
+ var str = &amp;#34;http://www.alessandrolacava.com/?code=ALE69&amp;#34;; var regex = /code=(w+)&amp;amp;?/; var results = regex.exec(str); if(!results){  alert(&amp;#34;no match&amp;#34;); } else{  // first group  alert(results[1]); } The previous code extracts the string that follows the code= part of str.</description>
     </item>
     
     <item>
@@ -29,7 +25,7 @@ var str = &amp;#34;http://www.alessandrolacava.com/?code=ALE69&amp;#34;; var reg
       <guid>/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
       <description>You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
-import java.util.regex; // ... other code  // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.</description>
+ import java.util.regex;  // .</description>
     </item>
     
     <item>

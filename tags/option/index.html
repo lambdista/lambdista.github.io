@@ -11,7 +11,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/tags/option/" />
-<meta property="og:updated_time" content="2016-09-14T14:27:23+02:00" />
+
 
 		<meta itemprop="name" content="Option">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -112,7 +112,7 @@ if (!doNotTrack) {
 		Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
+final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
 	</div>
 </article>
 </main>
@@ -172,7 +172,7 @@ final case class Ad( headline: String, description1: String, description2: Strin
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

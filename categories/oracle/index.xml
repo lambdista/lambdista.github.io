@@ -6,11 +6,7 @@
     <description>Recent content in Oracle on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/oracle/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate><atom:link href="/categories/oracle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Performance differences between IN and EXISTS</title>
       <link>/blog/performance-differences-between-in-and-exists/</link>
@@ -29,7 +25,7 @@ If you are sure that the field used to join the tables does not include NULL val
       <guid>/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
       <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
 Now try the following query:
-SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
 I think this is because NOT IN internally uses the inequality operator.</description>
     </item>
     
@@ -40,7 +36,7 @@ I think this is because NOT IN internally uses the inequality operator.</descrip
       
       <guid>/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
       <description>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.
-SELECT (to_date(&amp;#39;09-10-2007&amp;#39;, &amp;#39;DD-MM-YYYY&amp;#39;) - to_date(&amp;#39;01-01-1970&amp;#39;, &amp;#39;DD-MM-YYYY&amp;#39;)) * 60 * 60 * 24 FROM dual The result of the preceding query should be 1191888000.</description>
+ SELECT (to_date(&amp;#39;09-10-2007&amp;#39;, &amp;#39;DD-MM-YYYY&amp;#39;) - to_date(&amp;#39;01-01-1970&amp;#39;, &amp;#39;DD-MM-YYYY&amp;#39;)) * 60 * 60 * 24 FROM dual The result of the preceding query should be 1191888000.</description>
     </item>
     
     <item>
@@ -50,7 +46,7 @@ SELECT (to_date(&amp;#39;09-10-2007&amp;#39;, &amp;#39;DD-MM-YYYY&amp;#39;) - to
       
       <guid>/blog/how-to-create-a-copybackup-of-a-table-in-oracle/</guid>
       <description>You can create a backup of a table (structure and data) in Oracle by using the following syntax:
-CREATE TABLE customers_backup AS (SELECT * FROM customers) The previous example creates the customers_backup table which mirrors the structure and data of the customers table.</description>
+ CREATE TABLE customers_backup AS (SELECT * FROM customers) The previous example creates the customers_backup table which mirrors the structure and data of the customers table.</description>
     </item>
     
     <item>
@@ -87,7 +83,7 @@ CREATE TABLE customers_backup AS (SELECT * FROM customers) The previous example 
       
       <guid>/blog/using-dynamic-sql-statements-from-plsql/</guid>
       <description>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the EXECUTE IMMEDIATE statement. Here are three examples of how you can take advantage of this great statement.
-sql_select := &amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.</description>
+ sql_select := &amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.</description>
     </item>
     
     <item>
@@ -97,9 +93,9 @@ sql_select := &amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;; EXEC
       
       <guid>/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
       <description>Here are some snippets of code showing how to accomplish this:
-CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
+ CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&amp;rsquo;s insert one row in the table.
-INSERT INTO SampleTable VALUES (1, XMLType(&amp;#39;XMLString&amp;#39;)) Where you must replace XMLString with any string representing XML.</description>
+ INSERT INTO SampleTable VALUES (1, XMLType(&amp;#39;XMLString&amp;#39;)) Where you must replace XMLString with any string representing XML.</description>
     </item>
     
   </channel>

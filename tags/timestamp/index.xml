@@ -6,11 +6,7 @@
     <description>Recent content in Timestamp on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Oct 2007 11:20:28 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/timestamp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 09 Oct 2007 11:20:28 +0000</lastBuildDate><atom:link href="/tags/timestamp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to compute the timestamp in JavaScript</title>
       <link>/blog/how-to-compute-the-timestamp-in-javascript/</link>
@@ -18,7 +14,7 @@
       
       <guid>/blog/how-to-compute-the-timestamp-in-javascript/</guid>
       <description>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In JavaScript you can use the built-in object Date to compute this timestamp. Here follows an example:
-var ts = Date.UTC(&amp;#39;2007&amp;#39;, &amp;#39;09&amp;#39;, &amp;#39;28&amp;#39;) / 1000; alert(ts);  The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.</description>
+ var ts = Date.UTC(&amp;#39;2007&amp;#39;, &amp;#39;09&amp;#39;, &amp;#39;28&amp;#39;) / 1000; alert(ts); The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.</description>
     </item>
     
   </channel>

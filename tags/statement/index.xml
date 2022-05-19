@@ -6,11 +6,7 @@
     <description>Recent content in Statement on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 May 2007 12:52:20 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/statement/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 24 May 2007 12:52:20 +0000</lastBuildDate><atom:link href="/tags/statement/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
       <link>/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>

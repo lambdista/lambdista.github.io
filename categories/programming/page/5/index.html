@@ -11,7 +11,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/programming/" />
-<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
+
 
 		<meta itemprop="name" content="Programming">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -128,7 +128,7 @@ If you are sure that the field used to join the tables does not include NULL val
 	<div class="content list__excerpt post__content clearfix">
 		NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
 Now try the following query:
-SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
 I think this is because NOT IN internally uses the inequality operator.
 	</div>
 </article><article class="list__item post">
@@ -210,7 +210,7 @@ I think this is because NOT IN internally uses the inequality operator.
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

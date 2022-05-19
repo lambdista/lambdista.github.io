@@ -9,26 +9,23 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="Java split() of String | Multiple whitespace characters" />
 <meta property="og:description" content="The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
-String str = &#34;Testing split using two whitespace characters&#34;; String[] tokens = str." />
+ String str = &#34;Testing split using two whitespace characters&#34;; String[] tokens = str." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/java-split-of-string-multiple-whitespace-characters/" />
+<meta property="og:url" content="/blog/java-split-of-string-multiple-whitespace-characters/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2008-12-03T10:47:02+00:00" />
 <meta property="article:modified_time" content="2008-12-03T10:47:02+00:00" />
 
+
 		<meta itemprop="name" content="Java split() of String | Multiple whitespace characters">
 <meta itemprop="description" content="The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
-String str = &#34;Testing split using two whitespace characters&#34;; String[] tokens = str.">
-<meta itemprop="datePublished" content="2008-12-03T10:47:02&#43;00:00" />
-<meta itemprop="dateModified" content="2008-12-03T10:47:02&#43;00:00" />
+ String str = &#34;Testing split using two whitespace characters&#34;; String[] tokens = str."><meta itemprop="datePublished" content="2008-12-03T10:47:02+00:00" />
+<meta itemprop="dateModified" content="2008-12-03T10:47:02+00:00" />
 <meta itemprop="wordCount" content="223">
-
-
-
 <meta itemprop="keywords" content="RegEx," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java split() of String | Multiple whitespace characters"/>
 <meta name="twitter:description" content="The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
-String str = &#34;Testing split using two whitespace characters&#34;; String[] tokens = str."/>
+ String str = &#34;Testing split using two whitespace characters&#34;; String[] tokens = str."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -116,12 +113,12 @@ if (!doNotTrack) {
 in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
 be careful when you want to split a string using the whitespace character as a delimiter. Consider the
 following snippet of code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  
-String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Testing split using two  whitespace characters&#34;</span><span style="color:#f92672">;</span>
-String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\\s&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String token <span style="color:#f92672">:</span> tokens<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Testing split using two  whitespace characters&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\\s&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String token <span style="color:#f92672">:</span> tokens<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
 <p>What&rsquo;s the output produced by the previous code? If you think it is the following one you&rsquo;re wrong:</p>
 <ul>
 <li>-Testing-</li>
@@ -145,12 +142,12 @@ String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=
 are between the word <strong>two</strong> and <strong>whitespace</strong> of the <strong>str</strong> string. If this is what you want OK. However,
 most of the time, you will want to discard that empty string from your resulting string array. You can obtain this
 result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previuos code becomes:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 
-String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Testing split using two  whitespace characters&#34;</span><span style="color:#f92672">;</span>
-String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\\s+&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String token <span style="color:#f92672">:</span> tokens<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Testing split using two  whitespace characters&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\\s+&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String token <span style="color:#f92672">:</span> tokens<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
 
 		</div>
 		<footer class="post__footer">
@@ -187,7 +184,7 @@ String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=
 <section class="comments">
 	<div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -261,7 +258,7 @@ String<span style="color:#f92672">[]</span> tokens <span style="color:#f92672">=
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

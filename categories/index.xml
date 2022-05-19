@@ -6,11 +6,7 @@
     <description>Recent content in Categories on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programming</title>
       <link>/categories/programming/</link>
@@ -26,15 +22,6 @@
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
       
       <guid>/categories/scala/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>/categories/java/</link>
-      <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
-      
-      <guid>/categories/java/</guid>
       <description></description>
     </item>
     
@@ -71,6 +58,15 @@
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       
       <guid>/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>/categories/java/</link>
+      <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
+      
+      <guid>/categories/java/</guid>
       <description></description>
     </item>
     

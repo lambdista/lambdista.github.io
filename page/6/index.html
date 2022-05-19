@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.66.0" />
+	<meta name="generator" content="Hugo 0.99.1" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2017-10-11T00:00:00+00:00" />
+
 
 		<meta itemprop="name" content="Alessandro Lacava">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -128,7 +128,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Here&rsquo;s a little JavaScript function that disables all form elements:
-function disableElements(formName) { var fm = document.forms[formName]; for(var i = 0; i &lt; fm.elements.length; ++i) { fm.elements[i].disabled = true; } }  As you may have noticed the only parameter you need to pass is the form name.
+ function disableElements(formName) {  var fm = document.forms[formName];  for(var i = 0; i &lt; fm.elements.length; ++i) {  fm.elements[i].disabled = true;  } } As you may have noticed the only parameter you need to pass is the form name.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -145,7 +145,7 @@ function disableElements(formName) { var fm = document.forms[formName]; for(var 
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&rsquo;s an example:
-// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...);  Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&#34;SELECT * FROM your_table&#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&#34;Number of columns in your_table: &#34; + numCols); The previous code retrieves and displays the number of columns of your_table.
+ // Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...);  Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&#34;SELECT * FROM your_table&#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&#34;Number of columns in your_table: &#34; + numCols); The previous code retrieves and displays the number of columns of your_table.
 	</div>
 </article>
 </main>
@@ -209,7 +209,7 @@ function disableElements(formName) { var fm = document.forms[formName]; for(var 
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

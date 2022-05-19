@@ -6,11 +6,7 @@
     <description>Recent content in POJO on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Aug 2006 15:31:02 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/pojo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 Aug 2006 15:31:02 +0000</lastBuildDate><atom:link href="/tags/pojo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJO (Plain Old Java Object): The simpler...the better.</title>
       <link>/blog/pojo-plain-old-java-object-the-simplerthe-better/</link>

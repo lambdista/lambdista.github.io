@@ -11,7 +11,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/programming/" />
-<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
+
 
 		<meta itemprop="name" content="Programming">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -110,7 +110,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:
-int a = 0; a = a++; System.out.println(a); What does it print?
+ int a = 0; a = a++; System.out.println(a); What does it print?
 More than 50% of the programmers will answer 1, some of the remaining will say &ldquo;I don&rsquo;t know&rdquo; and the others will say 0. Well &ldquo;the others&rdquo; are right!
 Provided that such a code MUST NEVER BE WRITTEN, let&rsquo;s try to understand, for academic purposes, why it prints 0.
 	</div>
@@ -129,7 +129,7 @@ Provided that such a code MUST NEVER BE WRITTEN, let&rsquo;s try to understand, 
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the EXECUTE IMMEDIATE statement. Here are three examples of how you can take advantage of this great statement.
-sql_select := &#39;SELECT * FROM your_table WHERE field1 = :1&#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.
+ sql_select := &#39;SELECT * FROM your_table WHERE field1 = :1&#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -147,7 +147,7 @@ sql_select := &#39;SELECT * FROM your_table WHERE field1 = :1&#39;; EXECUTE IMME
 	<div class="content list__excerpt post__content clearfix">
 		This is an example of how you can show/hide an HTML form element depending on a combo box choice.
 Put the following JavaScript code between your &lt;head&gt;&lt;/head&gt; section (or within a .js file if you prefer).
-&lt;script language=&#34;javascript&#34; type=&#34;text/javascript&#34;&gt; function hide() { var text = document.formName.textBox; if(document.formName.combo.value == &#34;hide&#34;) { text.style.visibility = &#34;hidden&#34;; } else { text.style.visibility = &#34;visible&#34;; } } &lt;/script&gt; The following snippet of code instead is the HTML code to use to call the hide function.
+ &lt;script language=&#34;javascript&#34; type=&#34;text/javascript&#34;&gt;  function hide() {  var text = document.formName.textBox;  if(document.formName.combo.value == &#34;hide&#34;) {  text.style.visibility = &#34;hidden&#34;;  }  else {  text.style.visibility = &#34;visible&#34;;  }  } &lt;/script&gt; The following snippet of code instead is the HTML code to use to call the hide function.
 	</div>
 </article>
 </main>
@@ -212,7 +212,7 @@ Put the following JavaScript code between your &lt;head&gt;&lt;/head&gt; section
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

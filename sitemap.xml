@@ -1,640 +1,386 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/blog/</loc>
     <lastmod>2017-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/articles/</loc>
     <lastmod>2015-03-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talks/</loc>
     <lastmod>2017-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/about/</loc>
     <lastmod>2015-03-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/privacy-policy/</loc>
     <lastmod>2015-06-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2020-05-28T11:26:32+02:00</lastmod>
+  </url><url>
     <loc>/blog/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/desugaring-for-comprehensions-aka-for-expressions/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/for-comprehension/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/for-expression/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/programming/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/scala/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2017-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/adt/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/algebraic-data-type/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/keep-your-code-clean-with-algebraic-data-types-adts/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/option/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/collections/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/function/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/list/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/map/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/partial-function/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/scala-seq-map-and-set-as-functions/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/seq/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/set/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/vector/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/case-class/</loc>
     <lastmod>2015-05-22T08:12:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/companion-object/</loc>
     <lastmod>2015-05-22T08:12:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/scala-case-classes-in-depth/</loc>
     <lastmod>2015-05-22T08:12:07+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/scala-self-recursive-types/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/self-recursive-type/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/self-type/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/type-system/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/dsl/</loc>
     <lastmod>2015-02-20T15:09:06+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/implicit/</loc>
     <lastmod>2015-02-20T15:09:06+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/scala-dsl-for-currency-related-operations/</loc>
     <lastmod>2015-02-20T15:09:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/java/</loc>
-    <lastmod>2014-06-20T14:03:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/java-8/</loc>
     <lastmod>2014-06-20T14:03:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/try/</loc>
     <lastmod>2014-06-20T14:03:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/try-success-failure-api-for-java/</loc>
     <lastmod>2014-06-20T14:03:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/dennis-ritchie/</loc>
     <lastmod>2011-10-13T12:56:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/goodbye-dennis-macalistair-ritchie-dmr/</loc>
     <lastmod>2011-10-13T12:56:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/rip/</loc>
     <lastmod>2011-10-13T12:56:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/eclipse/</loc>
     <lastmod>2009-03-26T09:33:59+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/ide/</loc>
     <lastmod>2009-03-26T09:33:59+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/undo-close-tab-in-eclipse/</loc>
     <lastmod>2009-03-26T09:33:59+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/apache/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/easyphp/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/mysql/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/object-not-found-easyphp-mysql-phpmyadmin/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/php/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/phpmyadmin/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/categories/java/</loc>
+    <lastmod>2008-12-03T10:47:02+00:00</lastmod>
+  </url><url>
     <loc>/blog/java-split-of-string-multiple-whitespace-characters/</loc>
     <lastmod>2008-12-03T10:47:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/regex/</loc>
     <lastmod>2008-12-03T10:47:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/jvm/</loc>
     <lastmod>2008-07-22T08:53:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</loc>
     <lastmod>2008-07-22T08:53:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/database/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/exists/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/in/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/optimization/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/oracle/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/performance/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/performance-differences-between-in-and-exists/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/not-exists/</loc>
     <lastmod>2008-06-04T13:24:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/not-in/</loc>
     <lastmod>2008-06-04T13:24:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/not-in-vs-not-exists-when-null-values-are-involved/</loc>
     <lastmod>2008-06-04T13:24:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/aphorisms/</loc>
     <lastmod>2008-05-09T13:49:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
     <lastmod>2008-05-09T13:49:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
     <lastmod>2008-05-09T13:25:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</loc>
     <lastmod>2008-03-31T13:41:13+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/javascript/</loc>
     <lastmod>2008-03-31T13:41:13+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</loc>
     <lastmod>2007-12-12T10:32:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/resultset/</loc>
     <lastmod>2007-12-12T10:32:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/resultsetmetadata/</loc>
     <lastmod>2007-12-12T10:32:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</loc>
     <lastmod>2007-11-26T14:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/regexp/</loc>
     <lastmod>2007-11-26T14:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-compute-the-timestamp-in-javascript/</loc>
     <lastmod>2007-10-09T11:20:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/timestamp/</loc>
     <lastmod>2007-10-09T11:20:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</loc>
     <lastmod>2007-10-09T09:41:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/very-useful-shortcuts-for-eclipse/</loc>
     <lastmod>2007-09-25T11:10:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</loc>
     <lastmod>2007-09-14T12:50:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-create-a-copybackup-of-a-table-in-oracle/</loc>
     <lastmod>2007-07-04T08:16:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/ant/</loc>
     <lastmod>2007-06-04T10:43:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</loc>
     <lastmod>2007-06-04T10:43:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/svn/</loc>
     <lastmod>2007-06-04T10:43:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/dml/</loc>
     <lastmod>2007-05-24T12:52:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</loc>
     <lastmod>2007-05-24T12:52:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/statement/</loc>
     <lastmod>2007-05-24T12:52:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-format-a-decimal-number-in-javascript/</loc>
     <lastmod>2007-05-04T11:02:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</loc>
     <lastmod>2007-04-27T14:11:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</loc>
     <lastmod>2007-04-26T14:05:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/editor/</loc>
     <lastmod>2007-03-14T08:27:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</loc>
     <lastmod>2007-03-14T08:27:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/ultraedit-32/</loc>
     <lastmod>2007-03-14T08:27:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/css/</loc>
     <lastmod>2007-02-16T10:55:53+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-display-an-element-to-the-center-of-the-browser/</loc>
     <lastmod>2007-02-16T10:55:53+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-detect-the-selected-checkboxes-using-javascript/</loc>
     <lastmod>2007-01-16T16:31:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</loc>
     <lastmod>2006-11-24T09:21:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/prototype/</loc>
     <lastmod>2006-11-20T15:34:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/sorting-an-array-of-objects-with-the-sortby-method/</loc>
     <lastmod>2006-11-20T15:34:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/why-you-shouldnt-be-concerned-about-optimization/</loc>
     <lastmod>2006-10-11T16:26:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-select-any-character-across-multiple-lines-in-java/</loc>
     <lastmod>2006-10-10T08:52:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-include-a-js-file-a-javascript-file-within-another-js-file/</loc>
     <lastmod>2006-09-22T09:43:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/java-passes-everything-by-value/</loc>
     <lastmod>2006-09-13T08:51:47+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/what-happens-if-you-write-something-like-a-a-in-java/</loc>
     <lastmod>2006-09-13T07:58:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/dynamic-statement/</loc>
     <lastmod>2006-09-06T10:24:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/using-dynamic-sql-statements-from-plsql/</loc>
     <lastmod>2006-09-06T10:24:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/</loc>
     <lastmod>2006-09-01T13:04:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/pojo/</loc>
     <lastmod>2006-08-21T15:31:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/pojo-plain-old-java-object-the-simplerthe-better/</loc>
     <lastmod>2006-08-21T15:31:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/calling-a-function-of-the-opener-window/</loc>
     <lastmod>2006-07-27T15:16:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/class/</loc>
     <lastmod>2006-07-24T16:28:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/creating-class-definition-in-javascript/</loc>
     <lastmod>2006-07-24T16:28:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</loc>
     <lastmod>2006-07-12T13:24:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/metacharacter/</loc>
     <lastmod>2006-07-12T13:24:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/ajax/</loc>
     <lastmod>2006-07-11T15:54:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</loc>
     <lastmod>2006-07-11T15:54:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/j2me/</loc>
     <lastmod>2006-06-20T20:53:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/java-me/</loc>
     <lastmod>2006-06-20T20:53:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</loc>
     <lastmod>2006-06-20T20:53:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/the-function-class-in-javascript/</loc>
     <lastmod>2006-06-14T21:38:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</loc>
     <lastmod>2006-06-08T15:05:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/xml/</loc>
     <lastmod>2006-06-08T15:05:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/using-javascript-to-detect-the-key-pressed/</loc>
     <lastmod>2006-05-12T12:23:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/the-name-separator-character-in-java/</loc>
     <lastmod>2006-05-02T13:54:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/blog/hello-world/</loc>
     <lastmod>2006-04-13T22:32:24+00:00</lastmod>
   </url>
-  
 </urlset>

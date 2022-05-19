@@ -6,11 +6,7 @@
     <description>Recent content in AJAX on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jul 2006 15:54:40 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 11 Jul 2006 15:54:40 +0000</lastBuildDate><atom:link href="/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating an instance of the object used to make AJAX calls</title>
       <link>/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</link>
@@ -18,7 +14,7 @@
       
       <guid>/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</guid>
       <description>Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
-// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &amp;#34;undefined&amp;#34;) //NOT IE {  return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE {  var sVersions = [ &amp;#34;MSXML2.</description>
+ // The following function creates an XMLHttpRequest object function createHttpRequest() {  if (typeof XMLHttpRequest != &amp;#34;undefined&amp;#34;) //NOT IE {  return new XMLHttpRequest();  }  else if (window.</description>
     </item>
     
   </channel>

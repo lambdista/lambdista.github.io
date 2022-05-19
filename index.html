@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.66.0" />
+	<meta name="generator" content="Hugo 0.99.1" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2017-10-11T00:00:00+00:00" />
+
 
 		<meta itemprop="name" content="Alessandro Lacava">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -128,7 +128,7 @@ Compiler options Getting into the glory details of each and every compiler optio
 		Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
+final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -144,8 +144,8 @@ final case class Ad( headline: String, description1: String, description2: Strin
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&quot;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
-scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala.
+		Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
+ scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala.
 	</div>
 </article>
 </main>
@@ -208,7 +208,7 @@ scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

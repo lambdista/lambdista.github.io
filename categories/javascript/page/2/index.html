@@ -11,7 +11,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/javascript/" />
-<meta property="og:updated_time" content="2008-03-31T13:41:13+00:00" />
+
 
 		<meta itemprop="name" content="JavaScript">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -110,7 +110,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		In JavaScript you can use a built-in method to format a decimal number so that it is displayed using, at most, x decimal places. Here is an example:
-var num = 3.1356; var x = 3; alert(num.toFixed(x)); // displays 3.136  As you may have guessed the method is toFixed. It accepts one parameter which is the number of decimal places to take into account.
+ var num = 3.1356; var x = 3; alert(num.toFixed(x)); // displays 3.136  As you may have guessed the method is toFixed. It accepts one parameter which is the number of decimal places to take into account.
 Note: The number gets rounded as you can notice by the example above.
 	</div>
 </article><article class="list__item post">
@@ -128,7 +128,7 @@ Note: The number gets rounded as you can notice by the example above.
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of how you can do it using JavaScript and CSS.
-function init() { // Reference to the element  var loading = document.getElementById(&#34;loading&#34;); // The div&#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth; // The div&#39;s width, set within the CSS class  var loadingHeight = loading.
+ function init() {  // Reference to the element  var loading = document.getElementById(&#34;loading&#34;);  // The div&#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth;  // The div&#39;s width, set within the CSS class  var loadingHeight = loading.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -145,7 +145,7 @@ function init() { // Reference to the element  var loading = document.getElement
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Here is an example of how you can retrieve the selected checkboxes using a JavaScript function:
-&lt;html&gt; &lt;head&gt; &lt;script&gt; function getSelectedValues(elem) { var elemNumber = document.myForm.test.length; var selectedElems = []; for(j = 0; j &lt; elemNumber; j++) { if(elem[j].checked) { selectedElems.push(elem[j].value); } } return selectedElems; } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;form id=&#34;myForm&#34; name=&#34;myForm&#34;&gt; &lt;input type=&#34;checkbox&#34; id=&#34;test&#34; name=&#34;myCheckBox&#34; value=&#34;test1&#34;&gt; Test 1 &lt;input type=&#34;checkbox&#34; id=&#34;test&#34; name=&#34;myCheckBox&#34; value=&#34;test2&#34;&gt; Test 2 &lt;input type=&#34;button&#34; value=&#34;Click Here&#34; onclick=&#34;alert(getSelectedValues(document.
+ &lt;html&gt; &lt;head&gt; &lt;script&gt; function getSelectedValues(elem) {  var elemNumber = document.myForm.test.length;   var selectedElems = [];  for(j = 0; j &lt; elemNumber; j++) {  if(elem[j].checked) {  selectedElems.push(elem[j].value);  }  }  return selectedElems; } &lt;/script&gt; &lt;/head&gt;  &lt;body&gt; &lt;form id=&#34;myForm&#34; name=&#34;myForm&#34;&gt; &lt;input type=&#34;checkbox&#34; id=&#34;test&#34; name=&#34;myCheckBox&#34; value=&#34;test1&#34;&gt; Test 1   &lt;input type=&#34;checkbox&#34; id=&#34;test&#34; name=&#34;myCheckBox&#34; value=&#34;test2&#34;&gt; Test 2   &lt;input type=&#34;button&#34; value=&#34;Click Here&#34;  onclick=&#34;alert(getSelectedValues(document.
 	</div>
 </article>
 </main>
@@ -210,7 +210,7 @@ function init() { // Reference to the element  var loading = document.getElement
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

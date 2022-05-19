@@ -9,26 +9,23 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="Creating a Class definition in JavaScript" />
 <meta property="og:description" content="There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
-//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName &#43; &#34; &#34; &#43; this.firstName); }; //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1.phoneNumbers.push(&#34;1234567&#34;); oPerson2.phoneNumbers.push(&#34;7654321&#34;); oPerson1." />
+ //class function Person(sLastName, sFirstName, iAge) {  this.lastName = sLastName;  this.firstName = sFirstName;  this.age = iAge;  this.phoneNumbers = new Array(); }  //method Person.prototype.showFullName = function() {  alert(this.lastName &#43; &#34; &#34; &#43; this.firstName); };  //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/creating-class-definition-in-javascript/" />
+<meta property="og:url" content="/blog/creating-class-definition-in-javascript/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2006-07-24T16:28:27+00:00" />
 <meta property="article:modified_time" content="2006-07-24T16:28:27+00:00" />
 
+
 		<meta itemprop="name" content="Creating a Class definition in JavaScript">
 <meta itemprop="description" content="There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
-//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName &#43; &#34; &#34; &#43; this.firstName); }; //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1.phoneNumbers.push(&#34;1234567&#34;); oPerson2.phoneNumbers.push(&#34;7654321&#34;); oPerson1.">
-<meta itemprop="datePublished" content="2006-07-24T16:28:27&#43;00:00" />
-<meta itemprop="dateModified" content="2006-07-24T16:28:27&#43;00:00" />
+ //class function Person(sLastName, sFirstName, iAge) {  this.lastName = sLastName;  this.firstName = sFirstName;  this.age = iAge;  this.phoneNumbers = new Array(); }  //method Person.prototype.showFullName = function() {  alert(this.lastName &#43; &#34; &#34; &#43; this.firstName); };  //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1."><meta itemprop="datePublished" content="2006-07-24T16:28:27+00:00" />
+<meta itemprop="dateModified" content="2006-07-24T16:28:27+00:00" />
 <meta itemprop="wordCount" content="84">
-
-
-
 <meta itemprop="keywords" content="Class," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creating a Class definition in JavaScript"/>
 <meta name="twitter:description" content="There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
-//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName &#43; &#34; &#34; &#43; this.firstName); }; //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1.phoneNumbers.push(&#34;1234567&#34;); oPerson2.phoneNumbers.push(&#34;7654321&#34;); oPerson1."/>
+ //class function Person(sLastName, sFirstName, iAge) {  this.lastName = sLastName;  this.firstName = sFirstName;  this.age = iAge;  this.phoneNumbers = new Array(); }  //method Person.prototype.showFullName = function() {  alert(this.lastName &#43; &#34; &#34; &#43; this.firstName); };  //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -113,31 +110,31 @@ if (!doNotTrack) {
 </div></div>
 		</header><div class="content post__content clearfix">
 			<p>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">   
-<span style="color:#75715e">//class
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Person</span>(<span style="color:#a6e22e">sLastName</span>, <span style="color:#a6e22e">sFirstName</span>, <span style="color:#a6e22e">iAge</span>) {
-  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sLastName</span>;
-  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sFirstName</span>;
-  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">iAge</span>;
-  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">phoneNumbers</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-}
-
-<span style="color:#75715e">//method
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">Person</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">showFullName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span>);
-};
-
-<span style="color:#75715e">//instances
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oPerson1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;Lacava&#34;</span>, <span style="color:#e6db74">&#34;Alessandro&#34;</span>, <span style="color:#ae81ff">30</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oPerson2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;Brown&#34;</span>, <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#ae81ff">50</span>);
-<span style="color:#a6e22e">oPerson1</span>.<span style="color:#a6e22e">phoneNumbers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;1234567&#34;</span>);
-<span style="color:#a6e22e">oPerson2</span>.<span style="color:#a6e22e">phoneNumbers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;7654321&#34;</span>);
-
-<span style="color:#a6e22e">oPerson1</span>.<span style="color:#a6e22e">showFullName</span>(); <span style="color:#75715e">//outputs Lacava Alessandro
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">oPerson1</span>.<span style="color:#a6e22e">phoneNumbers</span>); <span style="color:#75715e">//outputs 1234567
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">oPerson2</span>.<span style="color:#a6e22e">showFullName</span>(); <span style="color:#75715e">//outputs Brown John
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">oPerson2</span>.<span style="color:#a6e22e">phoneNumbers</span>); <span style="color:#75715e">//outputs 7654321
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Person</span>(<span style="color:#a6e22e">sLastName</span>, <span style="color:#a6e22e">sFirstName</span>, <span style="color:#a6e22e">iAge</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sLastName</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sFirstName</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">iAge</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">phoneNumbers</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Person</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">showFullName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//instances
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oPerson1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;Lacava&#34;</span>, <span style="color:#e6db74">&#34;Alessandro&#34;</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oPerson2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;Brown&#34;</span>, <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">oPerson1</span>.<span style="color:#a6e22e">phoneNumbers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;1234567&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">oPerson2</span>.<span style="color:#a6e22e">phoneNumbers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;7654321&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">oPerson1</span>.<span style="color:#a6e22e">showFullName</span>(); <span style="color:#75715e">//outputs Lacava Alessandro
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">oPerson1</span>.<span style="color:#a6e22e">phoneNumbers</span>); <span style="color:#75715e">//outputs 1234567
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">oPerson2</span>.<span style="color:#a6e22e">showFullName</span>(); <span style="color:#75715e">//outputs Brown John
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">oPerson2</span>.<span style="color:#a6e22e">phoneNumbers</span>); <span style="color:#75715e">//outputs 7654321
+</span></span></span></code></pre></div>
 
 		</div>
 		<footer class="post__footer">
@@ -174,7 +171,7 @@ if (!doNotTrack) {
 <section class="comments">
 	<div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -248,7 +245,7 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

@@ -6,11 +6,7 @@
     <description>Recent content in Java on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jun 2014 14:03:33 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 03 Dec 2008 10:47:02 +0000</lastBuildDate><atom:link href="/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java split() of String | Multiple whitespace characters</title>
       <link>/blog/java-split-of-string-multiple-whitespace-characters/</link>
@@ -18,7 +14,7 @@
       
       <guid>/blog/java-split-of-string-multiple-whitespace-characters/</guid>
       <description>The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
-String str = &amp;#34;Testing split using two whitespace characters&amp;#34;; String[] tokens = str.</description>
+ String str = &amp;#34;Testing split using two whitespace characters&amp;#34;; String[] tokens = str.</description>
     </item>
     
     <item>
@@ -38,7 +34,7 @@ String str = &amp;#34;Testing split using two whitespace characters&amp;#34;; S
       
       <guid>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
       <description>In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&amp;rsquo;s an example:
-// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...);  Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
+ // Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...);  Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
     </item>
     
     <item>
@@ -77,7 +73,7 @@ Action Shortcut</description>
       <guid>/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
       <description>You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
-import java.util.regex; // ... other code  // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.</description>
+ import java.util.regex;  // .</description>
     </item>
     
     <item>
@@ -88,7 +84,7 @@ import java.util.regex; // ... other code  // Strip multiline comments public vo
       <guid>/blog/java-passes-everything-by-value/</guid>
       <description>It&amp;rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
-public static void main(String[] args) { int a = 0; increment(a); System.</description>
+ public static void main(String[] args) {  int a = 0;  increment(a);  System.</description>
     </item>
     
     <item>
@@ -98,7 +94,7 @@ public static void main(String[] args) { int a = 0; increment(a); System.</descr
       
       <guid>/blog/what-happens-if-you-write-something-like-a-a-in-java/</guid>
       <description>I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:
-int a = 0; a = a++; System.out.println(a); What does it print?
+ int a = 0; a = a++; System.out.println(a); What does it print?
 More than 50% of the programmers will answer 1, some of the remaining will say &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; and the others will say 0. Well &amp;ldquo;the others&amp;rdquo; are right!
 Provided that such a code MUST NEVER BE WRITTEN, let&amp;rsquo;s try to understand, for academic purposes, why it prints 0.</description>
     </item>

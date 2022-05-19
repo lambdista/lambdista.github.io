@@ -6,11 +6,7 @@
     <description>Recent content in Metacharacter on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jul 2006 13:24:03 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/metacharacter/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 12 Jul 2006 13:24:03 +0000</lastBuildDate><atom:link href="/tags/metacharacter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
       <link>/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>

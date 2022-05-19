@@ -6,11 +6,7 @@
     <description>Recent content in Class on Alessandro Lacava</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jul 2006 16:28:27 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/class/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Jul 2006 16:28:27 +0000</lastBuildDate><atom:link href="/tags/class/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a Class definition in JavaScript</title>
       <link>/blog/creating-class-definition-in-javascript/</link>
@@ -18,7 +14,7 @@
       
       <guid>/blog/creating-class-definition-in-javascript/</guid>
       <description>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
-//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName + &amp;#34; &amp;#34; + this.firstName); }; //instances var oPerson1 = new Person(&amp;#34;Lacava&amp;#34;, &amp;#34;Alessandro&amp;#34;, 30); var oPerson2 = new Person(&amp;#34;Brown&amp;#34;, &amp;#34;John&amp;#34;, 50); oPerson1.phoneNumbers.push(&amp;#34;1234567&amp;#34;); oPerson2.phoneNumbers.push(&amp;#34;7654321&amp;#34;); oPerson1.</description>
+ //class function Person(sLastName, sFirstName, iAge) {  this.lastName = sLastName;  this.firstName = sFirstName;  this.age = iAge;  this.phoneNumbers = new Array(); }  //method Person.prototype.showFullName = function() {  alert(this.lastName + &amp;#34; &amp;#34; + this.firstName); };  //instances var oPerson1 = new Person(&amp;#34;Lacava&amp;#34;, &amp;#34;Alessandro&amp;#34;, 30); var oPerson2 = new Person(&amp;#34;Brown&amp;#34;, &amp;#34;John&amp;#34;, 50); oPerson1.</description>
     </item>
     
   </channel>

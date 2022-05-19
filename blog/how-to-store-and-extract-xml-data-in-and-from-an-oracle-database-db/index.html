@@ -9,32 +9,29 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="How to store and extract XML data in and from an Oracle DataBase (DB)" />
 <meta property="og:description" content="Here are some snippets of code showing how to accomplish this:
-CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
+ CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&rsquo;s insert one row in the table.
-INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML." />
+ INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/" />
+<meta property="og:url" content="/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2006-06-08T15:05:27+00:00" />
 <meta property="article:modified_time" content="2006-06-08T15:05:27+00:00" />
 
+
 		<meta itemprop="name" content="How to store and extract XML data in and from an Oracle DataBase (DB)">
 <meta itemprop="description" content="Here are some snippets of code showing how to accomplish this:
-CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
+ CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&rsquo;s insert one row in the table.
-INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML.">
-<meta itemprop="datePublished" content="2006-06-08T15:05:27&#43;00:00" />
-<meta itemprop="dateModified" content="2006-06-08T15:05:27&#43;00:00" />
+ INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML."><meta itemprop="datePublished" content="2006-06-08T15:05:27+00:00" />
+<meta itemprop="dateModified" content="2006-06-08T15:05:27+00:00" />
 <meta itemprop="wordCount" content="240">
-
-
-
 <meta itemprop="keywords" content="XML," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to store and extract XML data in and from an Oracle DataBase (DB)"/>
 <meta name="twitter:description" content="Here are some snippets of code showing how to accomplish this:
-CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
+ CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&rsquo;s insert one row in the table.
-INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML."/>
+ INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -119,33 +116,33 @@ if (!doNotTrack) {
 </div></div>
 		</header><div class="content post__content clearfix">
 			<p>Here are some snippets of code showing how to accomplish this:</p>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> SampleTable (id number <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>, person XMLType)</code></pre></div>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> SampleTable (id number <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>, person XMLType)</span></span></code></pre></div>
 This first example creates a table with only two columns: id and person. The first is the PK of the table and the second
 is of XMLType type. The latter is going to contain our XML data.</p>
 <p>Now let&rsquo;s insert one row in the table.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> 
-<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> SampleTable <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, XMLType(<span style="color:#e6db74">&#39;XMLString&#39;</span>))</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> SampleTable <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, XMLType(<span style="color:#e6db74">&#39;XMLString&#39;</span>))</span></span></code></pre></div>
 <p>Where you must replace <code>XMLString</code> with any string representing XML. For example, you can replace it with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">   
-<span style="color:#f92672">&lt;persons&gt;</span>
-  <span style="color:#f92672">&lt;person&gt;</span>
-    <span style="color:#f92672">&lt;surname&gt;</span>Lacava<span style="color:#f92672">&lt;/surname&gt;</span>
-    <span style="color:#f92672">&lt;name&gt;</span>Alessandro<span style="color:#f92672">&lt;/name&gt;</span>
-    <span style="color:#f92672">&lt;date_OF_BIRTH</span> <span style="color:#a6e22e">DAY=</span><span style="color:#e6db74">&#34;31&#34;</span> <span style="color:#a6e22e">MONTH=</span><span style="color:#e6db74">&#34;01&#34;</span> <span style="color:#a6e22e">YEAR=</span><span style="color:#e6db74">&#34;1976&#34;</span> <span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/person&gt;</span>
-<span style="color:#f92672">&lt;/persons&gt;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;persons&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;person&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;surname&gt;</span>Lacava<span style="color:#f92672">&lt;/surname&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>Alessandro<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;date_OF_BIRTH</span> <span style="color:#a6e22e">DAY=</span><span style="color:#e6db74">&#34;31&#34;</span> <span style="color:#a6e22e">MONTH=</span><span style="color:#e6db74">&#34;01&#34;</span> <span style="color:#a6e22e">YEAR=</span><span style="color:#e6db74">&#34;1976&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/person&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/persons&gt;</span></span></span></code></pre></div>
 <p>I decided to decode the date of birth that way in order to show you (in the next example) how to retrieve, apart from a
 common XML node, an attribute as well.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  
-<span style="color:#66d9ef">SELECT</span> extractValue(person, <span style="color:#e6db74">&#39;/PERSONS/PERSON/SURNAME&#39;</span>) <span style="color:#66d9ef">AS</span> surname,
-  extractValue(person, <span style="color:#e6db74">&#39;/PERSONS/PERSON/DATE_OF_BIRTH/@YEAR&#39;</span>) <span style="color:#66d9ef">AS</span> year_of_birth
-<span style="color:#66d9ef">FROM</span> SampleTable</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> extractValue(person, <span style="color:#e6db74">&#39;/PERSONS/PERSON/SURNAME&#39;</span>) <span style="color:#66d9ef">AS</span> surname,
+</span></span><span style="display:flex;"><span>  extractValue(person, <span style="color:#e6db74">&#39;/PERSONS/PERSON/DATE_OF_BIRTH/@YEAR&#39;</span>) <span style="color:#66d9ef">AS</span> year_of_birth
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SampleTable</span></span></code></pre></div>
 <p>This last example extracts the surname and the year of birth from the XML data represented by the person column
 that is of XMLType type. As you can see to extract the XML data you use regular XPath expressions.</p>
 <p>Note: If your XML is using a namespace you will have to indicate it using the following syntax:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> 
-extractValue(<span style="color:#66d9ef">column_name</span>, XPath_Expression, <span style="color:#e6db74">&#39;xmlns=&#34;namespace_URI&#34;&#39;</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>extractValue(<span style="color:#66d9ef">column_name</span>, XPath_Expression, <span style="color:#e6db74">&#39;xmlns=&#34;namespace_URI&#34;&#39;</span>)</span></span></code></pre></div>
 <p>where <code>XPath_Expression</code> is the XPath expression used to extract the value you&rsquo;re interested in and <code>namespace_URI</code> is
 the URI indicating your namespace.</p>
 <p>One last note: You can use XML Data inside an Oracle DB from version 9.0.2 on.</p>
@@ -185,7 +182,7 @@ the URI indicating your namespace.</p>
 <section class="comments">
 	<div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -259,7 +256,7 @@ the URI indicating your namespace.</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

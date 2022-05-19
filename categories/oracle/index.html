@@ -11,7 +11,7 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/oracle/" />
-<meta property="og:updated_time" content="2008-06-04T13:33:24+00:00" />
+
 
 		<meta itemprop="name" content="Oracle">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -128,7 +128,7 @@ If you are sure that the field used to join the tables does not include NULL val
 	<div class="content list__excerpt post__content clearfix">
 		NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
 Now try the following query:
-SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
 I think this is because NOT IN internally uses the inequality operator.
 	</div>
 </article><article class="list__item post">
@@ -146,7 +146,7 @@ I think this is because NOT IN internally uses the inequality operator.
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.
-SELECT (to_date(&#39;09-10-2007&#39;, &#39;DD-MM-YYYY&#39;) - to_date(&#39;01-01-1970&#39;, &#39;DD-MM-YYYY&#39;)) * 60 * 60 * 24 FROM dual The result of the preceding query should be 1191888000.
+ SELECT (to_date(&#39;09-10-2007&#39;, &#39;DD-MM-YYYY&#39;) - to_date(&#39;01-01-1970&#39;, &#39;DD-MM-YYYY&#39;)) * 60 * 60 * 24 FROM dual The result of the preceding query should be 1191888000.
 	</div>
 </article>
 </main>
@@ -210,7 +210,7 @@ SELECT (to_date(&#39;09-10-2007&#39;, &#39;DD-MM-YYYY&#39;) - to_date(&#39;01-01
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2022 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
