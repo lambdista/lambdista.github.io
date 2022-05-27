@@ -127,7 +127,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
- var str = &#34;http://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){  alert(&#34;no match&#34;); } else{  // first group  alert(results[1]); } The previous code extracts the string that follows the code= part of str.
+ var str = &#34;https://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){  alert(&#34;no match&#34;); } else{  // first group  alert(results[1]); } The previous code extracts the string that follows the code= part of str.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
