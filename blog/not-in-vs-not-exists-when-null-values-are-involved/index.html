@@ -9,9 +9,8 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="NOT IN vs. NOT EXISTS when NULL values are involved" />
 <meta property="og:description" content="NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
-Now try the following query:
- SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
-I think this is because NOT IN internally uses the inequality operator." />
+ CD_FIELD DS_FIELD  1 ALPHA   2 BETA   **TABLE_A**  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   **TABLE_B** Now try the following query:
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/not-in-vs-not-exists-when-null-values-are-involved/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2008-06-04T13:24:09+00:00" />
@@ -20,18 +19,16 @@ I think this is because NOT IN internally uses the inequality operator." />
 
 		<meta itemprop="name" content="NOT IN vs. NOT EXISTS when NULL values are involved">
 <meta itemprop="description" content="NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
-Now try the following query:
- SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
-I think this is because NOT IN internally uses the inequality operator."><meta itemprop="datePublished" content="2008-06-04T13:24:09+00:00" />
+ CD_FIELD DS_FIELD  1 ALPHA   2 BETA   **TABLE_A**  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   **TABLE_B** Now try the following query:
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?"><meta itemprop="datePublished" content="2008-06-04T13:24:09+00:00" />
 <meta itemprop="dateModified" content="2008-06-04T13:24:09+00:00" />
-<meta itemprop="wordCount" content="211">
+<meta itemprop="wordCount" content="225">
 <meta itemprop="keywords" content="NOT IN,NOT EXISTS,," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NOT IN vs. NOT EXISTS when NULL values are involved"/>
 <meta name="twitter:description" content="NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
-Now try the following query:
- SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
-I think this is because NOT IN internally uses the inequality operator."/>
+ CD_FIELD DS_FIELD  1 ALPHA   2 BETA   **TABLE_A**  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   **TABLE_B** Now try the following query:
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -117,8 +114,36 @@ if (!doNotTrack) {
 		</header><div class="content post__content clearfix">
 			<p><code>NOT IN</code> does not behave as you would expect when <code>NULL</code> values are involved.
 Suppose you have the following tables:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<table>
+  <tr >
+    <td style="color: #696969">CD_FIELD</td>
+    <td style="color: #696969">DS_FIELD</td>
+  </tr>
+  <tr >
+    <td>1</td>
+    <td>ALPHA</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>BETA</td>
+  </tr>
+</table>
+**TABLE_A**
+<table>
+  <tr >
+    <td style="color: #696969">CD_FIELD</td>
+    <td style="color: #696969">DS_FIELD</td>
+  </tr>
+  <tr >
+    <td>1</td>
+    <td>GAMMA</td>
+  </tr>
+  <tr>
+    <td>NULL</td>
+    <td>DELTA</td>
+  </tr>
+</table>
+**TABLE_B**
 <p>Now try the following query:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>   
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>

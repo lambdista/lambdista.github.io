@@ -47,7 +47,8 @@ final case class Ad(  headline: String,  description1: String,  description2: St
       <guid>/blog/scala-case-classes-in-depth/</guid>
       <description>For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
+ Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
+Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
     </item>
     
     <item>
@@ -157,9 +158,8 @@ If you are sure that the field used to join the tables does not include NULL val
       
       <guid>/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
       <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
-Now try the following query:
- SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
-I think this is because NOT IN internally uses the inequality operator.</description>
+ CD_FIELD DS_FIELD  1 ALPHA   2 BETA   **TABLE_A**  CD_FIELD DS_FIELD  1 GAMMA   NULL DELTA   **TABLE_B** Now try the following query:
+ SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row?</description>
     </item>
     
     <item>
