@@ -10,7 +10,7 @@
     <item>
       <title>Blog</title>
       <link>/blog/</link>
-      <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>Articles</title>
       <link>/articles/</link>
-      <pubDate>Thu, 26 Mar 2015 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/articles/</guid>
       <description>Introduction to Internal DSLs in Scala
@@ -36,7 +36,7 @@ Combine the power and simplicity of the TrimPath template engine with JavaScript
     <item>
       <title>Talks</title>
       <link>/talks/</link>
-      <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/talks/</guid>
       <description>In English Internal DSL design in Scala A domain-specific language (DSL) is a language that you design with a specific domain in mind. There are two types of domain-specific languages (DSLs): external and internal. The former implicates — in the simplest case — parsing a string into the programming language syntax. The latter, on the other hand, involves implementing a language within your own programming language. Quoting Martin Fowler, &amp;ldquo;Internal DSLs are particular ways of using a host language to give the host language the feel of a particular language&amp;rdquo;.</description>
@@ -45,21 +45,11 @@ Combine the power and simplicity of the TrimPath template engine with JavaScript
     <item>
       <title>About Me</title>
       <link>/about/</link>
-      <pubDate>Thu, 26 Mar 2015 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
       <description>I work as a software designer and developer. Sometimes I even find the time to write. I coauthored the book Professional Scala and written different articles both for IT magazines and my personal blog.
 I&amp;rsquo;ve been programming since 1989&amp;ndash;I wrote my first LOC in Pascal at the age of thirteen. At that time web and mobile applications did not exist yet. By the way &amp;ldquo;applications&amp;rdquo;, then, were still called programs.</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>/privacy-policy/</link>
-      <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/privacy-policy/</guid>
-      <description>Cookies To make this website work properly, small data files called cookies are stored on your device. Most websites do this too.
-What are cookies? A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, font size and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.</description>
     </item>
     
     <item>
