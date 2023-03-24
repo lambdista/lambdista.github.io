@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.99.1" />
+	<meta name="generator" content="Hugo 0.111.3">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,6 @@
 <meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-
 
 		<meta itemprop="name" content="Alessandro Lacava">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
@@ -109,7 +108,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
- var str = &#34;https://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){  alert(&#34;no match&#34;); } else{  // first group  alert(results[1]); } The previous code extracts the string that follows the code= part of str.
+var str = &#34;https://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){ alert(&#34;no match&#34;); } else{ // first group alert(results[1]); } The previous code extracts the string that follows the code= part of str.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -126,7 +125,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In JavaScript you can use the built-in object Date to compute this timestamp. Here follows an example:
- var ts = Date.UTC(&#39;2007&#39;, &#39;09&#39;, &#39;28&#39;) / 1000; alert(ts); The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.
+var ts = Date.UTC(&#39;2007&#39;, &#39;09&#39;, &#39;28&#39;) / 1000; alert(ts); The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -143,7 +142,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.
- SELECT (to_date(&#39;09-10-2007&#39;, &#39;DD-MM-YYYY&#39;) - to_date(&#39;01-01-1970&#39;, &#39;DD-MM-YYYY&#39;)) * 60 * 60 * 24 FROM dual The result of the preceding query should be 1191888000.
+SELECT (to_date(&#39;09-10-2007&#39;, &#39;DD-MM-YYYY&#39;) - to_date(&#39;01-01-1970&#39;, &#39;DD-MM-YYYY&#39;)) * 60 * 60 * 24 FROM dual The result of the preceding query should be 1191888000.
 	</div>
 </article>
 </main>
@@ -207,10 +206,12 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2006-06-20T20:53:38+00:00" />
 <meta property="article:modified_time" content="2006-06-20T20:53:38+00:00" />
 
-
 		<meta itemprop="name" content="Using proguard obfuscator through the Wireless Toolkit">
 <meta itemprop="description" content="When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source tool you can use for this purpose. To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find the obfuscator. You can do that by editing the file ktools.properties that you can find under %WTK%wtklibWindows, where %WTK% is the root directory of the Wireless Toolkit."><meta itemprop="datePublished" content="2006-06-20T20:53:38+00:00" />
 <meta itemprop="dateModified" content="2006-06-20T20:53:38+00:00" />
@@ -112,9 +111,9 @@ To use it through the Wireless Toolkit (WTK), after downloading Proguard, you ne
 the obfuscator. You can do that by editing the file <strong>ktools.properties</strong> that you can find under <strong>%WTK%wtklibWindows</strong>,
 where <strong>%WTK%</strong> is the root directory of the Wireless Toolkit. Basically, you just need to add the two following lines
 to the aforementioned file:</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties"> 
-obfuscator.runner.class.name: proguard.wtk.ProGuardObfuscator
-obfuscator.runner.classpath: proguard_path</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> </span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obfuscator.runner.class.name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">proguard.wtk.ProGuardObfuscator</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obfuscator.runner.classpath</span><span style="color:#f92672">:</span> <span style="color:#e6db74">proguard_path</span></span></span></code></pre></div>
 <p>where <strong>proguard_path</strong> is the absolute path to the <strong>proguard.jar</strong> file that you can find under the <strong>lib</strong> directory
 of proguard&rsquo;s home folder. So the <strong>proguard_path</strong> will be (under a Windows system) something like:
 <strong>C:\Programs\proguard\lib\proguard.jar</strong>. After that, creating obfuscated code using the WTK is as easy as selecting
@@ -232,10 +231,12 @@ of proguard&rsquo;s home folder. So the <strong>proguard_path</strong> will be (
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

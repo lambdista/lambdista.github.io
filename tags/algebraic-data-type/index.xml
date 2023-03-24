@@ -16,7 +16,7 @@
       <description>Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&amp;rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&amp;rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.</description>
+final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.</description>
     </item>
     
   </channel>

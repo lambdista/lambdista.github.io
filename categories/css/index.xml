@@ -14,7 +14,7 @@
       
       <guid>/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
       <description>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of how you can do it using JavaScript and CSS.
- function init() {  // Reference to the element  var loading = document.getElementById(&amp;#34;loading&amp;#34;);  // The div&amp;#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth;  // The div&amp;#39;s width, set within the CSS class  var loadingHeight = loading.</description>
+function init() { // Reference to the element var loading = document.getElementById(&amp;#34;loading&amp;#34;); // The div&amp;#39;s width, set within the CSS class var loadingWidth = loading.offsetWidth; // The div&amp;#39;s width, set within the CSS class var loadingHeight = loading.offsetHeight; // The browser&amp;#39;s body&amp;#39;s width var documentWidth = document.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <guid>/blog/how-to-add-scrollbars-to-a-block-eg-a-element/</guid>
       <description>If you need to customize a list box then the &amp;lt;select&amp;gt; HTML element might not be enough. In such a case you&amp;rsquo;d like to have something that simulates the &amp;lt;select&amp;gt; behaviour.
 Here is the code to use to obtain a custom list box:
- &amp;lt;html&amp;gt;  &amp;lt;head&amp;gt;  &amp;lt;/head&amp;gt;   &amp;lt;body&amp;gt;  &amp;lt;div style=&amp;#34;width: 200px; height: 200px; overflow: auto;&amp;#34;&amp;gt;  &amp;lt;table width=&amp;#34;100%&amp;#34; height=&amp;#34;100%&amp;#34;&amp;gt;  &amp;lt;script&amp;gt;  for (var i = 0; i &amp;lt; 30; i++) {  if (i % 2 == 0) {  document.</description>
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div style=&amp;#34;width: 200px; height: 200px; overflow: auto;&amp;#34;&amp;gt; &amp;lt;table width=&amp;#34;100%&amp;#34; height=&amp;#34;100%&amp;#34;&amp;gt; &amp;lt;script&amp;gt; for (var i = 0; i &amp;lt; 30; i++) { if (i % 2 == 0) { document.</description>
     </item>
     
   </channel>

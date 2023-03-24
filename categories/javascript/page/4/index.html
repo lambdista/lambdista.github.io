@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/javascript/" />
 
-
 		<meta itemprop="name" content="JavaScript">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
 		<meta name="twitter:card" content="summary"/>
@@ -110,7 +109,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		It is possible, using JavaScript, to call a function pertaining to the opener window, that is the window that, calling window.open, opened the current window. The code to use is the following:
- if (window.opener) {  window.close();  window.opener.foo(&#34;bar&#34;); } First it checks if the opener window is still open. In this case, it closes the current window and call the foo function on the opener window.
+if (window.opener) { window.close(); window.opener.foo(&#34;bar&#34;); } First it checks if the opener window is still open. In this case, it closes the current window and call the foo function on the opener window.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -127,7 +126,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
- //class function Person(sLastName, sFirstName, iAge) {  this.lastName = sLastName;  this.firstName = sFirstName;  this.age = iAge;  this.phoneNumbers = new Array(); }  //method Person.prototype.showFullName = function() {  alert(this.lastName + &#34; &#34; + this.firstName); };  //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1.
+//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName + &#34; &#34; + this.firstName); }; //instances var oPerson1 = new Person(&#34;Lacava&#34;, &#34;Alessandro&#34;, 30); var oPerson2 = new Person(&#34;Brown&#34;, &#34;John&#34;, 50); oPerson1.phoneNumbers.push(&#34;1234567&#34;); oPerson2.phoneNumbers.push(&#34;7654321&#34;); oPerson1.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -144,7 +143,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
- // The following function creates an XMLHttpRequest object function createHttpRequest() {  if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE {  return new XMLHttpRequest();  }  else if (window.
+// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2.
 	</div>
 </article>
 </main>
@@ -209,10 +208,12 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

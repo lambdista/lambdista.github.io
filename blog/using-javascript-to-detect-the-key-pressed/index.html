@@ -9,23 +9,22 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="Using Javascript to detect the key pressed" />
 <meta property="og:description" content="Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on. For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of code you can use&ndash;of course adapting it to your needs.
- function keyPressed(e){  var code;  if(window.event){ //IE  code = e.keyCode;  }  else{ //other browsers  code = e." />
+function keyPressed(e){ var code; if(window.event){ //IE code = e.keyCode; } else{ //other browsers code = e.which; } //check, for example, if the Enter key was pressed (code 13) if(code == 13){ //Enter key pressed } else{ //Another key pressed } } Note: keyCode is used by Internet Explorer while which is used by the other browsers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/using-javascript-to-detect-the-key-pressed/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2006-05-12T12:23:55+00:00" />
 <meta property="article:modified_time" content="2006-05-12T12:23:55+00:00" />
 
-
 		<meta itemprop="name" content="Using Javascript to detect the key pressed">
 <meta itemprop="description" content="Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on. For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of code you can use&ndash;of course adapting it to your needs.
- function keyPressed(e){  var code;  if(window.event){ //IE  code = e.keyCode;  }  else{ //other browsers  code = e."><meta itemprop="datePublished" content="2006-05-12T12:23:55+00:00" />
+function keyPressed(e){ var code; if(window.event){ //IE code = e.keyCode; } else{ //other browsers code = e.which; } //check, for example, if the Enter key was pressed (code 13) if(code == 13){ //Enter key pressed } else{ //Another key pressed } } Note: keyCode is used by Internet Explorer while which is used by the other browsers."><meta itemprop="datePublished" content="2006-05-12T12:23:55+00:00" />
 <meta itemprop="dateModified" content="2006-05-12T12:23:55+00:00" />
 <meta itemprop="wordCount" content="126">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Javascript to detect the key pressed"/>
 <meta name="twitter:description" content="Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on. For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of code you can use&ndash;of course adapting it to your needs.
- function keyPressed(e){  var code;  if(window.event){ //IE  code = e.keyCode;  }  else{ //other browsers  code = e."/>
+function keyPressed(e){ var code; if(window.event){ //IE code = e.keyCode; } else{ //other browsers code = e.which; } //check, for example, if the Enter key was pressed (code 13) if(code == 13){ //Enter key pressed } else{ //Another key pressed } } Note: keyCode is used by Internet Explorer while which is used by the other browsers."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -231,10 +230,12 @@ code you can use&ndash;of course adapting it to your needs.</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

@@ -26,7 +26,7 @@ Compiler options Getting into the glory details of each and every compiler optio
       <description>Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&amp;rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&amp;rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.</description>
+final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ final case class Ad(  headline: String,  description1: String,  description2: St
       
       <guid>/blog/scala-seq-map-and-set-as-functions/</guid>
       <description>Yesterday my mate asked me: &amp;ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&amp;rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &amp;ldquo;No, you don&amp;rsquo;t need pattern matching, you just need this&amp;rdquo;:
- scala&amp;gt; val m = Map(&amp;#34;a&amp;#34; -&amp;gt; 1, &amp;#34;b&amp;#34; -&amp;gt; 2, &amp;#34;c&amp;#34; -&amp;gt; 3) m: scala.</description>
+scala&amp;gt; val m = Map(&amp;#34;a&amp;#34; -&amp;gt; 1, &amp;#34;b&amp;#34; -&amp;gt; 2, &amp;#34;c&amp;#34; -&amp;gt; 3) m: scala.</description>
     </item>
     
     <item>
@@ -47,8 +47,7 @@ final case class Ad(  headline: String,  description1: String,  description2: St
       <guid>/blog/scala-case-classes-in-depth/</guid>
       <description>For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  
-Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
+Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
     </item>
     
     <item>
@@ -70,7 +69,7 @@ Self-recursive type definition Terminology apart, let me show you one of the use
       <description>A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
 This Domain-Specific Language (DSL) lets you perform operations among different currencies, by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.
 Usage Example Here&amp;rsquo;s a simple usage example:
- import com.lambdista.money._ import com.lambdista.money.Currency._  object Main {   def main(args: Array[String]): Unit = {   val conversion: Conversion = Map(  (GBP, EUR) -&amp;gt; 1.</description>
+import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&amp;gt; 1.</description>
     </item>
     
   </channel>

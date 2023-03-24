@@ -14,7 +14,7 @@
       
       <guid>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
       <description>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
- By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
+By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
     </item>
     
   </channel>

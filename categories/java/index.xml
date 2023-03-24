@@ -14,7 +14,7 @@
       
       <guid>/blog/java-split-of-string-multiple-whitespace-characters/</guid>
       <description>The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must be careful when you want to split a string using the whitespace character as a delimiter. Consider the following snippet of code:
- String str = &amp;#34;Testing split using two whitespace characters&amp;#34;; String[] tokens = str.</description>
+String str = &amp;#34;Testing split using two whitespace characters&amp;#34;; String[] tokens = str.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       
       <guid>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
       <description>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
- By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
+By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@
       
       <guid>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
       <description>In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&amp;rsquo;s an example:
- // Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...);  Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
+// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <guid>/blog/very-useful-shortcuts-for-eclipse/</guid>
       <description>Who uses eclipse already knows how fantastic this great IDE is. Here I want to provide a table with the shortcuts I use almost ever when I develop in Java.
 Action Shortcut
- Toggle Comment  Ctrl+7   Show Tooltip  F2   Format Code  Ctrl+Shift+F   Indent Line  Ctrl+I   Duplicate Lines Down  Ctrl+Alt+Down Arrow   Duplicate Lines Up  Ctrl+Alt+Up Arrow   Delete Next Line And Move Below Code Up  Ctrl+D   Delete Next Word  Ctrl+Delete   Delete Previous Word  Ctrl+Backspace   Delete Line  Ctrl+Shift+Delete   Insert Line Above The Current One  Ctrl+Shift+Enter   Insert Line Below The Current One  Shift+Enter   Move Lines Down  Alt+Down Arrow   Move Lines Up  Alt+Up Arrow   Next Word  Ctrl+Right Arrow   Previous Word  Ctrl+Left Arrow   To Upper Case  Ctrl+Shift+X   To Lower Case  Ctrl+Shift+Y   Shortcut for System.</description>
+Toggle Comment Ctrl+7 Show Tooltip F2 Format Code Ctrl+Shift+F Indent Line Ctrl+I Duplicate Lines Down Ctrl+Alt+Down Arrow Duplicate Lines Up Ctrl+Alt+Up Arrow Delete Next Line And Move Below Code Up Ctrl+D Delete Next Word Ctrl+Delete Delete Previous Word Ctrl+Backspace Delete Line Ctrl+Shift+Delete Insert Line Above The Current One Ctrl+Shift+Enter Insert Line Below The Current One Shift+Enter Move Lines Down Alt+Down Arrow Move Lines Up Alt+Up Arrow Next Word Ctrl+Right Arrow Previous Word Ctrl+Left Arrow To Upper Case Ctrl+Shift+X To Lower Case Ctrl+Shift+Y Shortcut for System.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ Action Shortcut
       <guid>/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
       <description>You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
- import java.util.regex;  // .</description>
+import java.util.regex; // ... other code // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ Example: The following method strips the multiline comments (those between /* an
       <guid>/blog/java-passes-everything-by-value/</guid>
       <description>It&amp;rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
- public static void main(String[] args) {  int a = 0;  increment(a);  System.</description>
+public static void main(String[] args) { int a = 0; increment(a); System.</description>
     </item>
     
     <item>
@@ -95,7 +95,7 @@ When a parameter is passed by value, an actual copy of it is really passed so th
       
       <guid>/blog/what-happens-if-you-write-something-like-a-a-in-java/</guid>
       <description>I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:
- int a = 0; a = a++; System.out.println(a); What does it print?
+int a = 0; a = a++; System.out.println(a); What does it print?
 More than 50% of the programmers will answer 1, some of the remaining will say &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; and the others will say 0. Well &amp;ldquo;the others&amp;rdquo; are right!
 Provided that such a code MUST NEVER BE WRITTEN, let&amp;rsquo;s try to understand, for academic purposes, why it prints 0.</description>
     </item>
@@ -107,7 +107,7 @@ Provided that such a code MUST NEVER BE WRITTEN, let&amp;rsquo;s try to understa
       
       <guid>/blog/pojo-plain-old-java-object-the-simplerthe-better/</guid>
       <description>A POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined by the EJB 2 framework. An example of a POJO is a class composed by only:
- Properties, representing the object&amp;rsquo;s state. Getter and setter methods for the properties. Business methods, representing behaviour.  Some properties can represent associations with other POJOs. Here is an example of implementation of the Person entity using a POJO:</description>
+Properties, representing the object&amp;rsquo;s state. Getter and setter methods for the properties. Business methods, representing behaviour. Some properties can represent associations with other POJOs. Here is an example of implementation of the Person entity using a POJO:</description>
     </item>
     
     <item>
@@ -119,7 +119,7 @@ Provided that such a code MUST NEVER BE WRITTEN, let&amp;rsquo;s try to understa
       <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*+.
 If you want to treat them as ordinary characters you have two options:
- Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E  Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
+Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
     </item>
     
     <item>

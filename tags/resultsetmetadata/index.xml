@@ -14,7 +14,7 @@
       
       <guid>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
       <description>In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&amp;rsquo;s an example:
- // Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...);  Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
+// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
     </item>
     
   </channel>

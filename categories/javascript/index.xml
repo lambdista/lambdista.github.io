@@ -14,7 +14,7 @@
       
       <guid>/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</guid>
       <description>Here&amp;rsquo;s a little JavaScript function that disables all form elements:
- function disableElements(formName) {  var fm = document.forms[formName];  for(var i = 0; i &amp;lt; fm.elements.length; ++i) {  fm.elements[i].disabled = true;  } } As you may have noticed the only parameter you need to pass is the form name.</description>
+function disableElements(formName) { var fm = document.forms[formName]; for(var i = 0; i &amp;lt; fm.elements.length; ++i) { fm.elements[i].disabled = true; } } As you may have noticed the only parameter you need to pass is the form name.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       
       <guid>/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</guid>
       <description>There are whole books about regular expressions so this post shouldn&amp;rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
- var str = &amp;#34;https://www.alessandrolacava.com/?code=ALE69&amp;#34;; var regex = /code=(w+)&amp;amp;?/; var results = regex.exec(str); if(!results){  alert(&amp;#34;no match&amp;#34;); } else{  // first group  alert(results[1]); } The previous code extracts the string that follows the code= part of str.</description>
+var str = &amp;#34;https://www.alessandrolacava.com/?code=ALE69&amp;#34;; var regex = /code=(w+)&amp;amp;?/; var results = regex.exec(str); if(!results){ alert(&amp;#34;no match&amp;#34;); } else{ // first group alert(results[1]); } The previous code extracts the string that follows the code= part of str.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@
       
       <guid>/blog/how-to-compute-the-timestamp-in-javascript/</guid>
       <description>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In JavaScript you can use the built-in object Date to compute this timestamp. Here follows an example:
- var ts = Date.UTC(&amp;#39;2007&amp;#39;, &amp;#39;09&amp;#39;, &amp;#39;28&amp;#39;) / 1000; alert(ts); The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.</description>
+var ts = Date.UTC(&amp;#39;2007&amp;#39;, &amp;#39;09&amp;#39;, &amp;#39;28&amp;#39;) / 1000; alert(ts); The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       
       <guid>/blog/how-to-format-a-decimal-number-in-javascript/</guid>
       <description>In JavaScript you can use a built-in method to format a decimal number so that it is displayed using, at most, x decimal places. Here is an example:
- var num = 3.1356; var x = 3; alert(num.toFixed(x)); // displays 3.136  As you may have guessed the method is toFixed. It accepts one parameter which is the number of decimal places to take into account.
+var num = 3.1356; var x = 3; alert(num.toFixed(x)); // displays 3.136 As you may have guessed the method is toFixed. It accepts one parameter which is the number of decimal places to take into account.
 Note: The number gets rounded as you can notice by the example above.</description>
     </item>
     
@@ -55,7 +55,7 @@ Note: The number gets rounded as you can notice by the example above.</descripti
       
       <guid>/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
       <description>Sometimes you might need to display an element, for example a div, to the center of the browser. Here is an example of how you can do it using JavaScript and CSS.
- function init() {  // Reference to the element  var loading = document.getElementById(&amp;#34;loading&amp;#34;);  // The div&amp;#39;s width, set within the CSS class  var loadingWidth = loading.offsetWidth;  // The div&amp;#39;s width, set within the CSS class  var loadingHeight = loading.</description>
+function init() { // Reference to the element var loading = document.getElementById(&amp;#34;loading&amp;#34;); // The div&amp;#39;s width, set within the CSS class var loadingWidth = loading.offsetWidth; // The div&amp;#39;s width, set within the CSS class var loadingHeight = loading.offsetHeight; // The browser&amp;#39;s body&amp;#39;s width var documentWidth = document.</description>
     </item>
     
     <item>
@@ -65,7 +65,7 @@ Note: The number gets rounded as you can notice by the example above.</descripti
       
       <guid>/blog/how-to-detect-the-selected-checkboxes-using-javascript/</guid>
       <description>Here is an example of how you can retrieve the selected checkboxes using a JavaScript function:
- &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script&amp;gt; function getSelectedValues(elem) {  var elemNumber = document.myForm.test.length;   var selectedElems = [];  for(j = 0; j &amp;lt; elemNumber; j++) {  if(elem[j].checked) {  selectedElems.push(elem[j].value);  }  }  return selectedElems; } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;  &amp;lt;body&amp;gt; &amp;lt;form id=&amp;#34;myForm&amp;#34; name=&amp;#34;myForm&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; id=&amp;#34;test&amp;#34; name=&amp;#34;myCheckBox&amp;#34; value=&amp;#34;test1&amp;#34;&amp;gt; Test 1   &amp;lt;input type=&amp;#34;checkbox&amp;#34; id=&amp;#34;test&amp;#34; name=&amp;#34;myCheckBox&amp;#34; value=&amp;#34;test2&amp;#34;&amp;gt; Test 2   &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;Click Here&amp;#34;  onclick=&amp;#34;alert(getSelectedValues(document.</description>
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script&amp;gt; function getSelectedValues(elem) { var elemNumber = document.myForm.test.length; var selectedElems = []; for(j = 0; j &amp;lt; elemNumber; j++) { if(elem[j].checked) { selectedElems.push(elem[j].value); } } return selectedElems; } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;form id=&amp;#34;myForm&amp;#34; name=&amp;#34;myForm&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; id=&amp;#34;test&amp;#34; name=&amp;#34;myCheckBox&amp;#34; value=&amp;#34;test1&amp;#34;&amp;gt; Test 1 &amp;lt;input type=&amp;#34;checkbox&amp;#34; id=&amp;#34;test&amp;#34; name=&amp;#34;myCheckBox&amp;#34; value=&amp;#34;test2&amp;#34;&amp;gt; Test 2 &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;Click Here&amp;#34; onclick=&amp;#34;alert(getSelectedValues(document.</description>
     </item>
     
     <item>
@@ -75,7 +75,7 @@ Note: The number gets rounded as you can notice by the example above.</descripti
       
       <guid>/blog/sorting-an-array-of-objects-with-the-sortby-method/</guid>
       <description>Here is an example of how easy it is to sort an array of objects using the Enumerable.sortBy method of the Prototype framework:
- var obj1 = {  lastName : &amp;#34;Lacava&amp;#34;,  firstName : &amp;#34;Alessandro&amp;#34; };  var obj2 = {  lastName : &amp;#34;Brown&amp;#34;,  firstName : &amp;#34;John&amp;#34; };  var obj3 = {  lastName : &amp;#34;Simpson&amp;#34;,  firstName : &amp;#34;Bart&amp;#34; };  var arr = [obj1, obj2, obj3];  //order by last name var sorted = arr.</description>
+var obj1 = { lastName : &amp;#34;Lacava&amp;#34;, firstName : &amp;#34;Alessandro&amp;#34; }; var obj2 = { lastName : &amp;#34;Brown&amp;#34;, firstName : &amp;#34;John&amp;#34; }; var obj3 = { lastName : &amp;#34;Simpson&amp;#34;, firstName : &amp;#34;Bart&amp;#34; }; var arr = [obj1, obj2, obj3]; //order by last name var sorted = arr.sortBy(function(obj) { return obj.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ Note: The number gets rounded as you can notice by the example above.</descripti
       
       <guid>/blog/how-to-include-a-js-file-a-javascript-file-within-another-js-file/</guid>
       <description>Actually, there is no function you can call to include a JavaScript file within another one. This is the bad news. The good news is that you can use a trick to accomplish this task. Suppose you have two JavaScript files, say file1.js and file2.js. You want to include file1.js within file2.js because you want to use file1&amp;rsquo;s functions. Here is the code you can use:
- //this is file2.js document.</description>
+//this is file2.js document.write(&amp;#34;&amp;lt;script src=&amp;#39;file1.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ Note: The number gets rounded as you can notice by the example above.</descripti
       <guid>/blog/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/</guid>
       <description>This is an example of how you can show/hide an HTML form element depending on a combo box choice.
 Put the following JavaScript code between your &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section (or within a .js file if you prefer).
- &amp;lt;script language=&amp;#34;javascript&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;  function hide() {  var text = document.formName.textBox;  if(document.formName.combo.value == &amp;#34;hide&amp;#34;) {  text.style.visibility = &amp;#34;hidden&amp;#34;;  }  else {  text.style.visibility = &amp;#34;visible&amp;#34;;  }  } &amp;lt;/script&amp;gt; The following snippet of code instead is the HTML code to use to call the hide function.</description>
+&amp;lt;script language=&amp;#34;javascript&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt; function hide() { var text = document.formName.textBox; if(document.formName.combo.value == &amp;#34;hide&amp;#34;) { text.style.visibility = &amp;#34;hidden&amp;#34;; } else { text.style.visibility = &amp;#34;visible&amp;#34;; } } &amp;lt;/script&amp;gt; The following snippet of code instead is the HTML code to use to call the hide function.</description>
     </item>
     
     <item>
@@ -106,7 +106,7 @@ Put the following JavaScript code between your &amp;lt;head&amp;gt;&amp;lt;/head
       
       <guid>/blog/calling-a-function-of-the-opener-window/</guid>
       <description>It is possible, using JavaScript, to call a function pertaining to the opener window, that is the window that, calling window.open, opened the current window. The code to use is the following:
- if (window.opener) {  window.close();  window.opener.foo(&amp;#34;bar&amp;#34;); } First it checks if the opener window is still open. In this case, it closes the current window and call the foo function on the opener window.</description>
+if (window.opener) { window.close(); window.opener.foo(&amp;#34;bar&amp;#34;); } First it checks if the opener window is still open. In this case, it closes the current window and call the foo function on the opener window.</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@ Put the following JavaScript code between your &amp;lt;head&amp;gt;&amp;lt;/head
       
       <guid>/blog/creating-class-definition-in-javascript/</guid>
       <description>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:
- //class function Person(sLastName, sFirstName, iAge) {  this.lastName = sLastName;  this.firstName = sFirstName;  this.age = iAge;  this.phoneNumbers = new Array(); }  //method Person.prototype.showFullName = function() {  alert(this.lastName + &amp;#34; &amp;#34; + this.firstName); };  //instances var oPerson1 = new Person(&amp;#34;Lacava&amp;#34;, &amp;#34;Alessandro&amp;#34;, 30); var oPerson2 = new Person(&amp;#34;Brown&amp;#34;, &amp;#34;John&amp;#34;, 50); oPerson1.</description>
+//class function Person(sLastName, sFirstName, iAge) { this.lastName = sLastName; this.firstName = sFirstName; this.age = iAge; this.phoneNumbers = new Array(); } //method Person.prototype.showFullName = function() { alert(this.lastName + &amp;#34; &amp;#34; + this.firstName); }; //instances var oPerson1 = new Person(&amp;#34;Lacava&amp;#34;, &amp;#34;Alessandro&amp;#34;, 30); var oPerson2 = new Person(&amp;#34;Brown&amp;#34;, &amp;#34;John&amp;#34;, 50); oPerson1.phoneNumbers.push(&amp;#34;1234567&amp;#34;); oPerson2.phoneNumbers.push(&amp;#34;7654321&amp;#34;); oPerson1.</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@ Put the following JavaScript code between your &amp;lt;head&amp;gt;&amp;lt;/head
       
       <guid>/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</guid>
       <description>Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
- // The following function creates an XMLHttpRequest object function createHttpRequest() {  if (typeof XMLHttpRequest != &amp;#34;undefined&amp;#34;) //NOT IE {  return new XMLHttpRequest();  }  else if (window.</description>
+// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &amp;#34;undefined&amp;#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &amp;#34;MSXML2.</description>
     </item>
     
     <item>
@@ -136,8 +136,8 @@ Put the following JavaScript code between your &amp;lt;head&amp;gt;&amp;lt;/head
       
       <guid>/blog/the-function-class-in-javascript/</guid>
       <description>Most programmers know how to define and use a function in JavaScript. For example the following function displays an alert containing the string passed in as a parameter:
- function displayAlert(sText) {  alert(sText); } // Then you call it this way displayAlert(&amp;#34;Hello World!&amp;#34;); How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
- var displayAlert = new Function(&amp;#34;sText&amp;#34;, &amp;#34;alert(sText);&amp;#34;); //.</description>
+function displayAlert(sText) { alert(sText); } // Then you call it this way displayAlert(&amp;#34;Hello World!&amp;#34;); How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
+var displayAlert = new Function(&amp;#34;sText&amp;#34;, &amp;#34;alert(sText);&amp;#34;); //.</description>
     </item>
     
     <item>
@@ -147,7 +147,7 @@ Put the following JavaScript code between your &amp;lt;head&amp;gt;&amp;lt;/head
       
       <guid>/blog/using-javascript-to-detect-the-key-pressed/</guid>
       <description>Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on. For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of code you can use&amp;ndash;of course adapting it to your needs.
- function keyPressed(e){  var code;  if(window.event){ //IE  code = e.keyCode;  }  else{ //other browsers  code = e.</description>
+function keyPressed(e){ var code; if(window.event){ //IE code = e.keyCode; } else{ //other browsers code = e.which; } //check, for example, if the Enter key was pressed (code 13) if(code == 13){ //Enter key pressed } else{ //Another key pressed } } Note: keyCode is used by Internet Explorer while which is used by the other browsers.</description>
     </item>
     
   </channel>

@@ -14,7 +14,7 @@
       
       <guid>/blog/sorting-an-array-of-objects-with-the-sortby-method/</guid>
       <description>Here is an example of how easy it is to sort an array of objects using the Enumerable.sortBy method of the Prototype framework:
- var obj1 = {  lastName : &amp;#34;Lacava&amp;#34;,  firstName : &amp;#34;Alessandro&amp;#34; };  var obj2 = {  lastName : &amp;#34;Brown&amp;#34;,  firstName : &amp;#34;John&amp;#34; };  var obj3 = {  lastName : &amp;#34;Simpson&amp;#34;,  firstName : &amp;#34;Bart&amp;#34; };  var arr = [obj1, obj2, obj3];  //order by last name var sorted = arr.</description>
+var obj1 = { lastName : &amp;#34;Lacava&amp;#34;, firstName : &amp;#34;Alessandro&amp;#34; }; var obj2 = { lastName : &amp;#34;Brown&amp;#34;, firstName : &amp;#34;John&amp;#34; }; var obj3 = { lastName : &amp;#34;Simpson&amp;#34;, firstName : &amp;#34;Bart&amp;#34; }; var arr = [obj1, obj2, obj3]; //order by last name var sorted = arr.sortBy(function(obj) { return obj.</description>
     </item>
     
   </channel>

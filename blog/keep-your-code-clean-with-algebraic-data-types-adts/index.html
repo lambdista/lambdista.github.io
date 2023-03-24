@@ -11,18 +11,17 @@
 <meta property="og:description" content="Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded." />
+final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/keep-your-code-clean-with-algebraic-data-types-adts/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-09-14T14:27:23+02:00" />
 <meta property="article:modified_time" content="2016-09-14T14:27:23+02:00" />
 
-
 		<meta itemprop="name" content="Keep your code clean with algebraic data types (ADTs)">
 <meta itemprop="description" content="Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded."><meta itemprop="datePublished" content="2016-09-14T14:27:23+02:00" />
+final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded."><meta itemprop="datePublished" content="2016-09-14T14:27:23+02:00" />
 <meta itemprop="dateModified" content="2016-09-14T14:27:23+02:00" />
 <meta itemprop="wordCount" content="287">
 <meta itemprop="keywords" content="Algebraic Data Type,ADT,Option," />
@@ -31,7 +30,7 @@ final case class Ad(  headline: String,  description1: String,  description2: St
 <meta name="twitter:description" content="Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
 This short story is another example that demonstrates how using Option is not always the best option (pun intended).
 I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad(  headline: String,  description1: String,  description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded."/>
+final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -279,10 +278,12 @@ Indeed, the ad type is encoded in the type system which is always a <em>desidera
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

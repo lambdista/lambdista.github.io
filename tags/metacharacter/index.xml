@@ -16,7 +16,7 @@
       <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*+.
 If you want to treat them as ordinary characters you have two options:
- Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E  Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
+Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
     </item>
     
   </channel>

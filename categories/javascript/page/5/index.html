@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/javascript/" />
 
-
 		<meta itemprop="name" content="JavaScript">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
 		<meta name="twitter:card" content="summary"/>
@@ -110,8 +109,8 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Most programmers know how to define and use a function in JavaScript. For example the following function displays an alert containing the string passed in as a parameter:
- function displayAlert(sText) {  alert(sText); } // Then you call it this way displayAlert(&#34;Hello World!&#34;); How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
- var displayAlert = new Function(&#34;sText&#34;, &#34;alert(sText);&#34;); //.
+function displayAlert(sText) { alert(sText); } // Then you call it this way displayAlert(&#34;Hello World!&#34;); How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
+var displayAlert = new Function(&#34;sText&#34;, &#34;alert(sText);&#34;); //.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -128,7 +127,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on. For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of code you can use&ndash;of course adapting it to your needs.
- function keyPressed(e){  var code;  if(window.event){ //IE  code = e.keyCode;  }  else{ //other browsers  code = e.
+function keyPressed(e){ var code; if(window.event){ //IE code = e.keyCode; } else{ //other browsers code = e.which; } //check, for example, if the Enter key was pressed (code 13) if(code == 13){ //Enter key pressed } else{ //Another key pressed } } Note: keyCode is used by Internet Explorer while which is used by the other browsers.
 	</div>
 </article>
 </main>
@@ -192,10 +191,12 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/oracle/" />
 
-
 		<meta itemprop="name" content="Oracle">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
 		<meta name="twitter:card" content="summary"/>
@@ -126,7 +125,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the EXECUTE IMMEDIATE statement. Here are three examples of how you can take advantage of this great statement.
- sql_select := &#39;SELECT * FROM your_table WHERE field1 = :1&#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.
+sql_select := &#39;SELECT * FROM your_table WHERE field1 = :1&#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -143,9 +142,9 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Here are some snippets of code showing how to accomplish this:
- CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
+CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&rsquo;s insert one row in the table.
- INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML.
+INSERT INTO SampleTable VALUES (1, XMLType(&#39;XMLString&#39;)) Where you must replace XMLString with any string representing XML.
 	</div>
 </article>
 </main>
@@ -209,10 +208,12 @@ Now let&rsquo;s insert one row in the table.
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

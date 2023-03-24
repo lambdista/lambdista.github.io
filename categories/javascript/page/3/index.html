@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/javascript/" />
 
-
 		<meta itemprop="name" content="JavaScript">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
 		<meta name="twitter:card" content="summary"/>
@@ -110,7 +109,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Here is an example of how easy it is to sort an array of objects using the Enumerable.sortBy method of the Prototype framework:
- var obj1 = {  lastName : &#34;Lacava&#34;,  firstName : &#34;Alessandro&#34; };  var obj2 = {  lastName : &#34;Brown&#34;,  firstName : &#34;John&#34; };  var obj3 = {  lastName : &#34;Simpson&#34;,  firstName : &#34;Bart&#34; };  var arr = [obj1, obj2, obj3];  //order by last name var sorted = arr.
+var obj1 = { lastName : &#34;Lacava&#34;, firstName : &#34;Alessandro&#34; }; var obj2 = { lastName : &#34;Brown&#34;, firstName : &#34;John&#34; }; var obj3 = { lastName : &#34;Simpson&#34;, firstName : &#34;Bart&#34; }; var arr = [obj1, obj2, obj3]; //order by last name var sorted = arr.sortBy(function(obj) { return obj.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -127,7 +126,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Actually, there is no function you can call to include a JavaScript file within another one. This is the bad news. The good news is that you can use a trick to accomplish this task. Suppose you have two JavaScript files, say file1.js and file2.js. You want to include file1.js within file2.js because you want to use file1&rsquo;s functions. Here is the code you can use:
- //this is file2.js document.
+//this is file2.js document.write(&#34;&lt;script src=&#39;file1.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -145,7 +144,7 @@ if (!doNotTrack) {
 	<div class="content list__excerpt post__content clearfix">
 		This is an example of how you can show/hide an HTML form element depending on a combo box choice.
 Put the following JavaScript code between your &lt;head&gt;&lt;/head&gt; section (or within a .js file if you prefer).
- &lt;script language=&#34;javascript&#34; type=&#34;text/javascript&#34;&gt;  function hide() {  var text = document.formName.textBox;  if(document.formName.combo.value == &#34;hide&#34;) {  text.style.visibility = &#34;hidden&#34;;  }  else {  text.style.visibility = &#34;visible&#34;;  }  } &lt;/script&gt; The following snippet of code instead is the HTML code to use to call the hide function.
+&lt;script language=&#34;javascript&#34; type=&#34;text/javascript&#34;&gt; function hide() { var text = document.formName.textBox; if(document.formName.combo.value == &#34;hide&#34;) { text.style.visibility = &#34;hidden&#34;; } else { text.style.visibility = &#34;visible&#34;; } } &lt;/script&gt; The following snippet of code instead is the HTML code to use to call the hide function.
 	</div>
 </article>
 </main>
@@ -210,10 +209,12 @@ Put the following JavaScript code between your &lt;head&gt;&lt;/head&gt; section
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

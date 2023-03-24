@@ -10,17 +10,16 @@
 		<meta property="og:title" content="How to select any character across multiple lines in Java" />
 <meta property="og:description" content="You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
- import java.util.regex;  // ." />
+import java.util.regex; // ... other code // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/how-to-select-any-character-across-multiple-lines-in-java/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2006-10-10T08:52:06+00:00" />
 <meta property="article:modified_time" content="2006-10-10T08:52:06+00:00" />
 
-
 		<meta itemprop="name" content="How to select any character across multiple lines in Java">
 <meta itemprop="description" content="You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
- import java.util.regex;  // ."><meta itemprop="datePublished" content="2006-10-10T08:52:06+00:00" />
+import java.util.regex; // ... other code // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern."><meta itemprop="datePublished" content="2006-10-10T08:52:06+00:00" />
 <meta itemprop="dateModified" content="2006-10-10T08:52:06+00:00" />
 <meta itemprop="wordCount" content="108">
 <meta itemprop="keywords" content="RegExp," />
@@ -28,7 +27,7 @@ Example: The following method strips the multiline comments (those between /* an
 <meta name="twitter:title" content="How to select any character across multiple lines in Java"/>
 <meta name="twitter:description" content="You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
- import java.util.regex;  // ."/>
+import java.util.regex; // ... other code // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -239,10 +238,12 @@ returns the resulting string:</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

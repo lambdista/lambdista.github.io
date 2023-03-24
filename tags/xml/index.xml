@@ -14,9 +14,9 @@
       
       <guid>/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
       <description>Here are some snippets of code showing how to accomplish this:
- CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
+CREATE TABLE SampleTable (id number primary key, person XMLType) This first example creates a table with only two columns: id and person. The first is the PK of the table and the second is of XMLType type. The latter is going to contain our XML data.
 Now let&amp;rsquo;s insert one row in the table.
- INSERT INTO SampleTable VALUES (1, XMLType(&amp;#39;XMLString&amp;#39;)) Where you must replace XMLString with any string representing XML.</description>
+INSERT INTO SampleTable VALUES (1, XMLType(&amp;#39;XMLString&amp;#39;)) Where you must replace XMLString with any string representing XML.</description>
     </item>
     
   </channel>

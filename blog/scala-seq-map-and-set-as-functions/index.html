@@ -9,23 +9,22 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="Scala: Seq, Map and Set as functions" />
 <meta property="og:description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
- scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala." />
+scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/scala-seq-map-and-set-as-functions/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-10-23T10:24:00+02:00" />
 <meta property="article:modified_time" content="2015-10-23T10:24:00+02:00" />
 
-
 		<meta itemprop="name" content="Scala: Seq, Map and Set as functions">
 <meta itemprop="description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
- scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala."><meta itemprop="datePublished" content="2015-10-23T10:24:00+02:00" />
+scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala."><meta itemprop="datePublished" content="2015-10-23T10:24:00+02:00" />
 <meta itemprop="dateModified" content="2015-10-23T10:24:00+02:00" />
 <meta itemprop="wordCount" content="979">
 <meta itemprop="keywords" content="Collections,List,Vector,Seq,Map,Set,Function,Partial Function," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scala: Seq, Map and Set as functions"/>
 <meta name="twitter:description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
- scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala."/>
+scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -384,10 +383,12 @@ function. This could help to solve your problem without using pattern matching o
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

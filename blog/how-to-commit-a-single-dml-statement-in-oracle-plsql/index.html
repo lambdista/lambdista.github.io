@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2007-05-24T12:52:20+00:00" />
 <meta property="article:modified_time" content="2007-05-24T12:52:20+00:00" />
 
-
 		<meta itemprop="name" content="How to commit a single DML statement in Oracle (PL/SQL)">
 <meta itemprop="description" content="Sometimes you might need to commit a single INSERT, UPDATE or DELETE statement and not the whole main transaction. In such a case you can use an AUTONOMOUS TRANSACTION which is a feature available since Oracle 8i. The trick is to encapsulate the statement in a procedure and use the pragma AUTONOMOUS_TRANSACTION. Here is an example, suppose you have a table, your_table, which has just one column of type NUMBER and you want to insert the value 1, irrespective of the state of the main transaction:"><meta itemprop="datePublished" content="2007-05-24T12:52:20+00:00" />
 <meta itemprop="dateModified" content="2007-05-24T12:52:20+00:00" />
@@ -239,10 +238,12 @@ In such a case you would write a procedure using the pragma <code>AUTONOMOUS_TRA
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

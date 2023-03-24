@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/categories/java/" />
 
-
 		<meta itemprop="name" content="Java">
 <meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
 		<meta name="twitter:card" content="summary"/>
@@ -111,7 +110,7 @@ if (!doNotTrack) {
 	<div class="content list__excerpt post__content clearfix">
 		You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
- import java.util.regex;  // .
+import java.util.regex; // ... other code // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -129,7 +128,7 @@ Example: The following method strips the multiline comments (those between /* an
 	<div class="content list__excerpt post__content clearfix">
 		It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
- public static void main(String[] args) {  int a = 0;  increment(a);  System.
+public static void main(String[] args) { int a = 0; increment(a); System.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -146,7 +145,7 @@ When a parameter is passed by value, an actual copy of it is really passed so th
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:
- int a = 0; a = a++; System.out.println(a); What does it print?
+int a = 0; a = a++; System.out.println(a); What does it print?
 More than 50% of the programmers will answer 1, some of the remaining will say &ldquo;I don&rsquo;t know&rdquo; and the others will say 0. Well &ldquo;the others&rdquo; are right!
 Provided that such a code MUST NEVER BE WRITTEN, let&rsquo;s try to understand, for academic purposes, why it prints 0.
 	</div>
@@ -213,10 +212,12 @@ Provided that such a code MUST NEVER BE WRITTEN, let&rsquo;s try to understand, 
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

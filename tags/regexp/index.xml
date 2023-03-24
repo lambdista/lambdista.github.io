@@ -14,7 +14,7 @@
       
       <guid>/blog/capturing-groups-in-regular-expressions-regex-in-javascript/</guid>
       <description>There are whole books about regular expressions so this post shouldn&amp;rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
- var str = &amp;#34;https://www.alessandrolacava.com/?code=ALE69&amp;#34;; var regex = /code=(w+)&amp;amp;?/; var results = regex.exec(str); if(!results){  alert(&amp;#34;no match&amp;#34;); } else{  // first group  alert(results[1]); } The previous code extracts the string that follows the code= part of str.</description>
+var str = &amp;#34;https://www.alessandrolacava.com/?code=ALE69&amp;#34;; var regex = /code=(w+)&amp;amp;?/; var results = regex.exec(str); if(!results){ alert(&amp;#34;no match&amp;#34;); } else{ // first group alert(results[1]); } The previous code extracts the string that follows the code= part of str.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <guid>/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
       <description>You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
 Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
- import java.util.regex;  // .</description>
+import java.util.regex; // ... other code // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ Example: The following method strips the multiline comments (those between /* an
       <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*+.
 If you want to treat them as ordinary characters you have two options:
- Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E  Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
+Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
     </item>
     
   </channel>

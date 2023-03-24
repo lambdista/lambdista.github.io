@@ -9,23 +9,22 @@
 	<meta name="description" content="">
 		<meta property="og:title" content="Creating an instance of the object used to make AJAX calls" />
 <meta property="og:description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
- // The following function creates an XMLHttpRequest object function createHttpRequest() {  if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE {  return new XMLHttpRequest();  }  else if (window." />
+// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2006-07-11T15:54:40+00:00" />
 <meta property="article:modified_time" content="2006-07-11T15:54:40+00:00" />
 
-
 		<meta itemprop="name" content="Creating an instance of the object used to make AJAX calls">
 <meta itemprop="description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
- // The following function creates an XMLHttpRequest object function createHttpRequest() {  if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE {  return new XMLHttpRequest();  }  else if (window."><meta itemprop="datePublished" content="2006-07-11T15:54:40+00:00" />
+// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2."><meta itemprop="datePublished" content="2006-07-11T15:54:40+00:00" />
 <meta itemprop="dateModified" content="2006-07-11T15:54:40+00:00" />
 <meta itemprop="wordCount" content="260">
 <meta itemprop="keywords" content="AJAX," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creating an instance of the object used to make AJAX calls"/>
 <meta name="twitter:description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
- // The following function creates an XMLHttpRequest object function createHttpRequest() {  if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE {  return new XMLHttpRequest();  }  else if (window."/>
+// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2."/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -256,10 +255,12 @@ case&ndash;provided that at least one is available!</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&customize=1&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>
