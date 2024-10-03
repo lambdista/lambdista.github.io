@@ -15,6 +15,7 @@
   <meta property="og:description" content="When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*&#43;.
 If you want to treat them as ordinary characters you have two options:
+<<<<<<< HEAD
 Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: “quotes all characters until E”, while E ends the quotes.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -23,12 +24,20 @@ Escape the metacharacter with a backslash, Enclose the whole string that contain
     <meta property="article:modified_time" content="2006-07-12T13:24:03+00:00">
     <meta property="article:tag" content="RegExp">
     <meta property="article:tag" content="Metacharacter">
+=======
+Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &ldquo;quotes all characters until E&rdquo;, while E ends the quotes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2006-07-12T13:24:03+00:00" />
+<meta property="article:modified_time" content="2006-07-12T13:24:03+00:00" />
+>>>>>>> origin/master
 
 	
   <meta itemprop="name" content="How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)">
   <meta itemprop="description" content="When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
 ([{^$|)?*&#43;.
 If you want to treat them as ordinary characters you have two options:
+<<<<<<< HEAD
 Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: “quotes all characters until E”, while E ends the quotes.">
   <meta itemprop="datePublished" content="2006-07-12T13:24:03+00:00">
   <meta itemprop="dateModified" content="2006-07-12T13:24:03+00:00">
@@ -41,6 +50,18 @@ Escape the metacharacter with a backslash, Enclose the whole string that contain
 ([{^$|)?*&#43;.
 If you want to treat them as ordinary characters you have two options:
 Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: “quotes all characters until E”, while E ends the quotes.">
+=======
+Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &ldquo;quotes all characters until E&rdquo;, while E ends the quotes."><meta itemprop="datePublished" content="2006-07-12T13:24:03+00:00" />
+<meta itemprop="dateModified" content="2006-07-12T13:24:03+00:00" />
+<meta itemprop="wordCount" content="276">
+<meta itemprop="keywords" content="RegExp,Metacharacter," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)"/>
+<meta name="twitter:description" content="When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
+([{^$|)?*&#43;.
+If you want to treat them as ordinary characters you have two options:
+Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &ldquo;quotes all characters until E&rdquo;, while E ends the quotes."/>
+>>>>>>> origin/master
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -125,9 +146,15 @@ Escape the metacharacter with a backslash, Enclose the whole string that contain
 <p><code>Q</code> means: &ldquo;quotes all characters until E&rdquo;, while <code>E</code> ends the quotes.</p>
 <p>The following example will hopefully to clarify the subject:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> 
+<<<<<<< HEAD
 </span></span><span style="display:flex;"><span>String test <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;I want to replace the . with the ,&#34;</span>;
 </span></span><span style="display:flex;"><span>String replaced <span style="color:#f92672">=</span> test.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#e6db74">&#34;,&#34;</span>);
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(replaced);</span></span></code></pre></div>
+=======
+</span></span><span style="display:flex;"><span>String test <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;I want to replace the . with the ,&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>String replaced <span style="color:#f92672">=</span> test<span style="color:#f92672">.</span><span style="color:#a6e22e">replaceAll</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;.&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>replaced<span style="color:#f92672">);</span></span></span></code></pre></div>
+>>>>>>> origin/master
 <p>What do you expect the above method will do? Do you think the following string will be displayed?</p>
 <p><code>I want to replace the , with the ,</code></p>
 <p>If yes then you might be surprised to find out that what you really get is instead:</p>
@@ -139,8 +166,13 @@ Either you escape the . with a  or enclose it within <code>Q</code> and <code>E<
 metacharacter itself, you need to escape it too. :-)</p>
 <p>Translating this in Java you have:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> 
+<<<<<<< HEAD
 </span></span><span style="display:flex;"><span>test.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;\.&#34;</span>, <span style="color:#e6db74">&#34;,&#34;</span>);
 </span></span><span style="display:flex;"><span>test.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;\Q.\E&#34;</span>, <span style="color:#e6db74">&#34;,&#34;</span>);</span></span></code></pre></div>
+=======
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">.</span><span style="color:#a6e22e">replaceAll</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\.&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">.</span><span style="color:#a6e22e">replaceAll</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\Q.\E&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">);</span></span></span></code></pre></div>
+>>>>>>> origin/master
 <p>I prefer to use the first method when the metacharacter is just one. However, when I have more metacharacters or
 I don&rsquo;t know at compile time what my string is going to be, I use the second method.</p>
 
@@ -181,7 +213,11 @@ I don&rsquo;t know at compile time what my string is going to be, I use the seco
 
 <section class="comments">
 	<div id="disqus_thread"></div>
+<<<<<<< HEAD
 <script>
+=======
+<script type="application/javascript">
+>>>>>>> origin/master
     window.disqus_config = function () {
     
     
@@ -256,7 +292,11 @@ I don&rsquo;t know at compile time what my string is going to be, I use the seco
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
+<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
+=======
+			&copy; 2023 Alessandro Lacava.
+>>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

@@ -6,14 +6,29 @@
     <description>Recent content in EasyPHP on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 30 Jan 2009 09:46:05 +0000</lastBuildDate>
     <atom:link href="/tags/easyphp/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Fri, 30 Jan 2009 09:46:05 +0000</lastBuildDate><atom:link href="/tags/easyphp/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Object not found | EasyPHP | MySQL | phpMyAdmin</title>
       <link>/blog/object-not-found-easyphp-mysql-phpmyadmin/</link>
       <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
       <guid>/blog/object-not-found-easyphp-mysql-phpmyadmin/</guid>
+<<<<<<< HEAD
       <description>&lt;p&gt;After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Object not found!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This might be due to the fact that it tries the following URL:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;code&gt;https://127.0.0.1/mysql/&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Try this one instead:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;code&gt;https://127.0.0.1/home/mysql/&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;If it works then you can work it out by adding the following line to the httpd.conf file of Apache (you can find it under the %EASYPHP_HOME%/apache/conf path, where %EASYPHP_HOME% is the home directory of your EasyPHP installation). Open the file with a text editor and look up the following string: &lt;strong&gt;Alias /home/mysql&lt;/strong&gt;&lt;/p&gt;</description>
+=======
+      <description>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:
+Object not found!
+The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.
+This might be due to the fact that it tries the following URL:
+https://127.0.0.1/mysql/
+Try this one instead:
+https://127.0.0.1/home/mysql/
+If it works then you can work it out by adding the following line to the httpd.</description>
+>>>>>>> origin/master
     </item>
   </channel>
 </rss>

@@ -6,8 +6,12 @@
     <description>Recent content in For Expression on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     <atom:link href="/tags/for-expression/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate><atom:link href="/tags/for-expression/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Desugaring for comprehensions (AKA for expressions)</title>
       <link>/blog/desugaring-for-comprehensions-aka-for-expressions/</link>

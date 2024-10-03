@@ -8,16 +8,15 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="Blogs" />
-<meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
+<meta property="og:description" content="Designing and Developing Software" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/blog/" />
-<meta property="og:updated_time" content="2020-05-28T11:26:32+02:00" />
 
 		<meta itemprop="name" content="Blogs">
-<meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
+<meta itemprop="description" content="Designing and Developing Software">
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Blogs"/>
-<meta name="twitter:description" content="Designing and Developing Software. Mainly FP and Type Systems."/>
+<meta name="twitter:description" content="Designing and Developing Software"/>
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -47,7 +46,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -56,7 +55,7 @@ if (!doNotTrack) {
 		<span class="menu__btn-title" tabindex="-1">Menu</span>
 	</button>
 	<ul class="menu__list">
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="/blog/">
 				
 				<span class="menu__text">Blog</span>
@@ -80,7 +79,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -110,7 +109,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
-// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE {  return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE {  var sVersions = [ &#34;MSXML2.
+// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2.
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -143,7 +142,7 @@ if (!doNotTrack) {
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Most programmers know how to define and use a function in JavaScript. For example the following function displays an alert containing the string passed in as a parameter:
-function displayAlert(sText) { alert(sText); } // Then you call it this way displayAlert(&#34;Hello World!&#34;);  How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
+function displayAlert(sText) { alert(sText); } // Then you call it this way displayAlert(&#34;Hello World!&#34;); How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
 var displayAlert = new Function(&#34;sText&#34;, &#34;alert(sText);&#34;); //.
 	</div>
 </article>
@@ -209,10 +208,12 @@ var displayAlert = new Function(&#34;sText&#34;, &#34;alert(sText);&#34;); //.
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2023 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>

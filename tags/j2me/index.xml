@@ -6,8 +6,12 @@
     <description>Recent content in J2ME on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Tue, 20 Jun 2006 20:53:38 +0000</lastBuildDate>
     <atom:link href="/tags/j2me/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Tue, 20 Jun 2006 20:53:38 +0000</lastBuildDate><atom:link href="/tags/j2me/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Using proguard obfuscator through the Wireless Toolkit</title>
       <link>/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>

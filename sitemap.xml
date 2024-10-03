@@ -11,6 +11,12 @@
     <loc>/about/</loc>
   </url><url>
     <loc>/</loc>
+<<<<<<< HEAD
+=======
+    <lastmod>2020-05-28T11:26:32+02:00</lastmod>
+  </url><url>
+    <loc>/blog/</loc>
+>>>>>>> origin/master
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
     <loc>/categories/</loc>

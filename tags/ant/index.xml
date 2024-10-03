@@ -6,8 +6,12 @@
     <description>Recent content in Ant on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Mon, 04 Jun 2007 10:43:49 +0000</lastBuildDate>
     <atom:link href="/tags/ant/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Mon, 04 Jun 2007 10:43:49 +0000</lastBuildDate><atom:link href="/tags/ant/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>How to exclude subversion hidden directories (.svn) using Ant</title>
       <link>/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</link>

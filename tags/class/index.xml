@@ -6,8 +6,12 @@
     <description>Recent content in Class on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Mon, 24 Jul 2006 16:28:27 +0000</lastBuildDate>
     <atom:link href="/tags/class/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Mon, 24 Jul 2006 16:28:27 +0000</lastBuildDate><atom:link href="/tags/class/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Creating a Class definition in JavaScript</title>
       <link>/blog/creating-class-definition-in-javascript/</link>

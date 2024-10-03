@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>ResultSet - Alessandro Lacava</title>
+<<<<<<< HEAD
 	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 	<meta name="description"
 		content="">
@@ -25,6 +26,20 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="ResultSet">
   <meta name="twitter:description" content="Designing and Developing Software">
+=======
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="ResultSet" />
+<meta property="og:description" content="Designing and Developing Software" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/resultset/" />
+
+		<meta itemprop="name" content="ResultSet">
+<meta itemprop="description" content="Designing and Developing Software">
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ResultSet"/>
+<meta name="twitter:description" content="Designing and Developing Software"/>
+>>>>>>> origin/master
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -108,6 +123,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
+<<<<<<< HEAD
 		<p>In Java it is possible to retrieve the number of columns of a <code>ResultSet</code> dinamically, thanks to the <code>ResultSetMetaData</code>
 class. Here&rsquo;s an example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>   
@@ -120,6 +136,10 @@ class. Here&rsquo;s an example:</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numCols <span style="color:#f92672">=</span> rsmd.<span style="color:#a6e22e">getColumnCount</span>();
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Number of columns in your_table: &#34;</span> <span style="color:#f92672">+</span> numCols);</span></span></code></pre></div>
 <p>The previous code retrieves and displays the number of columns of <code>your_table</code>.</p>
+=======
+		In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&rsquo;s an example:
+// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&#34;SELECT * FROM your_table&#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&#34;Number of columns in your_table: &#34; + numCols); The previous code retrieves and displays the number of columns of your_table.
+>>>>>>> origin/master
 	</div>
 </article>
 </main>
@@ -179,7 +199,11 @@ class. Here&rsquo;s an example:</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
+<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
+=======
+			&copy; 2023 Alessandro Lacava.
+>>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

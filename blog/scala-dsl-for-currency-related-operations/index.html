@@ -14,6 +14,7 @@
   <meta property="og:title" content="Scala DSL for currency-related operations">
   <meta property="og:description" content="A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
 This Domain-Specific Language (DSL) lets you perform operations among different currencies, by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.
+<<<<<<< HEAD
 Usage Example Here’s a simple usage example:
 import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&gt; 1.270, (EUR, USD) -&gt; 1.268, (GBP, USD) -&gt; 1.611 ) implicit val converter = Converter(conversion) val sumAndConversion1 = 100.001(USD) &#43; 200(EUR) to GBP println(s&#34;sumAndConversion1: $sumAndConversion1&#34;) val sumAndConversion2: Money = 100(USD) &#43; 210.4(EUR) to EUR println(s&#34;sumAndConversion2: $sumAndConversion2&#34;) val sum = 100.001(USD) &#43; 200(EUR) val simpleConversion = sum(GBP) println(s&#34;simpleConversion: $simpleConversion&#34;) val sumWithSimpleNumber = 100(USD) &#43; 23.560 println(s&#34;sumWithSimpleNumber: $sumWithSimpleNumber&#34;) val multiplicationWithSimpleNumber = 100(USD) * 23 println(s&#34;multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber&#34;) val usd = Currency(&#34;USD&#34;) val multiplication = 100(usd) * 23(EUR) println(s&#34;multiplication: $multiplication&#34;) val divisionWithSimpleNumber = 100(USD) / 23 println(s&#34;divisionWithSimpleNumber: $divisionWithSimpleNumber&#34;) val comparison = 100(USD) &gt; 90(EUR) println(s&#34;100 USD &gt; 90 EUR? $comparison&#34;) } } As you can see the client code just needs two simple imports and an implicit value of type Converter in order to use the DSL. The operations shown in the previous code are only a few among the available ones. Have a look at the Money class for a complete coverage.">
   <meta property="og:locale" content="en_us">
@@ -23,11 +24,20 @@ import com.lambdista.money._ import com.lambdista.money.Currency._ object Main {
     <meta property="article:modified_time" content="2015-02-20T15:09:06+01:00">
     <meta property="article:tag" content="DSL">
     <meta property="article:tag" content="Implicit">
+=======
+Usage Example Here&rsquo;s a simple usage example:
+import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&gt; 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/scala-dsl-for-currency-related-operations/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-02-20T15:09:06+01:00" />
+<meta property="article:modified_time" content="2015-02-20T15:09:06+01:00" />
+>>>>>>> origin/master
 
 	
   <meta itemprop="name" content="Scala DSL for currency-related operations">
   <meta itemprop="description" content="A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
 This Domain-Specific Language (DSL) lets you perform operations among different currencies, by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.
+<<<<<<< HEAD
 Usage Example Here’s a simple usage example:
 import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&gt; 1.270, (EUR, USD) -&gt; 1.268, (GBP, USD) -&gt; 1.611 ) implicit val converter = Converter(conversion) val sumAndConversion1 = 100.001(USD) &#43; 200(EUR) to GBP println(s&#34;sumAndConversion1: $sumAndConversion1&#34;) val sumAndConversion2: Money = 100(USD) &#43; 210.4(EUR) to EUR println(s&#34;sumAndConversion2: $sumAndConversion2&#34;) val sum = 100.001(USD) &#43; 200(EUR) val simpleConversion = sum(GBP) println(s&#34;simpleConversion: $simpleConversion&#34;) val sumWithSimpleNumber = 100(USD) &#43; 23.560 println(s&#34;sumWithSimpleNumber: $sumWithSimpleNumber&#34;) val multiplicationWithSimpleNumber = 100(USD) * 23 println(s&#34;multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber&#34;) val usd = Currency(&#34;USD&#34;) val multiplication = 100(usd) * 23(EUR) println(s&#34;multiplication: $multiplication&#34;) val divisionWithSimpleNumber = 100(USD) / 23 println(s&#34;divisionWithSimpleNumber: $divisionWithSimpleNumber&#34;) val comparison = 100(USD) &gt; 90(EUR) println(s&#34;100 USD &gt; 90 EUR? $comparison&#34;) } } As you can see the client code just needs two simple imports and an implicit value of type Converter in order to use the DSL. The operations shown in the previous code are only a few among the available ones. Have a look at the Money class for a complete coverage.">
   <meta itemprop="datePublished" content="2015-02-20T15:09:06+01:00">
@@ -38,6 +48,16 @@ import com.lambdista.money._ import com.lambdista.money.Currency._ object Main {
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Scala DSL for currency-related operations">
   <meta name="twitter:description" content="A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
+=======
+Usage Example Here&rsquo;s a simple usage example:
+import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&gt; 1."><meta itemprop="datePublished" content="2015-02-20T15:09:06+01:00" />
+<meta itemprop="dateModified" content="2015-02-20T15:09:06+01:00" />
+<meta itemprop="wordCount" content="232">
+<meta itemprop="keywords" content="DSL,Implicit," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scala DSL for currency-related operations"/>
+<meta name="twitter:description" content="A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
+>>>>>>> origin/master
 This Domain-Specific Language (DSL) lets you perform operations among different currencies, by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.
 Usage Example Here’s a simple usage example:
 import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&gt; 1.270, (EUR, USD) -&gt; 1.268, (GBP, USD) -&gt; 1.611 ) implicit val converter = Converter(conversion) val sumAndConversion1 = 100.001(USD) &#43; 200(EUR) to GBP println(s&#34;sumAndConversion1: $sumAndConversion1&#34;) val sumAndConversion2: Money = 100(USD) &#43; 210.4(EUR) to EUR println(s&#34;sumAndConversion2: $sumAndConversion2&#34;) val sum = 100.001(USD) &#43; 200(EUR) val simpleConversion = sum(GBP) println(s&#34;simpleConversion: $simpleConversion&#34;) val sumWithSimpleNumber = 100(USD) &#43; 23.560 println(s&#34;sumWithSimpleNumber: $sumWithSimpleNumber&#34;) val multiplicationWithSimpleNumber = 100(USD) * 23 println(s&#34;multiplicationWithSimpleNumber: $multiplicationWithSimpleNumber&#34;) val usd = Currency(&#34;USD&#34;) val multiplication = 100(usd) * 23(EUR) println(s&#34;multiplication: $multiplication&#34;) val divisionWithSimpleNumber = 100(USD) / 23 println(s&#34;divisionWithSimpleNumber: $divisionWithSimpleNumber&#34;) val comparison = 100(USD) &gt; 90(EUR) println(s&#34;100 USD &gt; 90 EUR? $comparison&#34;) } } As you can see the client code just needs two simple imports and an implicit value of type Converter in order to use the DSL. The operations shown in the previous code are only a few among the available ones. Have a look at the Money class for a complete coverage.">
@@ -208,7 +228,11 @@ Have a look at the <code>Money</code> class for a complete coverage.</p>
 
 <section class="comments">
 	<div id="disqus_thread"></div>
+<<<<<<< HEAD
 <script>
+=======
+<script type="application/javascript">
+>>>>>>> origin/master
     window.disqus_config = function () {
     
     
@@ -283,7 +307,11 @@ Have a look at the <code>Money</code> class for a complete coverage.</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
+<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
+=======
+			&copy; 2023 Alessandro Lacava.
+>>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

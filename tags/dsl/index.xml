@@ -6,8 +6,12 @@
     <description>Recent content in DSL on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 20 Feb 2015 15:09:06 +0100</lastBuildDate>
     <atom:link href="/tags/dsl/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Fri, 20 Feb 2015 15:09:06 +0100</lastBuildDate><atom:link href="/tags/dsl/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Scala DSL for currency-related operations</title>
       <link>/blog/scala-dsl-for-currency-related-operations/</link>

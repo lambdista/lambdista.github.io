@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Scala: Seq, Map and Set as functions - Alessandro Lacava</title>
+<<<<<<< HEAD
 	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 	<meta name="description"
 		content="">
@@ -39,6 +40,28 @@ scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt
   <meta name="twitter:title" content="Scala: Seq, Map and Set as functions">
   <meta name="twitter:description" content="Yesterday my mate asked me: “I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?”. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: “No, you don’t need pattern matching, you just need this”:
 scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala.collection.immutable.Map[String,Int] = Map(a -&gt; 1, b -&gt; 2, c -&gt; 3) scala&gt; val l = List(&#34;a&#34;, &#34;c&#34;, &#34;b&#34;) l: List[String] = List(a, c, b) scala&gt; l collect m res0: List[Int] = List(1, 3, 2) Hold on, how does it work? If you look at the definition of the collect method you’ll see it accepts a PartialFunction, instead I passed a Map to it. Well, it turns out that Map is a PartialFunction.">
+=======
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Scala: Seq, Map and Set as functions" />
+<meta property="og:description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
+scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/scala-seq-map-and-set-as-functions/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-10-23T10:24:00+02:00" />
+<meta property="article:modified_time" content="2015-10-23T10:24:00+02:00" />
+
+		<meta itemprop="name" content="Scala: Seq, Map and Set as functions">
+<meta itemprop="description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
+scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala."><meta itemprop="datePublished" content="2015-10-23T10:24:00+02:00" />
+<meta itemprop="dateModified" content="2015-10-23T10:24:00+02:00" />
+<meta itemprop="wordCount" content="979">
+<meta itemprop="keywords" content="Collections,List,Vector,Seq,Map,Set,Function,Partial Function," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scala: Seq, Map and Set as functions"/>
+<meta name="twitter:description" content="Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
+scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala."/>
+>>>>>>> origin/master
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -312,7 +335,11 @@ function. This could help to solve your problem without using pattern matching o
 
 <section class="comments">
 	<div id="disqus_thread"></div>
+<<<<<<< HEAD
 <script>
+=======
+<script type="application/javascript">
+>>>>>>> origin/master
     window.disqus_config = function () {
     
     
@@ -387,7 +414,11 @@ function. This could help to solve your problem without using pattern matching o
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
+<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
+=======
+			&copy; 2023 Alessandro Lacava.
+>>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

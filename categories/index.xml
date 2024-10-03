@@ -6,8 +6,12 @@
     <description>Recent content in Categories on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Programming</title>
       <link>/categories/programming/</link>
@@ -22,6 +26,10 @@
       <guid>/categories/scala/</guid>
       <description></description>
     </item>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/master
     <item>
       <title>Java 8</title>
       <link>/categories/java-8/</link>
@@ -57,6 +65,15 @@
       <guid>/categories/java/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Java</title>
+      <link>/categories/java/</link>
+      <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
+      
+      <guid>/categories/java/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Database</title>
       <link>/categories/database/</link>

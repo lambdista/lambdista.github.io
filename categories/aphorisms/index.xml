@@ -6,28 +6,50 @@
     <description>Recent content in Aphorisms on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 09 May 2008 13:49:38 +0000</lastBuildDate>
     <atom:link href="/categories/aphorisms/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Fri, 09 May 2008 13:49:38 +0000</lastBuildDate><atom:link href="/categories/aphorisms/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Funny long jokes and aphorisms about programming (and programmers of course)</title>
       <link>/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
       <pubDate>Fri, 09 May 2008 13:49:38 +0000</pubDate>
       <guid>/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
+<<<<<<< HEAD
       <description>&lt;h4 id=&#34;here-are-some-funny-jokes-and-aphorisms-about-computer-programmers-and-programming-in-general&#34;&gt;Here are some funny jokes and aphorisms about computer programmers and programming in general:&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A man is smoking a cigarette and blowing smoke rings into the air.  His girlfriend becomes irritated with the smoke and says, &amp;ldquo;Can&amp;rsquo;t you see the warning on the cigarette pack?  Smoking is hazardous to your health!&amp;ldquo;To which the man replies, &amp;ldquo;I am a programmer.  We don&amp;rsquo;t worry about warnings; we only worry about errors.&amp;rdquo;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A programmer is walking along a beach and finds a lamp.  He rubs the lamp, and a genie appears.  &amp;ldquo;I am the most powerful genie in the world.  I can grant you any wish, but only one wish.&amp;ldquo;The programmer pulls out a map, points to it and says, &amp;ldquo;I&amp;rsquo;d want peace in the Middle East.&amp;ldquo;The genie responds, &amp;ldquo;Gee, I don&amp;rsquo;t know.  Those people have been fighting for millennia.  I can do just about anything, but this is likely beyond my limits.&amp;ldquo;The programmer then says, &amp;ldquo;Well, I am a programmer, and my programs have lots of users.  Please make all my users satisfied with my software and let them ask for sensible changes.&amp;rdquo;&lt;/p&gt;</description>
+=======
+      <description>Here are some funny jokes and aphorisms about computer programmers and programming in general: A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says, &amp;ldquo;Can&amp;rsquo;t you see the warning on the cigarette pack? Smoking is hazardous to your health!&amp;ldquo;To which the man replies, &amp;ldquo;I am a programmer. We don&amp;rsquo;t worry about warnings; we only worry about errors.&amp;rdquo;
+A programmer is walking along a beach and finds a lamp.</description>
+>>>>>>> origin/master
     </item>
     <item>
       <title>Funny short jokes and aphorisms about programming (and programmers of course)</title>
       <link>/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
       <pubDate>Fri, 09 May 2008 13:25:27 +0000</pubDate>
       <guid>/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
+<<<<<<< HEAD
       <description>&lt;h4 id=&#34;here-are-some-funny-jokes-and-aphorisms-about-computer-programming-and-programmers-in-general&#34;&gt;Here are some funny jokes and aphorisms about computer programming and programmers in general:&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;There are only 10 types of people in the world: Those who understand binary, and those who don&amp;rsquo;t.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;It&amp;rsquo;s always a long day, 86,400 won&amp;rsquo;t fit into a short.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Why do programmers always mix up Halloween and Christmas?&#xA;Because Oct 31 equals Dec 25.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&amp;ldquo;Knock, knock.&amp;rdquo;&#xA;&amp;ldquo;Who&amp;rsquo;s there?&amp;rdquo;&#xA;very long pause&amp;hellip;&#xA;&amp;ldquo;Java.&amp;rdquo;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Programming is like sex:&#xA;One mistake and you have to support it for the rest of your life.&lt;/p&gt;</description>
+=======
+      <description>Here are some funny jokes and aphorisms about computer programming and programmers in general: There are only 10 types of people in the world: Those who understand binary, and those who don&amp;rsquo;t.
+It&amp;rsquo;s always a long day, 86,400 won&amp;rsquo;t fit into a short.
+Why do programmers always mix up Halloween and Christmas? Because Oct 31 equals Dec 25.
+&amp;ldquo;Knock, knock.&amp;rdquo; &amp;ldquo;Who&amp;rsquo;s there?&amp;rdquo; very long pause&amp;hellip; &amp;ldquo;Java.&amp;rdquo;
+Programming is like sex: One mistake and you have to support it for the rest of your life.</description>
+>>>>>>> origin/master
     </item>
     <item>
       <title>Why you shouldn&#39;t be concerned about optimization</title>
       <link>/blog/why-you-shouldnt-be-concerned-about-optimization/</link>
       <pubDate>Wed, 11 Oct 2006 16:26:34 +0000</pubDate>
       <guid>/blog/why-you-shouldnt-be-concerned-about-optimization/</guid>
+<<<<<<< HEAD
       <description>&lt;p&gt;When you were at the university or in any programming course, you&amp;ndash;like me&amp;ndash;were probably thought of the importance of&#xA;optimization. In the real world though, you should strive for writing good code&amp;ndash;possibly using bullet-proof&#xA;Design Patterns&amp;ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing,&#xA;you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot&#xA;but know:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other&#xA;single reason, including blind stupidity.&lt;br /&gt;&#xA;&lt;strong&gt;William A. Wulf&lt;/strong&gt;&lt;/p&gt;</description>
+=======
+      <description>When you were at the university or in any programming course, you&amp;ndash;like me&amp;ndash;were probably thought of the importance of optimization. In the real world though, you should strive for writing good code&amp;ndash;possibly using bullet-proof Design Patterns&amp;ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing, you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot but know:
+More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason, including blind stupidity.</description>
+>>>>>>> origin/master
     </item>
   </channel>
 </rss>

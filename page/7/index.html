@@ -2,11 +2,16 @@
 <html class="no-js" lang="en">
 
 <head>
+<<<<<<< HEAD
 	<meta name="generator" content="Hugo 0.134.3">
+=======
+	<meta name="generator" content="Hugo 0.111.3">
+>>>>>>> origin/master
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Alessandro Lacava</title>
+<<<<<<< HEAD
 	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 	<meta name="description"
 		content="Designing and Developing Software">
@@ -26,6 +31,20 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Alessandro Lacava">
   <meta name="twitter:description" content="Designing and Developing Software">
+=======
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Designing and Developing Software">
+		<meta property="og:title" content="Alessandro Lacava" />
+<meta property="og:description" content="Designing and Developing Software" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+		<meta itemprop="name" content="Alessandro Lacava">
+<meta itemprop="description" content="Designing and Developing Software">
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Alessandro Lacava"/>
+<meta name="twitter:description" content="Designing and Developing Software"/>
+>>>>>>> origin/master
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -107,6 +126,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
+<<<<<<< HEAD
 		<p>There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the
 subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be
 considered just a tip not a tutorial on RegExp. Look at the following example:</p>
@@ -122,6 +142,10 @@ considered just a tip not a tutorial on RegExp. Look at the following example:</
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">1</span>]);
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>The previous code extracts the string that follows the <code>code=</code> part of <code>str</code>. That string is captured in the first group. of the RegExp, that&rsquo;s why I use <code>results[1]</code> to display it. When you utilise groups&ndash;through the use of parenthesis ()&ndash;you can refer to them using indices, starting from 1. Indeed, at the index 0 you find the whole match. In the previous example, <code>results[0]</code> is equal to <code>code=ALE69</code></p>
+=======
+		There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
+var str = &#34;https://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){ alert(&#34;no match&#34;); } else{ // first group alert(results[1]); } The previous code extracts the string that follows the code= part of str.
+>>>>>>> origin/master
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -138,6 +162,7 @@ considered just a tip not a tutorial on RegExp. Look at the following example:</
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
+<<<<<<< HEAD
 		<p>Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on
 January 1, 1970. In JavaScript you can use the built-in object <strong>Date</strong> to compute this timestamp. Here follows an example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
@@ -146,6 +171,10 @@ January 1, 1970. In JavaScript you can use the built-in object <strong>Date</str
 <p>The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00
 UTC on October 28, 2007.</p>
 <p><strong>How it works:</strong></p>
+=======
+		Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on January 1, 1970. In JavaScript you can use the built-in object Date to compute this timestamp. Here follows an example:
+var ts = Date.UTC(&#39;2007&#39;, &#39;09&#39;, &#39;28&#39;) / 1000; alert(ts); The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00 UTC on October 28, 2007.
+>>>>>>> origin/master
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -234,7 +263,11 @@ number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.</
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
+<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
+=======
+			&copy; 2023 Alessandro Lacava.
+>>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

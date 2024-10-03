@@ -6,8 +6,12 @@
     <description>Recent content in Database on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate>
     <atom:link href="/categories/database/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate><atom:link href="/categories/database/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/master
     <item>
       <title>Performance differences between IN and EXISTS</title>
       <link>/blog/performance-differences-between-in-and-exists/</link>
@@ -20,14 +24,25 @@
       <link>/blog/not-in-vs-not-exists-when-null-values-are-involved/</link>
       <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
       <guid>/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
+<<<<<<< HEAD
       <description>&lt;p&gt;&lt;code&gt;NOT IN&lt;/code&gt; does not behave as you would expect when &lt;code&gt;NULL&lt;/code&gt; values are involved.&#xA;Suppose you have the following tables:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;CD_FIELD&lt;/td&gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;DS_FIELD&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td&gt;1&lt;/td&gt;&#xA;    &lt;td&gt;ALPHA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr&gt;&#xA;    &lt;td&gt;2&lt;/td&gt;&#xA;    &lt;td&gt;BETA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;**TABLE_A**&#xA;&lt;table&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;CD_FIELD&lt;/td&gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;DS_FIELD&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td&gt;1&lt;/td&gt;&#xA;    &lt;td&gt;GAMMA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr&gt;&#xA;    &lt;td&gt;NULL&lt;/td&gt;&#xA;    &lt;td&gt;DELTA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;**TABLE_B**&#xA;&lt;p&gt;Now try the following query:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_a a&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; a.cd_field &lt;span style=&#34;color:#66d9ef&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; b.cd_field &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_b b);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field&#xA;which is not present in table_b.cd_field.&lt;/p&gt;</description>
+=======
+      <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
+CD_FIELD DS_FIELD 1 ALPHA 2 BETA **TABLE_A** CD_FIELD DS_FIELD 1 GAMMA NULL DELTA **TABLE_B** Now try the following query:
+SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.</description>
+>>>>>>> origin/master
     </item>
     <item>
       <title>How to get the number of columns in a ResultSet in Java</title>
       <link>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
       <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
       <guid>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
+<<<<<<< HEAD
       <description>&lt;p&gt;In Java it is possible to retrieve the number of columns of a &lt;code&gt;ResultSet&lt;/code&gt; dinamically, thanks to the &lt;code&gt;ResultSetMetaData&lt;/code&gt;&#xA;class. Here&amp;rsquo;s an example:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Here you get the conn object. E.g.:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Connection conn = DriverManager.getConnection(...);&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Statement st &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; conn.&lt;span style=&#34;color:#a6e22e&#34;&gt;createStatement&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ResultSet rs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; st.&lt;span style=&#34;color:#a6e22e&#34;&gt;executeQuery&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SELECT * FROM your_table&amp;#34;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ResultSetMetaData rsmd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rs.&lt;span style=&#34;color:#a6e22e&#34;&gt;getMetaData&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; numCols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsmd.&lt;span style=&#34;color:#a6e22e&#34;&gt;getColumnCount&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Number of columns in your_table: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; numCols);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;The previous code retrieves and displays the number of columns of &lt;code&gt;your_table&lt;/code&gt;.&lt;/p&gt;</description>
+=======
+      <description>In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&amp;rsquo;s an example:
+// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
+>>>>>>> origin/master
     </item>
   </channel>
 </rss>
