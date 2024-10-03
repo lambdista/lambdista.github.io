@@ -6,12 +6,8 @@
     <description>Recent content in Self-Type on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Mon, 30 Mar 2015 14:59:24 +0200</lastBuildDate>
     <atom:link href="/tags/self-type/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Mon, 30 Mar 2015 14:59:24 +0200</lastBuildDate><atom:link href="/tags/self-type/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>Scala self-recursive types</title>
       <link>/blog/scala-self-recursive-types/</link>

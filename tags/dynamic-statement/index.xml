@@ -6,12 +6,8 @@
     <description>Recent content in Dynamic Statement on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Wed, 06 Sep 2006 10:24:18 +0000</lastBuildDate>
     <atom:link href="/tags/dynamic-statement/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Wed, 06 Sep 2006 10:24:18 +0000</lastBuildDate><atom:link href="/tags/dynamic-statement/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>Using dynamic SQL statements from PL/SQL</title>
       <link>/blog/using-dynamic-sql-statements-from-plsql/</link>

@@ -6,23 +6,14 @@
     <description>Recent content in ResultSet on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Wed, 12 Dec 2007 10:32:31 +0000</lastBuildDate>
     <atom:link href="/tags/resultset/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Wed, 12 Dec 2007 10:32:31 +0000</lastBuildDate><atom:link href="/tags/resultset/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>How to get the number of columns in a ResultSet in Java</title>
       <link>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
       <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
       <guid>/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
-<<<<<<< HEAD
       <description>&lt;p&gt;In Java it is possible to retrieve the number of columns of a &lt;code&gt;ResultSet&lt;/code&gt; dinamically, thanks to the &lt;code&gt;ResultSetMetaData&lt;/code&gt;&#xA;class. Here&amp;rsquo;s an example:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Here you get the conn object. E.g.:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Connection conn = DriverManager.getConnection(...);&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Statement st &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; conn.&lt;span style=&#34;color:#a6e22e&#34;&gt;createStatement&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ResultSet rs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; st.&lt;span style=&#34;color:#a6e22e&#34;&gt;executeQuery&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SELECT * FROM your_table&amp;#34;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ResultSetMetaData rsmd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rs.&lt;span style=&#34;color:#a6e22e&#34;&gt;getMetaData&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; numCols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsmd.&lt;span style=&#34;color:#a6e22e&#34;&gt;getColumnCount&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Number of columns in your_table: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; numCols);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;The previous code retrieves and displays the number of columns of &lt;code&gt;your_table&lt;/code&gt;.&lt;/p&gt;</description>
-=======
-      <description>In Java it is possible to retrieve the number of columns of a ResultSet dinamically, thanks to the ResultSetMetaData class. Here&amp;rsquo;s an example:
-// Here you get the conn object. E.g.: // Connection conn = DriverManager.getConnection(...); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(&amp;#34;SELECT * FROM your_table&amp;#34;); ResultSetMetaData rsmd = rs.getMetaData(); int numCols = rsmd.getColumnCount(); System.out.println(&amp;#34;Number of columns in your_table: &amp;#34; + numCols); The previous code retrieves and displays the number of columns of your_table.</description>
->>>>>>> origin/master
     </item>
   </channel>
 </rss>

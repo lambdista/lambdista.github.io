@@ -6,12 +6,8 @@
     <description>Recent content in Prototype on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Mon, 20 Nov 2006 15:34:48 +0000</lastBuildDate>
     <atom:link href="/tags/prototype/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Mon, 20 Nov 2006 15:34:48 +0000</lastBuildDate><atom:link href="/tags/prototype/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>Sorting an array of objects with the sortBy method of Prototype</title>
       <link>/blog/sorting-an-array-of-objects-with-the-sortby-method/</link>

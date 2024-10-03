@@ -6,24 +6,14 @@
     <description>Recent content in Case Class on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Fri, 22 May 2015 08:12:07 +0200</lastBuildDate>
     <atom:link href="/tags/case-class/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Fri, 22 May 2015 08:12:07 +0200</lastBuildDate><atom:link href="/tags/case-class/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>Scala case classes in depth</title>
       <link>/blog/scala-case-classes-in-depth/</link>
       <pubDate>Fri, 22 May 2015 08:12:07 +0200</pubDate>
       <guid>/blog/scala-case-classes-in-depth/</guid>
-<<<<<<< HEAD
       <description>&lt;p&gt;For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified:&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Person&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;lastname&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; firstname&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; birthYear&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;In this post:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#commonKnowledge&#34;&gt;Common knowledge about case classes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#uncommonKnowledge&#34;&gt;&lt;em&gt;Not so common&lt;/em&gt; knowledge about case classes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#curried&#34;&gt;Defining a case class using the &lt;em&gt;curried&lt;/em&gt; form&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#privateConstructor&#34;&gt;Defining a case class with a private constructor&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#mostCurious&#34;&gt;For the most curious ones&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#finalNotes&#34;&gt;Final Notes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a name=&#34;commonKnowledge&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;common-knowledge-about-case-classes&#34;&gt;Common knowledge about case classes&lt;/h2&gt;&#xA;&lt;p&gt;When you declare a case class the Scala compiler does the following for you:&lt;/p&gt;</description>
-=======
-      <description>For this post I&amp;rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
-In this post:
-Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:</description>
->>>>>>> origin/master
     </item>
   </channel>
 </rss>

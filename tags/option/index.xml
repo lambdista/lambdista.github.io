@@ -6,12 +6,8 @@
     <description>Recent content in Option on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Wed, 14 Sep 2016 14:27:23 +0200</lastBuildDate>
     <atom:link href="/tags/option/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Wed, 14 Sep 2016 14:27:23 +0200</lastBuildDate><atom:link href="/tags/option/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>Keep your code clean with algebraic data types (ADTs)</title>
       <link>/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>

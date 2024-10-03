@@ -6,25 +6,14 @@
     <description>Recent content in Metacharacter on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Wed, 12 Jul 2006 13:24:03 +0000</lastBuildDate>
     <atom:link href="/tags/metacharacter/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Wed, 12 Jul 2006 13:24:03 +0000</lastBuildDate><atom:link href="/tags/metacharacter/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
       <link>/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</link>
       <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
       <guid>/blog/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</guid>
-<<<<<<< HEAD
       <description>&lt;p&gt;When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters.  As a reminder the metacharacters in a Java RegEx are:&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;([{^$|)?*+.&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you want to treat them as ordinary characters you have two options:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Escape the metacharacter with a backslash,&lt;/li&gt;&#xA;&lt;li&gt;Enclose the whole string that contains metacharacters within &lt;code&gt;Q&lt;/code&gt; and &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;code&gt;Q&lt;/code&gt; means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while &lt;code&gt;E&lt;/code&gt; ends the quotes.&lt;/p&gt;</description>
-=======
-      <description>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
-([{^$|)?*+.
-If you want to treat them as ordinary characters you have two options:
-Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E Q means: &amp;ldquo;quotes all characters until E&amp;rdquo;, while E ends the quotes.</description>
->>>>>>> origin/master
     </item>
   </channel>
 </rss>

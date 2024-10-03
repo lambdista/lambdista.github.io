@@ -6,12 +6,8 @@
     <description>Recent content in Optimization on Alessandro Lacava</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate>
     <atom:link href="/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate><atom:link href="/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> origin/master
     <item>
       <title>Performance differences between IN and EXISTS</title>
       <link>/blog/performance-differences-between-in-and-exists/</link>
@@ -24,12 +20,7 @@
       <link>/blog/why-you-shouldnt-be-concerned-about-optimization/</link>
       <pubDate>Wed, 11 Oct 2006 16:26:34 +0000</pubDate>
       <guid>/blog/why-you-shouldnt-be-concerned-about-optimization/</guid>
-<<<<<<< HEAD
       <description>&lt;p&gt;When you were at the university or in any programming course, you&amp;ndash;like me&amp;ndash;were probably thought of the importance of&#xA;optimization. In the real world though, you should strive for writing good code&amp;ndash;possibly using bullet-proof&#xA;Design Patterns&amp;ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing,&#xA;you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot&#xA;but know:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other&#xA;single reason, including blind stupidity.&lt;br /&gt;&#xA;&lt;strong&gt;William A. Wulf&lt;/strong&gt;&lt;/p&gt;</description>
-=======
-      <description>When you were at the university or in any programming course, you&amp;ndash;like me&amp;ndash;were probably thought of the importance of optimization. In the real world though, you should strive for writing good code&amp;ndash;possibly using bullet-proof Design Patterns&amp;ndash;and defer optimization until later. Actually, you should optimize your code only if, after testing, you realize that optimization is strongly necessary. There are three aphorisms concerning optimization that you cannot but know:
-More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason, including blind stupidity.</description>
->>>>>>> origin/master
     </item>
   </channel>
 </rss>

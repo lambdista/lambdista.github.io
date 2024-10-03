@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Function - Alessandro Lacava</title>
-<<<<<<< HEAD
 	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 	<meta name="description"
 		content="">
@@ -26,20 +25,6 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Function">
   <meta name="twitter:description" content="Designing and Developing Software">
-=======
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="Function" />
-<meta property="og:description" content="Designing and Developing Software" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/function/" />
-
-		<meta itemprop="name" content="Function">
-<meta itemprop="description" content="Designing and Developing Software">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Function"/>
-<meta name="twitter:description" content="Designing and Developing Software"/>
->>>>>>> origin/master
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -49,7 +34,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	
 	<link rel="shortcut icon" href="/%20favicon.ico">
-
 </head>
 
 <body class="body">
@@ -122,7 +106,6 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-<<<<<<< HEAD
 		<p>Yesterday my mate asked me: &ldquo;I have a <code>List[String]</code> and a <code>Map[String, Int]</code> and I want
 a <code>List[Int]</code> where its values are those of the <code>Map</code> whose keys match the <code>List[String]</code> elements,
 maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the
@@ -139,10 +122,6 @@ code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;
 <p>Hold on, how does it work? If you look at the definition of the <code>collect</code> method you&rsquo;ll see it accepts a
 <code>PartialFunction</code>, instead I passed a <code>Map</code> to it.
 Well, it turns out that <code>Map</code> <em>is</em> a <code>PartialFunction</code>.</p>
-=======
-		Yesterday my mate asked me: &ldquo;I have a List[String] and a Map[String, Int] and I want a List[Int] where its values are those of the Map whose keys match the List[String] elements, maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:
-scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt; 3) m: scala.
->>>>>>> origin/master
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -159,7 +138,6 @@ scala&gt; val m = Map(&#34;a&#34; -&gt; 1, &#34;b&#34; -&gt; 2, &#34;c&#34; -&gt
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-<<<<<<< HEAD
 		<p>Most programmers know how to define and use a function in JavaScript. For example the following function displays an
 alert containing the string passed in as a parameter:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
@@ -175,11 +153,6 @@ function using the <code>Function</code> class:</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//...and you call it the same way
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">displayAlert</span>(<span style="color:#e6db74">&#34;Hello World!&#34;</span>);</span></span></code></pre></div>
 <p>For those who didn&rsquo;t figure it out, the syntax of the <code>Function</code> class is the following:</p>
-=======
-		Most programmers know how to define and use a function in JavaScript. For example the following function displays an alert containing the string passed in as a parameter:
-function displayAlert(sText) { alert(sText); } // Then you call it this way displayAlert(&#34;Hello World!&#34;); How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous function using the Function class:
-var displayAlert = new Function(&#34;sText&#34;, &#34;alert(sText);&#34;); //.
->>>>>>> origin/master
 	</div>
 </article>
 </main>
@@ -239,11 +212,7 @@ var displayAlert = new Function(&#34;sText&#34;, &#34;alert(sText);&#34;); //.
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
-=======
-			&copy; 2023 Alessandro Lacava.
->>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

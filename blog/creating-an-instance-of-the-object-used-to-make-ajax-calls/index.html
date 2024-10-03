@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Creating an instance of the object used to make AJAX calls - Alessandro Lacava</title>
-<<<<<<< HEAD
 	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 	<meta name="description"
 		content="">
@@ -35,28 +34,6 @@
   <meta name="twitter:title" content="Creating an instance of the object used to make AJAX calls">
   <meta name="twitter:description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
 // The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2.XMLHttp.5.0&#34;, &#34;MSXML2.XMLHttp.4.0&#34;,&#34;MSXML2.XMLHttp.3.0&#34;, &#34;MSXML2.XMLHttp&#34;,&#34;Microsoft.XMLHttp&#34; ]; //try to get an instance of the newer version. //If it is not available go down till the oldest one for (var i = 0; i &lt; sVersions.length; i&#43;&#43;) { try { var ret = new ActiveXObject(sVersions[i]); return ret; } catch (oException) { //Do nothing. Just go on trying with the older versions } } } //if it gets here then no version is available alert(&#34;XMLHttpRequest object could not be created.&#34;); } As you can see this function creates the correct instance of the XMLHttpRequest object. If the browser is not Internet Explorer then it just instantiates the XMLHttpRequest object, otherwise it tries to create the correct ActiveX object used by IE to represent XMLHttpRequest. In this case it tries to instatiates the object from the newer version going down till the oldest one.">
-=======
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="Creating an instance of the object used to make AJAX calls" />
-<meta property="og:description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
-// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2006-07-11T15:54:40+00:00" />
-<meta property="article:modified_time" content="2006-07-11T15:54:40+00:00" />
-
-		<meta itemprop="name" content="Creating an instance of the object used to make AJAX calls">
-<meta itemprop="description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
-// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2."><meta itemprop="datePublished" content="2006-07-11T15:54:40+00:00" />
-<meta itemprop="dateModified" content="2006-07-11T15:54:40+00:00" />
-<meta itemprop="wordCount" content="260">
-<meta itemprop="keywords" content="AJAX," />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Creating an instance of the object used to make AJAX calls"/>
-<meta name="twitter:description" content="Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to overcome this problem:
-// The following function creates an XMLHttpRequest object function createHttpRequest() { if (typeof XMLHttpRequest != &#34;undefined&#34;) //NOT IE { return new XMLHttpRequest(); } else if (window.ActiveXObject) // IE { var sVersions = [ &#34;MSXML2."/>
->>>>>>> origin/master
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -64,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	
 	<link rel="shortcut icon" href="/%20favicon.ico">
-
 </head>
 
 <body class="body">
@@ -203,11 +179,7 @@ case&ndash;provided that at least one is available!</p>
 
 <section class="comments">
 	<div id="disqus_thread"></div>
-<<<<<<< HEAD
 <script>
-=======
-<script type="application/javascript">
->>>>>>> origin/master
     window.disqus_config = function () {
     
     
@@ -282,11 +254,7 @@ case&ndash;provided that at least one is available!</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-<<<<<<< HEAD
 			&copy; 2024 Alessandro Lacava.
-=======
-			&copy; 2023 Alessandro Lacava.
->>>>>>> origin/master
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
