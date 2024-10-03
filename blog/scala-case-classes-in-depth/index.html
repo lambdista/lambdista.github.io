@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Scala case classes in depth - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="Scala case classes in depth" />
-<meta property="og:description" content="For this post I&rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/blog/scala-case-classes-in-depth/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="Scala case classes in depth">
+  <meta property="og:description" content="For this post I’ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/scala-case-classes-in-depth/" />
-<meta property="article:published_time" content="2015-05-22T08:12:07+02:00" />
-<meta property="article:modified_time" content="2015-05-22T08:12:07+02:00" />
+Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2015-05-22T08:12:07+02:00">
+    <meta property="article:modified_time" content="2015-05-22T08:12:07+02:00">
+    <meta property="article:tag" content="Case Class">
+    <meta property="article:tag" content="Companion Object">
 
-		<meta itemprop="name" content="Scala case classes in depth">
-<meta itemprop="description" content="For this post I&rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
+	
+  <meta itemprop="name" content="Scala case classes in depth">
+  <meta itemprop="description" content="For this post I’ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:">
-<meta itemprop="datePublished" content="2015-05-22T08:12:07&#43;02:00" />
-<meta itemprop="dateModified" content="2015-05-22T08:12:07&#43;02:00" />
-<meta itemprop="wordCount" content="1825">
-
-
-
-<meta itemprop="keywords" content="Case class,Companion object," />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Scala case classes in depth"/>
-<meta name="twitter:description" content="For this post I&rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
+Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:">
+  <meta itemprop="datePublished" content="2015-05-22T08:12:07+02:00">
+  <meta itemprop="dateModified" content="2015-05-22T08:12:07+02:00">
+  <meta itemprop="wordCount" content="1825">
+  <meta itemprop="keywords" content="Case Class,Companion Object">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scala case classes in depth">
+  <meta name="twitter:description" content="For this post I’ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
 In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:"/>
+Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -60,7 +56,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -93,7 +89,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -104,7 +100,7 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
@@ -116,7 +112,7 @@ if (!doNotTrack) {
 </div></div>
 		</header><div class="content post__content clearfix">
 			<p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>lastname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> firstname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> birthYear<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>lastname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> firstname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> birthYear<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></span></span></code></pre></div></p>
 <p>In this post:</p>
 <ul>
 <li><a href="#commonKnowledge">Common knowledge about case classes</a></li>
@@ -126,195 +122,195 @@ if (!doNotTrack) {
 <li><a href="#mostCurious">For the most curious ones</a></li>
 <li><a href="#finalNotes">Final Notes</a></li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="commonKnowledge"></a></p>
 <h2 id="common-knowledge-about-case-classes">Common knowledge about case classes</h2>
 <p>When you declare a case class the Scala compiler does the following for you:</p>
 <ul>
 <li>Creates a class and its companion object.</li>
 <li>Implements the <code>apply</code> method that you can use as a factory. This lets you create instances of the class without the <code>new</code> keyword. E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> p <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// instead of the slightly more verbose:
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> p <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// instead of the slightly more verbose:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> p <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span></span></span></code></pre></div>
 <ul>
 <li>Prefixes all arguments, in the parameter list, with <code>val</code>. This means the class is immutable, hence you get the accessors but no mutators. E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> lastname <span style="color:#66d9ef">=</span> p<span style="color:#f92672">.</span>lastname
-<span style="color:#75715e">// the following won&#39;t compile:
-</span><span style="color:#75715e"></span>p<span style="color:#f92672">.</span>lastname <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Brown&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> lastname <span style="color:#66d9ef">=</span> p<span style="color:#f92672">.</span>lastname
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// the following won&#39;t compile:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p<span style="color:#f92672">.</span>lastname <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Brown&#34;</span></span></span></code></pre></div>
 <ul>
 <li>Adds <em>natural</em> implementations of <code>hashCode</code>, <code>equals</code> and <code>toString</code>. Since <code>==</code> in Scala always delegates to equals, this means that case class instances are always compared structurally. E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> p_1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Brown&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1969</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">val</span> p_2 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
-
-p <span style="color:#f92672">==</span> p_1 <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span>p <span style="color:#f92672">==</span> p_2 <span style="color:#f92672">//</span> <span style="color:#66d9ef">true</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p_1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Brown&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1969</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p_2 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">==</span> p_1 <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p <span style="color:#f92672">==</span> p_2 <span style="color:#f92672">//</span> <span style="color:#66d9ef">true</span></span></span></code></pre></div>
 <ul>
 <li>Generates a <code>copy</code> method to your class to create other instances starting from another one and keeping some arguments the same. E.g.: Create another instance keeping the <code>lastname</code> and changing <code>firstname</code> and <code>birthYear</code>:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// the result is: Person(Lacava,Michele,1972), my brother :)
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> p_3 <span style="color:#66d9ef">=</span> p<span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>firstname <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Michele&#34;</span><span style="color:#f92672">,</span> birthYear <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">1972</span><span style="color:#f92672">)</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#75715e">// the result is: Person(Lacava,Michele,1972), my brother :)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> p_3 <span style="color:#66d9ef">=</span> p<span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>firstname <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Michele&#34;</span><span style="color:#f92672">,</span> birthYear <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">1972</span><span style="color:#f92672">)</span> </span></span></code></pre></div>
 <ul>
 <li>Probably, most importantly, since the compiler implements the <code>unapply</code> method, a case class supports pattern matching. This is especially important when you define an Algebraic Data Type (ADT). E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">+T</span><span style="color:#f92672">]</span>
-<span style="color:#a6e22e">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Value</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">](</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">]</span>
-<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">object</span> <span style="color:#a6e22e">NoValue</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nothing</span><span style="color:#f92672">]</span>
-
-<span style="color:#66d9ef">val</span> v<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Value</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">val</span> v_1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">NoValue</span>
-
-<span style="color:#66d9ef">def</span> logValue<span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">](</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">])</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> value <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Value</span><span style="color:#f92672">(</span>v<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;We have a value here: </span><span style="color:#e6db74">$v</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
-  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">NoValue</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;I&#39;m sorry, no value&#34;</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#75715e">// prints We have a value here: 42
-</span><span style="color:#75715e"></span>logValue<span style="color:#f92672">(</span>v<span style="color:#f92672">)</span>
-<span style="color:#75715e">// prints I&#39;m sorry, no value
-</span><span style="color:#75715e"></span>logValue<span style="color:#f92672">(</span>v_1<span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">trait</span> <span style="color:#a6e22e">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">+T</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Value</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">](</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">T</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">object</span> <span style="color:#a6e22e">NoValue</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nothing</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> v<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Value</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> v_1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">NoValue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> logValue<span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">](</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Maybe</span><span style="color:#f92672">[</span><span style="color:#66d9ef">T</span><span style="color:#f92672">])</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> value <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Value</span><span style="color:#f92672">(</span>v<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;We have a value here: </span><span style="color:#e6db74">$v</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">NoValue</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;I&#39;m sorry, no value&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// prints We have a value here: 42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>logValue<span style="color:#f92672">(</span>v<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// prints I&#39;m sorry, no value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>logValue<span style="color:#f92672">(</span>v_1<span style="color:#f92672">)</span></span></span></code></pre></div>
 <p>As you probably already know, when your class has no argument you use a <code>case object</code>
 instead of a <code>case class</code> with an empty parameter list.</p>
 <p>Apart from being used in pattern matching the <code>unapply</code> method lets you <em>deconstruct</em> a case class to extract
 it&rsquo;s fields, both during pattern matching and as a simple expression to extract some of its fields. E.g.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>lastname<span style="color:#f92672">,</span> <span style="color:#66d9ef">_</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">_</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> p
-
-<span style="color:#75715e">// prints Lacava
-</span><span style="color:#75715e"></span>println<span style="color:#f92672">(</span>lastname<span style="color:#f92672">)</span> </code></pre></div>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>lastname<span style="color:#f92672">,</span> <span style="color:#66d9ef">_</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">_</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// prints Lacava
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>println<span style="color:#f92672">(</span>lastname<span style="color:#f92672">)</span> </span></span></code></pre></div>
+<p><a name="uncommonKnowledge"></a></p>
 <h2 id="not-so-common-knowledge-about-case-classes"><em>Not so common</em> knowledge about case classes</h2>
 <ul>
 <li>What if you need a function that, given your case class arguments as parameters, creates an instance of the class? Here&rsquo;s how you can do it by partially applying <code>apply</code> (no pun intended :)):</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> personCreator<span style="color:#66d9ef">:</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Int</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>apply <span style="color:#66d9ef">_</span>
-
-<span style="color:#75715e">// the result is: Person(Brown,John,1969)
-</span><span style="color:#75715e"></span>personCreator<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Brown&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1969</span><span style="color:#f92672">)</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> personCreator<span style="color:#66d9ef">:</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Int</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>apply <span style="color:#66d9ef">_</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// the result is: Person(Brown,John,1969)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>personCreator<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Brown&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1969</span><span style="color:#f92672">)</span> </span></span></code></pre></div>
 <ul>
 <li>What if you want your function, from the previous point, to be curried? Enters the <code>curried</code> method:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> curriedPerson<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">String</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Int</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>curried
-
-<span style="color:#66d9ef">val</span> lacavaBuilder<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Int</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> curriedPerson<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">)</span>
-
-<span style="color:#66d9ef">val</span> me <span style="color:#66d9ef">=</span> lacavaBuilder<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">val</span> myBrother <span style="color:#66d9ef">=</span> lacavaBuilder<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Michele&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">1972</span><span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> curriedPerson<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">String</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Int</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>curried
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> lacavaBuilder<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Int</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> curriedPerson<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> me <span style="color:#66d9ef">=</span> lacavaBuilder<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> myBrother <span style="color:#66d9ef">=</span> lacavaBuilder<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Michele&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">1972</span><span style="color:#f92672">)</span></span></span></code></pre></div>
 <ul>
 <li>What about obtaining a function that accepts a tuple whose arity is equal to the number of the case class arguments, and produces an instance of the class? Well, there&rsquo;s the <code>tupled</code> method for that:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> tupledPerson<span style="color:#66d9ef">:</span> <span style="color:#f92672">((</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">))</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>tupled
-
-<span style="color:#66d9ef">val</span> meAsTuple<span style="color:#66d9ef">:</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Int</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
-
-<span style="color:#66d9ef">val</span> meAsPersonAgain<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Person</span> <span style="color:#f92672">=</span> tupledPerson<span style="color:#f92672">(</span>meAsTuple<span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> tupledPerson<span style="color:#66d9ef">:</span> <span style="color:#f92672">((</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">))</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>tupled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> meAsTuple<span style="color:#66d9ef">:</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Int</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> meAsPersonAgain<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Person</span> <span style="color:#f92672">=</span> tupledPerson<span style="color:#f92672">(</span>meAsTuple<span style="color:#f92672">)</span></span></span></code></pre></div>
 <ul>
 <li>You could also need a function that, given an instance of your class as input, produces an <code>Option[TupleN[A1, A2, ..., AN]]</code> as output, where <code>N</code> is the number of the case class arguments and <code>A1, A2, ..., AN</code> are their types. E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> toOptionOfTuple<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Person</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Option</span><span style="color:#f92672">[(</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">Int</span><span style="color:#f92672">)]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>unapply <span style="color:#66d9ef">_</span>
-
-<span style="color:#66d9ef">val</span> x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[(</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">Int</span><span style="color:#f92672">)]</span> <span style="color:#66d9ef">=</span> toOptionOfTuple<span style="color:#f92672">(</span>p<span style="color:#f92672">)</span> <span style="color:#f92672">//</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">((</span><span style="color:#a6e22e">Lacava</span><span style="color:#f92672">,</span><span style="color:#a6e22e">Alessandro</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1976</span><span style="color:#f92672">))</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> toOptionOfTuple<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Person</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Option</span><span style="color:#f92672">[(</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">Int</span><span style="color:#f92672">)]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">.</span>unapply <span style="color:#66d9ef">_</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[(</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">Int</span><span style="color:#f92672">)]</span> <span style="color:#66d9ef">=</span> toOptionOfTuple<span style="color:#f92672">(</span>p<span style="color:#f92672">)</span> <span style="color:#f92672">//</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">((</span><span style="color:#a6e22e">Lacava</span><span style="color:#f92672">,</span><span style="color:#a6e22e">Alessandro</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1976</span><span style="color:#f92672">))</span></span></span></code></pre></div>
 <p>The <code>curried</code> and <code>tupled</code> methods are inherited from <code>AbstractFunctionN</code> which is extended by the autogenerated
 companion object. <code>N</code> is the number of the case class formal parameters.
 Note that, of course, if <code>N = 1</code> you won&rsquo;t get <code>curried</code> and <code>tupled</code> because
 they wouldn&rsquo;t make sense for just one parameter!</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="curried"></a></p>
 <h2 id="defining-a-case-class-using-the-curried-form">Defining a case class using the <em>curried</em> form</h2>
 <p>There&rsquo;s another less-known way of defining a case class, e.g.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span>text<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)(</span>source<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> foo<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span>text<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)(</span>source<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> foo<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></span></span></code></pre></div>
 <p>The formal parameters in the first parameter section of a case class (just <code>text</code> in this case) are called <em>elements</em>;
 they are treated specially. All the goodies you get when you define a case class (accessors, pattern matching support,
 copy method, &hellip;) only apply to the first section. For example you don&rsquo;t have an accessor for <code>source</code> since
 the compiler didn&rsquo;t implicitly prefix it with <code>val</code>, like it did for <code>text</code> instead. E.g.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> k1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;restaurant&#34;</span><span style="color:#f92672">)(</span><span style="color:#e6db74">&#34;storage&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// won&#39;t compile
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> source <span style="color:#66d9ef">=</span> k1<span style="color:#f92672">.</span>source</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> k1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;restaurant&#34;</span><span style="color:#f92672">)(</span><span style="color:#e6db74">&#34;storage&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// won&#39;t compile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> source <span style="color:#66d9ef">=</span> k1<span style="color:#f92672">.</span>source</span></span></code></pre></div>
 <p>You can solve the accessor problem by prefixing the parameters with <code>val</code>. E.g.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span>text<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)(</span><span style="color:#66d9ef">val</span> source<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">val</span> foo<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span>text<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)(</span><span style="color:#66d9ef">val</span> source<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">val</span> foo<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></span></span></code></pre></div>
 <p>Anyway you still won&rsquo;t get all the other case class features.
 For instance, you cannot use the <code>copy</code> method by specifying only the <code>source</code> parameter. You have to specify, at least, all the parameters
 of the sections successive to the first. E.g.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// won&#39;t compile
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> k2 <span style="color:#66d9ef">=</span> k1<span style="color:#f92672">.</span>copy<span style="color:#f92672">()(</span>source <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;web&#34;</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// will compile
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> k3 <span style="color:#66d9ef">=</span> k1<span style="color:#f92672">.</span>copy<span style="color:#f92672">()(</span>source <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;web&#34;</span><span style="color:#f92672">,</span> foo <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#75715e">// won&#39;t compile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> k2 <span style="color:#66d9ef">=</span> k1<span style="color:#f92672">.</span>copy<span style="color:#f92672">()(</span>source <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;web&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// will compile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> k3 <span style="color:#66d9ef">=</span> k1<span style="color:#f92672">.</span>copy<span style="color:#f92672">()(</span>source <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;web&#34;</span><span style="color:#f92672">,</span> foo <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span></span></span></code></pre></div>
 <p>Finally, the companion object of a case class defined in such a way won&rsquo;t extend <code>AbstractFunctionN</code>, so the <code>tupled</code>
 and <code>curried</code> methods are not available.</p>
 <p>At this point the natural question that may arise is: &ldquo;Why on earth should I want to define a case class in such a way?&rdquo;
 Apparently there are cases when it could be a <em>reasonable</em> choice. For example suppose that, for your business model,
 two instances of <code>Keyword</code> are to be considered equal iff they have the same <code>text</code> field. Well, in such a case by defining the
 case class using the <em>curried</em> form you&rsquo;ll get what you want. E.g.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> k1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;restaurant&#34;</span><span style="color:#f92672">)(</span><span style="color:#e6db74">&#34;storage&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">val</span> k2 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;restaurant&#34;</span><span style="color:#f92672">)(</span><span style="color:#e6db74">&#34;web&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// true!
-</span><span style="color:#75715e"></span>k1 <span style="color:#f92672">==</span> k2 </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> k1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;restaurant&#34;</span><span style="color:#f92672">)(</span><span style="color:#e6db74">&#34;storage&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> k2 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Keyword</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;restaurant&#34;</span><span style="color:#f92672">)(</span><span style="color:#e6db74">&#34;web&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// true!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>k1 <span style="color:#f92672">==</span> k2 </span></span></code></pre></div>
 <p>That&rsquo;s because also the <code>equals</code> implementation, you get for free for case classes, only applies to the first
 parameter section, so only to <code>text</code> in this case. I&rsquo;m not saying here that this is always the best choice
 but it could be of help in certain situations.</p>
 <p>In fact, you could define your case class as usual and override <code>equals</code> on your own. However overriding
 <code>equals</code> is not very trivial. Indeed, before doing that
-I recommend you read the <!-- raw HTML omitted --><!-- raw HTML omitted -->chapter 30 of <strong>Programming in Scala: A Comprehensive Step-by-Step Guide, 2nd Edition - Odersky, Spoon, Venners</strong>. Its title is <strong>Object Equality</strong> and it&rsquo;s just 25 pages long!</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+I recommend you read the <a name="programmingInScala"></a>chapter 30 of <strong>Programming in Scala: A Comprehensive Step-by-Step Guide, 2nd Edition - Odersky, Spoon, Venners</strong>. Its title is <strong>Object Equality</strong> and it&rsquo;s just 25 pages long!</p>
+<p><a name="privateConstructor"></a></p>
 <h2 id="defining-a-case-class-with-a-private-constructor">Defining a case class with a private constructor</h2>
 <p>Sometimes you&rsquo;ll want to control the construction of a case class so that you can perform a validation of the inputs at contruction-time. For example, Scala does not have a native way to define natural numbers (0, 1, 2, 3, &hellip;). In such a case you may be tempted to write something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Nat</span> <span style="color:#66d9ef">private</span> <span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Nat</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">def</span> apply<span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#a6e22e">None</span> <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span>value<span style="color:#f92672">))</span>
-<span style="color:#f92672">}</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Nat</span> <span style="color:#66d9ef">private</span> <span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Nat</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> apply<span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#a6e22e">None</span> <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span>value<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> </span></span></code></pre></div>
 <p>Let&rsquo;s give it a spin in the REPL:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
-x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span>
-
-scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
-x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">None</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">None</span></span></span></code></pre></div>
 <p>Nice, it seems to work. Unfortunately there&rsquo;s a hole. As I stated at the beginning of the post, a case class automatically defines a <code>copy</code> method for you and that could be used to subvert that private constructor:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
-x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span>
-
-scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>value <span style="color:#66d9ef">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span> <span style="color:#75715e">// oops!
-</span><span style="color:#75715e"></span>y<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>value <span style="color:#66d9ef">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span> <span style="color:#75715e">// oops!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>y<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span></span></span></code></pre></div>
 <p>The current solution is to define a private <code>copy</code> method manually, so that the compiler won&rsquo;t do it for us. Here is how to change the original definition:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Nat</span> <span style="color:#66d9ef">private</span> <span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">def</span> copy<span style="color:#f92672">()</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">()</span>
-<span style="color:#f92672">}</span>
-<span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Nat</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">def</span> apply<span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span>  
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#a6e22e">None</span> <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span>value<span style="color:#f92672">))</span>
-<span style="color:#f92672">}</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Nat</span> <span style="color:#66d9ef">private</span> <span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">def</span> copy<span style="color:#f92672">()</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Nat</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> apply<span style="color:#f92672">(</span>value<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>value <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#a6e22e">None</span> <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span>value<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> </span></span></code></pre></div>
 <p>This way the previous workaround wouldn&rsquo;t work:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
-x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span>
-
-scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>value <span style="color:#66d9ef">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span> <span style="color:#75715e">// no way!
-</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span>console<span style="color:#66d9ef">&gt;:</span><span style="color:#ae81ff">12</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">error:</span> <span style="color:#66d9ef">method</span> <span style="color:#66d9ef">copy</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">Nat</span> <span style="color:#66d9ef">cannot</span> <span style="color:#66d9ef">be</span> <span style="color:#66d9ef">accessed</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">Nat</span>
-       <span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>value <span style="color:#66d9ef">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span> <span style="color:#f92672">//</span> no way<span style="color:#f92672">!</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Option</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Nat</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>value <span style="color:#66d9ef">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span> <span style="color:#75715e">// no way!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span>console<span style="color:#66d9ef">&gt;:</span><span style="color:#ae81ff">12</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">error:</span> <span style="color:#66d9ef">method</span> <span style="color:#66d9ef">copy</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">Nat</span> <span style="color:#66d9ef">cannot</span> <span style="color:#66d9ef">be</span> <span style="color:#66d9ef">accessed</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">Nat</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>value <span style="color:#66d9ef">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">42</span><span style="color:#f92672">))</span> <span style="color:#f92672">//</span> no way<span style="color:#f92672">!</span></span></span></code></pre></div>
 <p>However you&rsquo;ll still have all the other goodies of case classes. For example pattern matching is available because the <code>unapply</code> method is still automatically defined for you, being it a case class:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> x<span style="color:#f92672">.</span>foreach <span style="color:#f92672">{</span>
-     <span style="color:#f92672">|</span>   <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span>value<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;Natural number: </span><span style="color:#e6db74">$value</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
-     <span style="color:#f92672">|</span> <span style="color:#f92672">}</span>
-<span style="color:#a6e22e">Natural</span> number<span style="color:#66d9ef">:</span> <span style="color:#960050;background-color:#1e0010">42</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> x<span style="color:#f92672">.</span>foreach <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">|</span>   <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Nat</span><span style="color:#f92672">(</span>value<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;Natural number: </span><span style="color:#e6db74">$value</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">|</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Natural</span> number<span style="color:#66d9ef">:</span> <span style="color:#960050;background-color:#1e0010">42</span></span></span></code></pre></div>
 <p>The only two automatic definitions you disabled with this tecnique here are <code>apply</code> and <code>copy</code>.</p>
 <p>That said, a much better alternative, in my opinion, is defining a <code>sealed abstract case class</code>, as proposed by Rob Norris (<a href="https://twitter.com/tpolecat">@tpolecat</a>) in this <a href="https://gist.github.com/tpolecat/a5cb0dc9adeacc93f846835ed21c92d2">gist</a>. That way you don&rsquo;t even need to define the private <code>copy</code> method. Plus the name <code>fromInt</code> communicates more clearly the concept of a possible failure while one expects that <code>apply</code> is a <em>non-effectful</em> method.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="mostCurious"></a></p>
 <h2 id="for-the-most-curious-ones">For the most curious ones</h2>
 <p>Furthermore, since each case class extends the <code>Product</code> trait it inherits the following methods:</p>
 <ul>
 <li><code>def productArity: Int</code>, returns the size of this product. In this case it corresponds to the number of arguments in the case class. E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> p <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// equals to 3
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> arity <span style="color:#66d9ef">=</span> p<span style="color:#f92672">.</span>productArity </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lacava&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Alessandro&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1976</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// equals to 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> arity <span style="color:#66d9ef">=</span> p<span style="color:#f92672">.</span>productArity </span></span></code></pre></div>
 <ul>
 <li><code>def productElement(n: Int): Any</code>, returns the n-th element of this product, 0-based. In this case it corresponds to the n-th argument of the class. E.g.:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// Lacava
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> lastname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Any</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>productElement<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#75715e">// Lacava
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> lastname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Any</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>productElement<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> </span></span></code></pre></div>
 <ul>
 <li>
 <p><code>def productIterator: Iterator[Any]</code>, returns an iterator over all the elements of this product which, in the case class context, they are its arguments.</p>
@@ -323,16 +319,16 @@ scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</sp
 <p><code>def productPrefix: String</code>, returns a string used in the <code>toString</code> method of the derived classes. In this case it&rsquo;s the name of the class. E.g.:</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// the result is Person
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> className<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>productPrefix </code></pre></div>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#75715e">// the result is Person
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> className<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>productPrefix </span></span></code></pre></div>
+<p><a name="finalNotes"></a></p>
 <h2 id="final-notes">Final Notes</h2>
 <ul>
 <li>
 <p>I used type declarations in many expressions just to make things clearer. Of course I could have left them out and let the type inferer do its job.</p>
 </li>
 <li>
-<p>Some <code>Product</code>'s methods return <em>Any-based</em> types, namely <code>productElement</code> and <code>productIterator</code>. For example, <code>p.productElement(0)</code> returns the <code>lastname</code> but it is of type <code>Any</code> so if you need to use it as <code>String</code> you have to cast it, which is an operation you should strive to avoid as much as possible.</p>
+<p>Some <code>Product</code>&rsquo;s methods return <em>Any-based</em> types, namely <code>productElement</code> and <code>productIterator</code>. For example, <code>p.productElement(0)</code> returns the <code>lastname</code> but it is of type <code>Any</code> so if you need to use it as <code>String</code> you have to cast it, which is an operation you should strive to avoid as much as possible.</p>
 </li>
 <li>
 <p><code>Product</code> extends <code>Equals</code> so every case class also inherits the <code>canEqual</code> method but, of course, going into its details is not the scope of this post. Besides, you don&rsquo;t have to worry about it because it&rsquo;s used interally by the autogenerated <code>equals</code> method, unless you decide to implement your own version of <code>equals</code> in which case you need to take into account <code>canEqual</code>. Again, in such a case I strongly suggest you read the chapter cited <a href="#programmingInScala">here</a>.</p>
@@ -376,8 +372,8 @@ scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</sp
 
 <section class="comments">
 	<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+<script>
+    window.disqus_config = function () {
     
     
     
@@ -451,14 +447,17 @@ scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</sp
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-
+	<script async defer src="/%20js/menu.js"></script>
+	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
+
 </html>

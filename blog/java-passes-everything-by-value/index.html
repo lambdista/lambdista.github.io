@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Java passes EVERYTHING by value! - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="Java passes EVERYTHING by value!" />
-<meta property="og:description" content="It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/blog/java-passes-everything-by-value/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="Java passes EVERYTHING by value!">
+  <meta property="og:description" content="It’s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
-public static void main(String[] args) { int a = 0; increment(a); System." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/java-passes-everything-by-value/" />
-<meta property="article:published_time" content="2006-09-13T08:51:47+00:00" />
-<meta property="article:modified_time" content="2006-09-13T08:51:47+00:00" />
+public static void main(String[] args) { int a = 0; increment(a); System.out.println(a); //it prints 0 so increment didn&#39;t work as expected } public static int increment(int a) { &#43;&#43;a; System.out.println(a); //it prints 1 return a; } As you can see the change made to the parameter passed to increment, that is a, affects only the local copy of it. This proves that Java passes primitives by value.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2006-09-13T08:51:47+00:00">
+    <meta property="article:modified_time" content="2006-09-13T08:51:47+00:00">
 
-		<meta itemprop="name" content="Java passes EVERYTHING by value!">
-<meta itemprop="description" content="It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
+	
+  <meta itemprop="name" content="Java passes EVERYTHING by value!">
+  <meta itemprop="description" content="It’s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
-public static void main(String[] args) { int a = 0; increment(a); System.">
-<meta itemprop="datePublished" content="2006-09-13T08:51:47&#43;00:00" />
-<meta itemprop="dateModified" content="2006-09-13T08:51:47&#43;00:00" />
-<meta itemprop="wordCount" content="396">
-
-
-
-<meta itemprop="keywords" content="" />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Java passes EVERYTHING by value!"/>
-<meta name="twitter:description" content="It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
+public static void main(String[] args) { int a = 0; increment(a); System.out.println(a); //it prints 0 so increment didn&#39;t work as expected } public static int increment(int a) { &#43;&#43;a; System.out.println(a); //it prints 1 return a; } As you can see the change made to the parameter passed to increment, that is a, affects only the local copy of it. This proves that Java passes primitives by value.">
+  <meta itemprop="datePublished" content="2006-09-13T08:51:47+00:00">
+  <meta itemprop="dateModified" content="2006-09-13T08:51:47+00:00">
+  <meta itemprop="wordCount" content="396">
+  <meta itemprop="keywords" content="Programming,Java">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Java passes EVERYTHING by value!">
+  <meta name="twitter:description" content="It’s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects by reference. Actually, everything in Java is passed by value as well as object references.
 When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a local effect. For example:
-public static void main(String[] args) { int a = 0; increment(a); System."/>
+public static void main(String[] args) { int a = 0; increment(a); System.out.println(a); //it prints 0 so increment didn&#39;t work as expected } public static int increment(int a) { &#43;&#43;a; System.out.println(a); //it prints 1 return a; } As you can see the change made to the parameter passed to increment, that is a, affects only the local copy of it. This proves that Java passes primitives by value.">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -60,7 +54,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -93,7 +87,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -104,14 +98,15 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">Java passes EVERYTHING by value!</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2006-09-13T08:51:47Z">Sep 13, 2006</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2006-09-13T08:51:47Z">Sep 13, 2006</time>
+	<time class="meta__text" datetime="2006-09-13T08:51:47Z">(Last Modified: Sep 13, 2006)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
@@ -119,38 +114,38 @@ if (!doNotTrack) {
 by reference. Actually, everything in Java is passed by value as well as object references.</p>
 <p>When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a
 local effect. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-  increment<span style="color:#f92672">(</span>a<span style="color:#f92672">);</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a<span style="color:#f92672">);</span> <span style="color:#75715e">//it prints 0 so increment didn&#39;t work as expected
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">increment</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  <span style="color:#f92672">++</span>a<span style="color:#f92672">;</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>a<span style="color:#f92672">);</span> <span style="color:#75715e">//it prints 1
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> a<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>  increment(a);
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(a); <span style="color:#75715e">//it prints 0 so increment didn&#39;t work as expected</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">increment</span>(<span style="color:#66d9ef">int</span> a) {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">++</span>a;
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(a); <span style="color:#75715e">//it prints 1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> a;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>As you can see the change made to the parameter passed to <code>increment</code>, that is <code>a</code>, affects only the local copy of it.
 This proves that Java passes primitives by value.</p>
 <p>Well, this is no surprise to anyone since you already knew that.</p>
 <p>I&rsquo;ll prove now, that also object references are passed by value, that is only a copy of the reference is passed.
 Suppose you want to write a <code>swap</code> method to swap two integers. Since you know you can&rsquo;t use primitives you might
 think to write the method using the wrapper class for int values, that is <code>Integer</code>. Let&rsquo;s try that:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  Integer a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-  Integer b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>5<span style="color:#f92672">);</span>
-  swap<span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">);</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>b<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span> <span style="color:#75715e">//it prints 5 so swap didn&#39;t work!
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span><span style="color:#f92672">(</span>Integer a<span style="color:#f92672">,</span> Integer b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  Integer temp <span style="color:#f92672">=</span> a<span style="color:#f92672">;</span>
-  a <span style="color:#f92672">=</span> b<span style="color:#f92672">;</span>
-  b <span style="color:#f92672">=</span> temp<span style="color:#f92672">;</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>b<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span> <span style="color:#75715e">//it prints 1!
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>  Integer a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer(1);
+</span></span><span style="display:flex;"><span>  Integer b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer(5);
+</span></span><span style="display:flex;"><span>  swap(a, b);
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(b.<span style="color:#a6e22e">intValue</span>()); <span style="color:#75715e">//it prints 5 so swap didn&#39;t work!</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(Integer a, Integer b) {
+</span></span><span style="display:flex;"><span>  Integer temp <span style="color:#f92672">=</span> a;
+</span></span><span style="display:flex;"><span>  a <span style="color:#f92672">=</span> b;
+</span></span><span style="display:flex;"><span>  b <span style="color:#f92672">=</span> temp;
+</span></span><span style="display:flex;"><span>  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(b.<span style="color:#a6e22e">intValue</span>()); <span style="color:#75715e">//it prints 1!</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>This means that, even the object references are passed by value, as I stated at the beginning of this post!</p>
 <p>What really happens is that, in case of references, a copy of the reference is passed and not the reference itself.
 This means that, if the class is not immutable, you can change it&rsquo;s state but you CANNOT change the actual memory address
@@ -182,8 +177,8 @@ that lets you change the state of the object. This is left as an exercise though
 
 <section class="comments">
 	<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+<script>
+    window.disqus_config = function () {
     
     
     
@@ -257,14 +252,17 @@ that lets you change the state of the object. This is left as an exercise though
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-
+	<script async defer src="/%20js/menu.js"></script>
+	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
+
 </html>

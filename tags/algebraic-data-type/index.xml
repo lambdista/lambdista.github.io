@@ -4,24 +4,16 @@
     <title>Algebraic Data Type on Alessandro Lacava</title>
     <link>/tags/algebraic-data-type/</link>
     <description>Recent content in Algebraic Data Type on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Sep 2016 14:27:23 +0200</lastBuildDate>
-    
-	<atom:link href="/tags/algebraic-data-type/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/algebraic-data-type/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Keep your code clean with algebraic data types (ADTs)</title>
       <link>/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>
       <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
-      
       <guid>/blog/keep-your-code-clean-with-algebraic-data-types-adts/</guid>
-      <description>Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&amp;rsquo;t agree more with Daniel.
-This short story is another example that demonstrates how using Option is not always the best option (pun intended).
-I&amp;rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.</description>
+      <description>&lt;p&gt;Recently, Daniel Westheide wrote an interesting post about the abuse of the &lt;code&gt;Option&lt;/code&gt; type&#xA;in Scala.&#xA;You can find it &lt;a href=&#34;https://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html&#34;&gt;here&lt;/a&gt;.&#xA;I couldn&amp;rsquo;t agree more with Daniel.&lt;/p&gt;&#xA;&lt;p&gt;This short story is another example that demonstrates how using &lt;code&gt;Option&lt;/code&gt; is not always&#xA;the best option (pun intended).&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m developing an advertising service for a customer using Scala.&#xA;A simplified version of the &lt;code&gt;Ad&lt;/code&gt; data structure is the following:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Ad&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    headline&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description1&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description2&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;At some point they told me we need to support, by adding the &lt;code&gt;headline2&lt;/code&gt; field,&#xA;two types of ad: standard and expanded.&#xA;They said: &amp;ldquo;If &lt;code&gt;headline&lt;/code&gt;, &lt;code&gt;description1&lt;/code&gt;, and &lt;code&gt;description2&lt;/code&gt; are used, it is a standard ad.&#xA;If &lt;code&gt;headline&lt;/code&gt;, &lt;code&gt;headline2&lt;/code&gt;, and &lt;code&gt;description1&lt;/code&gt; are used it is an expanded one.&#xA;Users won&amp;rsquo;t include &lt;code&gt;headline2&lt;/code&gt; when the ad is intended to be standard, and won&amp;rsquo;t include &lt;code&gt;description2&lt;/code&gt;&#xA;when the ad is intended to be expanded.&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

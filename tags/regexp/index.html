@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>RegExp - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="RegExp" />
-<meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/regexp/" />
-<meta property="og:updated_time" content="2007-11-26T14:21:20+00:00" />
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/tags/regexp/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="RegExp">
+  <meta property="og:description" content="Designing and Developing Software">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
-		<meta itemprop="name" content="RegExp">
-<meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RegExp"/>
-<meta name="twitter:description" content="Designing and Developing Software. Mainly FP and Type Systems."/>
+	
+  <meta itemprop="name" content="RegExp">
+  <meta itemprop="description" content="Designing and Developing Software">
+  <meta itemprop="datePublished" content="2007-11-26T14:21:20+00:00">
+  <meta itemprop="dateModified" content="2007-11-26T14:21:20+00:00">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RegExp">
+  <meta name="twitter:description" content="Designing and Developing Software">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	
 	<link rel="alternate" type="application/rss+xml" href="/tags/regexp/index.xml" title="Alessandro Lacava">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -47,7 +45,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -80,7 +78,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -91,7 +89,7 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main list" role="main">
 	<header class="main__header">
 		<h1 class="main__title">RegExp</h1>
@@ -104,13 +102,27 @@ if (!doNotTrack) {
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2007-11-26T14:21:20Z">Nov 26, 2007</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2007-11-26T14:21:20Z">Nov 26, 2007</time>
+	<time class="meta__text" datetime="2007-11-26T14:21:20Z">(Last Modified: Nov 26, 2007)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/javascript/" rel="category">JavaScript</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be considered just a tip not a tutorial on RegExp. Look at the following example:
-var str = &#34;http://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /code=(w+)&amp;?/; var results = regex.exec(str); if(!results){ alert(&#34;no match&#34;); } else{ // first group  alert(results[1]); }  The previous code extracts the string that follows the code= part of str.
+		<p>There are whole books about regular expressions so this post shouldn&rsquo;t be intended as an exhaustive resource on the
+subject. It just shows how to extract a substring from a string using regular expressions in JavaScript so it must be
+considered just a tip not a tutorial on RegExp. Look at the following example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.alessandrolacava.com/?code=ALE69&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/code=(w+)&amp;?/</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">results</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">regex</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">str</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">results</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;no match&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// first group
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>The previous code extracts the string that follows the <code>code=</code> part of <code>str</code>. That string is captured in the first group. of the RegExp, that&rsquo;s why I use <code>results[1]</code> to display it. When you utilise groups&ndash;through the use of parenthesis ()&ndash;you can refer to them using indices, starting from 1. Indeed, at the index 0 you find the whole match. In the previous example, <code>results[0]</code> is equal to <code>code=ALE69</code></p>
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -121,14 +133,29 @@ var str = &#34;http://www.alessandrolacava.com/?code=ALE69&#34;; var regex = /co
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2006-10-10T08:52:06Z">Oct 10, 2006</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2006-10-10T08:52:06Z">Oct 10, 2006</time>
+	<time class="meta__text" datetime="2006-10-10T08:52:06Z">(Last Modified: Oct 10, 2006)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)*? which means: any character (the .) or (the |) n or r. Zero or more times (the *) of the whole stuff.
-Example: The following method strips the multiline comments (those between /* and */) from a string passed in and returns the resulting string:
-import java.util.regex; // ... other code  // Strip multiline comments public void deleteMultilineComments(String subject) { Pattern pattern = Pattern.
+		<p>You can do that using the following pattern in the <code>compile</code> static method of the <code>java.util.regex.Pattern</code> class.
+The pattern is <code>(.|n|r)*?</code> which means: any character (the .) or (the |) n or r. Zero or more times (the *)
+of the whole stuff.</p>
+<p>Example: The following method strips the multiline comments (those between /* and */) from a string passed in and
+returns the resulting string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.regex;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ... other code </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Strip multiline comments</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteMultilineComments</span>(String subject) {
+</span></span><span style="display:flex;"><span>  Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;(/\\*(.|n|r)*?\\*/)&#34;</span>);
+</span></span><span style="display:flex;"><span>  Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(subject);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> matcher.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Note: rn works for Windows systems. n works for Unix-like systems. r works for Mac systems.</p>
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -139,15 +166,20 @@ import java.util.regex; // ... other code  // Strip multiline comments public vo
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2006-07-12T13:24:03Z">Jul 12, 2006</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2006-07-12T13:24:03Z">Jul 12, 2006</time>
+	<time class="meta__text" datetime="2006-07-12T13:24:03Z">(Last Modified: Jul 12, 2006)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters. As a reminder the metacharacters in a Java RegEx are:
-([{^$|)?*+.
-If you want to treat them as ordinary characters you have two options:
- Escape the metacharacter with a backslash, Enclose the whole string that contains metacharacters within Q and E  Q means: &ldquo;quotes all characters until E&rdquo;, while E ends the quotes.
+		<p>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters.  As a reminder the metacharacters in a Java RegEx are:</p>
+<p><code>([{^$|)?*+.</code></p>
+<p>If you want to treat them as ordinary characters you have two options:</p>
+<ol>
+<li>Escape the metacharacter with a backslash,</li>
+<li>Enclose the whole string that contains metacharacters within <code>Q</code> and <code>E</code></li>
+</ol>
+<p><code>Q</code> means: &ldquo;quotes all characters until E&rdquo;, while <code>E</code> ends the quotes.</p>
 	</div>
 </article>
 </main>
@@ -207,12 +239,15 @@ If you want to treat them as ordinary characters you have two options:
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-</body>
+	<script async defer src="/%20js/menu.js"></script>
+	</body>
+
 </html>

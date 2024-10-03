@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dynamic statement on Alessandro Lacava</title>
+    <title>Dynamic Statement on Alessandro Lacava</title>
     <link>/tags/dynamic-statement/</link>
-    <description>Recent content in Dynamic statement on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Dynamic Statement on Alessandro Lacava</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Sep 2006 10:24:18 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/dynamic-statement/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/dynamic-statement/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using dynamic SQL statements from PL/SQL</title>
       <link>/blog/using-dynamic-sql-statements-from-plsql/</link>
       <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
-      
       <guid>/blog/using-dynamic-sql-statements-from-plsql/</guid>
-      <description>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the EXECUTE IMMEDIATE statement. Here are three examples of how you can take advantage of this great statement.
-sql_select := &amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;; EXECUTE IMMEDIATE sql_select INTO your_cursor USING your_parameter_for_field1; In this first example I showed how you can use EXECUTE IMMEDIATE to execute the query and put the result into a cursor.</description>
+      <description>&lt;p&gt;Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the&#xA;&lt;code&gt;EXECUTE IMMEDIATE&lt;/code&gt; statement. Here are three examples of how you can take advantage of this great statement.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sql_select :&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;EXECUTE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IMMEDIATE&lt;/span&gt; sql_select&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; your_cursor&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; your_parameter_for_field1;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;In this first example I showed how you can use &lt;code&gt;EXECUTE IMMEDIATE&lt;/code&gt; to execute the query and put the result into a cursor.&#xA;The &lt;code&gt;USING your_parameter_for_field1&lt;/code&gt; part replaces the &lt;code&gt;:1&lt;/code&gt; bind variable with the value contained in the&#xA;&lt;code&gt;your_parameter_for_field1&lt;/code&gt; parameter.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

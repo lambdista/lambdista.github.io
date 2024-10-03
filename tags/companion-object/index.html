@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Companion object - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="Companion object" />
-<meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/companion-object/" />
-<meta property="og:updated_time" content="2015-05-22T08:12:07+02:00" />
+	<title>Companion Object - Alessandro Lacava</title>
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/tags/companion-object/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="Companion Object">
+  <meta property="og:description" content="Designing and Developing Software">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
-		<meta itemprop="name" content="Companion object">
-<meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Companion object"/>
-<meta name="twitter:description" content="Designing and Developing Software. Mainly FP and Type Systems."/>
+	
+  <meta itemprop="name" content="Companion Object">
+  <meta itemprop="description" content="Designing and Developing Software">
+  <meta itemprop="datePublished" content="2015-05-22T08:12:07+02:00">
+  <meta itemprop="dateModified" content="2015-05-22T08:12:07+02:00">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Companion Object">
+  <meta name="twitter:description" content="Designing and Developing Software">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	
 	<link rel="alternate" type="application/rss+xml" href="/tags/companion-object/index.xml" title="Alessandro Lacava">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -47,7 +45,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -80,7 +78,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -91,10 +89,10 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main list" role="main">
 	<header class="main__header">
-		<h1 class="main__title">Companion object</h1>
+		<h1 class="main__title">Companion Object</h1>
 	</header><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
@@ -109,9 +107,20 @@ if (!doNotTrack) {
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		For this post I&rsquo;ll consider the following simple case class unless otherwise specified: case class Person(lastname: String, firstname: String, birthYear: Int)
-In this post:
- Common knowledge about case classes Not so common knowledge about case classes Defining a case class using the curried form Defining a case class with a private constructor For the most curious ones Final Notes  Common knowledge about case classes When you declare a case class the Scala compiler does the following for you:
+		<p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>lastname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> firstname<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> birthYear<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span></span></span></code></pre></div></p>
+<p>In this post:</p>
+<ul>
+<li><a href="#commonKnowledge">Common knowledge about case classes</a></li>
+<li><a href="#uncommonKnowledge"><em>Not so common</em> knowledge about case classes</a></li>
+<li><a href="#curried">Defining a case class using the <em>curried</em> form</a></li>
+<li><a href="#privateConstructor">Defining a case class with a private constructor</a></li>
+<li><a href="#mostCurious">For the most curious ones</a></li>
+<li><a href="#finalNotes">Final Notes</a></li>
+</ul>
+<p><a name="commonKnowledge"></a></p>
+<h2 id="common-knowledge-about-case-classes">Common knowledge about case classes</h2>
+<p>When you declare a case class the Scala compiler does the following for you:</p>
 	</div>
 </article>
 </main>
@@ -171,12 +180,15 @@ In this post:
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-</body>
+	<script async defer src="/%20js/menu.js"></script>
+	</body>
+
 </html>

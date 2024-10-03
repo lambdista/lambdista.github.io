@@ -4,22 +4,16 @@
     <title>JVM on Alessandro Lacava</title>
     <link>/tags/jvm/</link>
     <description>Recent content in JVM on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Jul 2008 08:53:07 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</title>
       <link>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
       <pubDate>Tue, 22 Jul 2008 08:53:07 +0000</pubDate>
-      
       <guid>/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
-      <description>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
- By editing your eclipse.ini file you find under your Eclipse installation directory.</description>
+      <description>&lt;h1 id=&#34;outofmemoryerror-in-eclipse--java-virtual-machine-jvm&#34;&gt;OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)&lt;/h1&gt;&#xA;&lt;p&gt;It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;By editing your &lt;strong&gt;eclipse.ini&lt;/strong&gt; file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;-Xms40m&lt;/strong&gt;&#xA;** -Xmx512m**&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

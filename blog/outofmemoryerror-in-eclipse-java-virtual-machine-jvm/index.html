@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)" />
-<meta property="og:description" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
- By editing your eclipse.ini file you find under your Eclipse installation directory." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/" />
-<meta property="article:published_time" content="2008-07-22T08:53:07+00:00" />
-<meta property="article:modified_time" content="2008-07-22T08:53:07+00:00" />
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)">
+  <meta property="og:description" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
+By editing your eclipse.ini file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones: -Xms40m ** -Xmx512m**">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2008-07-22T08:53:07+00:00">
+    <meta property="article:modified_time" content="2008-07-22T08:53:07+00:00">
+    <meta property="article:tag" content="Eclipse">
+    <meta property="article:tag" content="JVM">
 
-		<meta itemprop="name" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)">
-<meta itemprop="description" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
- By editing your eclipse.ini file you find under your Eclipse installation directory.">
-<meta itemprop="datePublished" content="2008-07-22T08:53:07&#43;00:00" />
-<meta itemprop="dateModified" content="2008-07-22T08:53:07&#43;00:00" />
-<meta itemprop="wordCount" content="205">
-
-
-
-<meta itemprop="keywords" content="Eclipse,JVM," />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)"/>
-<meta name="twitter:description" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
- By editing your eclipse.ini file you find under your Eclipse installation directory."/>
+	
+  <meta itemprop="name" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)">
+  <meta itemprop="description" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
+By editing your eclipse.ini file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones: -Xms40m ** -Xmx512m**">
+  <meta itemprop="datePublished" content="2008-07-22T08:53:07+00:00">
+  <meta itemprop="dateModified" content="2008-07-22T08:53:07+00:00">
+  <meta itemprop="wordCount" content="205">
+  <meta itemprop="keywords" content="Eclipse,JVM">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)">
+  <meta name="twitter:description" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:
+By editing your eclipse.ini file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones: -Xms40m ** -Xmx512m**">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -57,7 +53,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -90,7 +86,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -101,14 +97,15 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2008-07-22T08:53:07Z">Jul 22, 2008</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/ide/" rel="category">IDE</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2008-07-22T08:53:07Z">Jul 22, 2008</time>
+	<time class="meta__text" datetime="2008-07-22T08:53:07Z">(Last Modified: Jul 22, 2008)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/programming/" rel="category">Programming</a>, <a class="meta__link" href="/categories/ide/" rel="category">IDE</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
@@ -169,8 +166,8 @@ if (!doNotTrack) {
 
 <section class="comments">
 	<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+<script>
+    window.disqus_config = function () {
     
     
     
@@ -244,14 +241,17 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-
+	<script async defer src="/%20js/menu.js"></script>
+	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
+
 </html>

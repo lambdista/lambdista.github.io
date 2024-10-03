@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>How to attach source or Javadoc to Java Enterprise Edition API in Eclipse - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="How to attach source or Javadoc to Java Enterprise Edition API in Eclipse" />
-<meta property="og:description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/" />
-<meta property="article:published_time" content="2007-09-14T12:50:48+00:00" />
-<meta property="article:modified_time" content="2007-09-14T12:50:48+00:00" />
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/blog/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="How to attach source or Javadoc to Java Enterprise Edition API in Eclipse">
+  <meta property="og:description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there’s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2007-09-14T12:50:48+00:00">
+    <meta property="article:modified_time" content="2007-09-14T12:50:48+00:00">
+    <meta property="article:tag" content="Eclipse">
 
-		<meta itemprop="name" content="How to attach source or Javadoc to Java Enterprise Edition API in Eclipse">
-<meta itemprop="description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:">
-<meta itemprop="datePublished" content="2007-09-14T12:50:48&#43;00:00" />
-<meta itemprop="dateModified" content="2007-09-14T12:50:48&#43;00:00" />
-<meta itemprop="wordCount" content="128">
-
-
-
-<meta itemprop="keywords" content="Eclipse," />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to attach source or Javadoc to Java Enterprise Edition API in Eclipse"/>
-<meta name="twitter:description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there&rsquo;s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:"/>
+	
+  <meta itemprop="name" content="How to attach source or Javadoc to Java Enterprise Edition API in Eclipse">
+  <meta itemprop="description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there’s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:">
+  <meta itemprop="datePublished" content="2007-09-14T12:50:48+00:00">
+  <meta itemprop="dateModified" content="2007-09-14T12:50:48+00:00">
+  <meta itemprop="wordCount" content="128">
+  <meta itemprop="keywords" content="Eclipse">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to attach source or Javadoc to Java Enterprise Edition API in Eclipse">
+  <meta name="twitter:description" content="Eclipse is a great IDE. When you hover your mouse over a class name or method of the Java SE API you get a contextual help for that class or method. However if you do the same thing over a Java EE class, such as HttpServletRequest you might not get the same effect. This is because there’s is no source or Javadoc attached to that class. To attach the documentation to your J2EE class as well you can follow these steps:">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -54,7 +49,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -87,7 +82,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -98,14 +93,15 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">How to attach source or Javadoc to Java Enterprise Edition API in Eclipse</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2007-09-14T12:50:48Z">Sep 14, 2007</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ide/" rel="category">IDE</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2007-09-14T12:50:48Z">Sep 14, 2007</time>
+	<time class="meta__text" datetime="2007-09-14T12:50:48Z">(Last Modified: Sep 14, 2007)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ide/" rel="category">IDE</a>, <a class="meta__link" href="/categories/java/" rel="category">Java</a>
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
@@ -118,7 +114,7 @@ if (!doNotTrack) {
 <p>Choose Properties from the menu.</p>
 </li>
 <li>
-<p>In Javadoc location path put the URL where the Java EE documentation is located (e.g. <a href="http://java.sun.com/j2ee/1.4/docs/api/">http://java.sun.com/j2ee/1.4/docs/api/</a>) or, alternatively, indicate the path where the Javadoc is located in your disk, such as file:/c:/path/to/your/documentation.</p>
+<p>In Javadoc location path put the URL where the Java EE documentation is located (e.g. <a href="https://java.sun.com/j2ee/1.4/docs/api/">https://java.sun.com/j2ee/1.4/docs/api/</a>) or, alternatively, indicate the path where the Javadoc is located in your disk, such as file:/c:/path/to/your/documentation.</p>
 </li>
 </ol>
 <p>Hope this helps!</p>
@@ -157,8 +153,8 @@ if (!doNotTrack) {
 
 <section class="comments">
 	<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+<script>
+    window.disqus_config = function () {
     
     
     
@@ -232,14 +228,17 @@ if (!doNotTrack) {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-
+	<script async defer src="/%20js/menu.js"></script>
+	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
+
 </html>

@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Self-recursive type on Alessandro Lacava</title>
+    <title>Self-Recursive Type on Alessandro Lacava</title>
     <link>/tags/self-recursive-type/</link>
-    <description>Recent content in Self-recursive type on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Self-Recursive Type on Alessandro Lacava</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Mar 2015 14:59:24 +0200</lastBuildDate>
-    
-	<atom:link href="/tags/self-recursive-type/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/self-recursive-type/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scala self-recursive types</title>
       <link>/blog/scala-self-recursive-types/</link>
       <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
-      
       <guid>/blog/scala-self-recursive-types/</guid>
-      <description>One of the advantages of using a statically typed language is that you can use the type system to enforce some constraints. Scala provides self-recursive types, aka F-bounded polymorphic types that&amp;ndash;along with self types&amp;ndash;let you put powerful constraint to your type definitions.
-Self-recursive type definition Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example which does not use a self-recursive type:</description>
+      <description>&lt;p&gt;One of the advantages of using a statically typed language is that you can use the type system to enforce&#xA;some constraints. Scala provides &lt;em&gt;self-recursive types&lt;/em&gt;, aka &lt;em&gt;F-bounded polymorphic types&lt;/em&gt;&#xA;that&amp;ndash;along with &lt;em&gt;self types&lt;/em&gt;&amp;ndash;let you put powerful constraint to your type definitions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;self-recursive-type-definition&#34;&gt;Self-recursive type definition&lt;/h2&gt;&#xA;&lt;p&gt;Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example&#xA;which does not use a self-recursive type:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

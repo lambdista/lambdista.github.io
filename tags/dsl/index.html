@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>DSL - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="DSL" />
-<meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/dsl/" />
-<meta property="og:updated_time" content="2015-02-20T15:09:06+01:00" />
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/tags/dsl/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="DSL">
+  <meta property="og:description" content="Designing and Developing Software">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
-		<meta itemprop="name" content="DSL">
-<meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="DSL"/>
-<meta name="twitter:description" content="Designing and Developing Software. Mainly FP and Type Systems."/>
+	
+  <meta itemprop="name" content="DSL">
+  <meta itemprop="description" content="Designing and Developing Software">
+  <meta itemprop="datePublished" content="2015-02-20T15:09:06+01:00">
+  <meta itemprop="dateModified" content="2015-02-20T15:09:06+01:00">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DSL">
+  <meta name="twitter:description" content="Designing and Developing Software">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	
 	<link rel="alternate" type="application/rss+xml" href="/tags/dsl/index.xml" title="Alessandro Lacava">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -47,7 +45,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -80,7 +78,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -91,7 +89,7 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main list" role="main">
 	<header class="main__header">
 		<h1 class="main__title">DSL</h1>
@@ -109,10 +107,61 @@ if (!doNotTrack) {
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		A simple internal DSL in Scala for money-related operations Source code: Scala DSL for money-related operations
-This Domain-Specific Language (DSL) lets you perform operations among different currencies, by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.
-Usage Example Here&rsquo;s a simple usage example:
-import com.lambdista.money._ import com.lambdista.money.Currency._ object Main { def main(args: Array[String]): Unit = { val conversion: Conversion = Map( (GBP, EUR) -&gt; 1.
+		<h3 id="a-simple-internal-dsl-in-scala-for-money-related-operations">A simple internal DSL in Scala for money-related operations</h3>
+<p>Source code: <a href="https://github.com/lambdista/money">Scala DSL for money-related operations</a></p>
+<p>This Domain-Specific Language (DSL) lets you perform operations among different currencies,
+by transparently doing all internal conversions. The conversion map is injected implicitly by the client code.</p>
+<h3 id="usage-example">Usage Example</h3>
+<p>Here&rsquo;s a simple usage example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> com.lambdista.money._
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> com.lambdista.money.Currency._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> conversion<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Conversion</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Map</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">(</span><span style="color:#a6e22e">GBP</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">EUR</span><span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">1.270</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">(</span><span style="color:#a6e22e">EUR</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">1.268</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">(</span><span style="color:#a6e22e">GBP</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">1.611</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">implicit</span> <span style="color:#66d9ef">val</span> converter <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Converter</span><span style="color:#f92672">(</span>conversion<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> sumAndConversion1 <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100.001</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">200</span><span style="color:#f92672">(</span><span style="color:#a6e22e">EUR</span><span style="color:#f92672">)</span> to <span style="color:#a6e22e">GBP</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;sumAndConversion1: </span><span style="color:#e6db74">$sumAndConversion1</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> sumAndConversion2<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">210.4</span><span style="color:#f92672">(</span><span style="color:#a6e22e">EUR</span><span style="color:#f92672">)</span> to <span style="color:#a6e22e">EUR</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;sumAndConversion2: </span><span style="color:#e6db74">$sumAndConversion2</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> sum <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100.001</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">200</span><span style="color:#f92672">(</span><span style="color:#a6e22e">EUR</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> simpleConversion <span style="color:#66d9ef">=</span> sum<span style="color:#f92672">(</span><span style="color:#a6e22e">GBP</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;simpleConversion: </span><span style="color:#e6db74">$simpleConversion</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> sumWithSimpleNumber <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">23.560</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;sumWithSimpleNumber: </span><span style="color:#e6db74">$sumWithSimpleNumber</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> multiplicationWithSimpleNumber <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;multiplicationWithSimpleNumber: </span><span style="color:#e6db74">$multiplicationWithSimpleNumber</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> usd <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Currency</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;USD&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> multiplication <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">(</span>usd<span style="color:#f92672">)</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">23</span><span style="color:#f92672">(</span><span style="color:#a6e22e">EUR</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;multiplication: </span><span style="color:#e6db74">$multiplication</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> divisionWithSimpleNumber <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;divisionWithSimpleNumber: </span><span style="color:#e6db74">$divisionWithSimpleNumber</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> comparison <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">(</span><span style="color:#a6e22e">USD</span><span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">(</span><span style="color:#a6e22e">EUR</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;100 USD &gt; 90 EUR? </span><span style="color:#e6db74">$comparison</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
+<p>As you can see the client code just needs two simple imports and an implicit value of type <code>Converter</code>
+in order to use the DSL. The operations shown in the previous code are only a few among the available ones.
+Have a look at the <code>Money</code> class for a complete coverage.</p>
 	</div>
 </article>
 </main>
@@ -172,12 +221,15 @@ import com.lambdista.money._ import com.lambdista.money.Currency._ object Main {
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-</body>
+	<script async defer src="/%20js/menu.js"></script>
+	</body>
+
 </html>

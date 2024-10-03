@@ -4,24 +4,16 @@
     <title>NOT IN on Alessandro Lacava</title>
     <link>/tags/not-in/</link>
     <description>Recent content in NOT IN on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Jun 2008 13:24:09 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/not-in/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/not-in/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NOT IN vs. NOT EXISTS when NULL values are involved</title>
       <link>/blog/not-in-vs-not-exists-when-null-values-are-involved/</link>
       <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
-      
       <guid>/blog/not-in-vs-not-exists-when-null-values-are-involved/</guid>
-      <description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables:
-Now try the following query:
-SELECT * FROM table_a a WHERE a.cd_field NOT IN (SELECT b.cd_field FROM table_b b); Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field which is not present in table_b.cd_field.
-I think this is because NOT IN internally uses the inequality operator.</description>
+      <description>&lt;p&gt;&lt;code&gt;NOT IN&lt;/code&gt; does not behave as you would expect when &lt;code&gt;NULL&lt;/code&gt; values are involved.&#xA;Suppose you have the following tables:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;CD_FIELD&lt;/td&gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;DS_FIELD&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td&gt;1&lt;/td&gt;&#xA;    &lt;td&gt;ALPHA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr&gt;&#xA;    &lt;td&gt;2&lt;/td&gt;&#xA;    &lt;td&gt;BETA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;**TABLE_A**&#xA;&lt;table&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;CD_FIELD&lt;/td&gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;DS_FIELD&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td&gt;1&lt;/td&gt;&#xA;    &lt;td&gt;GAMMA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr&gt;&#xA;    &lt;td&gt;NULL&lt;/td&gt;&#xA;    &lt;td&gt;DELTA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;**TABLE_B**&#xA;&lt;p&gt;Now try the following query:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_a a&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; a.cd_field &lt;span style=&#34;color:#66d9ef&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; b.cd_field &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_b b);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field&#xA;which is not present in table_b.cd_field.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

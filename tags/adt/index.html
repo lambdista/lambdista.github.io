@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>ADT - Alessandro Lacava</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="ADT" />
-<meta property="og:description" content="Designing and Developing Software. Mainly FP and Type Systems." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/adt/" />
-<meta property="og:updated_time" content="2016-09-14T14:27:23+02:00" />
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="">
+	<meta property="og:url" content="/tags/adt/">
+  <meta property="og:site_name" content="Alessandro Lacava">
+  <meta property="og:title" content="ADT">
+  <meta property="og:description" content="Designing and Developing Software">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
-		<meta itemprop="name" content="ADT">
-<meta itemprop="description" content="Designing and Developing Software. Mainly FP and Type Systems.">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ADT"/>
-<meta name="twitter:description" content="Designing and Developing Software. Mainly FP and Type Systems."/>
+	
+  <meta itemprop="name" content="ADT">
+  <meta itemprop="description" content="Designing and Developing Software">
+  <meta itemprop="datePublished" content="2016-09-14T14:27:23+02:00">
+  <meta itemprop="dateModified" content="2016-09-14T14:27:23+02:00">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ADT">
+  <meta name="twitter:description" content="Designing and Developing Software">
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	
 	<link rel="alternate" type="application/rss+xml" href="/tags/adt/index.xml" title="Alessandro Lacava">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-348808-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<link rel="shortcut icon" href="/%20favicon.ico">
 
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
@@ -47,7 +45,7 @@ if (!doNotTrack) {
 	<div class="logo">
 		<a class="logo__link" href="/" title="Alessandro Lacava" rel="home">
 			<div class="logo__title">Alessandro Lacava</div>
-			<div class="logo__tagline">On designing and developing software. Mainly FP and type systems.</div>
+			<div class="logo__tagline">On designing and developing software</div>
 		</a>
 	</div>
 		
@@ -80,7 +78,7 @@ if (!doNotTrack) {
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
-				<span class="menu__text">About</span>
+				<span class="menu__text">About Me</span>
 				
 			</a>
 		</li>
@@ -91,7 +89,7 @@ if (!doNotTrack) {
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
-			
+				
 <main class="main list" role="main">
 	<header class="main__header">
 		<h1 class="main__title">ADT</h1>
@@ -109,10 +107,25 @@ if (!doNotTrack) {
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Recently, Daniel Westheide wrote an interesting post about the abuse of the Option type in Scala. You can find it here. I couldn&rsquo;t agree more with Daniel.
-This short story is another example that demonstrates how using Option is not always the best option (pun intended).
-I&rsquo;m developing an advertising service for a customer using Scala. A simplified version of the Ad data structure is the following:
-final case class Ad( headline: String, description1: String, description2: String ) At some point they told me we need to support, by adding the headline2 field, two types of ad: standard and expanded.
+		<p>Recently, Daniel Westheide wrote an interesting post about the abuse of the <code>Option</code> type
+in Scala.
+You can find it <a href="https://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html">here</a>.
+I couldn&rsquo;t agree more with Daniel.</p>
+<p>This short story is another example that demonstrates how using <code>Option</code> is not always
+the best option (pun intended).</p>
+<p>I&rsquo;m developing an advertising service for a customer using Scala.
+A simplified version of the <code>Ad</code> data structure is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Ad</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    headline<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> 
+</span></span><span style="display:flex;"><span>    description1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> 
+</span></span><span style="display:flex;"><span>    description2<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span></span></span></code></pre></div>
+<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
+two types of ad: standard and expanded.
+They said: &ldquo;If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
+If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
+Users won&rsquo;t include <code>headline2</code> when the ad is intended to be standard, and won&rsquo;t include <code>description2</code>
+when the ad is intended to be expanded.&rdquo;</p>
 	</div>
 </article>
 </main>
@@ -172,12 +185,15 @@ final case class Ad( headline: String, description1: String, description2: Strin
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Alessandro Lacava.
+			&copy; 2024 Alessandro Lacava.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&always=1"></script>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-</body>
+	<script async defer src="/%20js/menu.js"></script>
+	</body>
+
 </html>

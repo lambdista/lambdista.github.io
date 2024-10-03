@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>for comprehension on Alessandro Lacava</title>
+    <title>For Comprehension on Alessandro Lacava</title>
     <link>/tags/for-comprehension/</link>
-    <description>Recent content in for comprehension on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in For Comprehension on Alessandro Lacava</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 11:26:32 +0200</lastBuildDate>
-    
-	<atom:link href="/tags/for-comprehension/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/for-comprehension/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Desugaring for comprehensions (AKA for expressions)</title>
       <link>/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
       <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
-      
       <guid>/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
-      <description>Recently I stumbled upon a piece of Scala code that might leave you puzzled. Before showing you the code I must spend a few words about the compiler options.
-Compiler options Getting into the glory details of each and every compiler option is out of the scope of this post (see compiler options). Suffice to say you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.</description>
+      <description>&lt;p&gt;Recently I stumbled upon a piece of Scala code that might leave you puzzled.&#xA;Before showing you the code I must spend a few words about the compiler options.&lt;/p&gt;&#xA;&lt;h2 id=&#34;compiler-options&#34;&gt;Compiler options&lt;/h2&gt;&#xA;&lt;p&gt;Getting into the glory details of each and every compiler option is out of the scope of this post&#xA;(see &lt;a href=&#34;https://docs.scala-lang.org/overviews/compiler-options/index.html&#34;&gt;compiler options&lt;/a&gt;). Suffice to say&#xA;you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.&#xA;The flag I always use, among others, is &lt;code&gt;&amp;quot;-Wunused&amp;quot;&lt;/code&gt;. So in &lt;code&gt;build.sbt&lt;/code&gt; I have:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

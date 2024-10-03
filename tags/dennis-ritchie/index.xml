@@ -4,22 +4,16 @@
     <title>Dennis Ritchie on Alessandro Lacava</title>
     <link>/tags/dennis-ritchie/</link>
     <description>Recent content in Dennis Ritchie on Alessandro Lacava</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Oct 2011 12:56:36 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/dennis-ritchie/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="/tags/dennis-ritchie/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Goodbye Dennis Ritchie (dmr)</title>
       <link>/blog/goodbye-dennis-macalistair-ritchie-dmr/</link>
       <pubDate>Thu, 13 Oct 2011 12:56:36 +0000</pubDate>
-      
       <guid>/blog/goodbye-dennis-macalistair-ritchie-dmr/</guid>
-      <description>Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011) This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language and the key developer of the Unix operating system.
-The C programming language is the book he wrote along with Brian Kernighan. In my humble opinion, it is one of the best book ever written about computer programming.</description>
+      <description>&lt;img alt=&#34;Dennis MacAlistair Ritchie (dmr)&#34; style=&#34;float: left; margin: 10px;&#34; src=&#34;/images/dennis-ritchie.jpg&#34; /&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dennis_Ritchie&#34;&gt;Dennis MacAlistair Ritchie (username: dmr, September 9, 1941 — October 8, 2011)&lt;/a&gt;&#xA;This post is dedicated to a man that gave a lot to the computer science world, Dennis Ritchie (a.k.a. dmr). He is the creator of the C programming language &#x9;and the key developer of the Unix operating system.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/The_C_Programming_Language_%28book%29&#34;&gt;The C programming language&lt;/a&gt; is the book he wrote along with &lt;a href=&#34;https://en.wikipedia.org/wiki/Brian_Kernighan&#34;&gt;Brian Kernighan&lt;/a&gt;. &#x9;In my humble opinion, it is one of the best book ever written about computer programming.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
