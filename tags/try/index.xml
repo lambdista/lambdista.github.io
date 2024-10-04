@@ -10,9 +10,9 @@
     <atom:link href="/tags/try/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Try-Success-Failure API for Java 8</title>
-      <link>/blog/try-success-failure-api-for-java/</link>
+      <link>/posts/try-success-failure-api-for-java/</link>
       <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
-      <guid>/blog/try-success-failure-api-for-java/</guid>
+      <guid>/posts/try-success-failure-api-for-java/</guid>
       <description>&lt;h3 id=&#34;try-success-failure-api-java-implementation-of-the-famous-scala-counterpart&#34;&gt;Try-Success-Failure API: Java implementation of the famous Scala counterpart&lt;/h3&gt;&#xA;&lt;p&gt;Source code: &lt;a href=&#34;https://github.com/lambdista/try&#34;&gt;Try-Success-Failure API for Java&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This API is a Java implementation of &lt;a href=&#34;https://www.scala-lang.org/api/current/#scala.util.Try&#34;&gt;Scala Try API&lt;/a&gt;,&#xA;originally implemented by the guys at &lt;a href=&#34;https://twitter.com/&#34;&gt;Twitter&lt;/a&gt; and later added to the Scala Standard Library.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;Try&lt;/code&gt; type represents a computation that may fail. If the computation is successful returns&#xA;the value wrapped in a &lt;code&gt;Try.Success&lt;/code&gt; otherwise returns the&#xA;&lt;code&gt;java.lang.Exception&lt;/code&gt; wrapped in a &lt;code&gt;Try.Failure&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;To use &lt;code&gt;Try&lt;/code&gt; you need to call the &lt;code&gt;Try.apply(FailableSupplier)&lt;/code&gt; method passing in a lambda with&#xA;the same signature used for a common &lt;code&gt;java.util.function.Supplier&lt;/code&gt;.&#xA;Indeed &lt;code&gt;FailableSupplier&lt;/code&gt; is just a &lt;code&gt;java.util.function.Supplier&lt;/code&gt; with a&#xA;&lt;code&gt;throws Exception&lt;/code&gt; added to its &lt;code&gt;get&lt;/code&gt; method.&lt;/p&gt;</description>
     </item>
   </channel>

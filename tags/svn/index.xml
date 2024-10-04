@@ -10,9 +10,9 @@
     <atom:link href="/tags/svn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to exclude subversion hidden directories (.svn) using Ant</title>
-      <link>/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</link>
+      <link>/posts/how-to-exclude-subversion-hidden-directories-svn-using-ant/</link>
       <pubDate>Mon, 04 Jun 2007 10:43:49 +0000</pubDate>
-      <guid>/blog/how-to-exclude-subversion-hidden-directories-svn-using-ant/</guid>
+      <guid>/posts/how-to-exclude-subversion-hidden-directories-svn-using-ant/</guid>
       <description>&lt;p&gt;Many Java developers already know that &lt;a href=&#34;https://ant.apache.org/&#34;&gt;Ant&lt;/a&gt; is a great build tool. Besides a build tool you also need a good version control system to manage the various versions of your code. For this purpose I often use &lt;a href=&#34;https://subversion.tigris.org/&#34;&gt;Subversion&lt;/a&gt;. Now, there might be time when you need to exclude the Subversion hidden directories from, for example, a backup Ant target you built. To do that you just need to use the following attribute to your zipfileset or other directory-based task:&lt;/p&gt;</description>
     </item>
   </channel>

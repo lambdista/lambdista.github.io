@@ -10,9 +10,9 @@
     <atom:link href="/tags/java-me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using proguard obfuscator through the Wireless Toolkit</title>
-      <link>/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
+      <link>/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
       <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
-      <guid>/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
+      <guid>/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
       <description>&lt;p&gt;When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation.&#xA;&lt;a href=&#34;https://proguard.sourceforge.net/&#34;&gt;Proguard&lt;/a&gt; is a good open-source tool you can use for this purpose.&#xA;To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find&#xA;the obfuscator. You can do that by editing the file &lt;strong&gt;ktools.properties&lt;/strong&gt; that you can find under &lt;strong&gt;%WTK%wtklibWindows&lt;/strong&gt;,&#xA;where &lt;strong&gt;%WTK%&lt;/strong&gt; is the root directory of the Wireless Toolkit. Basically, you just need to add the two following lines&#xA;to the aforementioned file:&lt;/p&gt;</description>
     </item>
   </channel>

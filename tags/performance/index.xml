@@ -10,9 +10,9 @@
     <atom:link href="/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Performance differences between IN and EXISTS</title>
-      <link>/blog/performance-differences-between-in-and-exists/</link>
+      <link>/posts/performance-differences-between-in-and-exists/</link>
       <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
-      <guid>/blog/performance-differences-between-in-and-exists/</guid>
+      <guid>/posts/performance-differences-between-in-and-exists/</guid>
       <description>&lt;p&gt;Very often I hear people wondering if it&amp;rsquo;s better the &lt;code&gt;EXISTS&lt;/code&gt; or the &lt;code&gt;IN&lt;/code&gt; operator.&#xA;Let&amp;rsquo;s start by saying that the two operators behave differently when &lt;code&gt;NULL&lt;/code&gt; values are involved&#xA;(see &lt;a href=&#34;/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved&#34;&gt;this post&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;If you are sure that the field used to join the tables does not include &lt;code&gt;NULL&lt;/code&gt; values then the &lt;code&gt;IN&lt;/code&gt; operator &amp;ldquo;generally&amp;rdquo;&#xA;performs better than &lt;code&gt;EXISTS&lt;/code&gt;. I say &amp;ldquo;generally&amp;rdquo; because this is not always the case. For example consider the following query:&lt;/p&gt;</description>
     </item>
   </channel>

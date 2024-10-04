@@ -10,9 +10,9 @@
     <atom:link href="/categories/editor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to exploit UltraEdit-32 to highlight code based on file extensions</title>
-      <link>/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</link>
+      <link>/posts/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</link>
       <pubDate>Wed, 14 Mar 2007 08:27:14 +0000</pubDate>
-      <guid>/blog/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</guid>
+      <guid>/posts/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.ultraedit.com/&#34;&gt;UltraEdit-32&lt;/a&gt; (UE for short from now on) is a wonderful text editor. You can use it as a simple text editor or to write programs using your favorite languages. Besides other features, UE offers syntax highlighting for the most common programming languages out there. UE recognizes the type of file by looking at its extension. However, sometimes, you might want to use one syntax highlighting for an extension that is not mapped in UE. For example if you use Pro&lt;em&gt;C, which file extension is .pc, you may want UE to default to the C highlighting for Pro&lt;/em&gt;C files. You can do that by editing the UE&amp;rsquo;s wordfile.txt file. UE uses this file to understand how to highlight words. To edit this file, from the UE menu go to: Advanced -&amp;gt; Configuration -&amp;gt; Editor Display -&amp;gt; Syntax Highlighting. From this window you can open wordfile.txt by clicking on the Open button in the Full path name word list section. In this file you&amp;rsquo;ll find all the languages that UE highlight. Each language start with /Ln, where n is a number. At the end of the row where /Ln is you can see &amp;ldquo;File Extensions = &lt;em&gt;extensions&lt;/em&gt;&amp;rdquo;. Just append the extension you need to highlight for that language and save the file. Restart UE and open the file with the extension you just mapped. Enjoy the result! :-)&lt;/p&gt;</description>
     </item>
   </channel>

@@ -10,9 +10,9 @@
     <atom:link href="/tags/pojo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>POJO (Plain Old Java Object): The simpler...the better.</title>
-      <link>/blog/pojo-plain-old-java-object-the-simplerthe-better/</link>
+      <link>/posts/pojo-plain-old-java-object-the-simplerthe-better/</link>
       <pubDate>Mon, 21 Aug 2006 15:31:02 +0000</pubDate>
-      <guid>/blog/pojo-plain-old-java-object-the-simplerthe-better/</guid>
+      <guid>/posts/pojo-plain-old-java-object-the-simplerthe-better/</guid>
       <description>&lt;p&gt;A  POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined&#xA;by the EJB 2 framework. An example of a POJO is a class composed by only:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Properties, representing the object&amp;rsquo;s state.&lt;/li&gt;&#xA;&lt;li&gt;Getter and setter methods for the properties.&lt;/li&gt;&#xA;&lt;li&gt;Business methods, representing behaviour.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Some properties can represent associations with other POJOs. Here is an example of implementation of the&#xA;&lt;code&gt;Person&lt;/code&gt; entity using a POJO:&lt;/p&gt;</description>
     </item>
   </channel>

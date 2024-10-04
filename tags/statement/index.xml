@@ -10,9 +10,9 @@
     <atom:link href="/tags/statement/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
-      <link>/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
+      <link>/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
       <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
-      <guid>/blog/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
+      <guid>/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
       <description>&lt;p&gt;Sometimes you might need to commit a single &lt;code&gt;INSERT&lt;/code&gt;, &lt;code&gt;UPDATE&lt;/code&gt; or &lt;code&gt;DELETE&lt;/code&gt; statement and not the whole main transaction.&#xA;In such a case you can use an &lt;code&gt;AUTONOMOUS TRANSACTION&lt;/code&gt; which is a feature available since Oracle 8i.&#xA;The trick is to encapsulate the statement in a procedure and use the pragma &lt;code&gt;AUTONOMOUS_TRANSACTION&lt;/code&gt;. Here is an example, suppose you have a table, &lt;code&gt;your_table&lt;/code&gt;, which has just one column of type &lt;code&gt;NUMBER&lt;/code&gt; and you want to insert the value 1, irrespective of the state of the main transaction:&lt;/p&gt;</description>
     </item>
   </channel>

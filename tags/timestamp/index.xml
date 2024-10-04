@@ -10,9 +10,9 @@
     <atom:link href="/tags/timestamp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to compute the timestamp in JavaScript</title>
-      <link>/blog/how-to-compute-the-timestamp-in-javascript/</link>
+      <link>/posts/how-to-compute-the-timestamp-in-javascript/</link>
       <pubDate>Tue, 09 Oct 2007 11:20:28 +0000</pubDate>
-      <guid>/blog/how-to-compute-the-timestamp-in-javascript/</guid>
+      <guid>/posts/how-to-compute-the-timestamp-in-javascript/</guid>
       <description>&lt;p&gt;Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on&#xA;January 1, 1970. In JavaScript you can use the built-in object &lt;strong&gt;Date&lt;/strong&gt; to compute this timestamp. Here follows an example:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ts&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Date.&lt;span style=&#34;color:#a6e22e&#34;&gt;UTC&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2007&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;09&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;28&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;alert&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ts&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;The previous code displays an alert with the number of seconds between 00:00:00 UTC on January 1, 1970 and 00:00:00&#xA;UTC on October 28, 2007.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
