@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Alessandro Lacava</title>
-        <link>http://www.alessandrolacava.com/tags/rip/</link>
+        <link>https://www.alessandrolacava.com/tags/rip/</link>
         <description>Latest blog posts from Alessandro Lacava</description>
 
         
@@ -20,87 +20,87 @@
         
 
         
-        <atom:link href="http://www.alessandrolacava.com/tags/rip/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://www.alessandrolacava.com/tags/rip/index.xml" rel="self" type="application/rss+xml" />
         
 
         
             
         <item>
           <title>Desugaring for comprehensions (AKA for expressions)</title>
-          <link>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
+          <link>https://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
           <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
+          <guid>https://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Keep your code clean with algebraic data types (ADTs)</title>
-          <link>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>
+          <link>https://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>
           <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</guid>
+          <guid>https://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Scala: Seq, Map and Set as functions</title>
-          <link>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</link>
+          <link>https://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</link>
           <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
+          <guid>https://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Scala case classes in depth</title>
-          <link>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</link>
+          <link>https://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</link>
           <pubDate>Fri, 22 May 2015 08:12:07 +0200</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</guid>
+          <guid>https://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Scala self-recursive types</title>
-          <link>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</link>
+          <link>https://www.alessandrolacava.com/blog/scala-self-recursive-types/</link>
           <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</guid>
+          <guid>https://www.alessandrolacava.com/blog/scala-self-recursive-types/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Scala DSL for currency-related operations</title>
-          <link>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</link>
+          <link>https://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</link>
           <pubDate>Fri, 20 Feb 2015 15:09:06 +0100</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</guid>
+          <guid>https://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Try-Success-Failure API for Java 8</title>
-          <link>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</link>
+          <link>https://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</link>
           <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</guid>
+          <guid>https://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Goodbye Dennis Ritchie (dmr)</title>
-          <link>http://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</link>
+          <link>https://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</link>
           <pubDate>Thu, 13 Oct 2011 12:56:36 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</guid>
+          <guid>https://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</guid>
           <description><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 </description>
@@ -108,440 +108,440 @@
             
         <item>
           <title>Undo close tab in Eclipse</title>
-          <link>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</link>
+          <link>https://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</link>
           <pubDate>Thu, 26 Mar 2009 09:33:59 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</guid>
+          <guid>https://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Object not found | EasyPHP | MySQL | phpMyAdmin</title>
-          <link>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</link>
+          <link>https://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</link>
           <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</guid>
+          <guid>https://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Java split() of String | Multiple whitespace characters</title>
-          <link>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</link>
+          <link>https://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</link>
           <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</guid>
+          <guid>https://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</title>
-          <link>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
+          <link>https://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
           <pubDate>Tue, 22 Jul 2008 08:53:07 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
+          <guid>https://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Performance differences between IN and EXISTS</title>
-          <link>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</link>
+          <link>https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</link>
           <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</guid>
+          <guid>https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>NOT IN vs. NOT EXISTS when NULL values are involved</title>
-          <link>http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</link>
+          <link>https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</link>
           <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</guid>
+          <guid>https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Funny long jokes and aphorisms about programming (and programmers of course)</title>
-          <link>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
+          <link>https://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
           <pubDate>Fri, 09 May 2008 13:49:38 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
+          <guid>https://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Funny short jokes and aphorisms about programming (and programmers of course)</title>
-          <link>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
+          <link>https://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
           <pubDate>Fri, 09 May 2008 13:25:27 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
+          <guid>https://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to disable all the elements of a form using JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</link>
           <pubDate>Mon, 31 Mar 2008 13:41:13 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to get the number of columns in a ResultSet in Java</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
           <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Capturing groups using regular expressions (RegEx) in JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</link>
           <pubDate>Mon, 26 Nov 2007 14:21:20 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to compute the timestamp in JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</link>
           <pubDate>Tue, 09 Oct 2007 11:20:28 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to compute a timestamp in Oracle (PL SQL)</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</link>
           <pubDate>Tue, 09 Oct 2007 09:41:18 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Very Useful Shortcuts for Eclipse</title>
-          <link>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</link>
+          <link>https://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</link>
           <pubDate>Tue, 25 Sep 2007 11:10:01 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
+          <guid>https://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to attach source or Javadoc to Java Enterprise Edition API in Eclipse</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</link>
           <pubDate>Fri, 14 Sep 2007 12:50:48 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to create a copy/backup of a table in Oracle</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</link>
           <pubDate>Wed, 04 Jul 2007 08:16:50 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to exclude subversion hidden directories (.svn) using Ant</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</link>
           <pubDate>Mon, 04 Jun 2007 10:43:49 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</link>
           <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to format a decimal number in JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</link>
           <pubDate>Fri, 04 May 2007 11:02:16 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to put a set of rows into a single row in Oracle</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</link>
           <pubDate>Fri, 27 Apr 2007 14:11:27 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to tell Oracle to use more than one byte per character</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</link>
           <pubDate>Thu, 26 Apr 2007 14:05:31 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to exploit UltraEdit-32 to highlight code based on file extensions</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</link>
           <pubDate>Wed, 14 Mar 2007 08:27:14 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to display an element to the center of the browser</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</link>
           <pubDate>Fri, 16 Feb 2007 10:55:53 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to detect the selected checkboxes using JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</link>
           <pubDate>Tue, 16 Jan 2007 16:31:26 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to add scrollbars to a block (e.g. a &lt;div&gt; element)</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</link>
           <pubDate>Fri, 24 Nov 2006 09:21:30 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Sorting an array of objects with the sortBy method of Prototype</title>
-          <link>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</link>
+          <link>https://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</link>
           <pubDate>Mon, 20 Nov 2006 15:34:48 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</guid>
+          <guid>https://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Why you shouldn&#39;t be concerned about optimization</title>
-          <link>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</link>
+          <link>https://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</link>
           <pubDate>Wed, 11 Oct 2006 16:26:34 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</guid>
+          <guid>https://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to select any character across multiple lines in Java</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</link>
           <pubDate>Tue, 10 Oct 2006 08:52:06 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to include a .js file (a JavaScript file) within another .js file</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</link>
           <pubDate>Fri, 22 Sep 2006 09:43:45 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Java passes EVERYTHING by value!</title>
-          <link>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</link>
+          <link>https://www.alessandrolacava.com/blog/java-passes-everything-by-value/</link>
           <pubDate>Wed, 13 Sep 2006 08:51:47 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</guid>
+          <guid>https://www.alessandrolacava.com/blog/java-passes-everything-by-value/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>What happens if you write something like a = a&#43;&#43; in Java?</title>
-          <link>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</link>
+          <link>https://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</link>
           <pubDate>Wed, 13 Sep 2006 07:58:27 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</guid>
+          <guid>https://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Using dynamic SQL statements from PL/SQL</title>
-          <link>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</link>
+          <link>https://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</link>
           <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</guid>
+          <guid>https://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to hide/show an HTML form element depending on a combo box choice</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</link>
           <pubDate>Fri, 01 Sep 2006 13:04:03 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>POJO (Plain Old Java Object): The simpler...the better.</title>
-          <link>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</link>
+          <link>https://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</link>
           <pubDate>Mon, 21 Aug 2006 15:31:02 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</guid>
+          <guid>https://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Calling a function of the opener window</title>
-          <link>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</link>
+          <link>https://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</link>
           <pubDate>Thu, 27 Jul 2006 15:16:22 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</guid>
+          <guid>https://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Creating a Class definition in JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</link>
           <pubDate>Mon, 24 Jul 2006 16:28:27 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</link>
           <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Creating an instance of the object used to make AJAX calls</title>
-          <link>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</link>
+          <link>https://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</link>
           <pubDate>Tue, 11 Jul 2006 15:54:40 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</guid>
+          <guid>https://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Using proguard obfuscator through the Wireless Toolkit</title>
-          <link>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
+          <link>https://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
           <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
+          <guid>https://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>The Function class in JavaScript</title>
-          <link>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</link>
+          <link>https://www.alessandrolacava.com/blog/the-function-class-in-javascript/</link>
           <pubDate>Wed, 14 Jun 2006 21:38:22 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</guid>
+          <guid>https://www.alessandrolacava.com/blog/the-function-class-in-javascript/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>How to store and extract XML data in and from an Oracle DataBase (DB)</title>
-          <link>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
+          <link>https://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
           <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
+          <guid>https://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Using Javascript to detect the key pressed</title>
-          <link>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</link>
+          <link>https://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</link>
           <pubDate>Fri, 12 May 2006 12:23:55 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</guid>
+          <guid>https://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>The name-separator character in Java</title>
-          <link>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</link>
+          <link>https://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</link>
           <pubDate>Tue, 02 May 2006 13:54:38 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</guid>
+          <guid>https://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>
             
         <item>
           <title>Hello world!</title>
-          <link>http://www.alessandrolacava.com/blog/hello-world/</link>
+          <link>https://www.alessandrolacava.com/blog/hello-world/</link>
           <pubDate>Thu, 13 Apr 2006 22:32:24 +0000</pubDate>
           
-          <guid>http://www.alessandrolacava.com/blog/hello-world/</guid>
+          <guid>https://www.alessandrolacava.com/blog/hello-world/</guid>
           <description><!-- raw HTML omitted -->
 </description>
         </item>

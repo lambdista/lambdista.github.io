@@ -8,7 +8,7 @@
     
     <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
     
-    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
     
     
     <link rel="icon" href="/favicon.ico">
@@ -16,12 +16,12 @@
     <meta charset="UTF-8">
     <meta name="author" content="Alessandro Lacava">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="alternate" type="application/rss+xml" href="http://www.alessandrolacava.com/categories/oracle/index.xml" title="Alessandro Lacava" />
+    <link rel="alternate" type="application/rss+xml" href="https://www.alessandrolacava.com/categories/oracle/index.xml" title="Alessandro Lacava" />
     </head>
 <body>
 <header class="page-header">
     <div class="myname"> 
-        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
     </div>
     <nav>
         <ul class="navbar">
@@ -53,7 +53,7 @@
     <h1>Category: Oracle</h1>
     <article class="archive-item">
                 <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Performance differences between IN and EXISTS</a></h3>
+    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Performance differences between IN and EXISTS</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
     
@@ -78,13 +78,13 @@
 Let&rsquo;s start by saying that the two operators behave differently when <code>NULL</code> values are involved
 (see <a href="/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved">this post</a>).</p>
 <p>If you are sure that the field used to join the tables does not include <code>NULL</code> values then the <code>IN</code> operator &ldquo;generally&rdquo;
-performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p><span> <a href="http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Read more...</a></span>
+performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p><span> <a href="https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Read more...</a></span>
     </p>
 </article>
 
             </article><article class="archive-item">
                 <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">NOT IN vs. NOT EXISTS when NULL values are involved</a></h3>
+    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">NOT IN vs. NOT EXISTS when NULL values are involved</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
     
@@ -115,13 +115,13 @@ Suppose you have the following tables:</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
 <p>Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field
-which is not present in table_b.cd_field.</p><span> <a href="http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">Read more...</a></span>
+which is not present in table_b.cd_field.</p><span> <a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">Read more...</a></span>
     </p>
 </article>
 
             </article><article class="archive-item">
                 <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/">How to compute a timestamp in Oracle (PL SQL)</a></h3>
+    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/">How to compute a timestamp in Oracle (PL SQL)</a></h3>
 
     <p class="blog-post-info">Posted: <time>2007-10-09</time>
     
@@ -142,13 +142,13 @@ number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.</
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>(to_date(<span style="color:#cd5555">&#39;09-10-2007&#39;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;DD-MM-YYYY&#39;</span>)<span style="color:#bbb"> </span>-<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>to_date(<span style="color:#cd5555">&#39;01-01-1970&#39;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;DD-MM-YYYY&#39;</span>))<span style="color:#bbb"> </span>*<span style="color:#bbb"> </span><span style="color:#b452cd">60</span><span style="color:#bbb"> </span>*<span style="color:#bbb"> </span><span style="color:#b452cd">60</span><span style="color:#bbb"> </span>*<span style="color:#bbb"> </span><span style="color:#b452cd">24</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>dual</span></span></code></pre></div>
-<p>The result of the preceding query should be 1191888000.</p><span> <a href="http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/">Read more...</a></span>
+<p>The result of the preceding query should be 1191888000.</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/">Read more...</a></span>
     </p>
 </article>
 
             </article><article class="archive-item">
                 <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/">How to create a copy/backup of a table in Oracle</a></h3>
+    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/">How to create a copy/backup of a table in Oracle</a></h3>
 
     <p class="blog-post-info">Posted: <time>2007-07-04</time>
     
@@ -165,7 +165,7 @@ number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.</
     <p><p>You can create a backup of a table (structure and data) in Oracle by using the following syntax:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>customers_backup<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">AS</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers)</span></span></code></pre></div>
-<p>The previous example creates the <code>customers_backup</code> table which mirrors the structure and data of the <code>customers</code> table.</p><span> <a href="http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/">Read more...</a></span>
+<p>The previous example creates the <code>customers_backup</code> table which mirrors the structure and data of the <code>customers</code> table.</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/">Read more...</a></span>
     </p>
 </article>
 
