@@ -2,375 +2,380 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/</loc>
+    <loc>http://www.alessandrolacava.com/articles/</loc>
   </url><url>
-    <loc>/articles/</loc>
+    <loc>http://www.alessandrolacava.com/talks/</loc>
   </url><url>
-    <loc>/talks/</loc>
+    <loc>http://www.alessandrolacava.com/</loc>
+    <lastmod>2020-06-01T16:16:24+02:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
-  </url><url>
-    <loc>/</loc>
+    <loc>http://www.alessandrolacava.com/blog/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>http://www.alessandrolacava.com/categories/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/posts/desugaring-for-comprehensions-aka-for-expressions/</loc>
+    <loc>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/tags/for-comprehension/</loc>
+    <loc>http://www.alessandrolacava.com/tags/for-comprehension/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/tags/for-expression/</loc>
+    <loc>http://www.alessandrolacava.com/tags/for-expression/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/categories/programming/</loc>
+    <loc>http://www.alessandrolacava.com/categories/programming/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/categories/scala/</loc>
+    <loc>http://www.alessandrolacava.com/categories/scala/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>http://www.alessandrolacava.com/tags/</loc>
     <lastmod>2020-05-28T11:26:32+02:00</lastmod>
   </url><url>
-    <loc>/tags/adt/</loc>
+    <loc>http://www.alessandrolacava.com/tags/adt/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
   </url><url>
-    <loc>/tags/algebraic-data-type/</loc>
+    <loc>http://www.alessandrolacava.com/tags/algebraic-data-type/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
   </url><url>
-    <loc>/posts/keep-your-code-clean-with-algebraic-data-types-adts/</loc>
+    <loc>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
   </url><url>
-    <loc>/tags/option/</loc>
+    <loc>http://www.alessandrolacava.com/tags/option/</loc>
     <lastmod>2016-09-14T14:27:23+02:00</lastmod>
   </url><url>
-    <loc>/tags/collections/</loc>
+    <loc>http://www.alessandrolacava.com/tags/collections/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/function/</loc>
+    <loc>http://www.alessandrolacava.com/tags/function/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/list/</loc>
+    <loc>http://www.alessandrolacava.com/tags/list/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/map/</loc>
+    <loc>http://www.alessandrolacava.com/tags/map/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/partial-function/</loc>
+    <loc>http://www.alessandrolacava.com/tags/partial-function/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/posts/scala-seq-map-and-set-as-functions/</loc>
+    <loc>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/seq/</loc>
+    <loc>http://www.alessandrolacava.com/tags/seq/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/set/</loc>
+    <loc>http://www.alessandrolacava.com/tags/set/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/vector/</loc>
+    <loc>http://www.alessandrolacava.com/tags/vector/</loc>
     <lastmod>2015-10-23T10:24:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/case-class/</loc>
+    <loc>http://www.alessandrolacava.com/tags/case-class/</loc>
     <lastmod>2015-05-22T08:12:07+02:00</lastmod>
   </url><url>
-    <loc>/tags/companion-object/</loc>
+    <loc>http://www.alessandrolacava.com/tags/companion-object/</loc>
     <lastmod>2015-05-22T08:12:07+02:00</lastmod>
   </url><url>
-    <loc>/posts/scala-case-classes-in-depth/</loc>
+    <loc>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</loc>
     <lastmod>2015-05-22T08:12:07+02:00</lastmod>
   </url><url>
-    <loc>/posts/scala-self-recursive-types/</loc>
+    <loc>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
   </url><url>
-    <loc>/tags/self-recursive-type/</loc>
+    <loc>http://www.alessandrolacava.com/tags/self-recursive-type/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
   </url><url>
-    <loc>/tags/self-type/</loc>
+    <loc>http://www.alessandrolacava.com/tags/self-type/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
   </url><url>
-    <loc>/tags/type-system/</loc>
+    <loc>http://www.alessandrolacava.com/tags/type-system/</loc>
     <lastmod>2015-03-30T14:59:24+02:00</lastmod>
   </url><url>
-    <loc>/tags/dsl/</loc>
+    <loc>http://www.alessandrolacava.com/tags/dsl/</loc>
     <lastmod>2015-02-20T15:09:06+01:00</lastmod>
   </url><url>
-    <loc>/tags/implicit/</loc>
+    <loc>http://www.alessandrolacava.com/tags/implicit/</loc>
     <lastmod>2015-02-20T15:09:06+01:00</lastmod>
   </url><url>
-    <loc>/posts/scala-dsl-for-currency-related-operations/</loc>
+    <loc>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</loc>
     <lastmod>2015-02-20T15:09:06+01:00</lastmod>
   </url><url>
-    <loc>/categories/java-8/</loc>
+    <loc>http://www.alessandrolacava.com/categories/java-8/</loc>
     <lastmod>2014-06-20T14:03:33+00:00</lastmod>
   </url><url>
-    <loc>/tags/try/</loc>
+    <loc>http://www.alessandrolacava.com/tags/try/</loc>
     <lastmod>2014-06-20T14:03:33+00:00</lastmod>
   </url><url>
-    <loc>/posts/try-success-failure-api-for-java/</loc>
+    <loc>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</loc>
     <lastmod>2014-06-20T14:03:33+00:00</lastmod>
   </url><url>
-    <loc>/tags/dennis-ritchie/</loc>
+    <loc>http://www.alessandrolacava.com/tags/dennis-ritchie/</loc>
     <lastmod>2011-10-13T12:56:36+00:00</lastmod>
   </url><url>
-    <loc>/posts/goodbye-dennis-macalistair-ritchie-dmr/</loc>
+    <loc>http://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</loc>
     <lastmod>2011-10-13T12:56:36+00:00</lastmod>
   </url><url>
-    <loc>/tags/rip/</loc>
+    <loc>http://www.alessandrolacava.com/tags/rip/</loc>
     <lastmod>2011-10-13T12:56:36+00:00</lastmod>
   </url><url>
-    <loc>/tags/eclipse/</loc>
+    <loc>http://www.alessandrolacava.com/tags/eclipse/</loc>
     <lastmod>2009-03-26T09:33:59+00:00</lastmod>
   </url><url>
-    <loc>/categories/ide/</loc>
+    <loc>http://www.alessandrolacava.com/categories/ide/</loc>
     <lastmod>2009-03-26T09:33:59+00:00</lastmod>
   </url><url>
-    <loc>/posts/undo-close-tab-in-eclipse/</loc>
+    <loc>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</loc>
     <lastmod>2009-03-26T09:33:59+00:00</lastmod>
   </url><url>
-    <loc>/categories/apache/</loc>
+    <loc>http://www.alessandrolacava.com/categories/apache/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
   </url><url>
-    <loc>/tags/easyphp/</loc>
+    <loc>http://www.alessandrolacava.com/tags/easyphp/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
   </url><url>
-    <loc>/tags/mysql/</loc>
+    <loc>http://www.alessandrolacava.com/tags/mysql/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
   </url><url>
-    <loc>/posts/object-not-found-easyphp-mysql-phpmyadmin/</loc>
+    <loc>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
   </url><url>
-    <loc>/categories/php/</loc>
+    <loc>http://www.alessandrolacava.com/categories/php/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
   </url><url>
-    <loc>/tags/phpmyadmin/</loc>
+    <loc>http://www.alessandrolacava.com/tags/phpmyadmin/</loc>
     <lastmod>2009-01-30T09:46:05+00:00</lastmod>
   </url><url>
-    <loc>/categories/java/</loc>
+    <loc>http://www.alessandrolacava.com/categories/java/</loc>
     <lastmod>2008-12-03T10:47:02+00:00</lastmod>
   </url><url>
-    <loc>/posts/java-split-of-string-multiple-whitespace-characters/</loc>
+    <loc>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</loc>
     <lastmod>2008-12-03T10:47:02+00:00</lastmod>
   </url><url>
-    <loc>/tags/regex/</loc>
+    <loc>http://www.alessandrolacava.com/tags/regex/</loc>
     <lastmod>2008-12-03T10:47:02+00:00</lastmod>
   </url><url>
-    <loc>/tags/jvm/</loc>
+    <loc>http://www.alessandrolacava.com/tags/jvm/</loc>
     <lastmod>2008-07-22T08:53:07+00:00</lastmod>
   </url><url>
-    <loc>/posts/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</loc>
+    <loc>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</loc>
     <lastmod>2008-07-22T08:53:07+00:00</lastmod>
   </url><url>
-    <loc>/categories/database/</loc>
+    <loc>http://www.alessandrolacava.com/categories/database/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/tags/exists/</loc>
+    <loc>http://www.alessandrolacava.com/tags/exists/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/tags/in/</loc>
+    <loc>http://www.alessandrolacava.com/tags/in/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/tags/optimization/</loc>
+    <loc>http://www.alessandrolacava.com/tags/optimization/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/categories/oracle/</loc>
+    <loc>http://www.alessandrolacava.com/categories/oracle/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/tags/performance/</loc>
+    <loc>http://www.alessandrolacava.com/tags/performance/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/posts/performance-differences-between-in-and-exists/</loc>
+    <loc>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</loc>
     <lastmod>2008-06-04T13:33:24+00:00</lastmod>
   </url><url>
-    <loc>/tags/not-exists/</loc>
+    <loc>http://www.alessandrolacava.com/tags/not-exists/</loc>
     <lastmod>2008-06-04T13:24:09+00:00</lastmod>
   </url><url>
-    <loc>/tags/not-in/</loc>
+    <loc>http://www.alessandrolacava.com/tags/not-in/</loc>
     <lastmod>2008-06-04T13:24:09+00:00</lastmod>
   </url><url>
-    <loc>/posts/not-in-vs-not-exists-when-null-values-are-involved/</loc>
+    <loc>http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</loc>
     <lastmod>2008-06-04T13:24:09+00:00</lastmod>
   </url><url>
-    <loc>/categories/aphorisms/</loc>
+    <loc>http://www.alessandrolacava.com/categories/aphorisms/</loc>
     <lastmod>2008-05-09T13:49:38+00:00</lastmod>
   </url><url>
-    <loc>/posts/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
+    <loc>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
     <lastmod>2008-05-09T13:49:38+00:00</lastmod>
   </url><url>
-    <loc>/posts/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
+    <loc>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</loc>
     <lastmod>2008-05-09T13:25:27+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-disable-all-the-elements-of-a-form-using-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</loc>
     <lastmod>2008-03-31T13:41:13+00:00</lastmod>
   </url><url>
-    <loc>/categories/javascript/</loc>
+    <loc>http://www.alessandrolacava.com/categories/javascript/</loc>
     <lastmod>2008-03-31T13:41:13+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-get-the-number-of-columns-in-a-resultset-in-java/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</loc>
     <lastmod>2007-12-12T10:32:31+00:00</lastmod>
   </url><url>
-    <loc>/tags/resultset/</loc>
+    <loc>http://www.alessandrolacava.com/tags/resultset/</loc>
     <lastmod>2007-12-12T10:32:31+00:00</lastmod>
   </url><url>
-    <loc>/tags/resultsetmetadata/</loc>
+    <loc>http://www.alessandrolacava.com/tags/resultsetmetadata/</loc>
     <lastmod>2007-12-12T10:32:31+00:00</lastmod>
   </url><url>
-    <loc>/posts/capturing-groups-in-regular-expressions-regex-in-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</loc>
     <lastmod>2007-11-26T14:21:20+00:00</lastmod>
   </url><url>
-    <loc>/tags/regexp/</loc>
+    <loc>http://www.alessandrolacava.com/tags/regexp/</loc>
     <lastmod>2007-11-26T14:21:20+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-compute-the-timestamp-in-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</loc>
     <lastmod>2007-10-09T11:20:28+00:00</lastmod>
   </url><url>
-    <loc>/tags/timestamp/</loc>
+    <loc>http://www.alessandrolacava.com/tags/timestamp/</loc>
     <lastmod>2007-10-09T11:20:28+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-compute-a-timestamp-in-oracle-pl-sql/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</loc>
     <lastmod>2007-10-09T09:41:18+00:00</lastmod>
   </url><url>
-    <loc>/posts/very-useful-shortcuts-for-eclipse/</loc>
+    <loc>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</loc>
     <lastmod>2007-09-25T11:10:01+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-attach-source-or-javadoc-to-servlets-in-eclipse/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</loc>
     <lastmod>2007-09-14T12:50:48+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-create-a-copybackup-of-a-table-in-oracle/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</loc>
     <lastmod>2007-07-04T08:16:50+00:00</lastmod>
   </url><url>
-    <loc>/tags/ant/</loc>
+    <loc>http://www.alessandrolacava.com/tags/ant/</loc>
     <lastmod>2007-06-04T10:43:49+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-exclude-subversion-hidden-directories-svn-using-ant/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</loc>
     <lastmod>2007-06-04T10:43:49+00:00</lastmod>
   </url><url>
-    <loc>/tags/svn/</loc>
+    <loc>http://www.alessandrolacava.com/tags/svn/</loc>
     <lastmod>2007-06-04T10:43:49+00:00</lastmod>
   </url><url>
-    <loc>/tags/dml/</loc>
+    <loc>http://www.alessandrolacava.com/tags/dml/</loc>
     <lastmod>2007-05-24T12:52:20+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</loc>
     <lastmod>2007-05-24T12:52:20+00:00</lastmod>
   </url><url>
-    <loc>/tags/statement/</loc>
+    <loc>http://www.alessandrolacava.com/tags/statement/</loc>
     <lastmod>2007-05-24T12:52:20+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-format-a-decimal-number-in-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</loc>
     <lastmod>2007-05-04T11:02:16+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</loc>
     <lastmod>2007-04-27T14:11:27+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</loc>
     <lastmod>2007-04-26T14:05:31+00:00</lastmod>
   </url><url>
-    <loc>/categories/editor/</loc>
+    <loc>http://www.alessandrolacava.com/categories/editor/</loc>
     <lastmod>2007-03-14T08:27:14+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-exploit-ultraedit-32-to-highlight-based-on-file-extensions/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</loc>
     <lastmod>2007-03-14T08:27:14+00:00</lastmod>
   </url><url>
-    <loc>/tags/ultraedit-32/</loc>
+    <loc>http://www.alessandrolacava.com/tags/ultraedit-32/</loc>
     <lastmod>2007-03-14T08:27:14+00:00</lastmod>
   </url><url>
-    <loc>/categories/css/</loc>
+    <loc>http://www.alessandrolacava.com/categories/css/</loc>
     <lastmod>2007-02-16T10:55:53+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-display-an-element-to-the-center-of-the-browser/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</loc>
     <lastmod>2007-02-16T10:55:53+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-detect-the-selected-checkboxes-using-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</loc>
     <lastmod>2007-01-16T16:31:26+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-add-scrollbars-to-a-block-eg-a-element/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</loc>
     <lastmod>2006-11-24T09:21:30+00:00</lastmod>
   </url><url>
-    <loc>/tags/prototype/</loc>
+    <loc>http://www.alessandrolacava.com/tags/prototype/</loc>
     <lastmod>2006-11-20T15:34:48+00:00</lastmod>
   </url><url>
-    <loc>/posts/sorting-an-array-of-objects-with-the-sortby-method/</loc>
+    <loc>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</loc>
     <lastmod>2006-11-20T15:34:48+00:00</lastmod>
   </url><url>
-    <loc>/posts/why-you-shouldnt-be-concerned-about-optimization/</loc>
+    <loc>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</loc>
     <lastmod>2006-10-11T16:26:34+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-select-any-character-across-multiple-lines-in-java/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</loc>
     <lastmod>2006-10-10T08:52:06+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-include-a-js-file-a-javascript-file-within-another-js-file/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</loc>
     <lastmod>2006-09-22T09:43:45+00:00</lastmod>
   </url><url>
-    <loc>/posts/java-passes-everything-by-value/</loc>
+    <loc>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</loc>
     <lastmod>2006-09-13T08:51:47+00:00</lastmod>
   </url><url>
-    <loc>/posts/what-happens-if-you-write-something-like-a-a-in-java/</loc>
+    <loc>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</loc>
     <lastmod>2006-09-13T07:58:27+00:00</lastmod>
   </url><url>
-    <loc>/tags/dynamic-statement/</loc>
+    <loc>http://www.alessandrolacava.com/tags/dynamic-statement/</loc>
     <lastmod>2006-09-06T10:24:18+00:00</lastmod>
   </url><url>
-    <loc>/posts/using-dynamic-sql-statements-from-plsql/</loc>
+    <loc>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</loc>
     <lastmod>2006-09-06T10:24:18+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-hideshow-an-html-form-element-depending-on-a-combo-box-choice/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</loc>
     <lastmod>2006-09-01T13:04:03+00:00</lastmod>
   </url><url>
-    <loc>/tags/pojo/</loc>
+    <loc>http://www.alessandrolacava.com/tags/pojo/</loc>
     <lastmod>2006-08-21T15:31:02+00:00</lastmod>
   </url><url>
-    <loc>/posts/pojo-plain-old-java-object-the-simplerthe-better/</loc>
+    <loc>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</loc>
     <lastmod>2006-08-21T15:31:02+00:00</lastmod>
   </url><url>
-    <loc>/posts/calling-a-function-of-the-opener-window/</loc>
+    <loc>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</loc>
     <lastmod>2006-07-27T15:16:22+00:00</lastmod>
   </url><url>
-    <loc>/tags/class/</loc>
+    <loc>http://www.alessandrolacava.com/tags/class/</loc>
     <lastmod>2006-07-24T16:28:27+00:00</lastmod>
   </url><url>
-    <loc>/posts/creating-class-definition-in-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</loc>
     <lastmod>2006-07-24T16:28:27+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-force-a-metacharacter-to-be-treated-as-an-ordinary-character-in-a-java-regular-expression-regex/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</loc>
     <lastmod>2006-07-12T13:24:03+00:00</lastmod>
   </url><url>
-    <loc>/tags/metacharacter/</loc>
+    <loc>http://www.alessandrolacava.com/tags/metacharacter/</loc>
     <lastmod>2006-07-12T13:24:03+00:00</lastmod>
   </url><url>
-    <loc>/tags/ajax/</loc>
+    <loc>http://www.alessandrolacava.com/tags/ajax/</loc>
     <lastmod>2006-07-11T15:54:40+00:00</lastmod>
   </url><url>
-    <loc>/posts/creating-an-instance-of-the-object-used-to-make-ajax-calls/</loc>
+    <loc>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</loc>
     <lastmod>2006-07-11T15:54:40+00:00</lastmod>
   </url><url>
-    <loc>/tags/j2me/</loc>
+    <loc>http://www.alessandrolacava.com/tags/j2me/</loc>
     <lastmod>2006-06-20T20:53:38+00:00</lastmod>
   </url><url>
-    <loc>/tags/java-me/</loc>
+    <loc>http://www.alessandrolacava.com/tags/java-me/</loc>
     <lastmod>2006-06-20T20:53:38+00:00</lastmod>
   </url><url>
-    <loc>/posts/using-proguard-obfuscator-through-the-wireless-toolkit/</loc>
+    <loc>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</loc>
     <lastmod>2006-06-20T20:53:38+00:00</lastmod>
   </url><url>
-    <loc>/posts/the-function-class-in-javascript/</loc>
+    <loc>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</loc>
     <lastmod>2006-06-14T21:38:22+00:00</lastmod>
   </url><url>
-    <loc>/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</loc>
+    <loc>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</loc>
     <lastmod>2006-06-08T15:05:27+00:00</lastmod>
   </url><url>
-    <loc>/tags/xml/</loc>
+    <loc>http://www.alessandrolacava.com/tags/xml/</loc>
     <lastmod>2006-06-08T15:05:27+00:00</lastmod>
   </url><url>
-    <loc>/posts/using-javascript-to-detect-the-key-pressed/</loc>
+    <loc>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</loc>
     <lastmod>2006-05-12T12:23:55+00:00</lastmod>
   </url><url>
-    <loc>/posts/the-name-separator-character-in-java/</loc>
+    <loc>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</loc>
     <lastmod>2006-05-02T13:54:38+00:00</lastmod>
   </url><url>
-    <loc>/posts/hello-world/</loc>
+    <loc>http://www.alessandrolacava.com/blog/hello-world/</loc>
     <lastmod>2006-04-13T22:32:24+00:00</lastmod>
+  </url><url>
+    <loc>http://www.alessandrolacava.com/archive/</loc>
+  </url><url>
+    <loc>http://www.alessandrolacava.com/month/</loc>
+  </url><url>
+    <loc>http://www.alessandrolacava.com/year/</loc>
   </url>
 </urlset>

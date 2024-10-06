@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - How to store and extract XML data in and from an Oracle DataBase (DB) </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">How to store and extract XML data in and from an Oracle DataBase (DB)</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-06-08</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/xml">XML</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Here are some snippets of code showing how to accomplish this:</p>
+<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>SampleTable<span style="color:#bbb"> </span>(id<span style="color:#bbb"> </span><span style="color:#658b00">number</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">primary</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">key</span>,<span style="color:#bbb"> </span>person<span style="color:#bbb"> </span>XMLType)</span></span></code></pre></div>
+This first example creates a table with only two columns: id and person. The first is the PK of the table and the second
+is of XMLType type. The latter is going to contain our XML data.</p>
+<p>Now let&rsquo;s insert one row in the table.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>SampleTable<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#b452cd">1</span>,<span style="color:#bbb"> </span>XMLType(<span style="color:#cd5555">&#39;XMLString&#39;</span>))</span></span></code></pre></div>
+<p>Where you must replace <code>XMLString</code> with any string representing XML. For example, you can replace it with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;persons&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&lt;person&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">&lt;surname&gt;</span>Lacava<span style="color:#8b008b;font-weight:bold">&lt;/surname&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">&lt;name&gt;</span>Alessandro<span style="color:#8b008b;font-weight:bold">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">&lt;date_OF_BIRTH</span> <span style="color:#658b00">DAY=</span><span style="color:#cd5555">&#34;31&#34;</span> <span style="color:#658b00">MONTH=</span><span style="color:#cd5555">&#34;01&#34;</span> <span style="color:#658b00">YEAR=</span><span style="color:#cd5555">&#34;1976&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">&lt;/person&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;/persons&gt;</span></span></span></code></pre></div>
+<p>I decided to decode the date of birth that way in order to show you (in the next example) how to retrieve, apart from a
+common XML node, an attribute as well.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>extractValue(person,<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;/PERSONS/PERSON/SURNAME&#39;</span>)<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">AS</span><span style="color:#bbb"> </span>surname,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>extractValue(person,<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;/PERSONS/PERSON/DATE_OF_BIRTH/@YEAR&#39;</span>)<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">AS</span><span style="color:#bbb"> </span>year_of_birth<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>SampleTable</span></span></code></pre></div>
+<p>This last example extracts the surname and the year of birth from the XML data represented by the person column
+that is of XMLType type. As you can see to extract the XML data you use regular XPath expressions.</p>
+<p>Note: If your XML is using a namespace you will have to indicate it using the following syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>extractValue(<span style="color:#8b008b;font-weight:bold">column_name</span>,<span style="color:#bbb"> </span>XPath_Expression,<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;xmlns=&#34;namespace_URI&#34;&#39;</span>)</span></span></code></pre></div>
+<p>where <code>XPath_Expression</code> is the XPath expression used to extract the value you&rsquo;re interested in and <code>namespace_URI</code> is
+the URI indicating your namespace.</p>
+<p>One last note: You can use XML Data inside an Oracle DB from version 9.0.2 on.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

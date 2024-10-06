@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Using dynamic SQL statements from PL/SQL </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Using dynamic SQL statements from PL/SQL</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-09-06</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/dynamic-statement">Dynamic statement</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+<code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sql_select<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>sql_select<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>your_cursor<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">USING</span><span style="color:#bbb"> </span>your_parameter_for_field1;</span></span></code></pre></div>
+<p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
+The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
+<code>your_parameter_for_field1</code> parameter.</p>
+<p>Now let&rsquo;s see another example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sql_select<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;SELECT * FROM your_table WHERE field1 = :1 AND field2 = :2&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>sql_select<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>your_cursor<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">USING</span><span style="color:#bbb"> </span>your_parameter_for_field1,<span style="color:#bbb"> </span>your_parameter_for_field2;</span></span></code></pre></div>
+<p>As you can see this example is similar to the previous one but here I showed how you can use more than one parameter.</p>
+<p>One last example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">     
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sql_insert<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;INSERT INTO your_table VALUES (:1, :2)&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>sql_insert<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">USING</span><span style="color:#bbb"> </span>your_parameter_for_field1,<span style="color:#bbb"> </span>your_parameter_for_field2;</span></span></code></pre></div>
+<p>This last example shows how you can use <code>EXECUTE IMMEDIATE</code> to execute an <code>INSERT</code> statement. Here you don&rsquo;t need an
+explicit cursor. Of course, in a similar way, you can use <code>EXECUTE IMMEDIATE</code> to execute <code>UPDATE</code> and <code>DELETE</code>
+statements as well.</p>
+<p>Of course, you could have accomplished the &ldquo;same&rdquo; result using string concatenation but binding the variables using
+the method just shown is much better from a performance viewpoint.</p>
+<p>One last note: you CANNOT use bind variables to replace actual object names like table names, columns and so on.
+In this case you can turn back to string concatenation.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

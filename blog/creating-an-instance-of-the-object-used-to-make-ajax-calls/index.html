@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Creating an instance of the object used to make AJAX calls </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Creating an instance of the object used to make AJAX calls</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-07-11</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/ajax">AJAX</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous
+requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to
+overcome this problem:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// The following function creates an XMLHttpRequest object
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> createHttpRequest() {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#8b008b;font-weight:bold">typeof</span> XMLHttpRequest != <span style="color:#cd5555">&#34;undefined&#34;</span>) <span style="color:#228b22">//NOT IE {
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> XMLHttpRequest();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#658b00">window</span>.ActiveXObject) <span style="color:#228b22">// IE {
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">var</span> sVersions = [ <span style="color:#cd5555">&#34;MSXML2.XMLHttp.5.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;MSXML2.XMLHttp.4.0&#34;</span>,<span style="color:#cd5555">&#34;MSXML2.XMLHttp.3.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;MSXML2.XMLHttp&#34;</span>,<span style="color:#cd5555">&#34;Microsoft.XMLHttp&#34;</span>
+</span></span><span style="display:flex;"><span>    ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">//try to get an instance of the newer version.
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#228b22">//If it is not available go down till the oldest one
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">var</span> i = <span style="color:#b452cd">0</span>; i &lt; sVersions.length; i++) {
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">var</span> ret = <span style="color:#8b008b;font-weight:bold">new</span> ActiveXObject(sVersions[i]);
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> ret;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">catch</span> (oException) {
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//Do nothing. Just go on trying with the older versions
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#228b22">//if it gets here then no version is available
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  alert(<span style="color:#cd5555">&#34;XMLHttpRequest object could not be created.&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>As you can see this function creates the correct instance of the <code>XMLHttpRequest</code> object. If the browser is not
+Internet Explorer then it just instantiates the <code>XMLHttpRequest</code> object, otherwise it tries to create the correct
+ActiveX object used by IE to represent <code>XMLHttpRequest</code>. In this case it tries to instatiates the object from the
+newer version going down till the oldest one.</p>
+<p>Note: Finally, IE7 seems to use the same object used by other browsers, that is <code>XMLHttpRequest</code>. However,
+I advise you to use the above code just to be sure that older browser versions get the correct object in any
+case&ndash;provided that at least one is available!</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

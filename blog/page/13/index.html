@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Blog </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" type="application/rss+xml" href="http://www.alessandrolacava.com/blog/index.xml" title="Alessandro Lacava" />
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+<main>
+
+    <h1 class="page-title">Blog</h1>
+
+    <article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/">How to store and extract XML data in and from an Oracle DataBase (DB)</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-06-08</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/xml">XML</a>
+    </span>
+
+</p>
+    <p><p>Here are some snippets of code showing how to accomplish this:</p>
+<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>SampleTable<span style="color:#bbb"> </span>(id<span style="color:#bbb"> </span><span style="color:#658b00">number</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">primary</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">key</span>,<span style="color:#bbb"> </span>person<span style="color:#bbb"> </span>XMLType)</span></span></code></pre></div>
+This first example creates a table with only two columns: id and person. The first is the PK of the table and the second
+is of XMLType type. The latter is going to contain our XML data.</p>
+<p>Now let&rsquo;s insert one row in the table.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>SampleTable<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#b452cd">1</span>,<span style="color:#bbb"> </span>XMLType(<span style="color:#cd5555">&#39;XMLString&#39;</span>))</span></span></code></pre></div>
+<p>Where you must replace <code>XMLString</code> with any string representing XML. For example, you can replace it with:</p><span> <a href="http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/">Using Javascript to detect the key pressed</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-05-12</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on.
+For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of
+code you can use&ndash;of course adapting it to your needs.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> keyPressed(e){
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">var</span> code;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span>(<span style="color:#658b00">window</span>.event){ <span style="color:#228b22">//IE
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>   code = e.keyCode;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">else</span>{ <span style="color:#228b22">//other browsers
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    code = e.which;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#228b22">//check, for example, if the Enter key was pressed (code 13)
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">if</span>(code == <span style="color:#b452cd">13</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">//Enter key pressed
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">else</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">//Another key pressed
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Note: <code>keyCode</code> is used by Internet Explorer while <code>which</code> is used by the other browsers.</p><span> <a href="http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/">The name-separator character in Java</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-05-02</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>Java was born as a platform-independent programming language. Some features that grant the platform independence are
+achieved using the APIs of the language itself. For example, to construct a filename path, you can use the public static
+field separator of the <code>java.io.File</code> class.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>java.<span style="color:#658b00">io</span>.<span style="color:#658b00">File</span>.<span style="color:#658b00">separator</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;foldername&#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>java.<span style="color:#658b00">io</span>.<span style="color:#658b00">File</span>.<span style="color:#658b00">separator</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;filename&#34;</span>;</span></span></code></pre></div>
+<p>This produces the string <code>/foldername/filename</code> under Unix-like systems and <code>\foldername\filename</code> under Windows systems.</p><span> <a href="http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/hello-world/">Hello world!</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-04-13</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>Welcome to my blog. This is my first post.
+About myself:
+My name is Alessandro Lacava and I am a software engineer. I love designing and developing software. So,
+as you may have guessed, my blog is going to mainly contain articles, techniques, tips &amp; tricks and
+much more about computer programming. Stay tuned.</p><span> <a href="http://www.alessandrolacava.com/blog/hello-world/">Read more...</a></span>
+    </p>
+</article>
+
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/blog/" class="page-link" aria-label="First"><span
+                aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/blog/page/12/"
+        class="page-link" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/12/">12</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/blog/page/13/">13</a></li>
+    
+    
+    <li class="page-item disabled">
+    <a 
+        class="page-link" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/blog/page/13/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+</ul>
+
+</main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

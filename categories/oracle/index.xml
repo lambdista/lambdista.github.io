@@ -1,75 +1,551 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Oracle on Alessandro Lacava</title>
-    <link>/categories/oracle/</link>
-    <description>Recent content in Oracle on Alessandro Lacava</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate>
-    <atom:link href="/categories/oracle/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Performance differences between IN and EXISTS</title>
-      <link>/posts/performance-differences-between-in-and-exists/</link>
-      <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
-      <guid>/posts/performance-differences-between-in-and-exists/</guid>
-      <description>&lt;p&gt;Very often I hear people wondering if it&amp;rsquo;s better the &lt;code&gt;EXISTS&lt;/code&gt; or the &lt;code&gt;IN&lt;/code&gt; operator.&#xA;Let&amp;rsquo;s start by saying that the two operators behave differently when &lt;code&gt;NULL&lt;/code&gt; values are involved&#xA;(see &lt;a href=&#34;/blog/2008/06/04/not-in-vs-not-exists-when-null-values-are-involved&#34;&gt;this post&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;If you are sure that the field used to join the tables does not include &lt;code&gt;NULL&lt;/code&gt; values then the &lt;code&gt;IN&lt;/code&gt; operator &amp;ldquo;generally&amp;rdquo;&#xA;performs better than &lt;code&gt;EXISTS&lt;/code&gt;. I say &amp;ldquo;generally&amp;rdquo; because this is not always the case. For example consider the following query:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>NOT IN vs. NOT EXISTS when NULL values are involved</title>
-      <link>/posts/not-in-vs-not-exists-when-null-values-are-involved/</link>
-      <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
-      <guid>/posts/not-in-vs-not-exists-when-null-values-are-involved/</guid>
-      <description>&lt;p&gt;&lt;code&gt;NOT IN&lt;/code&gt; does not behave as you would expect when &lt;code&gt;NULL&lt;/code&gt; values are involved.&#xA;Suppose you have the following tables:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;CD_FIELD&lt;/td&gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;DS_FIELD&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td&gt;1&lt;/td&gt;&#xA;    &lt;td&gt;ALPHA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr&gt;&#xA;    &lt;td&gt;2&lt;/td&gt;&#xA;    &lt;td&gt;BETA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;**TABLE_A**&#xA;&lt;table&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;CD_FIELD&lt;/td&gt;&#xA;    &lt;td style=&#34;color: #696969&#34;&gt;DS_FIELD&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr &gt;&#xA;    &lt;td&gt;1&lt;/td&gt;&#xA;    &lt;td&gt;GAMMA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;  &lt;tr&gt;&#xA;    &lt;td&gt;NULL&lt;/td&gt;&#xA;    &lt;td&gt;DELTA&lt;/td&gt;&#xA;  &lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;**TABLE_B**&#xA;&lt;p&gt;Now try the following query:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_a a&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; a.cd_field &lt;span style=&#34;color:#66d9ef&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; b.cd_field &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_b b);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Does the previous query return any row? The answer is NO it doesn&amp;rsquo;t, even if there is a value (2) in table_a.cd_field&#xA;which is not present in table_b.cd_field.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to compute a timestamp in Oracle (PL SQL)</title>
-      <link>/posts/how-to-compute-a-timestamp-in-oracle-pl-sql/</link>
-      <pubDate>Tue, 09 Oct 2007 09:41:18 +0000</pubDate>
-      <guid>/posts/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
-      <description>&lt;p&gt;Many sources use the term timestamp to refer specifically to Unix time, the number of seconds since 00:00:00 UTC on&#xA;January 1, 1970. In Oracle you can compute this number very easily. For example, the following query computes the&#xA;number of seconds between 00:00:00 UTC on January 1, 1970 and October 9, 2007.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; (to_date(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;09-10-2007&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DD-MM-YYYY&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;to_date(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;01-01-1970&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DD-MM-YYYY&amp;#39;&lt;/span&gt;)) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; dual&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;The result of the preceding query should be 1191888000.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to create a copy/backup of a table in Oracle</title>
-      <link>/posts/how-to-create-a-copybackup-of-a-table-in-oracle/</link>
-      <pubDate>Wed, 04 Jul 2007 08:16:50 +0000</pubDate>
-      <guid>/posts/how-to-create-a-copybackup-of-a-table-in-oracle/</guid>
-      <description>&lt;p&gt;You can create a backup of a table (structure and data) in Oracle by using the following syntax:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; customers_backup &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; customers)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;The previous example creates the &lt;code&gt;customers_backup&lt;/code&gt; table which mirrors the structure and data of the &lt;code&gt;customers&lt;/code&gt; table.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
-      <link>/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</link>
-      <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
-      <guid>/posts/how-to-commit-a-single-dml-statement-in-oracle-plsql/</guid>
-      <description>&lt;p&gt;Sometimes you might need to commit a single &lt;code&gt;INSERT&lt;/code&gt;, &lt;code&gt;UPDATE&lt;/code&gt; or &lt;code&gt;DELETE&lt;/code&gt; statement and not the whole main transaction.&#xA;In such a case you can use an &lt;code&gt;AUTONOMOUS TRANSACTION&lt;/code&gt; which is a feature available since Oracle 8i.&#xA;The trick is to encapsulate the statement in a procedure and use the pragma &lt;code&gt;AUTONOMOUS_TRANSACTION&lt;/code&gt;. Here is an example, suppose you have a table, &lt;code&gt;your_table&lt;/code&gt;, which has just one column of type &lt;code&gt;NUMBER&lt;/code&gt; and you want to insert the value 1, irrespective of the state of the main transaction:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to put a set of rows into a single row in Oracle</title>
-      <link>/posts/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</link>
-      <pubDate>Fri, 27 Apr 2007 14:11:27 +0000</pubDate>
-      <guid>/posts/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</guid>
-      <description>&lt;p&gt;In Oracle you can execute hierarchical queries using some cool operators&amp;ndash;&lt;code&gt;CONNECT BY PRIOR&lt;/code&gt;, &lt;code&gt;START WITH&lt;/code&gt; and&#xA;the pseudocolumn &lt;code&gt;SYS_CONNECT_BY_PATH&lt;/code&gt;, namely. However, using your fantasy you can exploit these operators&#xA;to put in a single row&amp;ndash;with each item separated by the next through a separator, such as a comma&amp;ndash;what you have&#xA;in multiple rows. For example if you have more than one telephone number in different rows and you want to put them&#xA;in a single comma-separated row you could use a query similar to the following:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to tell Oracle to use more than one byte per character</title>
-      <link>/posts/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</link>
-      <pubDate>Thu, 26 Apr 2007 14:05:31 +0000</pubDate>
-      <guid>/posts/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</guid>
-      <description>&lt;p&gt;When you create a table, by default, the number of bytes used to represent a character in a &lt;code&gt;VARCHAR2&lt;/code&gt; type is 1,&#xA;irrespective of the characterset of the DB. This may be fine if the characterset is such that it uses just one byte per&#xA;character. However, if the characterset of the DB is such that there might take more than one byte to represent a&#xA;character (for example for characterset = &lt;code&gt;AL32UTF8&lt;/code&gt;) you might run into troubles, such as the error:&#xA;&lt;strong&gt;ORA-01401: inserted value too large for column&lt;/strong&gt;. However you can specify, at creation time, that the size of&#xA;characters is expressed in CHARs instead of bytes. For example:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using dynamic SQL statements from PL/SQL</title>
-      <link>/posts/using-dynamic-sql-statements-from-plsql/</link>
-      <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
-      <guid>/posts/using-dynamic-sql-statements-from-plsql/</guid>
-      <description>&lt;p&gt;Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the&#xA;&lt;code&gt;EXECUTE IMMEDIATE&lt;/code&gt; statement. Here are three examples of how you can take advantage of this great statement.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sql_select :&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;SELECT * FROM your_table WHERE field1 = :1&amp;#39;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;EXECUTE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IMMEDIATE&lt;/span&gt; sql_select&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; your_cursor&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; your_parameter_for_field1;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;In this first example I showed how you can use &lt;code&gt;EXECUTE IMMEDIATE&lt;/code&gt; to execute the query and put the result into a cursor.&#xA;The &lt;code&gt;USING your_parameter_for_field1&lt;/code&gt; part replaces the &lt;code&gt;:1&lt;/code&gt; bind variable with the value contained in the&#xA;&lt;code&gt;your_parameter_for_field1&lt;/code&gt; parameter.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to store and extract XML data in and from an Oracle DataBase (DB)</title>
-      <link>/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
-      <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
-      <guid>/posts/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
-      <description>&lt;p&gt;Here are some snippets of code showing how to accomplish this:&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; SampleTable (id number &lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;key&lt;/span&gt;, person XMLType)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;This first example creates a table with only two columns: id and person. The first is the PK of the table and the second&#xA;is of XMLType type. The latter is going to contain our XML data.&lt;/p&gt;&#xA;&lt;p&gt;Now let&amp;rsquo;s insert one row in the table.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;INSERT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INTO&lt;/span&gt; SampleTable &lt;span style=&#34;color:#66d9ef&#34;&gt;VALUES&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, XMLType(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;XMLString&amp;#39;&lt;/span&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Where you must replace &lt;code&gt;XMLString&lt;/code&gt; with any string representing XML. For example, you can replace it with:&lt;/p&gt;</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Alessandro Lacava</title>
+        <link>http://www.alessandrolacava.com/categories/oracle/</link>
+        <description>Latest blog posts from Alessandro Lacava</description>
+
+        
+        <language>en-us</language>
+        
+
+        
+
+        
+
+        
+
+        
+        <lastBuildDate>Wed, 04 Jun 2008 13:33:24 +0000</lastBuildDate>
+        
+
+        
+        <atom:link href="http://www.alessandrolacava.com/categories/oracle/index.xml" rel="self" type="application/rss+xml" />
+        
+
+        
+            
+        <item>
+          <title>Desugaring for comprehensions (AKA for expressions)</title>
+          <link>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</link>
+          <pubDate>Thu, 28 May 2020 11:26:32 +0200</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Keep your code clean with algebraic data types (ADTs)</title>
+          <link>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</link>
+          <pubDate>Wed, 14 Sep 2016 14:27:23 +0200</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Scala: Seq, Map and Set as functions</title>
+          <link>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</link>
+          <pubDate>Fri, 23 Oct 2015 10:24:00 +0200</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Scala case classes in depth</title>
+          <link>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</link>
+          <pubDate>Fri, 22 May 2015 08:12:07 +0200</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Scala self-recursive types</title>
+          <link>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</link>
+          <pubDate>Mon, 30 Mar 2015 14:59:24 +0200</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/scala-self-recursive-types/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Scala DSL for currency-related operations</title>
+          <link>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</link>
+          <pubDate>Fri, 20 Feb 2015 15:09:06 +0100</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/scala-dsl-for-currency-related-operations/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Try-Success-Failure API for Java 8</title>
+          <link>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</link>
+          <pubDate>Fri, 20 Jun 2014 14:03:33 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Goodbye Dennis Ritchie (dmr)</title>
+          <link>http://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</link>
+          <pubDate>Thu, 13 Oct 2011 12:56:36 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/goodbye-dennis-ritchie-dmr/</guid>
+          <description><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Undo close tab in Eclipse</title>
+          <link>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</link>
+          <pubDate>Thu, 26 Mar 2009 09:33:59 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/undo-close-tab-in-eclipse/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Object not found | EasyPHP | MySQL | phpMyAdmin</title>
+          <link>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</link>
+          <pubDate>Fri, 30 Jan 2009 09:46:05 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/object-not-found-easyphp-mysql-phpmyadmin/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Java split() of String | Multiple whitespace characters</title>
+          <link>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</link>
+          <pubDate>Wed, 03 Dec 2008 10:47:02 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</title>
+          <link>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</link>
+          <pubDate>Tue, 22 Jul 2008 08:53:07 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Performance differences between IN and EXISTS</title>
+          <link>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</link>
+          <pubDate>Wed, 04 Jun 2008 13:33:24 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>NOT IN vs. NOT EXISTS when NULL values are involved</title>
+          <link>http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</link>
+          <pubDate>Wed, 04 Jun 2008 13:24:09 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Funny long jokes and aphorisms about programming (and programmers of course)</title>
+          <link>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
+          <pubDate>Fri, 09 May 2008 13:49:38 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Funny short jokes and aphorisms about programming (and programmers of course)</title>
+          <link>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</link>
+          <pubDate>Fri, 09 May 2008 13:25:27 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to disable all the elements of a form using JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</link>
+          <pubDate>Mon, 31 Mar 2008 13:41:13 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-disable-all-the-elements-of-a-form-using-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to get the number of columns in a ResultSet in Java</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</link>
+          <pubDate>Wed, 12 Dec 2007 10:32:31 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Capturing groups using regular expressions (RegEx) in JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</link>
+          <pubDate>Mon, 26 Nov 2007 14:21:20 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/capturing-groups-using-regular-expressions-regex-in-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to compute the timestamp in JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</link>
+          <pubDate>Tue, 09 Oct 2007 11:20:28 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-compute-the-timestamp-in-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to compute a timestamp in Oracle (PL SQL)</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</link>
+          <pubDate>Tue, 09 Oct 2007 09:41:18 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-compute-a-timestamp-in-oracle-pl-sql/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Very Useful Shortcuts for Eclipse</title>
+          <link>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</link>
+          <pubDate>Tue, 25 Sep 2007 11:10:01 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/very-useful-shortcuts-for-eclipse/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to attach source or Javadoc to Java Enterprise Edition API in Eclipse</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</link>
+          <pubDate>Fri, 14 Sep 2007 12:50:48 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-attach-source-or-javadoc-to-java-enterprise-edition-api-in-eclipse/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to create a copy/backup of a table in Oracle</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</link>
+          <pubDate>Wed, 04 Jul 2007 08:16:50 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-create-a-copy/backup-of-a-table-in-oracle/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to exclude subversion hidden directories (.svn) using Ant</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</link>
+          <pubDate>Mon, 04 Jun 2007 10:43:49 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-exclude-subversion-hidden-directories-.svn-using-ant/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to commit a single DML statement in Oracle (PL/SQL)</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</link>
+          <pubDate>Thu, 24 May 2007 12:52:20 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to format a decimal number in JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</link>
+          <pubDate>Fri, 04 May 2007 11:02:16 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-format-a-decimal-number-in-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to put a set of rows into a single row in Oracle</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</link>
+          <pubDate>Fri, 27 Apr 2007 14:11:27 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to tell Oracle to use more than one byte per character</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</link>
+          <pubDate>Thu, 26 Apr 2007 14:05:31 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to exploit UltraEdit-32 to highlight code based on file extensions</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</link>
+          <pubDate>Wed, 14 Mar 2007 08:27:14 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-exploit-ultraedit-32-to-highlight-code-based-on-file-extensions/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to display an element to the center of the browser</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</link>
+          <pubDate>Fri, 16 Feb 2007 10:55:53 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-display-an-element-to-the-center-of-the-browser/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to detect the selected checkboxes using JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</link>
+          <pubDate>Tue, 16 Jan 2007 16:31:26 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-detect-the-selected-checkboxes-using-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to add scrollbars to a block (e.g. a &lt;div&gt; element)</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</link>
+          <pubDate>Fri, 24 Nov 2006 09:21:30 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-add-scrollbars-to-a-block-e.g.-a-div-element/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Sorting an array of objects with the sortBy method of Prototype</title>
+          <link>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</link>
+          <pubDate>Mon, 20 Nov 2006 15:34:48 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/sorting-an-array-of-objects-with-the-sortby-method-of-prototype/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Why you shouldn&#39;t be concerned about optimization</title>
+          <link>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</link>
+          <pubDate>Wed, 11 Oct 2006 16:26:34 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/why-you-shouldnt-be-concerned-about-optimization/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to select any character across multiple lines in Java</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</link>
+          <pubDate>Tue, 10 Oct 2006 08:52:06 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to include a .js file (a JavaScript file) within another .js file</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</link>
+          <pubDate>Fri, 22 Sep 2006 09:43:45 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Java passes EVERYTHING by value!</title>
+          <link>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</link>
+          <pubDate>Wed, 13 Sep 2006 08:51:47 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/java-passes-everything-by-value/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>What happens if you write something like a = a&#43;&#43; in Java?</title>
+          <link>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</link>
+          <pubDate>Wed, 13 Sep 2006 07:58:27 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Using dynamic SQL statements from PL/SQL</title>
+          <link>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</link>
+          <pubDate>Wed, 06 Sep 2006 10:24:18 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to hide/show an HTML form element depending on a combo box choice</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</link>
+          <pubDate>Fri, 01 Sep 2006 13:04:03 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>POJO (Plain Old Java Object): The simpler...the better.</title>
+          <link>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</link>
+          <pubDate>Mon, 21 Aug 2006 15:31:02 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Calling a function of the opener window</title>
+          <link>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</link>
+          <pubDate>Thu, 27 Jul 2006 15:16:22 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Creating a Class definition in JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</link>
+          <pubDate>Mon, 24 Jul 2006 16:28:27 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</link>
+          <pubDate>Wed, 12 Jul 2006 13:24:03 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-force-one-or-more-metacharacters-to-be-treated-as-ordinary-characters-in-a-java-regular-expression-regex/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Creating an instance of the object used to make AJAX calls</title>
+          <link>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</link>
+          <pubDate>Tue, 11 Jul 2006 15:54:40 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/creating-an-instance-of-the-object-used-to-make-ajax-calls/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Using proguard obfuscator through the Wireless Toolkit</title>
+          <link>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</link>
+          <pubDate>Tue, 20 Jun 2006 20:53:38 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>The Function class in JavaScript</title>
+          <link>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</link>
+          <pubDate>Wed, 14 Jun 2006 21:38:22 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/the-function-class-in-javascript/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>How to store and extract XML data in and from an Oracle DataBase (DB)</title>
+          <link>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</link>
+          <pubDate>Thu, 08 Jun 2006 15:05:27 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/how-to-store-and-extract-xml-data-in-and-from-an-oracle-database-db/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Using Javascript to detect the key pressed</title>
+          <link>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</link>
+          <pubDate>Fri, 12 May 2006 12:23:55 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/using-javascript-to-detect-the-key-pressed/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>The name-separator character in Java</title>
+          <link>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</link>
+          <pubDate>Tue, 02 May 2006 13:54:38 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/the-name-separator-character-in-java/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        <item>
+          <title>Hello world!</title>
+          <link>http://www.alessandrolacava.com/blog/hello-world/</link>
+          <pubDate>Thu, 13 Apr 2006 22:32:24 +0000</pubDate>
+          
+          <guid>http://www.alessandrolacava.com/blog/hello-world/</guid>
+          <description><!-- raw HTML omitted -->
+</description>
+        </item>
+            
+        
+    </channel>
 </rss>

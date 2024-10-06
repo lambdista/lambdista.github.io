@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Blog </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" type="application/rss+xml" href="http://www.alessandrolacava.com/blog/index.xml" title="Alessandro Lacava" />
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+<main>
+
+    <h1 class="page-title">Blog</h1>
+
+    <article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/">How to include a .js file (a JavaScript file) within another .js file</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-09-22</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>Actually, there is no function you can call to include a JavaScript file within another one. This is the bad news.
+The good news is that you can use a trick to accomplish this task. Suppose you have two JavaScript files,
+say <code>file1.js</code> and <code>file2.js</code>. You want to include <code>file1.js</code> within <code>file2.js</code> because you want to use file1&rsquo;s functions.
+Here is the code you can use:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//this is file2.js
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#658b00">document</span>.write(<span style="color:#cd5555">&#34;&lt;script src=&#39;file1.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// here you can use functions defined in file1.js
+</span></span></span></code></pre></div>
+<p>As you can see it suffices &ldquo;to write&rdquo; in the browser the code you generally use to include a JavaScript file within an
+HTML file and you&rsquo;re done!</p><span> <a href="http://www.alessandrolacava.com/blog/how-to-include-a-.js-file-a-javascript-file-within-another-.js-file/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/java-passes-everything-by-value/">Java passes EVERYTHING by value!</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-09-13</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>It&rsquo;s a common misconception thinking (or worse teaching!) that, in Java, primitives are passed by value and objects
+by reference. Actually, everything in Java is passed by value as well as object references.</p>
+<p>When a parameter is passed by value, an actual copy of it is really passed so that any change made will have only a
+local effect. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#00688b;font-weight:bold">void</span><span style="color:#bbb"> </span><span style="color:#008b45">main</span>(String[]<span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>increment(a);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a);<span style="color:#bbb"> </span><span style="color:#228b22">//it prints 0 so increment didn&#39;t work as expected</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span><span style="color:#008b45">increment</span>(<span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span>a)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>++a;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a);<span style="color:#bbb"> </span><span style="color:#228b22">//it prints 1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">return</span><span style="color:#bbb"> </span>a;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div>
+<p>As you can see the change made to the parameter passed to <code>increment</code>, that is <code>a</code>, affects only the local copy of it.
+This proves that Java passes primitives by value.</p><span> <a href="http://www.alessandrolacava.com/blog/java-passes-everything-by-value/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/">What happens if you write something like a = a&#43;&#43; in Java?</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-09-13</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>a++;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a);</span></span></code></pre></div>
+<p>What does it print?</p>
+<p>More than 50% of the programmers will answer 1, some of the remaining will say &ldquo;I don&rsquo;t know&rdquo; and the others will say 0.
+Well &ldquo;the others&rdquo; are right!</p>
+<p>Provided that such a code <strong>MUST NEVER BE WRITTEN</strong>, let&rsquo;s try to understand, for academic purposes, why it prints 0.</p><span> <a href="http://www.alessandrolacava.com/blog/what-happens-if-you-write-something-like-a-a-in-java/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/">Using dynamic SQL statements from PL/SQL</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-09-06</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/dynamic-statement">Dynamic statement</a>
+    </span>
+
+</p>
+    <p><p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
+<code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sql_select<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>sql_select<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>your_cursor<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">USING</span><span style="color:#bbb"> </span>your_parameter_for_field1;</span></span></code></pre></div>
+<p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
+The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
+<code>your_parameter_for_field1</code> parameter.</p><span> <a href="http://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/">Read more...</a></span>
+    </p>
+</article>
+
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/blog/" class="page-link" aria-label="First"><span
+                aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/blog/page/9/"
+        class="page-link" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/9/">9</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/blog/page/10/">10</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/11/">11</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/13/">13</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/blog/page/11/"
+        class="page-link" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/blog/page/13/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+</ul>
+
+</main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - How to commit a single DML statement in Oracle (PL/SQL) </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">How to commit a single DML statement in Oracle (PL/SQL)</h1>
+            
+                <p class="blog-post-info">Posted: <time>2007-05-24</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/dml">DML</a>, <a class="blog-taxonomy-info" href="/tags/statement">Statement</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Sometimes you might need to commit a single <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statement and not the whole main transaction.
+In such a case you can use an <code>AUTONOMOUS TRANSACTION</code> which is a feature available since Oracle 8i.
+The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>p_insert<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>PRAGMA<span style="color:#bbb"> </span>AUTONOMOUS_TRANSACTION;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">BEGIN</span><span style="color:#bbb"> </span><span style="color:#228b22">-- Main transaction suspends here.
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>your_table<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#b452cd">1</span>);<span style="color:#bbb"> </span><span style="color:#228b22">-- Autonomous transaction begins here.
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">COMMIT</span>;<span style="color:#bbb"> </span><span style="color:#228b22">-- Autonomous transaction ends here.
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">END</span>;<span style="color:#bbb"> </span><span style="color:#228b22">-- Main transaction resumes here.</span></span></span></code></pre></div>
+<p>After calling this proc from another transaction (main transaction) your_table will have another row with 1 as the
+value of its only column. If, after calling <code>p_insert</code>, you call <code>ROLLBACK</code> in your main transaction you will
+have that the changes made within <code>p_insert</code> will be permanent. However the changes made in your main transaction will be rollbacked.</p>
+<p>A tipical scenario where you need an autonomous transaction is a table used to log errors and/or other info.
+For example if something goes wrong you might want to log the reason into a table before rollbacking the main transaction.
+In such a case you would write a procedure using the pragma <code>AUTONOMOUS_TRANSACTION</code> and call this proc before rollbacking.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

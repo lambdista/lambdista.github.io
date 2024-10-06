@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - What happens if you write something like a = a&#43;&#43; in Java? </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">What happens if you write something like a = a&#43;&#43; in Java?</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-09-13</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+
+                <div class="blog-post-content">
+                <p>I often happened to see discussions about this topic. Basically, here is the question. If you have such a code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>a++;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a);</span></span></code></pre></div>
+<p>What does it print?</p>
+<p>More than 50% of the programmers will answer 1, some of the remaining will say &ldquo;I don&rsquo;t know&rdquo; and the others will say 0.
+Well &ldquo;the others&rdquo; are right!</p>
+<p>Provided that such a code <strong>MUST NEVER BE WRITTEN</strong>, let&rsquo;s try to understand, for academic purposes, why it prints 0.</p>
+<p>The reason lies in the JLS (Java Language Specification). The JLS mandates that, in an assignment expression,
+the right side of the = must be evaluated first and then the value of the expression must be assigned to the left side.
+When the right side gets evaluated, <code>a++</code> evaluates to <code>0</code> since it is a post-increment. This value is then saved into
+some temporary variable. At this point the post-increment takes place -&gt; <code>a = a + 1</code> and, finally, the value of the
+temporary variable is assigned to <code>a</code>, losing the increment previously done!</p>
+<p>If we translate that code in pseudo-code we have:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>0<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>temp<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>(the<span style="color:#bbb"> </span>value<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>a++<span style="color:#bbb"> </span>expression)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>1<span style="color:#bbb"> </span>(the<span style="color:#bbb"> </span>effect<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>post-increment)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>a<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>temp;</span></span></code></pre></div>
+<p>That&rsquo;s why you get 0! I hope this is clear enough.</p>
+<p>An important thing to say is that, if you use a good IDE you&rsquo;ll get a warning about that assignment. For example,
+using Eclipse (my version is 3.1.1 at the time or writing this post) I get: &ldquo;The assignment to variable <code>a</code> has no effect&rdquo;.</p>
+<p>Final Note: In C and C++ that expression gives an &ldquo;undefined behaviour&rdquo;! That means that there&rsquo;s no specification about it.
+Indeed, some compilers give 0 and others give 1 as the final value of <code>a</code>.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

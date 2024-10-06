@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Using proguard obfuscator through the Wireless Toolkit </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Using proguard obfuscator through the Wireless Toolkit</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-06-20</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/j2me">J2ME</a>, <a class="blog-taxonomy-info" href="/tags/java-me">Java ME</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation.
+<a href="https://proguard.sourceforge.net/">Proguard</a> is a good open-source tool you can use for this purpose.
+To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find
+the obfuscator. You can do that by editing the file <strong>ktools.properties</strong> that you can find under <strong>%WTK%wtklibWindows</strong>,
+where <strong>%WTK%</strong> is the root directory of the Wireless Toolkit. Basically, you just need to add the two following lines
+to the aforementioned file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"> </span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">obfuscator.runner.class.name</span>: <span style="color:#cd5555">proguard.wtk.ProGuardObfuscator</span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">obfuscator.runner.classpath</span>: <span style="color:#cd5555">proguard_path</span></span></span></code></pre></div>
+<p>where <strong>proguard_path</strong> is the absolute path to the <strong>proguard.jar</strong> file that you can find under the <strong>lib</strong> directory
+of proguard&rsquo;s home folder. So the <strong>proguard_path</strong> will be (under a Windows system) something like:
+<strong>C:\Programs\proguard\lib\proguard.jar</strong>. After that, creating obfuscated code using the WTK is as easy as selecting
+<strong>Project-&gt;Package-&gt;Create Obfuscated Package</strong> from the WTK menu</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

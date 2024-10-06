@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Blog </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" type="application/rss+xml" href="http://www.alessandrolacava.com/blog/index.xml" title="Alessandro Lacava" />
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+<main>
+
+    <h1 class="page-title">Blog</h1>
+
+    <article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/">How to hide/show an HTML form element depending on a combo box choice</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-09-01</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>This is an example of how you can show/hide an HTML form element depending on a combo box choice.</p>
+<p>Put the following JavaScript code between your <code>&lt;head&gt;&lt;/head&gt;</code> section (or within a <code>.js</code> file if you prefer).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">language</span>=<span style="color:#cd5555">&#34;javascript&#34;</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">function</span> hide() {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">var</span> text = <span style="color:#658b00">document</span>.formName.textBox;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">if</span>(<span style="color:#658b00">document</span>.formName.combo.value == <span style="color:#cd5555">&#34;hide&#34;</span>) {
+</span></span><span style="display:flex;"><span>      text.style.visibility = <span style="color:#cd5555">&#34;hidden&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>      text.style.visibility = <span style="color:#cd5555">&#34;visible&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div>
+<p>The following snippet of code instead is the HTML code to use to  call the <code>hide</code> function.</p><span> <a href="http://www.alessandrolacava.com/blog/how-to-hide/show-an-html-form-element-depending-on-a-combo-box-choice/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./">POJO (Plain Old Java Object): The simpler...the better.</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-08-21</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/pojo">POJO</a>
+    </span>
+
+</p>
+    <p><p>A  POJO is simply an object built using a Java class that does not implement any special interfaces such as those defined
+by the EJB 2 framework. An example of a POJO is a class composed by only:</p>
+<ol>
+<li>Properties, representing the object&rsquo;s state.</li>
+<li>Getter and setter methods for the properties.</li>
+<li>Business methods, representing behaviour.</li>
+</ol>
+<p>Some properties can represent associations with other POJOs. Here is an example of implementation of the
+<code>Person</code> entity using a POJO:</p><span> <a href="http://www.alessandrolacava.com/blog/pojo-plain-old-java-object-the-simpler...the-better./">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/">Calling a function of the opener window</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-07-27</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+    <p><p>It is possible, using JavaScript, to call a function pertaining to the opener window, that is the window that, calling
+<code>window.open</code>, opened the current window. The code to use is the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#658b00">window</span>.opener) {
+</span></span><span style="display:flex;"><span>  <span style="color:#658b00">window</span>.close();
+</span></span><span style="display:flex;"><span>  <span style="color:#658b00">window</span>.opener.foo(<span style="color:#cd5555">&#34;bar&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>First it checks if the opener window is still open. In this case, it closes the current window and call the <code>foo</code>
+function on the opener window.</p><span> <a href="http://www.alessandrolacava.com/blog/calling-a-function-of-the-opener-window/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/">Creating a Class definition in JavaScript</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2006-07-24</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/class">Class</a>
+    </span>
+
+</p>
+    <p><p>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//class
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> Person(sLastName, sFirstName, iAge) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.lastName = sLastName;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.firstName = sFirstName;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.age = iAge;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">this</span>.phoneNumbers = <span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#658b00">Array</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//method
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Person.prototype.showFullName = <span style="color:#8b008b;font-weight:bold">function</span>() {
+</span></span><span style="display:flex;"><span>  alert(<span style="color:#8b008b;font-weight:bold">this</span>.lastName + <span style="color:#cd5555">&#34; &#34;</span> + <span style="color:#8b008b;font-weight:bold">this</span>.firstName);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//instances
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">var</span> oPerson1 = <span style="color:#8b008b;font-weight:bold">new</span> Person(<span style="color:#cd5555">&#34;Lacava&#34;</span>, <span style="color:#cd5555">&#34;Alessandro&#34;</span>, <span style="color:#b452cd">30</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">var</span> oPerson2 = <span style="color:#8b008b;font-weight:bold">new</span> Person(<span style="color:#cd5555">&#34;Brown&#34;</span>, <span style="color:#cd5555">&#34;John&#34;</span>, <span style="color:#b452cd">50</span>);
+</span></span><span style="display:flex;"><span>oPerson1.phoneNumbers.push(<span style="color:#cd5555">&#34;1234567&#34;</span>);
+</span></span><span style="display:flex;"><span>oPerson2.phoneNumbers.push(<span style="color:#cd5555">&#34;7654321&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>oPerson1.showFullName(); <span style="color:#228b22">//outputs Lacava Alessandro
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>alert(oPerson1.phoneNumbers); <span style="color:#228b22">//outputs 1234567
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>oPerson2.showFullName(); <span style="color:#228b22">//outputs Brown John
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>alert(oPerson2.phoneNumbers); <span style="color:#228b22">//outputs 7654321
+</span></span></span></code></pre></div><span> <a href="http://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/">Read more...</a></span>
+    </p>
+</article>
+
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/blog/" class="page-link" aria-label="First"><span
+                aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/blog/page/10/"
+        class="page-link" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/10/">10</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/blog/page/11/">11</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/12/">12</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/13/">13</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/blog/page/12/"
+        class="page-link" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/blog/page/13/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+</ul>
+
+</main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

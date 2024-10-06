@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Using Javascript to detect the key pressed </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Using Javascript to detect the key pressed</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-05-12</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/javascript">JavaScript</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Often it is useful to intercept the key pressed within an element of an HTML form, like a textbox and so on.
+For this purpose you can use Javascript to extract the code of the key that was pressed. Here is a snippet of
+code you can use&ndash;of course adapting it to your needs.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> keyPressed(e){
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">var</span> code;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span>(<span style="color:#658b00">window</span>.event){ <span style="color:#228b22">//IE
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>   code = e.keyCode;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">else</span>{ <span style="color:#228b22">//other browsers
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    code = e.which;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#228b22">//check, for example, if the Enter key was pressed (code 13)
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">if</span>(code == <span style="color:#b452cd">13</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">//Enter key pressed
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">else</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#228b22">//Another key pressed
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Note: <code>keyCode</code> is used by Internet Explorer while <code>which</code> is used by the other browsers.</p>
+<p>Then, from within a form, you can call this function. For example</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">onkeypress</span>=<span style="color:#cd5555">&#34;javascript:keyPressed(event);&#34;</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;text&#34;</span> /&gt;</span></span></code></pre></div>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

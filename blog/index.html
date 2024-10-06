@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Blog </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" type="application/rss+xml" href="http://www.alessandrolacava.com/blog/index.xml" title="Alessandro Lacava" />
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+<main>
+
+    <h1 class="page-title">Blog</h1>
+
+    <article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/">Desugaring for comprehensions (AKA for expressions)</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2020-05-28</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/for-comprehension">for comprehension</a>, <a class="blog-taxonomy-info" href="/tags/for-expression">for expression</a>
+    </span>
+
+</p>
+    <p><p>Recently I stumbled upon a piece of Scala code that might leave you puzzled.
+Before showing you the code I must spend a few words about the compiler options.</p>
+<h2 id="compiler-options">Compiler options</h2>
+<p>Getting into the glory details of each and every compiler option is out of the scope of this post
+(see <a href="https://docs.scala-lang.org/overviews/compiler-options/index.html">compiler options</a>). Suffice to say
+you can use some flags to make the Scala compiler stricter and help you find code deficiencies at compile time.
+The flag I always use, among others, is <code>&quot;-Wunused&quot;</code>. So in <code>build.sbt</code> I have:</p><span> <a href="http://www.alessandrolacava.com/blog/desugaring-for-comprehensions-aka-for-expressions/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Keep your code clean with algebraic data types (ADTs)</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2016-09-14</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/adt">ADT</a>, <a class="blog-taxonomy-info" href="/tags/algebraic-data-type">Algebraic Data Type</a>, <a class="blog-taxonomy-info" href="/tags/option">Option</a>
+    </span>
+
+</p>
+    <p><p>Recently, Daniel Westheide wrote an interesting post about the abuse of the <code>Option</code> type
+in Scala.
+You can find it <a href="https://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html">here</a>.
+I couldn&rsquo;t agree more with Daniel.</p>
+<p>This short story is another example that demonstrates how using <code>Option</code> is not always
+the best option (pun intended).</p>
+<p>I&rsquo;m developing an advertising service for a customer using Scala.
+A simplified version of the <code>Ad</code> data structure is the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Ad</span>(
+</span></span><span style="display:flex;"><span>    headline<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>    description1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>    description2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
+two types of ad: standard and expanded.
+They said: &ldquo;If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
+If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
+Users won&rsquo;t include <code>headline2</code> when the ad is intended to be standard, and won&rsquo;t include <code>description2</code>
+when the ad is intended to be expanded.&rdquo;</p><span> <a href="http://www.alessandrolacava.com/blog/keep-your-code-clean-with-algebraic-data-types-adts/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/">Scala: Seq, Map and Set as functions</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2015-10-23</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/collections">Collections</a>, <a class="blog-taxonomy-info" href="/tags/function">Function</a>, <a class="blog-taxonomy-info" href="/tags/list">List</a>, <a class="blog-taxonomy-info" href="/tags/map">Map</a>, <a class="blog-taxonomy-info" href="/tags/partial-function">Partial Function</a>, <a class="blog-taxonomy-info" href="/tags/seq">Seq</a>, <a class="blog-taxonomy-info" href="/tags/set">Set</a>, <a class="blog-taxonomy-info" href="/tags/vector">Vector</a>
+    </span>
+
+</p>
+    <p><p>Yesterday my mate asked me: &ldquo;I have a <code>List[String]</code> and a <code>Map[String, Int]</code> and I want
+a <code>List[Int]</code> where its values are those of the <code>Map</code> whose keys match the <code>List[String]</code> elements,
+maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the
+code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> m <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Map</span>(<span style="color:#cd5555">&#34;a&#34;</span> -&gt; <span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#34;b&#34;</span> -&gt; <span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#34;c&#34;</span> -&gt; <span style="color:#b452cd">3</span>)
+</span></span><span style="display:flex;"><span>m<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">scala.collection.immutable.Map</span>[<span style="color:#00688b;font-weight:bold">String</span>,<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#008b45;font-weight:bold">Map</span>(a -&gt; <span style="color:#b452cd">1</span>, b -&gt; <span style="color:#b452cd">2</span>, c -&gt; <span style="color:#b452cd">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> l <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;c&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>l<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, c, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; l collect m
+</span></span><span style="display:flex;"><span>res0<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#b452cd">1</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">2</span>)</span></span></code></pre></div>
+<p>Hold on, how does it work? If you look at the definition of the <code>collect</code> method you&rsquo;ll see it accepts a
+<code>PartialFunction</code>, instead I passed a <code>Map</code> to it.
+Well, it turns out that <code>Map</code> <em>is</em> a <code>PartialFunction</code>.</p><span> <a href="http://www.alessandrolacava.com/blog/scala-seq-map-and-set-as-functions/">Read more...</a></span>
+    </p>
+</article>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/">Scala case classes in depth</a></h3>
+
+    <p class="blog-post-info">Posted: <time>2015-05-22</time>
+    
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/case-class">Case class</a>, <a class="blog-taxonomy-info" href="/tags/companion-object">Companion object</a>
+    </span>
+
+</p>
+    <p><p>For this post I&rsquo;ll consider the following simple case class unless otherwise specified:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Person</span>(lastname<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, firstname<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, birthYear<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Int</span>)</span></span></code></pre></div></p>
+<p>In this post:</p>
+<ul>
+<li><a href="#commonKnowledge">Common knowledge about case classes</a></li>
+<li><a href="#uncommonKnowledge"><em>Not so common</em> knowledge about case classes</a></li>
+<li><a href="#curried">Defining a case class using the <em>curried</em> form</a></li>
+<li><a href="#privateConstructor">Defining a case class with a private constructor</a></li>
+<li><a href="#mostCurious">For the most curious ones</a></li>
+<li><a href="#finalNotes">Final Notes</a></li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="common-knowledge-about-case-classes">Common knowledge about case classes</h2>
+<p>When you declare a case class the Scala compiler does the following for you:</p><span> <a href="http://www.alessandrolacava.com/blog/scala-case-classes-in-depth/">Read more...</a></span>
+    </p>
+</article>
+
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/blog/" class="page-link" aria-label="First"><span
+                aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a 
+        class="page-link" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/blog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/13/">13</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/blog/page/2/"
+        class="page-link" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/blog/page/13/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+</ul>
+
+</main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

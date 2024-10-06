@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Keep your code clean with algebraic data types (ADTs) </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Keep your code clean with algebraic data types (ADTs)</h1>
+            
+                <p class="blog-post-info">Posted: <time>2016-09-14</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/adt">ADT</a>, <a class="blog-taxonomy-info" href="/tags/algebraic-data-type">Algebraic Data Type</a>, <a class="blog-taxonomy-info" href="/tags/option">Option</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Recently, Daniel Westheide wrote an interesting post about the abuse of the <code>Option</code> type
+in Scala.
+You can find it <a href="https://danielwestheide.com/blog/2016/04/26/when-option-is-not-good-enough.html">here</a>.
+I couldn&rsquo;t agree more with Daniel.</p>
+<p>This short story is another example that demonstrates how using <code>Option</code> is not always
+the best option (pun intended).</p>
+<p>I&rsquo;m developing an advertising service for a customer using Scala.
+A simplified version of the <code>Ad</code> data structure is the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Ad</span>(
+</span></span><span style="display:flex;"><span>    headline<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>    description1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>    description2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
+two types of ad: standard and expanded.
+They said: &ldquo;If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
+If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
+Users won&rsquo;t include <code>headline2</code> when the ad is intended to be standard, and won&rsquo;t include <code>description2</code>
+when the ad is intended to be expanded.&rdquo;</p>
+<p>The optionality of the <code>headline2</code> and <code>description2</code> fields could put you in the wrong direction.
+Indeed, you could think of changing the data structure as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Ad</span>(
+</span></span><span style="display:flex;"><span>    headline<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>    headline2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Option</span>[<span style="color:#00688b;font-weight:bold">String</span>], 
+</span></span><span style="display:flex;"><span>    description1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>    description2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Option</span>[<span style="color:#00688b;font-weight:bold">String</span>]
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>This may sound fine but you could reach a much cleaner and type-safe
+solution using a simple Algebraic Data Type (ADT). Here&rsquo;s how:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">sealed</span> <span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Ad</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">object</span> <span style="color:#008b45;font-weight:bold">Ad</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Standard</span>(
+</span></span><span style="display:flex;"><span>      headline<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>      description1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>      description2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Ad</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Expanded</span>(
+</span></span><span style="display:flex;"><span>      headline<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>      headline2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, 
+</span></span><span style="display:flex;"><span>      description1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Ad</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>This way you don&rsquo;t need to inspect the <code>headline2</code> and/or <code>description2</code> value
+to find out the ad type you&rsquo;re dealing with.
+Indeed, the ad type is encoded in the type system which is always a <em>desiderata</em>.</p>
+<p>Bottom line: use <code>Option</code> with caution.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Scala self-recursive types </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Scala self-recursive types</h1>
+            
+                <p class="blog-post-info">Posted: <time>2015-03-30</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/self-recursive-type">Self-recursive type</a>, <a class="blog-taxonomy-info" href="/tags/self-type">Self-type</a>, <a class="blog-taxonomy-info" href="/tags/type-system">Type system</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>One of the advantages of using a statically typed language is that you can use the type system to enforce
+some constraints. Scala provides <em>self-recursive types</em>, aka <em>F-bounded polymorphic types</em>
+that&ndash;along with <em>self types</em>&ndash;let you put powerful constraint to your type definitions.</p>
+<h2 id="self-recursive-type-definition">Self-recursive type definition</h2>
+<p>Terminology apart, let me show you one of the use cases where this could be useful. Consider the following example
+which does not use a self-recursive type:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span>] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">T</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Square</span>(base<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span>) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">Square</span>] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">override</span> <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Square</span> = <span style="color:#008b45;font-weight:bold">Square</span>(base * <span style="color:#b452cd">2</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>So far so good, the compiler will not complain. The problem is that it won&rsquo;t complain even if you write
+something outrageous like the following code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Person</span>(firstname<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, lastname<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>, age<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Int</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Square</span>(base<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span>) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">Person</span>] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">override</span> <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Person</span> = <span style="color:#008b45;font-weight:bold">Person</span>(<span style="color:#cd5555">&#34;John&#34;</span>, <span style="color:#cd5555">&#34;Smith&#34;</span>, <span style="color:#b452cd">42</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>You want to avoid something like that by enforcing a compile-time check. Enters a self-recursive type:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span> <span style="color:#8b008b;font-weight:bold">&lt;:</span> <span style="color:#00688b;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span>]] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">T</span>
+</span></span><span style="display:flex;"><span>}   </span></span></code></pre></div>
+<p>By using this definition of <code>Doubler</code> you&rsquo;re saying: &ldquo;Hey, if someone tries to extends <code>Doubler</code> with a type
+which doesn&rsquo;t extend <code>Doubler</code> in turn (hence <em>self-recursive</em>), do not compile it&rdquo;.
+In this case the previous definition of <code>Square</code>, which extends <code>Doubler[Person]</code>, doesn&rsquo;t compile.</p>
+<p>Note that self-recursive types are not specific to Scala. Indeed Java uses them too.
+Take, for example, the <code>Enum</code> definition:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">abstract</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Enum</span>&lt;E<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">extends</span><span style="color:#bbb"> </span>Enum&lt;E&gt;&gt;<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">implements</span><span style="color:#bbb"> </span>Comparable&lt;E&gt;,<span style="color:#bbb"> </span>Serializable<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div>
+<p><code>E extends Enum&lt;E&gt;</code> in <em>Javanese</em> means exactly <code>E &lt;: Enum[E]</code></p>
+<h2 id="self-type-definition">Self type definition</h2>
+<p>F-bounded polymorphic types are of great help but sometimes they are not enough to enforce the constraints you need.
+Indeed, the previous definition of <code>Doubler</code> has still one problem. Consider the next code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span> <span style="color:#8b008b;font-weight:bold">&lt;:</span> <span style="color:#00688b;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span>]] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">T</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Square</span>(base<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span>) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">Square</span>] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">override</span> <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Square</span> = <span style="color:#008b45;font-weight:bold">Square</span>(base * <span style="color:#b452cd">2</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Apple</span>(kind<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">Square</span>] {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">override</span> <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Square</span> = <span style="color:#008b45;font-weight:bold">Square</span>(<span style="color:#b452cd">5</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Can you spot the problem? Look at the <code>Apple</code> definition, it extends <code>Doubler[Square]</code> instead of <code>Doubler[Apple]</code>.</p>
+<p>This code compiles because it respects the constraint put by the <code>Doubler</code> definition.
+Indeed <code>Square</code> extends <code>Doubler</code> so it can be used in <code>Apple</code>. Sometimes this is what you want in which case
+the self-recursive type will do. In cases when you don’t want this to happen a self type can work this out:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span> <span style="color:#8b008b;font-weight:bold">&lt;:</span> <span style="color:#00688b;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">T</span>]] { self<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">T</span> =&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">def</span> double<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">T</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Now if you try to compile the previous definition of <code>Apple</code> the compiler will complain by saying something like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>error<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">illegal</span> <span style="color:#00688b;font-weight:bold">inheritance</span>;
+</span></span><span style="display:flex;"><span> self-<span style="color:#8b008b;font-weight:bold">type</span> <span style="color:#00688b;font-weight:bold">Apple</span> <span style="color:#00688b;font-weight:bold">does</span> <span style="color:#00688b;font-weight:bold">not</span> <span style="color:#00688b;font-weight:bold">conform</span> <span style="color:#00688b;font-weight:bold">to</span> <span style="color:#00688b;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">Square</span>]&#39;s selftype <span style="color:#008b45;font-weight:bold">Square</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#8b008b;font-weight:bold">case</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Apple</span>(kind<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span>) <span style="color:#8b008b;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">Doubler</span>[<span style="color:#00688b;font-weight:bold">Square</span>] {
+</span></span><span style="display:flex;"><span>                                              ^</span></span></code></pre></div>
+<h2 id="conclusions">Conclusions</h2>
+<p>If you&rsquo;re thinking: &ldquo;Come on! I would never extend <code>Apple</code> that way because I know what I meant when I wrote
+my <code>Doubler</code> abstraction. I don&rsquo;t need then the self type annotation and, since I know what I&rsquo;m doing,
+I don&rsquo;t need the self-recursive type either&rdquo;. Well you may be right but I&rsquo;d have two objections:</p>
+<ol>
+<li>
+<p>Generally you are not the only one working on a project and, anyway, a good rule of thumb is to design your
+software as if you&rsquo;re designing a public API. In this case you want to be sure no one will use your API in the wrong way.</p>
+</li>
+<li>
+<p>Compilers are implemented by smart guys, generally. Having the compiler help by your side is
+always a good thing in my humble opinion.</p>
+</li>
+</ol>
+<p>Are there alternatives to this type of problems? Yes indeed, <em>Type Classes</em>, which is by the way the option I prefer.
+But this is another story for a future post.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

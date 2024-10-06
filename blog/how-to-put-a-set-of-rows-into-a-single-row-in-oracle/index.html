@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - How to put a set of rows into a single row in Oracle </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">How to put a set of rows into a single row in Oracle</h1>
+            
+                <p class="blog-post-info">Posted: <time>2007-04-27</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+</p>
+
+                <div class="blog-post-content">
+                <p>In Oracle you can execute hierarchical queries using some cool operators&ndash;<code>CONNECT BY PRIOR</code>, <code>START WITH</code> and
+the pseudocolumn <code>SYS_CONNECT_BY_PATH</code>, namely. However, using your fantasy you can exploit these operators
+to put in a single row&ndash;with each item separated by the next through a separator, such as a comma&ndash;what you have
+in multiple rows. For example if you have more than one telephone number in different rows and you want to put them
+in a single comma-separated row you could use a query similar to the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ltrim(sys_connect_by_path(telephone,<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;, &#39;</span>),<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;, &#39;</span>)<span style="color:#bbb"> </span>tel<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>telephone,<span style="color:#bbb"> </span>rownum<span style="color:#bbb"> </span>num_of_rows<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>(<span style="color:#228b22">-- Select the first 9 rows    (1)
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ds_number<span style="color:#bbb"> </span>telephone<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>telephones<span style="color:#bbb"> </span>t<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>cd_customer<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#b452cd">50</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">AND</span><span style="color:#bbb"> </span>rownum<span style="color:#bbb"> </span>&lt;=<span style="color:#bbb"> </span><span style="color:#b452cd">9</span>))<span style="color:#bbb"> </span>x<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>num_of_rows<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>(<span style="color:#228b22">-- Count the # of rows selected in (1)
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">COUNT</span>(*)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>telephones<span style="color:#bbb"> </span>t<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>cd_customer<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#b452cd">50</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">AND</span><span style="color:#bbb"> </span>rownum<span style="color:#bbb"> </span>&lt;=<span style="color:#bbb"> </span><span style="color:#b452cd">9</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">START</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">WITH</span><span style="color:#bbb"> </span>num_of_rows<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#b452cd">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">CONNECT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">BY</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">PRIOR</span><span style="color:#bbb"> </span>x.num_of_rows<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>(x.num_of_rows<span style="color:#bbb"> </span>-<span style="color:#bbb"> </span><span style="color:#b452cd">1</span>);</span></span></code></pre></div>
+<p>The previuos query selects all the telephone numbers for the customer with cd_customer = 50 and put them in a
+single comma-separated row.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

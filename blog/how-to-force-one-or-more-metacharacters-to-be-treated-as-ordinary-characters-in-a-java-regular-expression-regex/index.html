@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx) </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">How to force one or more metacharacters to be treated as ordinary characters in a Java Regular Expression (RegEx)</h1>
+            
+                <p class="blog-post-info">Posted: <time>2006-07-12</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/metacharacter">Metacharacter</a>, <a class="blog-taxonomy-info" href="/tags/regexp">RegExp</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>When using RegEx in Java you might face the need of treating one or more metacharacters as ordinary characters.  As a reminder the metacharacters in a Java RegEx are:</p>
+<p><code>([{^$|)?*+.</code></p>
+<p>If you want to treat them as ordinary characters you have two options:</p>
+<ol>
+<li>Escape the metacharacter with a backslash,</li>
+<li>Enclose the whole string that contains metacharacters within <code>Q</code> and <code>E</code></li>
+</ol>
+<p><code>Q</code> means: &ldquo;quotes all characters until E&rdquo;, while <code>E</code> ends the quotes.</p>
+<p>The following example will hopefully to clarify the subject:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;I want to replace the . with the ,&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>replaced<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;.&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(replaced);</span></span></code></pre></div>
+<p>What do you expect the above method will do? Do you think the following string will be displayed?</p>
+<p><code>I want to replace the , with the ,</code></p>
+<p>If yes then you might be surprised to find out that what you really get is instead:</p>
+<p><code>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,</code></p>
+<p>The problem is that the <code>replaceAll</code> method of the <code>String</code> class accept a RegExp as its first parameter.
+Since <code>.</code> means any character, so writing <code>test.replaceAll(&quot;.&quot;, &quot;,&quot;);</code> is translated in:
+&ldquo;Replace ANY character of the <code>test</code> string with a comma&rdquo;. As I said previously you can fix that in two ways.
+Either you escape the . with a  or enclose it within <code>Q</code> and <code>E</code>. What I didn&rsquo;t say is that, since the  is a
+metacharacter itself, you need to escape it too. :-)</p>
+<p>Translating this in Java you have:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;\.&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;\Q.\E&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);</span></span></code></pre></div>
+<p>I prefer to use the first method when the metacharacter is just one. However, when I have more metacharacters or
+I don&rsquo;t know at compile time what my string is going to be, I use the second method.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

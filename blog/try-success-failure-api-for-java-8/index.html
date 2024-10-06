@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Try-Success-Failure API for Java 8 </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Try-Success-Failure API for Java 8</h1>
+            
+                <p class="blog-post-info">Posted: <time>2014-06-20</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java-8">Java 8</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/try">Try</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <h3 id="try-success-failure-api-java-implementation-of-the-famous-scala-counterpart">Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+<p>This API is a Java implementation of <a href="https://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
+originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
+<p>The <code>Try</code> type represents a computation that may fail. If the computation is successful returns
+the value wrapped in a <code>Try.Success</code> otherwise returns the
+<code>java.lang.Exception</code> wrapped in a <code>Try.Failure</code>.</p>
+<p>To use <code>Try</code> you need to call the <code>Try.apply(FailableSupplier)</code> method passing in a lambda with
+the same signature used for a common <code>java.util.function.Supplier</code>.
+Indeed <code>FailableSupplier</code> is just a <code>java.util.function.Supplier</code> with a
+<code>throws Exception</code> added to its <code>get</code> method.</p>
+<p>For example, <code>Try</code> can be used to perform division on a user-defined input, without the need to do explicit
+exception-handling in all of the places that an exception might occur.</p>
+<p>An important property of <code>Try</code> shown in the <code>divide</code> method of the <code>MainExample</code> class is its ability
+to <em>pipeline (chain if you prefer)</em>  operations, catching exceptions along the way thanks to its <code>flatMap</code> method.
+If you are not a seasoned functional programming geek concepts such as <code>flatMap/map</code> might not be easy to grasp
+at first. However you&rsquo;ll get used to them and, in the end, you&rsquo;ll love them. Moreover you&rsquo;re going to encounter
+these methods more and more often since some important Java 8 classes already implement them
+(e.g. <code>java.util.Optional</code> and <code>java.util.stream.Stream</code>. Anyway for the moment just take for
+granted that to pipeline more than two operations, say N, you just need to chain them by using N - 1
+<code>flatMap</code> calls and a last call to <code>map</code>. E.g.: Suppose you have 3 variables (x, y and z) being
+of type <code>Try</code> and you just want to sum them up. The code you need for doing that is the
+following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>x.<span style="color:#658b00">flatMap</span>(a<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>y.<span style="color:#658b00">flatMap</span>(b<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>z.<span style="color:#658b00">map</span>(c<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>b<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>c)))</span></span></code></pre></div>
+<p>Apart from <code>map</code> and <code>flatMap</code>, <code>Try</code> has many other useful methods. See the <code>TryTest</code>
+class for a thorough coverage of all methods.</p>
+<h3 id="usage-example">Usage example</h3>
+<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Integer division&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Enter the dividend press Return and then enter the divisor: &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Scanner<span style="color:#bbb"> </span>dividend<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(System.<span style="color:#658b00">in</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Scanner<span style="color:#bbb"> </span>divisor<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(System.<span style="color:#658b00">in</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Try&lt;Integer&gt;<span style="color:#bbb"> </span>num<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>Try.<span style="color:#658b00">apply</span>(dividend::nextInt);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Try&lt;Integer&gt;<span style="color:#bbb"> </span>denom<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>Try.<span style="color:#658b00">apply</span>(divisor::nextInt);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Try&lt;Integer&gt;<span style="color:#bbb"> </span>result<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>num.<span style="color:#658b00">flatMap</span>(x<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>denom.<span style="color:#658b00">map</span>(y<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span>/<span style="color:#bbb"> </span>y));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Try&lt;String&gt;<span style="color:#bbb"> </span>resultTryStr<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>result.<span style="color:#658b00">map</span>(i<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;The result of division is: &#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>i);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>resultStr<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>resultTryStr.<span style="color:#658b00">getOrElse</span>(<span style="color:#cd5555">&#34;You must&#39;ve divided by zero or entered something that&#39;s not an Int. Try again!&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(resultStr);</span></span></code></pre></div>
+In the previous example if you enter two valid integers with the second one&ndash;the divisor&ndash;being different from zero
+then the code prints out <code>The result of division is: $RESULT</code>, where <code>$RESULT</code> is the division between the first
+and the second number. On the other hand, if you either enter non valid integers&ndash;such as a string&ndash;or the second
+number is zero then you&rsquo;ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
+printed out.</p>
+<p>Anyway, as I already said, see the <code>TryTest</code> class for a thorough coverage of all methods.</p>
+<h3 id="final-notes">Final Notes</h3>
+<p>Any criticism/suggestion is more than welcome!</p>
+<p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

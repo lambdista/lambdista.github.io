@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Object not found | EasyPHP | MySQL | phpMyAdmin </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Object not found | EasyPHP | MySQL | phpMyAdmin</h1>
+            
+                <p class="blog-post-info">Posted: <time>2009-01-30</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/apache">Apache</a>, <a class="blog-taxonomy-info" href="/categories/php">PHP</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/easyphp">EasyPHP</a>, <a class="blog-taxonomy-info" href="/tags/mysql">MySQL</a>, <a class="blog-taxonomy-info" href="/tags/phpmyadmin">phpMyAdmin</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>After installing EasyPHP, when you try to run phpMyAdmin you might get the following error:</p>
+<p><strong>Object not found!</strong></p>
+<p><strong>The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.</strong></p>
+<p>This might be due to the fact that it tries the following URL:</p>
+<p><strong><code>https://127.0.0.1/mysql/</code></strong></p>
+<p>Try this one instead:</p>
+<p><strong><code>https://127.0.0.1/home/mysql/</code></strong></p>
+<p>If it works then you can work it out by adding the following line to the httpd.conf file of Apache (you can find it under the %EASYPHP_HOME%/apache/conf path, where %EASYPHP_HOME% is the home directory of your EasyPHP installation). Open the file with a text editor and look up the following string: <strong>Alias /home/mysql</strong></p>
+<p>You should find something similar to the following line:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#658b00">Alias</span> <span style="color:#cb6c20">/home/mysql</span> <span style="color:#cd5555">&#34;C:/Program Files/EasyPHP 3.0/phpmyadmin&#34;</span></span></span></code></pre></div>
+<p>Just add, to the next line, the following string:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#658b00">Alias</span> <span style="color:#cb6c20">/mysql</span> <span style="color:#cd5555">&#34;C:/Program Files/EasyPHP 3.0/phpmyadmin&#34;</span></span></span></code></pre></div>
+<p>Restart EasyPHP. Now try to open https://127.0.0.1/mysql/. It should work.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

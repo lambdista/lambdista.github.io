@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Java split() of String | Multiple whitespace characters </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Java split() of String | Multiple whitespace characters</h1>
+            
+                <p class="blog-post-info">Posted: <time>2008-12-03</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/regex">RegEx</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
+in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
+be careful when you want to split a string using the whitespace character as a delimiter. Consider the
+following snippet of code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;Testing split using two  whitespace characters&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String[]<span style="color:#bbb"> </span>tokens<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>str.<span style="color:#658b00">split</span>(<span style="color:#cd5555">&#34;\\s&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">for</span>(String<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>tokens)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;-&#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;-&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div>
+<p>What&rsquo;s the output produced by the previous code? If you think it is the following one you&rsquo;re wrong:</p>
+<ul>
+<li>-Testing-</li>
+<li>-split-</li>
+<li>-using-</li>
+<li>-two-</li>
+<li>-whitespace-</li>
+<li>-characters-</li>
+</ul>
+<p>The actual output is instead this one:</p>
+<ul>
+<li>-Testing-</li>
+<li>-split-</li>
+<li>-using-</li>
+<li>-two-</li>
+<li>&ndash;</li>
+<li>-whitespace-</li>
+<li>-characters-</li>
+</ul>
+<p>Where in the hell did that empty string come out from? It comes out from the two whitespace characters that
+are between the word <strong>two</strong> and <strong>whitespace</strong> of the <strong>str</strong> string. If this is what you want OK. However,
+most of the time, you will want to discard that empty string from your resulting string array. You can obtain this
+result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previuos code becomes:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;Testing split using two  whitespace characters&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String[]<span style="color:#bbb"> </span>tokens<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>str.<span style="color:#658b00">split</span>(<span style="color:#cd5555">&#34;\\s+&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">for</span>(String<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>tokens)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;-&#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;-&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

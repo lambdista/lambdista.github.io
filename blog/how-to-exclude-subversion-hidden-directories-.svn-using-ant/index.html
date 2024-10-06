@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - How to exclude subversion hidden directories (.svn) using Ant </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">How to exclude subversion hidden directories (.svn) using Ant</h1>
+            
+                <p class="blog-post-info">Posted: <time>2007-06-04</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/ant">Ant</a>, <a class="blog-taxonomy-info" href="/tags/svn">SVN</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Many Java developers already know that <a href="https://ant.apache.org/">Ant</a> is a great build tool. Besides a build tool you also need a good version control system to manage the various versions of your code. For this purpose I often use <a href="https://subversion.tigris.org/">Subversion</a>. Now, there might be time when you need to exclude the Subversion hidden directories from, for example, a backup Ant target you built. To do that you just need to use the following attribute to your zipfileset or other directory-based task:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;zipfileset</span> <span style="color:#658b00">dir=</span><span style="color:#cd5555">&#34;${basedir}&#34;</span> <span style="color:#658b00">excludes=</span><span style="color:#cd5555">&#34;**/.svn/*&#34;</span> <span style="color:#658b00">prefix=</span><span style="color:#cd5555">&#34;${ant.project.name}&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span></span></span></code></pre></div>
+<p>In particular, the previous code excludes all the <code>.svn</code> directories, that are under the basedir directory and its subdirectories, recursively.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

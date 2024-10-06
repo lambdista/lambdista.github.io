@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alessandro Lacava - Scala: Seq, Map and Set as functions </title>
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
+    
+    <link rel="stylesheet" type="text/css" href="http://www.alessandrolacava.com/css/userstyles.css">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Alessandro Lacava">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="http://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li class="">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="dropdown activetab">
+                <a href ="/blog/">
+                    <span>Blog</span>
+                </a>
+                <div class=sub-menu>
+                    <a class="" href="/categories/">All Categories</a>
+                    <a class="" href="/tags/">All Tags</a>
+                    <a class="" href="/archive/">Archive</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="/articles/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="/talks/">
+                    <span>Talks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="content">
+    <main>
+        <article>
+            
+            <h1 class="page-title blog">Scala: Seq, Map and Set as functions</h1>
+            
+                <p class="blog-post-info">Posted: <time>2015-10-23</time>
+                
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>, <a class="blog-taxonomy-info" href="/categories/scala">Scala</a>
+    </span>
+
+
+
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        
+        
+        
+        <a class="blog-taxonomy-info" href="/tags/collections">Collections</a>, <a class="blog-taxonomy-info" href="/tags/function">Function</a>, <a class="blog-taxonomy-info" href="/tags/list">List</a>, <a class="blog-taxonomy-info" href="/tags/map">Map</a>, <a class="blog-taxonomy-info" href="/tags/partial-function">Partial Function</a>, <a class="blog-taxonomy-info" href="/tags/seq">Seq</a>, <a class="blog-taxonomy-info" href="/tags/set">Set</a>, <a class="blog-taxonomy-info" href="/tags/vector">Vector</a>
+    </span>
+
+</p>
+
+                <div class="blog-post-content">
+                <p>Yesterday my mate asked me: &ldquo;I have a <code>List[String]</code> and a <code>Map[String, Int]</code> and I want
+a <code>List[Int]</code> where its values are those of the <code>Map</code> whose keys match the <code>List[String]</code> elements,
+maintaining the order. Should I use pattern matching?&rdquo;. I know, the sentence is a bit convoluted but the
+code will make it clear, hopefully. Anyway, I replied: &ldquo;No, you don&rsquo;t need pattern matching, you just need this&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> m <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Map</span>(<span style="color:#cd5555">&#34;a&#34;</span> -&gt; <span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#34;b&#34;</span> -&gt; <span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#34;c&#34;</span> -&gt; <span style="color:#b452cd">3</span>)
+</span></span><span style="display:flex;"><span>m<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">scala.collection.immutable.Map</span>[<span style="color:#00688b;font-weight:bold">String</span>,<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#008b45;font-weight:bold">Map</span>(a -&gt; <span style="color:#b452cd">1</span>, b -&gt; <span style="color:#b452cd">2</span>, c -&gt; <span style="color:#b452cd">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> l <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;c&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>l<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, c, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; l collect m
+</span></span><span style="display:flex;"><span>res0<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#b452cd">1</span>, <span style="color:#b452cd">3</span>, <span style="color:#b452cd">2</span>)</span></span></code></pre></div>
+<p>Hold on, how does it work? If you look at the definition of the <code>collect</code> method you&rsquo;ll see it accepts a
+<code>PartialFunction</code>, instead I passed a <code>Map</code> to it.
+Well, it turns out that <code>Map</code> <em>is</em> a <code>PartialFunction</code>.</p>
+<p>Since this peculiarity surprised him I decided to write a small post showing how Scala&rsquo;s <code>Map</code>,
+<code>List</code> (actually <code>Seq</code>) and <code>Set</code> can be viewed as functions.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="before-starting-functions-vs-partial-functions">Before starting: functions vs partial functions</h2>
+<p>In short, a function is a mapping <code>A =&gt; B</code> that relates each value of type <code>A</code> to a
+value of type <code>B</code>&ndash;modulo <em>bottom</em>. <code>A</code> and <code>B</code> are called <em>domain</em> and <em>codomain</em>, respectively. If you&rsquo;re not a math
+addict, roughly speaking, the domain is the set of all values that you may provide as input to your function,
+while the codomain is the result of the function application to the input, that is your function output.<br>
+On the other hand a partial function from <code>A</code> to <code>B</code> is not defined for some inputs of type <code>A</code>. E.g.:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// function
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> abs<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span> =&gt; <span style="color:#008b45;font-weight:bold">Double</span> <span style="color:#8b008b;font-weight:bold">=</span> x <span style="color:#8b008b;font-weight:bold">=&gt;</span> <span style="color:#8b008b;font-weight:bold">if</span> (x &gt; <span style="color:#b452cd">0</span>) x <span style="color:#8b008b;font-weight:bold">else</span> -x
+</span></span><span style="display:flex;"><span>abs<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span> =&gt; <span style="color:#008b45;font-weight:bold">Double</span> <span style="color:#8b008b;font-weight:bold">=</span> &lt;function1&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; abs(<span style="color:#b452cd">42</span>)
+</span></span><span style="display:flex;"><span>res1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span> = <span style="color:#b452cd">42.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; abs(-<span style="color:#b452cd">42</span>)
+</span></span><span style="display:flex;"><span>res2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span> = <span style="color:#b452cd">42.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// partial function
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> sqrt<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">Double</span>, <span style="color:#00688b;font-weight:bold">Double</span>] <span style="color:#8b008b;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>     |   <span style="color:#8b008b;font-weight:bold">case</span> x <span style="color:#8b008b;font-weight:bold">if</span> x &gt;= <span style="color:#b452cd">0</span> <span style="color:#8b008b;font-weight:bold">=&gt;</span> math.sqrt(x)
+</span></span><span style="display:flex;"><span>     | }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; sqrt(<span style="color:#b452cd">4</span>)
+</span></span><span style="display:flex;"><span>res3<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Double</span> = <span style="color:#b452cd">2.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; sqrt(-<span style="color:#b452cd">1</span>)
+</span></span><span style="display:flex;"><span>scala.<span style="color:#008b45;font-weight:bold">MatchError</span><span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">-</span><span style="color:#a61717;background-color:#e3d2d2">1</span><span style="color:#00688b;font-weight:bold">.</span><span style="color:#a61717;background-color:#e3d2d2">0</span> (<span style="color:#00688b;font-weight:bold">of</span> <span style="color:#00688b;font-weight:bold">class</span> <span style="color:#00688b;font-weight:bold">java.lang.Double</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#00688b;font-weight:bold">at</span> <span style="color:#00688b;font-weight:bold">scala.PartialFunction$$anon$1.apply</span>(<span style="color:#00688b;font-weight:bold">PartialFunction.scala:</span><span style="color:#a61717;background-color:#e3d2d2">253</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#00688b;font-weight:bold">at</span> <span style="color:#00688b;font-weight:bold">scala.PartialFunction$$anon$1.apply</span>(<span style="color:#00688b;font-weight:bold">PartialFunction.scala:</span><span style="color:#a61717;background-color:#e3d2d2">251</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#00688b;font-weight:bold">at</span> <span style="color:#00688b;font-weight:bold">$anonfun$1.applyOrElse</span>(<span style="color:#00688b;font-weight:bold">&lt;console</span><span style="color:#8b008b;font-weight:bold">&gt;:</span><span style="color:#a61717;background-color:#e3d2d2">7</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#00688b;font-weight:bold">at</span> <span style="color:#00688b;font-weight:bold">$anonfun$1.applyOrElse</span>(<span style="color:#00688b;font-weight:bold">&lt;console</span><span style="color:#8b008b;font-weight:bold">&gt;:</span><span style="color:#a61717;background-color:#e3d2d2">7</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#00688b;font-weight:bold">...</span></span></span></code></pre></div>
+<p>Note that the <code>PartialFunction</code> definition is the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">-A</span>, <span style="color:#00688b;font-weight:bold">+B</span>] <span style="color:#008b45;font-weight:bold">extends</span> (A) <span style="color:#8b008b;font-weight:bold">=&gt;</span> B</span></span></code></pre></div>
+<p>That is a <code>PartialFunction</code> is a <code>Function</code> that will just <em>throw</em> for those inputs the partial function is not
+defined at. So you can use a <code>PartialFunction</code> wherever a <code>Function</code> is expected. Just keep in mind you&rsquo;ll get
+an exception for some input values.</p>
+<h2 id="seqa-as-partialfunctionint-a">Seq[A] as PartialFunction[Int, A]</h2>
+<p>Being <code>List</code> an indirect subclass of <code>collection.Seq</code> and given that the latter has the following definition, you
+can see clearly that every <code>Seq[A]</code> is also a <code>PartialFunction[Int, A]</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Seq</span>[<span style="color:#00688b;font-weight:bold">+A</span>] <span style="color:#008b45;font-weight:bold">extends</span> <span style="color:#008b45;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">Int</span>, <span style="color:#00688b;font-weight:bold">A</span>] <span style="color:#8b008b;font-weight:bold">with</span> ...</span></span></code></pre></div>
+<p>Here&rsquo;s an example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> xs <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;c&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>l<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, c, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> f1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">Int</span>, <span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> xs
+</span></span><span style="display:flex;"><span>f1<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">Int</span>,<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, c, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; f1(<span style="color:#b452cd">0</span>)
+</span></span><span style="display:flex;"><span>res4<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span> = a</span></span></code></pre></div>
+<p>Of course I could have used <code>xs</code> directly without the assignment to <code>f1</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; xs(<span style="color:#b452cd">0</span>)
+</span></span><span style="display:flex;"><span>res2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span> = a</span></span></code></pre></div>
+<p>I assigned the list to <code>f1</code> just to emphasise the fact that it&rsquo;s a partial function. It corresponds to the
+index-based lookup.</p>
+<p><strong>Performance concern</strong>: Take into account that the index-based lookup on <code>List</code> has a cost of <code>O(n)</code>. For this type
+of access you may consider using a <code>Vector</code> which has constant-time access cost. Anyway this post is not about
+performance concerns about the collection API so I won&rsquo;t dig into this topic.</p>
+<h2 id="mapa-b-as-partialfunctiona-b">Map[A, B] as PartialFunction[A, B]</h2>
+<p>If you look at the <code>Map</code> definition you&rsquo;ll see that it extends <code>MapLike</code> which, in turn, extends <code>PartialFunction</code>.
+So you can use it as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> m <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Map</span>(<span style="color:#cd5555">&#34;a&#34;</span> -&gt; <span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#34;b&#34;</span> -&gt; <span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#34;c&#34;</span> -&gt; <span style="color:#b452cd">3</span>, <span style="color:#cd5555">&#34;d&#34;</span> -&gt; <span style="color:#b452cd">4</span>)
+</span></span><span style="display:flex;"><span>m<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">scala.collection.immutable.Map</span>[<span style="color:#00688b;font-weight:bold">String</span>,<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#008b45;font-weight:bold">Map</span>(a -&gt; <span style="color:#b452cd">1</span>, b -&gt; <span style="color:#b452cd">2</span>, c -&gt; <span style="color:#b452cd">3</span>, d -&gt; <span style="color:#b452cd">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> f2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">String</span>, <span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> m
+</span></span><span style="display:flex;"><span>f2<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">PartialFunction</span>[<span style="color:#00688b;font-weight:bold">String</span>,<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#008b45;font-weight:bold">Map</span>(a -&gt; <span style="color:#b452cd">1</span>, b -&gt; <span style="color:#b452cd">2</span>, c -&gt; <span style="color:#b452cd">3</span>, d -&gt; <span style="color:#b452cd">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; f2(<span style="color:#cd5555">&#34;a&#34;</span>)
+</span></span><span style="display:flex;"><span>res5<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Int</span> = <span style="color:#b452cd">1</span></span></span></code></pre></div>
+<h2 id="seta-as-a--boolean">Set[A] as A =&gt; Boolean</h2>
+<p>Here&rsquo;s the definition of <code>Set</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">trait</span> <span style="color:#008b45;font-weight:bold">Set</span>[<span style="color:#00688b;font-weight:bold">A</span>] <span style="color:#008b45;font-weight:bold">extends</span> (A) <span style="color:#8b008b;font-weight:bold">=&gt;</span> <span style="color:#008b45;font-weight:bold">Boolean</span> <span style="color:#8b008b;font-weight:bold">with</span> ...</span></span></code></pre></div>
+<p>It, evidently, extends <code>A =&gt; Boolean</code> which, as you probably already know, is just syntactic sugar for the more
+verbose <code>Function[A, Boolean]</code>. Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> s <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Set</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>, <span style="color:#cd5555">&#34;c&#34;</span>)
+</span></span><span style="display:flex;"><span>s<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">scala.collection.immutable.Set</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Set</span>(a, b, c)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> f3<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span> =&gt; <span style="color:#008b45;font-weight:bold">Boolean</span> <span style="color:#8b008b;font-weight:bold">=</span> s
+</span></span><span style="display:flex;"><span>f3<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">String</span> =&gt; <span style="color:#008b45;font-weight:bold">Boolean</span> <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Set</span>(a, b, c)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; f3(<span style="color:#cd5555">&#34;a&#34;</span>)
+</span></span><span style="display:flex;"><span>res6<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">Boolean</span> = <span style="color:#8b008b;font-weight:bold">true</span></span></span></code></pre></div>
+<p>So, for instance, you can use a set to filter a list:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> xs <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;c&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>xs<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, c, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> s <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Set</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>, <span style="color:#cd5555">&#34;d&#34;</span>)
+</span></span><span style="display:flex;"><span>s<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">scala.collection.immutable.Set</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Set</span>(a, b, d)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; xs filter s
+</span></span><span style="display:flex;"><span>res7<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, b)</span></span></code></pre></div>
+<h2 id="conclusions">Conclusions</h2>
+<p>As a final consideration take into account that <code>Seq</code>s and <code>Map</code>s are partial functions while <code>Set</code> is a
+function. Partial functions could introduce insidious bugs.
+For instance, consider the very first example of this post.
+If the <code>Map</code> hadn&rsquo;t contained all the elements of the <code>List</code> and I had used
+the <code>map</code> method instead of <code>collect</code> I would have introduced a bug:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> xs <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(<span style="color:#cd5555">&#34;a&#34;</span>, <span style="color:#cd5555">&#34;b&#34;</span>, <span style="color:#cd5555">&#34;c&#34;</span>, <span style="color:#cd5555">&#34;d&#34;</span>)
+</span></span><span style="display:flex;"><span>xs<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">List</span>[<span style="color:#00688b;font-weight:bold">String</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">List</span>(a, b, c, d)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; <span style="color:#8b008b;font-weight:bold">val</span> m <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Map</span>(<span style="color:#cd5555">&#34;a&#34;</span> -&gt; <span style="color:#b452cd">1</span>)
+</span></span><span style="display:flex;"><span>m<span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">scala.collection.immutable.Map</span>[<span style="color:#00688b;font-weight:bold">String</span>,<span style="color:#00688b;font-weight:bold">Int</span>] <span style="color:#8b008b;font-weight:bold">=</span> <span style="color:#008b45;font-weight:bold">Map</span>(a -&gt; <span style="color:#b452cd">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt; xs map m
+</span></span><span style="display:flex;"><span>java.util.<span style="color:#008b45;font-weight:bold">NoSuchElementException</span><span style="color:#8b008b;font-weight:bold">:</span> <span style="color:#00688b;font-weight:bold">key</span> <span style="color:#00688b;font-weight:bold">not</span> <span style="color:#00688b;font-weight:bold">found:</span> <span style="color:#00688b;font-weight:bold">b</span>
+</span></span><span style="display:flex;"><span>  at scala.collection.<span style="color:#008b45;font-weight:bold">MapLike$class</span>.default(<span style="color:#008b45;font-weight:bold">MapLike</span>.scala<span style="color:#8b008b;font-weight:bold">:</span><span style="color:#a61717;background-color:#e3d2d2">228</span>)
+</span></span><span style="display:flex;"><span>  at scala.collection.<span style="color:#008b45;font-weight:bold">AbstractMap</span>.default(<span style="color:#008b45;font-weight:bold">Map</span>.scala<span style="color:#8b008b;font-weight:bold">:</span><span style="color:#a61717;background-color:#e3d2d2">59</span>)
+</span></span><span style="display:flex;"><span>  at scala.collection.<span style="color:#008b45;font-weight:bold">MapLike$class</span>.apply(<span style="color:#008b45;font-weight:bold">MapLike</span>.scala<span style="color:#8b008b;font-weight:bold">:</span><span style="color:#a61717;background-color:#e3d2d2">141</span>)
+</span></span><span style="display:flex;"><span>  at scala.collection.<span style="color:#008b45;font-weight:bold">AbstractMap</span>.apply(<span style="color:#008b45;font-weight:bold">Map</span>.scala<span style="color:#8b008b;font-weight:bold">:</span><span style="color:#a61717;background-color:#e3d2d2">59</span>)
+</span></span><span style="display:flex;"><span>  at scala.collection.immutable.<span style="color:#008b45;font-weight:bold">List</span>.map(<span style="color:#008b45;font-weight:bold">List</span>.scala<span style="color:#8b008b;font-weight:bold">:</span><span style="color:#a61717;background-color:#e3d2d2">277</span>)
+</span></span><span style="display:flex;"><span>  ... <span style="color:#b452cd">33</span> elided</span></span></code></pre></div>
+<p>This is because <code>map</code> accepts a function and providing a partial function instead you get the exception for not valid
+inputs as I said in the <a href="#functions_vs_partial_functions">functions vs partial functions section</a>.</p>
+<p>From now on, whenever you have a collection hanging around, consider looking at it as a
+function. This could help to solve your problem without using pattern matching or other boilerplate.</p>
+
+                </div>
+                
+            
+        </article>
+    </main>
+
+        </div><footer>
+    <span></span>
+</footer>
+</body>
+</html>

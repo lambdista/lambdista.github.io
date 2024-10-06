@@ -1,0 +1,68 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: FreeSans, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #333;
+}
+
+nav a {
+  color: #07608f;
+  padding: 0.25em 0.63em;
+  font-family: FreeSans, sans-serif;
+  font-size: 1.2em;
+  display: block;
+}
+
+nav li:hover {
+  border-color: #07608f;
+}
+
+.dropdown .sub-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  color: #07608f;
+  cursor: pointer;
+  border-width: 0 0 0.3em 0;
+  min-width: 6em;
+  margin-top: 0.3em;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.sub-menu a:hover {
+  background-color: #07608f;
+  color: white;
+}
+
+.dropdown.activetab,
+.activetab,
+li.activetab {
+  background-color: #07608f;
+  border-color: white;
+}
+
+.myname a {
+  color: #333;
+  text-decoration: none;
+  font-family: FreeSerif, serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.blog-post-title {
+  margin-bottom: 0.2em;
+  padding-bottom: 0;
+  font-size: 1.6em;
+}
+.blog-post-title a {
+  color: #07608f;
+  font-family: FreeSans, sans-serif;
+}
+
+/*# sourceMappingURL=userstyles.css.map */
