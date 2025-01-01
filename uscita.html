@@ -150,6 +150,19 @@
 
       const intervalId = setInterval(animate, intervalTime); // Start the fade-in effect
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('workingShift').addEventListener('change', function () {
+        const lunchBreakMin = document.getElementById('lunchBreakMin');
+        const selectedValue = this.value;
+        if (selectedValue == "6:00") {
+          lunchBreakMin.value = "0";
+        } else {
+          lunchBreakMin.value = "30";
+        }
+      });
+    });
+
   </script>
 </head>
 
