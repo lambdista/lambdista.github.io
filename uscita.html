@@ -156,6 +156,8 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+      compute();
+
       document.getElementById('workingShift').addEventListener('change', function () {
         const lunchBreakMin = document.getElementById('lunchBreakMin');
         const selectedValue = this.value;
