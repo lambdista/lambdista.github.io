@@ -63,7 +63,7 @@
     .hidden-field {
       width: 100%;
       text-align: center;
-      color: red;
+      color: SlateBlue;
       display: none;
       margin-top: 15px;
     }
@@ -99,7 +99,7 @@
       const [resHoursStr, resMinutesStr] = [String(resHours).padStart(2, '0'), String(resMinutes).padStart(2, '0')]
 
       const hiddenField = document.getElementById('hiddenField');
-      hiddenField.innerHTML = `Puoi uscire alle ${resHoursStr}:${resMinutesStr}`;
+      hiddenField.innerHTML = `USCITA ${resHoursStr}:${resMinutesStr}`;
       hiddenField.style.display = 'block';
       fadeIn(hiddenField, 2000);
     }
