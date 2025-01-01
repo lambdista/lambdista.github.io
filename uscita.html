@@ -101,7 +101,6 @@
       const hiddenField = document.getElementById('hiddenField');
       hiddenField.innerHTML = `USCITA ${resHoursStr}:${resMinutesStr}`;
       hiddenField.style.display = 'block';
-      fadeIn(hiddenField, 2000);
     }
 
     function parseTime(timeString) {
@@ -133,26 +132,6 @@
       const hours = date.getHours();
       const minutes = date.getMinutes();
       return [hours, minutes];
-    }
-
-    function fadeIn(element, duration = 1000) {
-      let opacity = 0; // Start with 0 opacity
-      const intervalTime = 50; // Interval time for each update
-      const increment = intervalTime / duration; // Increment per interval to reach 1 opacity
-
-      element.style.opacity = opacity;
-      element.style.display = 'block'; // Ensure the element is visible
-
-      function animate() {
-        opacity += increment; // Increase opacity based on the interval
-        if (opacity >= 1) {
-          opacity = 1; // Ensure opacity doesn't exceed 1
-          clearInterval(intervalId); // Stop the interval when done
-        }
-        element.style.opacity = opacity;
-      }
-
-      const intervalId = setInterval(animate, intervalTime); // Start the fade-in effect
     }
 
     document.addEventListener('DOMContentLoaded', function () {
