@@ -134,23 +134,43 @@
       return [hours, minutes];
     }
 
+    function saveValue(dropdownId) {
+      localStorage.setItem(dropdownId, document.getElementById(dropdownId).value);
+    }
+
+    function restoreSavedValue(dropdownId) {
+      const dropdown = document.getElementById(dropdownId);
+      const savedValue = localStorage.getItem(dropdownId);
+      if (savedValue) {
+        dropdown.value = savedValue; // Set the dropdown to the saved value
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       compute();
 
+      restoreSavedValue('workingShift');
+      restoreSavedValue('startHours');
+      restoreSavedValue('startMinutes');
+      restoreSavedValue('lunchBreakMin');
+
       document.getElementById('workingShift').addEventListener('change', function () {
+        saveValue('workingShift');
         compute();
       });
       document.getElementById('startHours').addEventListener('change', function () {
+        saveValue('startHours');
         compute();
       });
       document.getElementById('startMinutes').addEventListener('change', function () {
+        saveValue('startMinutes');
         compute();
       });
       document.getElementById('lunchBreakMin').addEventListener('change', function () {
+        saveValue('lunchBreakMin');
         compute();
       });
     });
-
   </script>
 </head>
 
