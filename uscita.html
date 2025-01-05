@@ -147,12 +147,12 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      compute();
-
       restoreSavedValue('workingShift');
       restoreSavedValue('startHours');
       restoreSavedValue('startMinutes');
       restoreSavedValue('lunchBreakMin');
+
+      compute();
 
       document.getElementById('workingShift').addEventListener('change', function () {
         saveValue('workingShift');
