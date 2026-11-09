@@ -1,117 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alessandro Lacava - NOT IN vs. NOT EXISTS when NULL values are involved </title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="author" content="Alessandro Lacava">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<header class="page-header">
-    <div class="myname"> 
-        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
-    </div>
-    <nav>
-        <ul class="navbar">
-            <li class="">
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/blog/">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/articles/">
-                    <span>Articles</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/talks/">
-                    <span>Talks</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div id="content">
-    <main>
-        <article>
-            
-            <h1 class="page-title blog">NOT IN vs. NOT EXISTS when NULL values are involved</h1>
-            
-                <p class="blog-post-info">Posted: <time>2008-06-04</time>
-                
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/categories/database">Database</a>, <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
-    </span>
-
-
-
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/tags/not-exists">NOT EXISTS</a>, <a class="blog-taxonomy-info" href="/tags/not-in">NOT IN</a>, <a class="blog-taxonomy-info" href="/tags/"></a>
-    </span>
-
-</p>
-
-                <div class="blog-post-content">
-                <p><code>NOT IN</code> does not behave as you would expect when <code>NULL</code> values are involved.
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables: CDFIELD DSFIELD 1 ALPHA 2 BETA TABLEA…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>NOT IN vs. NOT EXISTS when NULL values are involved | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/"><meta property="og:title" content="NOT IN vs. NOT EXISTS when NULL values are involved | Alessandro Lacava"><meta property="og:description" content="NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables: CDFIELD DSFIELD 1 ALPHA 2 BETA TABLEA…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/"><meta property="article:published_time" content="2008-06-04T13:24:09.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"NOT IN vs. NOT EXISTS when NULL values are involved","description":"NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables: CDFIELD DSFIELD 1 ALPHA 2 BETA TABLEA…","datePublished":"2008-06-04T13:24:09.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>NOT IN vs. NOT EXISTS when NULL values are involved</h1><div class="post-meta"><time datetime="2008-06-04T13:24:09.000Z">4 Jun 2008</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/database/">Database</a><a class="topic" href="/categories/oracle/">Oracle</a></div></header><div class="prose article-body"><p><code>NOT IN</code> does not behave as you would expect when <code>NULL</code> values are involved.
 Suppose you have the following tables:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<table>
+  <tr >
+    <td style="color: #696969">CD_FIELD</td>
+    <td style="color: #696969">DS_FIELD</td>
+  </tr>
+  <tr >
+    <td>1</td>
+    <td>ALPHA</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>BETA</td>
+  </tr>
+</table>
+**TABLE_A**
+<table>
+  <tr >
+    <td style="color: #696969">CD_FIELD</td>
+    <td style="color: #696969">DS_FIELD</td>
+  </tr>
+  <tr >
+    <td>1</td>
+    <td>GAMMA</td>
+  </tr>
+  <tr>
+    <td>NULL</td>
+    <td>DELTA</td>
+  </tr>
+</table>
+**TABLE_B**
 <p>Now try the following query:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
-<p>Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span></span>
+<span class="line"><span style="color:#D73A49">FROM</span><span style="color:#24292E"> table_a a</span></span>
+<span class="line"><span style="color:#D73A49">WHERE</span><span style="color:#005CC5"> a</span><span style="color:#24292E">.</span><span style="color:#005CC5">cd_field</span><span style="color:#D73A49"> NOT</span><span style="color:#D73A49"> IN</span><span style="color:#24292E"> (</span><span style="color:#D73A49">SELECT</span><span style="color:#005CC5"> b</span><span style="color:#24292E">.</span><span style="color:#005CC5">cd_field</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> table_b b);</span></span></code></pre>
+<p>Does the previous query return any row? The answer is NO it doesn’t, even if there is a value (2) in table_a.cd_field
 which is not present in table_b.cd_field.</p>
 <p>I think this is because <code>NOT IN</code> internally uses the inequality operator.
 You should never use the equality or inequality operators with <code>NULL</code>, but <code>IS NULL</code> and <code>IS NOT NULL</code>, respectively.
 For this reason, in SQL, <code>NULL</code> is not equal to <code>NULL</code>.
-If you don&rsquo;t believe me then try the following query:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#cd5555">&#39;test&#39;</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">c</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>dual<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NULL</span><span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NULL</span>;</span></span></code></pre></div>
+If you don’t believe me then try the following query:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#032F62"> 'test'</span><span style="color:#24292E"> c</span></span>
+<span class="line"><span style="color:#D73A49">FROM</span><span style="color:#24292E"> dual</span></span>
+<span class="line"><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> NULL</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> NULL</span><span style="color:#24292E">;</span></span></code></pre>
 <p>It returns 0 rows.</p>
 <p>So how can you work this out? Enter the <code>EXISTS</code> (and <code>NOT EXISTS</code>) operator.</p>
 <p>Try the following query:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">     
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">EXISTS</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#b452cd">1</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>b.cd_field);</span></span></code></pre></div>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span></span>
+<span class="line"><span style="color:#D73A49">FROM</span><span style="color:#24292E"> table_a a</span></span>
+<span class="line"><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> NOT</span><span style="color:#D73A49"> EXISTS</span><span style="color:#24292E"> (</span><span style="color:#D73A49">SELECT</span><span style="color:#005CC5"> 1</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> table_b b </span><span style="color:#D73A49">WHERE</span><span style="color:#005CC5"> a</span><span style="color:#24292E">.</span><span style="color:#005CC5">cd_field</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> b</span><span style="color:#24292E">.</span><span style="color:#005CC5">cd_field</span><span style="color:#24292E">);</span></span></code></pre>
 <p>The previous query returns 1 row, that is what you would expect since there is a row in table_a with cd_field = 2
 which is not present in table_b.cd_field.</p>
 <p>From now on beware of using <code>NOT IN</code> and <code>IN</code> when <code>NULL</code> values are involved.</p>
-
-                </div>
-                
-            
-        </article>
-    </main>
-
-        </div><footer>
-    <a href="/privacy/">Privacy and cookies</a>
-</footer>
-</body>
-</html>
+</div><footer class="article-tags"><span>Filed under</span><a href="/tags/not-in/">NOT IN</a><a href="/tags/not-exists/">NOT EXISTS</a><a href="/tags/null/">NULL</a></footer><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>

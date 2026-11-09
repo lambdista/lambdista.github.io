@@ -1,81 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alessandro Lacava - OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) </title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="author" content="Alessandro Lacava">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<header class="page-header">
-    <div class="myname"> 
-        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
-    </div>
-    <nav>
-        <ul class="navbar">
-            <li class="">
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/blog/">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/articles/">
-                    <span>Articles</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/talks/">
-                    <span>Talks</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div id="content">
-    <main>
-        <article>
-            
-            <h1 class="page-title blog">OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
-            
-                <p class="blog-post-info">Posted: <time>2008-07-22</time>
-                
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/categories/ide">IDE</a>, <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
-    </span>
-
-
-
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/tags/eclipse">Eclipse</a>, <a class="blog-taxonomy-info" href="/tags/jvm">JVM</a>
-    </span>
-
-</p>
-
-                <div class="blog-post-content">
-                <h1 id="outofmemoryerror-in-eclipse--java-virtual-machine-jvm">OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1>
-<p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"><meta property="og:title" content="OutOfMemoryError in Eclipse | Java Virtual Machine (JVM) | Alessandro Lacava"><meta property="og:description" content="It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"><meta property="article:published_time" content="2008-07-22T08:53:07.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)","description":"It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory…","datePublished":"2008-07-22T08:53:07.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/outofmemoryerror-in-eclipse-java-virtual-machine-jvm/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>OutOfMemoryError in Eclipse | Java Virtual Machine (JVM)</h1><div class="post-meta"><time datetime="2008-07-22T08:53:07.000Z">22 Jul 2008</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/ide/">IDE</a><a class="topic" href="/categories/java/">Java</a></div></header><div class="prose article-body"><p>It might happen that while running a Java application within the Eclipse environment you get an OutOfMemoryError due to the maximum amount of memory dedicated to the heap. You can fix it by increasing the minimum (-Xms parameter) and maximum (-Xmx parameter) heap size. You can do it in two different ways:</p>
 <ol>
 <li>By editing your <strong>eclipse.ini</strong> file you find under your Eclipse installation directory. Within that file you should find two lines similar to the following ones:</li>
 </ol>
@@ -84,7 +7,7 @@
 <p>You might want to change them depending on your hardware. For example I changed them as follows:</p>
 <p><strong>-Xms256m</strong>
 <strong>-Xmx1024m</strong></p>
-<p>It means: &ldquo;start with an initial heap size of 256 MB and grow to a maximum of 1024MB, that is 1GB.&rdquo;</p>
+<p>It means: “start with an initial heap size of 256 MB and grow to a maximum of 1024MB, that is 1GB.”</p>
 <ol start="2">
 <li>By editing the <strong>Run Configurations in Eclipse</strong>. To do this, right-click on the class you want to run (the one with the main method) and then select:</li>
 </ol>
@@ -93,15 +16,4 @@
 <p><strong>-Xms256m -Xmx1024m</strong></p>
 <p>or whatever you prefer, depending on the hardware you possess.</p>
 <p><strong>IMPORTANT NOTE: It is strongly recommended that you make a backup copy of your eclipse.ini file before editing it in any way.</strong></p>
-
-                </div>
-                
-            
-        </article>
-    </main>
-
-        </div><footer>
-    <a href="/privacy/">Privacy and cookies</a>
-</footer>
-</body>
-</html>
+</div><footer class="article-tags"><span>Filed under</span><a href="/tags/eclipse/">Eclipse</a><a href="/tags/jvm/">JVM</a></footer><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>

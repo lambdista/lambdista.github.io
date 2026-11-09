@@ -1,91 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alessandro Lacava - How to tell Oracle to use more than one byte per character </title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="author" content="Alessandro Lacava">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<header class="page-header">
-    <div class="myname"> 
-        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
-    </div>
-    <nav>
-        <ul class="navbar">
-            <li class="">
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/blog/">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/articles/">
-                    <span>Articles</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/talks/">
-                    <span>Talks</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div id="content">
-    <main>
-        <article>
-            
-            <h1 class="page-title blog">How to tell Oracle to use more than one byte per character</h1>
-            
-                <p class="blog-post-info">Posted: <time>2007-04-26</time>
-                
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/categories/oracle">Oracle</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
-    </span>
-
-
-
-</p>
-
-                <div class="blog-post-content">
-                <p>When you create a table, by default, the number of bytes used to represent a character in a <code>VARCHAR2</code> type is 1,
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="When you create a table, by default, the number of bytes used to represent a character in a VARCHAR2 type is 1, irrespective of the characterset of the…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>How to tell Oracle to use more than one byte per character | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/"><meta property="og:title" content="How to tell Oracle to use more than one byte per character | Alessandro Lacava"><meta property="og:description" content="When you create a table, by default, the number of bytes used to represent a character in a VARCHAR2 type is 1, irrespective of the characterset of the…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/"><meta property="article:published_time" content="2007-04-26T14:05:31.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to tell Oracle to use more than one byte per character","description":"When you create a table, by default, the number of bytes used to represent a character in a VARCHAR2 type is 1, irrespective of the characterset of the…","datePublished":"2007-04-26T14:05:31.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>How to tell Oracle to use more than one byte per character</h1><div class="post-meta"><time datetime="2007-04-26T14:05:31.000Z">26 Apr 2007</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/oracle/">Oracle</a></div></header><div class="prose article-body"><p>When you create a table, by default, the number of bytes used to represent a character in a <code>VARCHAR2</code> type is 1,
 irrespective of the characterset of the DB. This may be fine if the characterset is such that it uses just one byte per
 character. However, if the characterset of the DB is such that there might take more than one byte to represent a
 character (for example for characterset = <code>AL32UTF8</code>) you might run into troubles, such as the error:
 <strong>ORA-01401: inserted value too large for column</strong>. However you can specify, at creation time, that the size of
 characters is expressed in CHARs instead of bytes. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>(col_test<span style="color:#bbb"> </span>VARCHAR2(<span style="color:#b452cd">10</span><span style="color:#bbb"> </span><span style="color:#658b00">CHAR</span>))</span></span></code></pre></div>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">CREATE</span><span style="color:#D73A49"> TABLE</span><span style="color:#6F42C1"> test</span><span style="color:#24292E"> (col_test </span><span style="color:#D73A49">VARCHAR2</span><span style="color:#24292E">(</span><span style="color:#005CC5">10</span><span style="color:#D73A49"> CHAR</span><span style="color:#24292E">))</span></span></code></pre>
 <p>The previous code creates a table with just one column. The column will be able to contain 10 characters irrespective
 of the number of bytes used to represent the characters internally.</p>
-
-                </div>
-                
-            
-        </article>
-    </main>
-
-        </div><footer>
-    <a href="/privacy/">Privacy and cookies</a>
-</footer>
-</body>
-</html>
+</div><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>

@@ -1,80 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alessandro Lacava - Try-Success-Failure API for Java 8 </title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="author" content="Alessandro Lacava">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<header class="page-header">
-    <div class="myname"> 
-        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
-    </div>
-    <nav>
-        <ul class="navbar">
-            <li class="">
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/blog/">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/articles/">
-                    <span>Articles</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/talks/">
-                    <span>Talks</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div id="content">
-    <main>
-        <article>
-            
-            <h1 class="page-title blog">Try-Success-Failure API for Java 8</h1>
-            
-                <p class="blog-post-info">Posted: <time>2014-06-20</time>
-                
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/categories/java-8">Java 8</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
-    </span>
-
-
-
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/tags/try">Try</a>
-    </span>
-
-</p>
-
-                <div class="blog-post-content">
-                <h3 id="try-success-failure-api-java-implementation-of-the-famous-scala-counterpart">Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Try-Success-Failure API: Java implementation of the famous Scala counterpart Source code: Try-Success-Failure API for Java This API is a Java…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>Try-Success-Failure API for Java 8 | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/"><meta property="og:title" content="Try-Success-Failure API for Java 8 | Alessandro Lacava"><meta property="og:description" content="Try-Success-Failure API: Java implementation of the famous Scala counterpart Source code: Try-Success-Failure API for Java This API is a Java…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/"><meta property="article:published_time" content="2014-06-20T14:03:33.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Try-Success-Failure API for Java 8","description":"Try-Success-Failure API: Java implementation of the famous Scala counterpart Source code: Try-Success-Failure API for Java This API is a Java…","datePublished":"2014-06-20T14:03:33.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/try-success-failure-api-for-java-8/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>Try-Success-Failure API for Java 8</h1><div class="post-meta"><time datetime="2014-06-20T14:03:33.000Z">20 Jun 2014</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/java-8/">Java 8</a></div></header><div class="prose article-body"><h3 id="try-success-failure-api-java-implementation-of-the-famous-scala-counterpart">Try-Success-Failure API: Java implementation of the famous Scala counterpart</h3>
 <p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
 <p>This API is a Java implementation of <a href="https://www.scala-lang.org/api/current/#scala.util.Try">Scala Try API</a>,
 originally implemented by the guys at <a href="https://twitter.com/">Twitter</a> and later added to the Scala Standard Library.</p>
@@ -90,49 +14,36 @@ exception-handling in all of the places that an exception might occur.</p>
 <p>An important property of <code>Try</code> shown in the <code>divide</code> method of the <code>MainExample</code> class is its ability
 to <em>pipeline (chain if you prefer)</em>  operations, catching exceptions along the way thanks to its <code>flatMap</code> method.
 If you are not a seasoned functional programming geek concepts such as <code>flatMap/map</code> might not be easy to grasp
-at first. However you&rsquo;ll get used to them and, in the end, you&rsquo;ll love them. Moreover you&rsquo;re going to encounter
+at first. However you’ll get used to them and, in the end, you’ll love them. Moreover you’re going to encounter
 these methods more and more often since some important Java 8 classes already implement them
 (e.g. <code>java.util.Optional</code> and <code>java.util.stream.Stream</code>. Anyway for the moment just take for
 granted that to pipeline more than two operations, say N, you just need to chain them by using N - 1
 <code>flatMap</code> calls and a last call to <code>map</code>. E.g.: Suppose you have 3 variables (x, y and z) being
 of type <code>Try</code> and you just want to sum them up. The code you need for doing that is the
 following:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span>x.<span style="color:#658b00">flatMap</span>(a<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>y.<span style="color:#658b00">flatMap</span>(b<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>z.<span style="color:#658b00">map</span>(c<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>b<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>c)))</span></span></code></pre></div>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">x.</span><span style="color:#6F42C1">flatMap</span><span style="color:#24292E">(a </span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E"> y.</span><span style="color:#6F42C1">flatMap</span><span style="color:#24292E">(b </span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E"> z.</span><span style="color:#6F42C1">map</span><span style="color:#24292E">(c </span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E"> a </span><span style="color:#D73A49">+</span><span style="color:#24292E"> b </span><span style="color:#D73A49">+</span><span style="color:#24292E"> c)))</span></span></code></pre>
 <p>Apart from <code>map</code> and <code>flatMap</code>, <code>Try</code> has many other useful methods. See the <code>TryTest</code>
 class for a thorough coverage of all methods.</p>
 <h3 id="usage-example">Usage example</h3>
-<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">    
-</span></span></span><span style="display:flex;"><span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Integer division&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Enter the dividend press Return and then enter the divisor: &#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>Scanner<span style="color:#bbb"> </span>dividend<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(System.<span style="color:#658b00">in</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>Scanner<span style="color:#bbb"> </span>divisor<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(System.<span style="color:#658b00">in</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>Try&lt;Integer&gt;<span style="color:#bbb"> </span>num<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>Try.<span style="color:#658b00">apply</span>(dividend::nextInt);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>Try&lt;Integer&gt;<span style="color:#bbb"> </span>denom<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>Try.<span style="color:#658b00">apply</span>(divisor::nextInt);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>Try&lt;Integer&gt;<span style="color:#bbb"> </span>result<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>num.<span style="color:#658b00">flatMap</span>(x<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>denom.<span style="color:#658b00">map</span>(y<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span>/<span style="color:#bbb"> </span>y));<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>Try&lt;String&gt;<span style="color:#bbb"> </span>resultTryStr<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>result.<span style="color:#658b00">map</span>(i<span style="color:#bbb"> </span>-&gt;<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;The result of division is: &#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>i);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>String<span style="color:#bbb"> </span>resultStr<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>resultTryStr.<span style="color:#658b00">getOrElse</span>(<span style="color:#cd5555">&#34;You must&#39;ve divided by zero or entered something that&#39;s not an Int. Try again!&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(resultStr);</span></span></code></pre></div>
-In the previous example if you enter two valid integers with the second one&ndash;the divisor&ndash;being different from zero
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Integer division"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Enter the dividend press Return and then enter the divisor: "</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">Scanner dividend </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Scanner</span><span style="color:#24292E">(System.in);</span></span>
+<span class="line"><span style="color:#24292E">Scanner divisor </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Scanner</span><span style="color:#24292E">(System.in);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Try&lt;</span><span style="color:#D73A49">Integer</span><span style="color:#24292E">&gt; num </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Try.</span><span style="color:#6F42C1">apply</span><span style="color:#24292E">(dividend</span><span style="color:#D73A49">::</span><span style="color:#24292E">nextInt);</span></span>
+<span class="line"><span style="color:#24292E">Try&lt;</span><span style="color:#D73A49">Integer</span><span style="color:#24292E">&gt; denom </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Try.</span><span style="color:#6F42C1">apply</span><span style="color:#24292E">(divisor</span><span style="color:#D73A49">::</span><span style="color:#24292E">nextInt);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Try&lt;</span><span style="color:#D73A49">Integer</span><span style="color:#24292E">&gt; result </span><span style="color:#D73A49">=</span><span style="color:#24292E"> num.</span><span style="color:#6F42C1">flatMap</span><span style="color:#24292E">(x </span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E"> denom.</span><span style="color:#6F42C1">map</span><span style="color:#24292E">(y </span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E"> x </span><span style="color:#D73A49">/</span><span style="color:#24292E"> y));</span></span>
+<span class="line"><span style="color:#24292E">Try&lt;</span><span style="color:#D73A49">String</span><span style="color:#24292E">&gt; resultTryStr </span><span style="color:#D73A49">=</span><span style="color:#24292E"> result.</span><span style="color:#6F42C1">map</span><span style="color:#24292E">(i </span><span style="color:#D73A49">-&gt;</span><span style="color:#032F62"> "The result of division is: "</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> i);</span></span>
+<span class="line"><span style="color:#24292E">String resultStr </span><span style="color:#D73A49">=</span><span style="color:#24292E"> resultTryStr.</span><span style="color:#6F42C1">getOrElse</span><span style="color:#24292E">(</span><span style="color:#032F62">"You must've divided by zero or entered something that's not an Int. Try again!"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(resultStr);</span></span></code></pre>
+<p>In the previous example if you enter two valid integers with the second one–the divisor–being different from zero
 then the code prints out <code>The result of division is: $RESULT</code>, where <code>$RESULT</code> is the division between the first
-and the second number. On the other hand, if you either enter non valid integers&ndash;such as a string&ndash;or the second
-number is zero then you&rsquo;ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
+and the second number. On the other hand, if you either enter non valid integers–such as a string–or the second
+number is zero then you’ll get the message <code>You must've divided by zero or entered something that's not an Int. Try again!</code>
 printed out.</p>
 <p>Anyway, as I already said, see the <code>TryTest</code> class for a thorough coverage of all methods.</p>
 <h3 id="final-notes">Final Notes</h3>
 <p>Any criticism/suggestion is more than welcome!</p>
 <p>Source code: <a href="https://github.com/lambdista/try">Try-Success-Failure API for Java</a></p>
-
-                </div>
-                
-            
-        </article>
-    </main>
-
-        </div><footer>
-    <a href="/privacy/">Privacy and cookies</a>
-</footer>
-</body>
-</html>
+</div><footer class="article-tags"><span>Filed under</span><a href="/tags/try/">Try</a></footer><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>

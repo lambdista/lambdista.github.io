@@ -1,101 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alessandro Lacava - Using proguard obfuscator through the Wireless Toolkit </title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="author" content="Alessandro Lacava">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<header class="page-header">
-    <div class="myname"> 
-        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
-    </div>
-    <nav>
-        <ul class="navbar">
-            <li class="">
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/blog/">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/articles/">
-                    <span>Articles</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/talks/">
-                    <span>Talks</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div id="content">
-    <main>
-        <article>
-            
-            <h1 class="page-title blog">Using proguard obfuscator through the Wireless Toolkit</h1>
-            
-                <p class="blog-post-info">Posted: <time>2006-06-20</time>
-                
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
-    </span>
-
-
-
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/tags/j2me">J2ME</a>, <a class="blog-taxonomy-info" href="/tags/java-me">Java ME</a>
-    </span>
-
-</p>
-
-                <div class="blog-post-content">
-                <p>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation.
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>Using proguard obfuscator through the Wireless Toolkit | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/"><meta property="og:title" content="Using proguard obfuscator through the Wireless Toolkit | Alessandro Lacava"><meta property="og:description" content="When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/"><meta property="article:published_time" content="2006-06-20T20:53:38.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Using proguard obfuscator through the Wireless Toolkit","description":"When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation. Proguard is a good open-source…","datePublished":"2006-06-20T20:53:38.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/using-proguard-obfuscator-through-the-wireless-toolkit/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>Using proguard obfuscator through the Wireless Toolkit</h1><div class="post-meta"><time datetime="2006-06-20T20:53:38.000Z">20 Jun 2006</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/java/">Java</a></div></header><div class="prose article-body"><p>When you develop an application you might want to protect your code. A good way to accomplish this is using obfuscation.
 <a href="https://proguard.sourceforge.net/">Proguard</a> is a good open-source tool you can use for this purpose.
 To use it through the Wireless Toolkit (WTK), after downloading Proguard, you need to tell the WTK where it can find
 the obfuscator. You can do that by editing the file <strong>ktools.properties</strong> that you can find under <strong>%WTK%wtklibWindows</strong>,
 where <strong>%WTK%</strong> is the root directory of the Wireless Toolkit. Basically, you just need to add the two following lines
 to the aforementioned file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"> </span>
-</span></span><span style="display:flex;"><span><span style="color:#658b00">obfuscator.runner.class.name</span>: <span style="color:#cd5555">proguard.wtk.ProGuardObfuscator</span>
-</span></span><span style="display:flex;"><span><span style="color:#658b00">obfuscator.runner.classpath</span>: <span style="color:#cd5555">proguard_path</span></span></span></code></pre></div>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="properties"><code><span class="line"><span style="color:#24292E">obfuscator.runner.class.name: proguard.wtk.ProGuardObfuscator</span></span>
+<span class="line"><span style="color:#24292E">obfuscator.runner.classpath: proguard_path</span></span></code></pre>
 <p>where <strong>proguard_path</strong> is the absolute path to the <strong>proguard.jar</strong> file that you can find under the <strong>lib</strong> directory
-of proguard&rsquo;s home folder. So the <strong>proguard_path</strong> will be (under a Windows system) something like:
+of proguard’s home folder. So the <strong>proguard_path</strong> will be (under a Windows system) something like:
 <strong>C:\Programs\proguard\lib\proguard.jar</strong>. After that, creating obfuscated code using the WTK is as easy as selecting
 <strong>Project-&gt;Package-&gt;Create Obfuscated Package</strong> from the WTK menu</p>
-
-                </div>
-                
-            
-        </article>
-    </main>
-
-        </div><footer>
-    <a href="/privacy/">Privacy and cookies</a>
-</footer>
-</body>
-</html>
+</div><footer class="article-tags"><span>Filed under</span><a href="/tags/j2me/">J2ME</a><a href="/tags/java-me/">Java ME</a></footer><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>

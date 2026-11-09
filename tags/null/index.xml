@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>Alessandro Lacava</title><link>https://www.alessandrolacava.com/blog/</link><description>Software design, Scala, Java, and functional programming. Notes and articles by Alessandro Lacava.</description><language>en</language>
+<atom:link href="https://www.alessandrolacava.com/tags/null/index.xml" rel="self" type="application/rss+xml"/>
+<item><title>NOT IN vs. NOT EXISTS when NULL values are involved</title><link>https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</link><guid>https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/</guid><pubDate>Wed, 04 Jun 2008 13:24:09 GMT</pubDate><description>NOT IN does not behave as you would expect when NULL values are involved. Suppose you have the following tables: CDFIELD DSFIELD 1 ALPHA 2 BETA TABLEA CDFIELD DSFIELD 1 GAMMA NULL DELTA TABLEB Now try the following query: Does the previous query return any row? The answer is NO it doesn&apos;t, even if…</description></item>
+</channel></rss>

@@ -1,105 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alessandro Lacava - How to select any character across multiple lines in Java </title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/styles.min.d1b3428734153d8c3b5e2f3598da20a6372f630ae87c763594b98c554c580343.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://www.alessandrolacava.com/css/userstyles.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="author" content="Alessandro Lacava">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-<body>
-<header class="page-header">
-    <div class="myname"> 
-        <h2><a href="https://www.alessandrolacava.com/">Alessandro Lacava</a></h2> 
-    </div>
-    <nav>
-        <ul class="navbar">
-            <li class="">
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/blog/">
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/articles/">
-                    <span>Articles</span>
-                </a>
-            </li>
-            <li class="">
-                <a href="/talks/">
-                    <span>Talks</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div id="content">
-    <main>
-        <article>
-            
-            <h1 class="page-title blog">How to select any character across multiple lines in Java</h1>
-            
-                <p class="blog-post-info">Posted: <time>2006-10-10</time>
-                
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/categories/java">Java</a>, <a class="blog-taxonomy-info" href="/categories/programming">Programming</a>
-    </span>
-
-
-
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
-        
-        
-        
-        <a class="blog-taxonomy-info" href="/tags/regexp">RegExp</a>
-    </span>
-
-</p>
-
-                <div class="blog-post-content">
-                <p>You can do that using the following pattern in the <code>compile</code> static method of the <code>java.util.regex.Pattern</code> class.
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)? which means: any…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>How to select any character across multiple lines in Java | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/"><meta property="og:title" content="How to select any character across multiple lines in Java | Alessandro Lacava"><meta property="og:description" content="You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)? which means: any…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/"><meta property="article:published_time" content="2006-10-10T08:52:06.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to select any character across multiple lines in Java","description":"You can do that using the following pattern in the compile static method of the java.util.regex.Pattern class. The pattern is (.|n|r)? which means: any…","datePublished":"2006-10-10T08:52:06.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/how-to-select-any-character-across-multiple-lines-in-java/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>How to select any character across multiple lines in Java</h1><div class="post-meta"><time datetime="2006-10-10T08:52:06.000Z">10 Oct 2006</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/java/">Java</a></div></header><div class="prose article-body"><p>You can do that using the following pattern in the <code>compile</code> static method of the <code>java.util.regex.Pattern</code> class.
 The pattern is <code>(.|n|r)*?</code> which means: any character (the .) or (the |) n or r. Zero or more times (the *)
 of the whole stuff.</p>
 <p>Example: The following method strips the multiline comments (those between /* and */) from a string passed in and
 returns the resulting string:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#008b45;text-decoration:underline">java.util.regex</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22">// ... other code </span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22">// Strip multiline comments</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00688b;font-weight:bold">void</span><span style="color:#bbb"> </span><span style="color:#008b45">deleteMultilineComments</span>(String<span style="color:#bbb"> </span>subject)<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>Pattern<span style="color:#bbb"> </span>pattern<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>Pattern.<span style="color:#658b00">compile</span>(<span style="color:#cd5555">&#34;(/\\*(.|n|r)*?\\*/)&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>Matcher<span style="color:#bbb"> </span>matcher<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>pattern.<span style="color:#658b00">matcher</span>(subject);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">return</span><span style="color:#bbb"> </span>matcher.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.regex;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ... other code </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Strip multiline comments</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> deleteMultilineComments</span><span style="color:#24292E">(String subject) {</span></span>
+<span class="line"><span style="color:#24292E">  Pattern pattern </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Pattern.</span><span style="color:#6F42C1">compile</span><span style="color:#24292E">(</span><span style="color:#032F62">"(/</span><span style="color:#005CC5">\\</span><span style="color:#032F62">*(.|n|r)*?</span><span style="color:#005CC5">\\</span><span style="color:#032F62">*/)"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  Matcher matcher </span><span style="color:#D73A49">=</span><span style="color:#24292E"> pattern.</span><span style="color:#6F42C1">matcher</span><span style="color:#24292E">(subject);</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> matcher.</span><span style="color:#6F42C1">replaceAll</span><span style="color:#24292E">(</span><span style="color:#032F62">""</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
 <p>Note: rn works for Windows systems. n works for Unix-like systems. r works for Mac systems.</p>
-
-                </div>
-                
-            
-        </article>
-    </main>
-
-        </div><footer>
-    <a href="/privacy/">Privacy and cookies</a>
-</footer>
-</body>
-</html>
+</div><footer class="article-tags"><span>Filed under</span><a href="/tags/regexp/">RegExp</a></footer><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>
