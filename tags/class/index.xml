@@ -2,5 +2,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
 <title>Alessandro Lacava</title><link>https://www.alessandrolacava.com/blog/</link><description>Software design, Scala, Java, and functional programming. Notes and articles by Alessandro Lacava.</description><language>en</language>
 <atom:link href="https://www.alessandrolacava.com/tags/class/index.xml" rel="self" type="application/rss+xml"/>
-<item><title>Creating a Class definition in JavaScript</title><link>https://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</link><guid>https://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</guid><pubDate>Mon, 24 Jul 2006 16:28:27 GMT</pubDate><description>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:</description></item>
+<item><title>Creating a class definition in JavaScript</title><link>https://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</link><guid>https://www.alessandrolacava.com/blog/creating-a-class-definition-in-javascript/</guid><pubDate>Mon, 24 Jul 2006 16:28:27 GMT</pubDate><description>There are different ways to define classes in JavaScript. However, this is the most widely used and accepted at the moment:</description></item>
 </channel></rss>

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a…"><meta name="author" content="Alessandro Lacava"><meta name="theme-color" content="#f8f5ed"><title>Java split() of String | Multiple whitespace characters | Alessandro Lacava</title><link rel="canonical" href="https://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/"><meta property="og:title" content="Java split() of String | Multiple whitespace characters | Alessandro Lacava"><meta property="og:description" content="The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a…"><meta property="og:type" content="article"><meta property="og:site_name" content="Alessandro Lacava"><meta property="og:url" content="https://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/"><meta property="article:published_time" content="2008-12-03T10:47:02.000Z"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="alternate" type="application/rss+xml" title="Alessandro Lacava — Blog" href="/index.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Java split() of String | Multiple whitespace characters","description":"The split method of the String class is very useful when you want to tokenize a string. Its power lies in the fact that it accepts a string, as a…","datePublished":"2008-12-03T10:47:02.000Z","author":{"@type":"Person","name":"Alessandro Lacava","url":"https://www.alessandrolacava.com"},"mainEntityOfPage":"https://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/"}</script><link rel="stylesheet" href="/_astro/BaseLayout.DOb9xySF.css"></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="wordmark" href="/">Alessandro Lacava</a><nav aria-label="Main navigation"><ul class="navigation"><li><a href="/">Home</a></li><li><a href="/blog/" aria-current="location">Blog</a></li><li><a href="/articles/">Articles</a></li><li><a href="/talks/">Talks</a></li></ul></nav></div></header><main id="main-content" tabindex="-1"><article class="article-page container"><header class="article-header"><a class="eyebrow back-link" href="/blog/">← Back to the blog</a><h1>Java split() of String | Multiple whitespace characters</h1><div class="post-meta"><time datetime="2008-12-03T10:47:02.000Z">3 Dec 2008</time><a class="topic" href="/categories/programming/">Programming</a><a class="topic" href="/categories/java/">Java</a></div></header><div class="prose article-body"><p>The <code>split</code> method of the <code>String</code> class is very useful when you want to tokenize a string. Its power lies
-in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
+in the fact that it accepts a string, as a parameter, which can be a regular expression. However, you must
 be careful when you want to split a string using the whitespace character as a delimiter. Consider the
 following snippet of code:</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">String str </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "Testing split using two  whitespace characters"</span><span style="color:#24292E">;</span></span>
@@ -7,7 +7,7 @@ following snippet of code:</p>
 <span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E">(String token </span><span style="color:#D73A49">:</span><span style="color:#24292E"> tokens) {</span></span>
 <span class="line"><span style="color:#24292E">  System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"-"</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> token </span><span style="color:#D73A49">+</span><span style="color:#032F62"> "-"</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#24292E">}</span></span></code></pre>
-<p>What’s the output produced by the previous code? If you think it is the following one you’re wrong:</p>
+<p>What’s the output produced by the previous code? If you think it is the following, you’re wrong:</p>
 <ul>
 <li>-Testing-</li>
 <li>-split-</li>
@@ -16,7 +16,7 @@ following snippet of code:</p>
 <li>-whitespace-</li>
 <li>-characters-</li>
 </ul>
-<p>The actual output is instead this one:</p>
+<p>The actual output is:</p>
 <ul>
 <li>-Testing-</li>
 <li>-split-</li>
@@ -26,10 +26,10 @@ following snippet of code:</p>
 <li>-whitespace-</li>
 <li>-characters-</li>
 </ul>
-<p>Where in the hell did that empty string come out from? It comes out from the two whitespace characters that
-are between the word <strong>two</strong> and <strong>whitespace</strong> of the <strong>str</strong> string. If this is what you want OK. However,
+<p>Where on earth did that empty string come from? It comes from the two whitespace characters
+between the words <strong>two</strong> and <strong>whitespace</strong> in the <strong>str</strong> string. If this is what you want, that’s fine. However,
 most of the time, you will want to discard that empty string from your resulting string array. You can obtain this
-result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previuos code becomes:</p>
+result by using the <strong>\s+</strong> regex in place of <strong>\s</strong>. Basically, the previous code becomes:</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">String str </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "Testing split using two  whitespace characters"</span><span style="color:#24292E">;</span></span>
 <span class="line"><span style="color:#D73A49">String</span><span style="color:#24292E">[] tokens </span><span style="color:#D73A49">=</span><span style="color:#24292E"> str.</span><span style="color:#6F42C1">split</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\\</span><span style="color:#032F62">s+"</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E">(String token </span><span style="color:#D73A49">:</span><span style="color:#24292E"> tokens) {</span></span>

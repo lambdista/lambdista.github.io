@@ -11,13 +11,12 @@ A simplified version of the <code>Ad</code> data structure is the following:</p>
 <span class="line"><span style="color:#E36209">    description1</span><span style="color:#24292E">: </span><span style="color:#6F42C1">String</span><span style="color:#24292E">, </span></span>
 <span class="line"><span style="color:#E36209">    description2</span><span style="color:#24292E">: </span><span style="color:#6F42C1">String</span></span>
 <span class="line"><span style="color:#24292E">)</span></span></code></pre>
-<p>At some point they told me we need to support, by adding the <code>headline2</code> field,
-two types of ad: standard and expanded.
+<p>At some point, they told me we needed to support two types of ad—standard and expanded—by adding a <code>headline2</code> field.
 They said: “If <code>headline</code>, <code>description1</code>, and <code>description2</code> are used, it is a standard ad.
 If <code>headline</code>, <code>headline2</code>, and <code>description1</code> are used it is an expanded one.
 Users won’t include <code>headline2</code> when the ad is intended to be standard, and won’t include <code>description2</code>
 when the ad is intended to be expanded.”</p>
-<p>The optionality of the <code>headline2</code> and <code>description2</code> fields could put you in the wrong direction.
+<p>The optionality of the <code>headline2</code> and <code>description2</code> fields could lead you in the wrong direction.
 Indeed, you could think of changing the data structure as follows:</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="scala"><code><span class="line"><span style="color:#D73A49">final</span><span style="color:#D73A49"> case</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Ad</span><span style="color:#24292E">(</span></span>
 <span class="line"><span style="color:#E36209">    headline</span><span style="color:#24292E">: </span><span style="color:#6F42C1">String</span><span style="color:#24292E">, </span></span>
@@ -25,7 +24,7 @@ Indeed, you could think of changing the data structure as follows:</p>
 <span class="line"><span style="color:#E36209">    description1</span><span style="color:#24292E">: </span><span style="color:#6F42C1">String</span><span style="color:#24292E">, </span></span>
 <span class="line"><span style="color:#E36209">    description2</span><span style="color:#24292E">: </span><span style="color:#6F42C1">Option</span><span style="color:#24292E">[</span><span style="color:#6F42C1">String</span><span style="color:#24292E">]</span></span>
 <span class="line"><span style="color:#24292E">)</span></span></code></pre>
-<p>This may sound fine but you could reach a much cleaner and type-safe
+<p>This may sound fine but you could reach a much cleaner, type-safe
 solution using a simple Algebraic Data Type (ADT). Here’s how:</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="scala"><code><span class="line"><span style="color:#D73A49">sealed</span><span style="color:#D73A49"> trait</span><span style="color:#6F42C1"> Ad</span></span>
 <span class="line"></span>
@@ -42,8 +41,8 @@ solution using a simple Algebraic Data Type (ADT). Here’s how:</p>
 <span class="line"><span style="color:#E36209">      description1</span><span style="color:#24292E">: </span><span style="color:#6F42C1">String</span></span>
 <span class="line"><span style="color:#24292E">  ) </span><span style="color:#D73A49">extends</span><span style="color:#6F42C1"> Ad</span></span>
 <span class="line"><span style="color:#24292E">}</span></span></code></pre>
-<p>This way you don’t need to inspect the <code>headline2</code> and/or <code>description2</code> value
+<p>This way you don’t need to inspect the <code>headline2</code> and/or <code>description2</code> values
 to find out the ad type you’re dealing with.
-Indeed, the ad type is encoded in the type system which is always a <em>desiderata</em>.</p>
+Indeed, the ad type is encoded in the type system, which is always desirable.</p>
 <p>Bottom line: use <code>Option</code> with caution.</p>
 </div><footer class="article-tags"><span>Filed under</span><a href="/tags/algebraic-data-type/">Algebraic Data Type</a><a href="/tags/adt/">ADT</a><a href="/tags/option/">Option</a></footer><div class="article-end"><a class="text-link" href="/blog/">← More from the blog</a><a class="text-link" href="/index.xml">Follow via RSS ↗</a></div></article></main><footer class="site-footer"><div class="container footer-main"><div><a class="wordmark" href="/">Alessandro Lacava</a><p>Software, words, and the ideas in between.</p></div><nav aria-label="Social and contact links"><a href="https://github.com/lambdista" rel="me">GitHub ↗</a><a href="https://www.linkedin.com/in/alessandrolacava" rel="me">LinkedIn ↗</a><a href="https://twitter.com/lambdista" rel="me">X / Twitter ↗</a><a href="mailto:alessandrolacava@gmail.com">Email ↗</a></nav></div><div class="container footer-bottom"><span>© 2026 Alessandro Lacava</span><div><a href="/index.xml">RSS feed</a><a href="/privacy/">Privacy and cookies</a></div></div></footer></body></html>
