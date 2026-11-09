@@ -137,12 +137,12 @@
 in the fact that it accepts a string, as a parameter, which can be a regular expression. However you must
 be careful when you want to split a string using the whitespace character as a delimiter. Consider the
 following snippet of code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;Testing split using two  whitespace characters&#34;</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String[]<span style="color:#bbb"> </span>tokens<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>str.<span style="color:#658b00">split</span>(<span style="color:#cd5555">&#34;\\s&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">for</span>(String<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>tokens)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;Testing split using two  whitespace characters&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>String[]<span style="color:#bbb"> </span>tokens<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>str.<span style="color:#658b00">split</span>(<span style="color:#cd5555">&#34;\\s&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">for</span>(String<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>tokens)<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;-&#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>+<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;-&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>What&rsquo;s the output produced by the previous code? If you think it is the following one you&rsquo;re wrong:</p><span> <a href="https://www.alessandrolacava.com/blog/java-split-of-string-multiple-whitespace-characters/">Read more...</a></span>
     </p>
 </article>

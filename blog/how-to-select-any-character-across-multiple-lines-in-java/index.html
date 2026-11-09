@@ -79,17 +79,17 @@ The pattern is <code>(.|n|r)*?</code> which means: any character (the .) or (the
 of the whole stuff.</p>
 <p>Example: The following method strips the multiline comments (those between /* and */) from a string passed in and
 returns the resulting string:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#008b45;text-decoration:underline">java.util.regex</span>;<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#008b45;text-decoration:underline">java.util.regex</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#228b22">// ... other code </span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22">// ... other code </span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#228b22">// Strip multiline comments</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00688b;font-weight:bold">void</span><span style="color:#bbb"> </span><span style="color:#008b45">deleteMultilineComments</span>(String<span style="color:#bbb"> </span>subject)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22">// Strip multiline comments</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00688b;font-weight:bold">void</span><span style="color:#bbb"> </span><span style="color:#008b45">deleteMultilineComments</span>(String<span style="color:#bbb"> </span>subject)<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>Pattern<span style="color:#bbb"> </span>pattern<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>Pattern.<span style="color:#658b00">compile</span>(<span style="color:#cd5555">&#34;(/\\*(.|n|r)*?\\*/)&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>Matcher<span style="color:#bbb"> </span>matcher<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>pattern.<span style="color:#658b00">matcher</span>(subject);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">return</span><span style="color:#bbb"> </span>matcher.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>Note: rn works for Windows systems. n works for Unix-like systems. r works for Mac systems.</p>
 
                 </div>

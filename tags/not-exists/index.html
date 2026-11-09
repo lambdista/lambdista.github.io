@@ -50,9 +50,10 @@
 </header>
 <div id="content">
 <main>
-    <h1>Tag: NOT EXISTS</h1>
-    <article class="archive-item">
-                <article class="blog-post-summary">
+
+    <h1 class="page-title">NOT EXISTS</h1>
+
+    <article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">NOT IN vs. NOT EXISTS when NULL values are involved</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
@@ -79,16 +80,15 @@ Suppose you have the following tables:</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Now try the following query:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
 <p>Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field
 which is not present in table_b.cd_field.</p><span> <a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">Read more...</a></span>
     </p>
 </article>
 
-            </article>
 
 </main>
 

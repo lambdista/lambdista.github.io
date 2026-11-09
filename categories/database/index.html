@@ -50,9 +50,10 @@
 </header>
 <div id="content">
 <main>
-    <h1>Category: Database</h1>
-    <article class="archive-item">
-                <article class="blog-post-summary">
+
+    <h1 class="page-title">Database</h1>
+
+    <article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Performance differences between IN and EXISTS</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
@@ -81,9 +82,7 @@ Let&rsquo;s start by saying that the two operators behave differently when <code
 performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p><span> <a href="https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">NOT IN vs. NOT EXISTS when NULL values are involved</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
@@ -110,17 +109,15 @@ Suppose you have the following tables:</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Now try the following query:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
 <p>Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field
 which is not present in table_b.cd_field.</p><span> <a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/">How to get the number of columns in a ResultSet in Java</a></h3>
 
     <p class="blog-post-info">Posted: <time>2007-12-12</time>
@@ -144,20 +141,19 @@ which is not present in table_b.cd_field.</p><span> <a href="https://www.alessan
 </p>
     <p><p>In Java it is possible to retrieve the number of columns of a <code>ResultSet</code> dinamically, thanks to the <code>ResultSetMetaData</code>
 class. Here&rsquo;s an example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#228b22">// Here you get the conn object. E.g.:</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#228b22">// Connection conn = DriverManager.getConnection(...);</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22">// Here you get the conn object. E.g.:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22">// Connection conn = DriverManager.getConnection(...);</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Statement<span style="color:#bbb"> </span>st<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>conn.<span style="color:#658b00">createStatement</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>ResultSet<span style="color:#bbb"> </span>rs<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>st.<span style="color:#658b00">executeQuery</span>(<span style="color:#cd5555">&#34;SELECT * FROM your_table&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>ResultSetMetaData<span style="color:#bbb"> </span>rsmd<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>rs.<span style="color:#658b00">getMetaData</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span>numCols<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>rsmd.<span style="color:#658b00">getColumnCount</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Number of columns in your_table: &#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>numCols);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>Statement<span style="color:#bbb"> </span>st<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>conn.<span style="color:#658b00">createStatement</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>ResultSet<span style="color:#bbb"> </span>rs<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>st.<span style="color:#658b00">executeQuery</span>(<span style="color:#cd5555">&#34;SELECT * FROM your_table&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>ResultSetMetaData<span style="color:#bbb"> </span>rsmd<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>rs.<span style="color:#658b00">getMetaData</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b;font-weight:bold">int</span><span style="color:#bbb"> </span>numCols<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>rsmd.<span style="color:#658b00">getColumnCount</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Number of columns in your_table: &#34;</span><span style="color:#bbb"> </span>+<span style="color:#bbb"> </span>numCols);</span></span></code></pre></div>
 <p>The previous code retrieves and displays the number of columns of <code>your_table</code>.</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-get-the-number-of-columns-in-a-resultset-in-java/">Read more...</a></span>
     </p>
 </article>
 
-            </article>
 
 </main>
 

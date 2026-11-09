@@ -83,10 +83,10 @@
 </ol>
 <p><code>Q</code> means: &ldquo;quotes all characters until E&rdquo;, while <code>E</code> ends the quotes.</p>
 <p>The following example will hopefully to clarify the subject:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;I want to replace the . with the ,&#34;</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>replaced<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;.&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(replaced);</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span>String<span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;I want to replace the . with the ,&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>String<span style="color:#bbb"> </span>replaced<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;.&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(replaced);</span></span></code></pre></div>
 <p>What do you expect the above method will do? Do you think the following string will be displayed?</p>
 <p><code>I want to replace the , with the ,</code></p>
 <p>If yes then you might be surprised to find out that what you really get is instead:</p>
@@ -97,9 +97,9 @@ Since <code>.</code> means any character, so writing <code>test.replaceAll(&quot
 Either you escape the . with a  or enclose it within <code>Q</code> and <code>E</code>. What I didn&rsquo;t say is that, since the  is a
 metacharacter itself, you need to escape it too. :-)</p>
 <p>Translating this in Java you have:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;\.&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;\Q.\E&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;\.&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>test.<span style="color:#658b00">replaceAll</span>(<span style="color:#cd5555">&#34;\Q.\E&#34;</span>,<span style="color:#bbb"> </span><span style="color:#cd5555">&#34;,&#34;</span>);</span></span></code></pre></div>
 <p>I prefer to use the first method when the metacharacter is just one. However, when I have more metacharacters or
 I don&rsquo;t know at compile time what my string is going to be, I use the second method.</p>
 

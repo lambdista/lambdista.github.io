@@ -73,8 +73,8 @@ character. However, if the characterset of the DB is such that there might take 
 character (for example for characterset = <code>AL32UTF8</code>) you might run into troubles, such as the error:
 <strong>ORA-01401: inserted value too large for column</strong>. However you can specify, at creation time, that the size of
 characters is expressed in CHARs instead of bytes. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>(col_test<span style="color:#bbb"> </span>VARCHAR2(<span style="color:#b452cd">10</span><span style="color:#bbb"> </span><span style="color:#658b00">CHAR</span>))</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>(col_test<span style="color:#bbb"> </span>VARCHAR2(<span style="color:#b452cd">10</span><span style="color:#bbb"> </span><span style="color:#658b00">CHAR</span>))</span></span></code></pre></div>
 <p>The previous code creates a table with just one column. The column will be able to contain 10 characters irrespective
 of the number of bytes used to represent the characters internally.</p>
 

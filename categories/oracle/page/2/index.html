@@ -50,10 +50,11 @@
 </header>
 <div id="content">
 <main>
-    <h1>Category: Oracle</h1>
-    <article class="archive-item">
-                <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/">How to commit a single DML statement in Oracle (PL/SQL)</a></h3>
+
+    <h1 class="page-title">Oracle</h1>
+
+    <article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl-sql/">How to commit a single DML statement in Oracle (PL/SQL)</a></h3>
 
     <p class="blog-post-info">Posted: <time>2007-05-24</time>
     
@@ -76,12 +77,10 @@
 </p>
     <p><p>Sometimes you might need to commit a single <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statement and not the whole main transaction.
 In such a case you can use an <code>AUTONOMOUS TRANSACTION</code> which is a feature available since Oracle 8i.
-The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl/sql/">Read more...</a></span>
+The trick is to encapsulate the statement in a procedure and use the pragma <code>AUTONOMOUS_TRANSACTION</code>. Here is an example, suppose you have a table, <code>your_table</code>, which has just one column of type <code>NUMBER</code> and you want to insert the value 1, irrespective of the state of the main transaction:</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-commit-a-single-dml-statement-in-oracle-pl-sql/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/">How to put a set of rows into a single row in Oracle</a></h3>
 
     <p class="blog-post-info">Posted: <time>2007-04-27</time>
@@ -103,9 +102,7 @@ in multiple rows. For example if you have more than one telephone number in diff
 in a single comma-separated row you could use a query similar to the following:</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-put-a-set-of-rows-into-a-single-row-in-oracle/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/">How to tell Oracle to use more than one byte per character</a></h3>
 
     <p class="blog-post-info">Posted: <time>2007-04-26</time>
@@ -128,10 +125,8 @@ character (for example for characterset = <code>AL32UTF8</code>) you might run i
 characters is expressed in CHARs instead of bytes. For example:</p><span> <a href="https://www.alessandrolacava.com/blog/how-to-tell-oracle-to-use-more-than-one-byte-per-character/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/">Using dynamic SQL statements from PL/SQL</a></h3>
+<article class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl-sql/">Using dynamic SQL statements from PL/SQL</a></h3>
 
     <p class="blog-post-info">Posted: <time>2006-09-06</time>
     
@@ -154,18 +149,17 @@ characters is expressed in CHARs instead of bytes. For example:</p><span> <a hre
 </p>
     <p><p>Sometimes you need to execute dynamic SQL statements. Starting from Oracle8i you can accomplish this task using the
 <code>EXECUTE IMMEDIATE</code> statement. Here are three examples of how you can take advantage of this great statement.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sql_select<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>sql_select<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>your_cursor<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">USING</span><span style="color:#bbb"> </span>your_parameter_for_field1;</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span>sql_select<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span><span style="color:#cd5555">&#39;SELECT * FROM your_table WHERE field1 = :1&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>sql_select<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">INTO</span><span style="color:#bbb"> </span>your_cursor<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">USING</span><span style="color:#bbb"> </span>your_parameter_for_field1;</span></span></code></pre></div>
 <p>In this first example I showed how you can use <code>EXECUTE IMMEDIATE</code> to execute the query and put the result into a cursor.
 The <code>USING your_parameter_for_field1</code> part replaces the <code>:1</code> bind variable with the value contained in the
-<code>your_parameter_for_field1</code> parameter.</p><span> <a href="https://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl/sql/">Read more...</a></span>
+<code>your_parameter_for_field1</code> parameter.</p><span> <a href="https://www.alessandrolacava.com/blog/using-dynamic-sql-statements-from-pl-sql/">Read more...</a></span>
     </p>
 </article>
 
-            </article>
 
 <ul class="pagination">
     

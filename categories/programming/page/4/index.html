@@ -50,9 +50,10 @@
 </header>
 <div id="content">
 <main>
-    <h1>Category: Programming</h1>
-    <article class="archive-item">
-                <article class="blog-post-summary">
+
+    <h1 class="page-title">Programming</h1>
+
+    <article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Performance differences between IN and EXISTS</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
@@ -81,9 +82,7 @@ Let&rsquo;s start by saying that the two operators behave differently when <code
 performs better than <code>EXISTS</code>. I say &ldquo;generally&rdquo; because this is not always the case. For example consider the following query:</p><span> <a href="https://www.alessandrolacava.com/blog/performance-differences-between-in-and-exists/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">NOT IN vs. NOT EXISTS when NULL values are involved</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-06-04</time>
@@ -110,17 +109,15 @@ Suppose you have the following tables:</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Now try the following query:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>*<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_a<span style="color:#bbb"> </span>a<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>a.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">IN</span><span style="color:#bbb"> </span>(<span style="color:#8b008b;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>b.cd_field<span style="color:#bbb"> </span><span style="color:#8b008b;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table_b<span style="color:#bbb"> </span>b);</span></span></code></pre></div>
 <p>Does the previous query return any row? The answer is NO it doesn&rsquo;t, even if there is a value (2) in table_a.cd_field
 which is not present in table_b.cd_field.</p><span> <a href="https://www.alessandrolacava.com/blog/not-in-vs.-not-exists-when-null-values-are-involved/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/">Funny long jokes and aphorisms about programming (and programmers of course)</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-05-09</time>
@@ -142,9 +139,7 @@ which is not present in table_b.cd_field.</p><span> <a href="https://www.alessan
 <p>A programmer is walking along a beach and finds a lamp.  He rubs the lamp, and a genie appears.  &ldquo;I am the most powerful genie in the world.  I can grant you any wish, but only one wish.&ldquo;The programmer pulls out a map, points to it and says, &ldquo;I&rsquo;d want peace in the Middle East.&ldquo;The genie responds, &ldquo;Gee, I don&rsquo;t know.  Those people have been fighting for millennia.  I can do just about anything, but this is likely beyond my limits.&ldquo;The programmer then says, &ldquo;Well, I am a programmer, and my programs have lots of users.  Please make all my users satisfied with my software and let them ask for sensible changes.&rdquo;</p><span> <a href="https://www.alessandrolacava.com/blog/funny-long-jokes-and-aphorisms-about-programming-and-programmers-of-course/">Read more...</a></span>
     </p>
 </article>
-
-            </article><article class="archive-item">
-                <article class="blog-post-summary">
+<article class="blog-post-summary">
     <h3 class="blog-post-title"><a href="https://www.alessandrolacava.com/blog/funny-short-jokes-and-aphorisms-about-programming-and-programmers-of-course/">Funny short jokes and aphorisms about programming (and programmers of course)</a></h3>
 
     <p class="blog-post-info">Posted: <time>2008-05-09</time>
@@ -178,7 +173,6 @@ One mistake and you have to support it for the rest of your life.</p><span> <a h
     </p>
 </article>
 
-            </article>
 
 <ul class="pagination">
     

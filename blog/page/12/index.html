@@ -110,32 +110,32 @@
     <p><p>Nowadays, AJAX is a ubiquitous technology in the IT world. When you need to create the object used to send asynchronous
 requests to a server, you might face the browser-difference problem. Here is a JavaScript function you could use to
 overcome this problem:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// The following function creates an XMLHttpRequest object
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">function</span> createHttpRequest() {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> createHttpRequest() {
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#8b008b;font-weight:bold">typeof</span> XMLHttpRequest != <span style="color:#cd5555">&#34;undefined&#34;</span>) <span style="color:#228b22">//NOT IE {
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> XMLHttpRequest();
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> XMLHttpRequest();
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#658b00">window</span>.ActiveXObject) <span style="color:#228b22">// IE {
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">var</span> sVersions = [ <span style="color:#cd5555">&#34;MSXML2.XMLHttp.5.0&#34;</span>,
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">var</span> sVersions = [ <span style="color:#cd5555">&#34;MSXML2.XMLHttp.5.0&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;MSXML2.XMLHttp.4.0&#34;</span>,<span style="color:#cd5555">&#34;MSXML2.XMLHttp.3.0&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;MSXML2.XMLHttp&#34;</span>,<span style="color:#cd5555">&#34;Microsoft.XMLHttp&#34;</span>
 </span></span><span style="display:flex;"><span>    ];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#228b22">//try to get an instance of the newer version.
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#228b22">//If it is not available go down till the oldest one
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">var</span> i = <span style="color:#b452cd">0</span>; i &lt; sVersions.length; i++) {
+</span></span></span><span style="display:flex;"><span>    <span style="color:#228b22">//If it is not available go down till the oldest one
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#8b008b;font-weight:bold">var</span> i = <span style="color:#b452cd">0</span>; i &lt; sVersions.length; i++) {
 </span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">try</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">var</span> ret = <span style="color:#8b008b;font-weight:bold">new</span> ActiveXObject(sVersions[i]);
 </span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> ret;
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">catch</span> (oException) {
 </span></span><span style="display:flex;"><span>        <span style="color:#228b22">//Do nothing. Just go on trying with the older versions
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>      }
+</span></span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#228b22">//if it gets here then no version is available
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  alert(<span style="color:#cd5555">&#34;XMLHttpRequest object could not be created.&#34;</span>);
+</span></span></span><span style="display:flex;"><span>  alert(<span style="color:#cd5555">&#34;XMLHttpRequest object could not be created.&#34;</span>);
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>As you can see this function creates the correct instance of the <code>XMLHttpRequest</code> object. If the browser is not
 Internet Explorer then it just instantiates the <code>XMLHttpRequest</code> object, otherwise it tries to create the correct
@@ -197,18 +197,18 @@ to the aforementioned file:</p><span> <a href="https://www.alessandrolacava.com/
 </p>
     <p><p>Most programmers know how to define and use a function in JavaScript. For example the following function displays an
 alert containing the string passed in as a parameter:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> displayAlert(sText) {
 </span></span><span style="display:flex;"><span>  alert(sText);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#228b22">// Then you call it this way
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>displayAlert(<span style="color:#cd5555">&#34;Hello World!&#34;</span>);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>displayAlert(<span style="color:#cd5555">&#34;Hello World!&#34;</span>);</span></span></code></pre></div>
 <p>How many developers, however, know that JavaScript functions are actually objects? Indeed, you can define the previous
 function using the <code>Function</code> class:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">var</span> displayAlert = <span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#658b00">Function</span>(<span style="color:#cd5555">&#34;sText&#34;</span>, <span style="color:#cd5555">&#34;alert(sText);&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#228b22">//...and you call it the same way
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>displayAlert(<span style="color:#cd5555">&#34;Hello World!&#34;</span>);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>displayAlert(<span style="color:#cd5555">&#34;Hello World!&#34;</span>);</span></span></code></pre></div>
 <p>For those who didn&rsquo;t figure it out, the syntax of the <code>Function</code> class is the following:</p><span> <a href="https://www.alessandrolacava.com/blog/the-function-class-in-javascript/">Read more...</a></span>
     </p>
 </article>
